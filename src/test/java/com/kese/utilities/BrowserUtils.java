@@ -2,16 +2,66 @@ package com.kese.utilities;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.*;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.*;
 
 public class BrowserUtils {
+
+
+    public static void mySendKeysMethod (By locator, String sendText){
+
+        WebElement element = Driver.get().findElement(locator);
+
+        Wait<WebDriver> wait = new FluentWait<WebDriver>(Driver.get()).
+                withTimeout(Duration.ofSeconds(10)).
+                pollingEvery(Duration.ofSeconds(2)).
+                withMessage("My click method failed");
+
+        wait.until(ExpectedConditions.visibilityOf(element)).sendKeys(sendText);
+
+    }
+
+    public static void myClickMethod (By locator){
+
+        WebElement element = Driver.get().findElement(locator);
+
+        Wait<WebDriver> wait = new FluentWait<WebDriver>(Driver.get()).
+                withTimeout(Duration.ofSeconds(10)).
+                pollingEvery(Duration.ofSeconds(2)).
+                withMessage("My click method failed");
+
+        wait.until(ExpectedConditions.elementToBeClickable(element)).click();
+
+    }
+
+    public static String myGetElementTextMethods(By locator){
+
+        WebElement element = Driver.get().findElement(locator);
+
+        Wait<WebDriver> wait = new FluentWait<WebDriver>(Driver.get()).
+                withTimeout(Duration.ofSeconds(10)).
+                pollingEvery(Duration.ofSeconds(2)).
+                withMessage("My click method failed");
+
+        wait.until(ExpectedConditions.visibilityOf(element)).getText();
+
+        return element.getText();
+    }
+
+    public static String myGetCurrentUrlMethod(){
+
+        BrowserUtils.waitForPageToLoad(3000);
+        String currentUrl =Driver.get().getCurrentUrl();
+        return currentUrl;
+    }
+
+
+
 
     /*
      * switches to new window by the exact title
@@ -66,6 +116,12 @@ public class BrowserUtils {
             elemTexts.add(el.getText());
         }
         return elemTexts;
+    }
+
+    public static String getSingleElementText(By locator){
+
+        String returnMyText= Driver.get().findElement(locator).getText();
+        return returnMyText;
     }
 
     /**
@@ -341,8 +397,6 @@ public class BrowserUtils {
      * Integer, Float, Long, and large numbers by using any of the parse methods.
      *
      */
-
-
     public static boolean isNumeric(String strNum) {
         if (strNum == null) {
             return false;
