@@ -3,7 +3,7 @@ package com.kese.pages;
 import com.kese.utilities.BrowserUtils;
 import org.openqa.selenium.By;
 
-public class US18LoginPage {
+public class LoginPage {
 
 
 
