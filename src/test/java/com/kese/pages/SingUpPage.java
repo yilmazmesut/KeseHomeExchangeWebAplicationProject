@@ -7,11 +7,14 @@ import org.openqa.selenium.support.PageFactory;
 
 public class SingUpPage extends CommonPage{
 
+
     @FindBy(xpath = "//a[@href='/usage']")
     public WebElement usage;
 
     @FindBy(xpath = "//a[@href='/privacy']")
     public WebElement privacy;
+
+
 
 
 
