@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class SingUpPage extends CommonPage{
+public class SignUpPage extends CommonPage{
 
     @FindBy(xpath = "//a[@href='/usage']")
     public WebElement usage;
