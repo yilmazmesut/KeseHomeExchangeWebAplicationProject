@@ -26,6 +26,32 @@ public class BrowserUtils {
 
     }
 
+    public static boolean isDisplayed (By locator){
+
+        return waitUntilVisibilityOf(locator).isDisplayed();
+
+    }
+
+    public static WebElement waitUntilVisibilityOf (By locator){
+
+        WebElement element = Driver.get().findElement(locator);
+
+        Wait<WebDriver> wait = new FluentWait<WebDriver>(Driver.get()).
+                withTimeout(Duration.ofSeconds(10)).
+                pollingEvery(Duration.ofSeconds(2)).
+                withMessage("My click method failed");
+
+        return wait.until(ExpectedConditions.visibilityOf(element));
+
+    }
+
+
+    public static boolean isEnabled (By locator){
+
+        return waitUntilVisibilityOf(locator).isEnabled();
+
+    }
+
     public static void myClickMethod (By locator){
 
         WebElement element = Driver.get().findElement(locator);
