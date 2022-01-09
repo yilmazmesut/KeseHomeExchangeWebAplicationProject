@@ -1,7 +1,6 @@
 package com.kese.stepdefinitions;
 
 import com.kese.pages.SignUpPage;
-import com.kese.pages.US18LoginPage;
 import com.kese.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
