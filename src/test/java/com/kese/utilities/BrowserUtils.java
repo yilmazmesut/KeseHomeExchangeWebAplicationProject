@@ -13,6 +13,11 @@ import static org.junit.Assert.*;
 public class BrowserUtils {
 
 
+
+
+
+
+
     public static void mySendKeysMethod (By locator, String sendText){
 
         WebElement element = Driver.get().findElement(locator);
