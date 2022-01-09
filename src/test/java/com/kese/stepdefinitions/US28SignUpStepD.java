@@ -1,27 +1,27 @@
 package com.kese.stepdefinitions;
 
-import com.kese.pages.SingUpPage;
+import com.kese.pages.SignUpPage;
 import com.kese.utilities.BrowserUtils;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 
 public class US28SignUpStepD {
-    SingUpPage singUpPage = new SingUpPage();
+    SignUpPage signUpPage = new SignUpPage();
 
 
 
     @Given("Click usage")
     public void click_usage() {
 
-        singUpPage.usage.click();
+        signUpPage.usage.click();
 
     }
 
 
     @And("Click privacy")
     public void clickPrivacy() {
-        singUpPage.privacy.click();
+        signUpPage.privacy.click();
     }
 
 
@@ -30,10 +30,10 @@ public class US28SignUpStepD {
         switch (tab){
 
             case "/usage":
-                BrowserUtils.verifyElementDisplayed(singUpPage.usage);
+                BrowserUtils.verifyElementDisplayed(signUpPage.usage);
                 break;
             case "/privacy":
-                BrowserUtils.verifyElementDisplayed(singUpPage.privacy);
+                BrowserUtils.verifyElementDisplayed(signUpPage.privacy);
                 break;
 
 
