@@ -1,25 +1,21 @@
 package com.kese.pages;
 
-import com.kese.utilities.BrowserUtils;
-import org.openqa.selenium.By;
+import com.kese.utilities.Driver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
-public class SignUpPage {
-
-    private static final By girisYapButton = By.linkText("Giriş Yap");
+public class SignUpPage extends CommonPage{
 
 
-    public static boolean girisYapButtonIsDisplayed(){
-    return BrowserUtils.isDisplayed(girisYapButton);
+    @FindBy(xpath = "//a[@href='/usage']")
+    public WebElement usage;
 
-    }
+    @FindBy(xpath = "//a[@href='/privacy']")
+    public WebElement privacy;
 
-    public static boolean girisYapButtonIsEnabled(){
-    return BrowserUtils.isEnabled(girisYapButton);
 
-    }
 
-    public static void clickGirisYapButton(){
-        BrowserUtils.myClickMethod(girisYapButton);
-    }
+
 
 }
