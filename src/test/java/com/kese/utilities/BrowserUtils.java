@@ -401,6 +401,24 @@ public class BrowserUtils {
         }
     }
 
+
+    /**
+     * This method creates a random string
+     *
+     * @param length number of letters in string
+     * @return random string
+     */
+
+    public static String getRandomString(int length) {
+        String possibleLetters = "abcdefgijklmopqrstuvwxyz";
+        char[] rndWord = new char[length];
+        for (int i = 0; i < length; i++) {
+            int rand = (int) (Math.random() * possibleLetters.length());
+            rndWord[i] = possibleLetters.charAt(rand);
+        }
+        return new String(rndWord);
+    }
+
     /**
      * executes the given JavaScript command on given web element
      *
