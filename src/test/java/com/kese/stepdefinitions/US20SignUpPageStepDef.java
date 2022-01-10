@@ -24,8 +24,8 @@ public class US20SignUpPageStepDef {
     String email;
     @When("user creates a random credentials and signup")
     public void signUpWithRandomCredentials() {
-        username = getRandomString(4);
-        email = getRandomString(4)+"@nonmail.com";
+        username = BrowserUtils.getRandomString(4);
+        email = BrowserUtils.getRandomString(4)+"@nonmail.com";
 
         page.inputUsername.sendKeys(username);
         page.inputMail.sendKeys(email);
@@ -43,10 +43,10 @@ public class US20SignUpPageStepDef {
     public void userTriesToUseTheSameForSignupAgain(String arg0) {
         switch (arg0){
             case "email": // email didn't change
-                username = getRandomString(4);
+                username = BrowserUtils.getRandomString(4);
                 break;
             case "username": // password didn't change
-                email = getRandomString(5)+"@nonmail.com";
+                email = BrowserUtils.getRandomString(5)+"@nonmail.com";
                 break;
         }
         page.inputUsername.sendKeys(username);
@@ -67,20 +67,5 @@ public class US20SignUpPageStepDef {
         Assert.assertTrue(textElement.isDisplayed());
     }
 
-    /**
-     * This method creates a random string
-     *
-     * @param length number of letters in string
-     * @return random string
-     */
 
-    private String getRandomString(int length) {
-        String possibleLetters = "abcdefgijklmopqrstuvwxyz";
-        char[] rndWord = new char[length];
-        for (int i = 0; i < length; i++) {
-            int rand = (int) (Math.random() * possibleLetters.length());
-            rndWord[i] = possibleLetters.charAt(rand);
-        }
-        return new String(rndWord);
-    }
 }
