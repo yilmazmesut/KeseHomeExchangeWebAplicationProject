@@ -1,6 +1,6 @@
 package com.kese.stepdefinitions;
 
-import com.kese.pages.US20SignupPage;
+import com.kese.pages.SignUpPage;
 import com.kese.utilities.BrowserUtils;
 import com.kese.utilities.Driver;
 import io.cucumber.java.en.And;
@@ -12,7 +12,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 public class US20SignUpPageStepDef {
-    US20SignupPage page = new US20SignupPage();
+    SignUpPage page = new SignUpPage();
 
     @Given("user goes to {string} page")
     public void userGoesToPage(String url) {
