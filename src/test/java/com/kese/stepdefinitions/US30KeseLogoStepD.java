@@ -1,6 +1,6 @@
 package com.kese.stepdefinitions;
 
-import com.kese.pages.HomePage;
+import com.kese.pages.MainPage;
 import com.kese.utilities.BrowserUtils;
 import com.kese.utilities.ConfigurationReader;
 import com.kese.utilities.Driver;
@@ -16,7 +16,7 @@ public class US30KeseLogoStepD {
 
     String homePageTitle;
     String advertPageTitle;
-    HomePage homePage= new HomePage();
+    MainPage mainPage = new MainPage();
     WebDriver driver= Driver.get();
 
     @Given("the user should be on the homepage")
@@ -57,7 +57,7 @@ public class US30KeseLogoStepD {
     @When("user hits the KESE logo on the advert page")
     public void user_hits_the_KESE_logo_on_the_advert_page() {
         BrowserUtils.waitFor(2);
-        homePage.logo.click();
+        mainPage.logo.click();
     }
 
     @Then("system should display homepage")
@@ -67,7 +67,7 @@ public class US30KeseLogoStepD {
 
     @When("user hits the KESE logo on the homepage")
     public void user_hits_the_KESE_logo_on_the_homepage() {
-        homePage.logo.click();
+        mainPage.logo.click();
     }
 
     @Then("the system should NOT navigate another page")
