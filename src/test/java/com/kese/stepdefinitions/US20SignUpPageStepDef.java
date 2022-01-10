@@ -67,6 +67,13 @@ public class US20SignUpPageStepDef {
         Assert.assertTrue(textElement.isDisplayed());
     }
 
+    /**
+     * This method creates a random string
+     *
+     * @param length number of letters in string
+     * @return random string
+     */
+
     private String getRandomString(int length) {
         String possibleLetters = "abcdefgijklmopqrstuvwxyz";
         char[] rndWord = new char[length];
