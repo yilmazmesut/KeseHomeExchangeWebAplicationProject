@@ -1,6 +1,6 @@
 Feature: Kese Login page feature
 
-  @main1234
+  @main12
   Scenario: Kese Website Login with valid username valid password
     Given user is on login page "http://test.kese.nl/login"
     When user enters valid username "email@gmail.com"
