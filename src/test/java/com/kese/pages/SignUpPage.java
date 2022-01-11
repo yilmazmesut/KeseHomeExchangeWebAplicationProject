@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class SignUpPage extends CommonPage {
+public class SignUpPage extends CommonPage{
 
 
     @FindBy(xpath = "//a[@href='/usage']")
@@ -16,40 +16,47 @@ public class SignUpPage extends CommonPage {
     @FindBy(xpath = "//a[@href='/privacy']")
     public WebElement privacy;
 
-    @FindBy(css = "input#inputUsername")
-    public WebElement kullaniciAdi;
+    @FindBy( id = "inputUsername")
+    public WebElement inputUsername;
 
-    @FindBy(css = "input#staticEmail")
-    public WebElement emailAlani;
+    @FindBy( id = "staticEmail")
+    public WebElement inputMail;
 
-    @FindBy(css = "input#sifre")
-    public WebElement sifreAlani;
+    @FindBy( id = "sifre")
+    public WebElement inputPassword;
 
-    @FindBy(css = "input#sifreTekrar")
-    public WebElement sifreTekrarAlani;
+    @FindBy( id = "sifreTekrar")
+    public WebElement inputPasswordAgain;
 
-    @FindBy(xpath = "/html//input[@id='flexCheckChecked']")
-    public WebElement kullanimKosullariCheckBox;
+    @FindBy( id = "flexCheckChecked")
+    public WebElement privacyPolicyCheckBox;
 
-    @FindBy(xpath = "/html//div[@id='root']/section//form/div[6]")
-    public WebElement kayitOlusturButton;
+    @FindBy ( xpath = "//button[@type='submit']")
+    public WebElement signUpButton;       //Kayit olustur butonu
+
+    @FindBy( xpath = "//button[contains(text(),'Giriş Yap')]")
+    public WebElement girisYapButtonOnSignInPage;
+
+    @FindBy( className = "btn-danger")
+    public WebElement kayitOl;
 
     private static final By girisYapButton = By.linkText("Giriş Yap");
 
 
-    public static boolean girisYapButtonIsDisplayed() {
+    public static boolean girisYapButtonIsDisplayed(){
         return BrowserUtils.isDisplayed(girisYapButton);
 
     }
 
-    public static boolean girisYapButtonIsEnabled() {
+    public static boolean girisYapButtonIsEnabled(){
         return BrowserUtils.isEnabled(girisYapButton);
 
     }
 
-    public static void clickGirisYapButton() {
+    public static void clickGirisYapButton(){
         BrowserUtils.myClickMethod(girisYapButton);
     }
+
 
 
 }
