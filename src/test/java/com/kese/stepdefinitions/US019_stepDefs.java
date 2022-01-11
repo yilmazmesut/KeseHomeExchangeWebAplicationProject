@@ -3,6 +3,8 @@ package com.kese.stepdefinitions;
 import com.kese.pages.SignUpPage;
 import com.kese.utilities.Driver;
 import io.cucumber.java.en.*;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class US019_stepDefs {
 
@@ -44,5 +46,6 @@ public class US019_stepDefs {
     @Given("user clicks on signup button")
     public void user_clicks_on_signup_button() {
         page.SignupButton.click();
+
     }
 }
