@@ -14,32 +14,32 @@ public class US14_StepDef {
 
     @And("user types {string} to the Kullanici Alani input")
     public void userTypesToTheKullaniciAlaniInput(String kullaniciAdi) {
-        page.kullaniciAdi.sendKeys(kullaniciAdi);
+        page.inputUsername.sendKeys(kullaniciAdi);
     }
 
     @And("user types {string} to the email input")
     public void userTypesToTheEmailInput(String mail) {
-        page.emailAlani.sendKeys(mail);
+        page.inputMail.sendKeys(mail);
     }
 
     @And("user types {string} to the Sifre input")
     public void userTypesToTheSifreInput(String sifre) {
-        page.sifreAlani.sendKeys(sifre);
+        page.inputPassword.sendKeys(sifre);
     }
 
     @And("user types {string} to the Sifre Tekrari input")
     public void userTypesToTheSifreTekrariInput(String sifreTekrar) {
-        page.sifreTekrarAlani.sendKeys(sifreTekrar);
+        page.inputPasswordAgain.sendKeys(sifreTekrar);
     }
 
     @And("user click Kullanim Kosullari check box")
     public void userClickKullanimKosullariCheckBox() {
-        page.kullanimKosullariCheckBox.click();
+        page.privacyPolicyCheckBox.click();
     }
 
     @Then("user verifies that Kayit Olustur button not be clickable")
     public void userVerifiesThatKayitOlusturButtonNotBeClickable() {
-        WebElement element = page.kayitOlusturButton;
+        WebElement element = page.kayitOl;
         try {
             assertTrue("Element not visible: " + element, element.isDisplayed());
         } catch (NoSuchElementException e) {
