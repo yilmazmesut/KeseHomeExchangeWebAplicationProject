@@ -1,0 +1,498 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2022-01-10T16:48:57.146Z",
+        "before": [
+          {
+            "result": {
+              "duration": 7961721300,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.kese.stepdefinitions.Hooks.setUp()"
+            }
+          }
+        ],
+        "line": 4,
+        "name": "Kese Website Login with valid username valid password",
+        "description": "",
+        "id": "kese-login-page-feature;kese-website-login-with-valid-username-valid-password",
+        "after": [
+          {
+            "result": {
+              "duration": 7179622000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.kese.stepdefinitions.Hooks.tearDown(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 3315134500,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "user is on login page \"http://test.kese.nl/login\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"http://test.kese.nl/login\"",
+                  "offset": 22
+                }
+              ],
+              "location": "com.kese.stepdefinitions.US18LoginPageStepD.userIsOnLoginPage(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 480714300,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user enters valid username \"email@gmail.com\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"email@gmail.com\"",
+                  "offset": 27
+                }
+              ],
+              "location": "com.kese.stepdefinitions.US18LoginPageStepD.userEntersValidUsername(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 476725600,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "user enters valid password \"3344\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"3344\"",
+                  "offset": 27
+                }
+              ],
+              "location": "com.kese.stepdefinitions.US18LoginPageStepD.userEntersValidPassword(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 445806800,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "user clicks on Login button",
+            "match": {
+              "location": "com.kese.stepdefinitions.US18LoginPageStepD.userClicksOnLoginButton()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 115691300,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "user gets the url of the page",
+            "match": {
+              "location": "com.kese.stepdefinitions.US18LoginPageStepD.userGetsTheUrlOfThePage()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 10967900,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "page url should be \"http://test.kese.nl/\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"http://test.kese.nl/\"",
+                  "offset": 19
+                }
+              ],
+              "location": "com.kese.stepdefinitions.US18LoginPageStepD.pageUrlShouldBe(java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@main12"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2022-01-10T16:49:17.327Z",
+        "before": [
+          {
+            "result": {
+              "duration": 5180958500,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.kese.stepdefinitions.Hooks.setUp()"
+            }
+          }
+        ],
+        "line": 12,
+        "name": "Kese Website Login with valid username invalid password",
+        "description": "",
+        "id": "kese-login-page-feature;kese-website-login-with-valid-username-invalid-password",
+        "after": [
+          {
+            "result": {
+              "duration": 6164960300,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.kese.stepdefinitions.Hooks.tearDown(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 2147261900,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "user is on login page \"http://test.kese.nl/login\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"http://test.kese.nl/login\"",
+                  "offset": 22
+                }
+              ],
+              "location": "com.kese.stepdefinitions.US18LoginPageStepD.userIsOnLoginPage(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 225397500,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "user enters valid username \"email@gmail.com\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"email@gmail.com\"",
+                  "offset": 27
+                }
+              ],
+              "location": "com.kese.stepdefinitions.US18LoginPageStepD.userEntersValidUsername(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 146607600,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "user enters invalid password \"abcd\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"abcd\"",
+                  "offset": 29
+                }
+              ],
+              "location": "com.kese.stepdefinitions.US18LoginPageStepD.userEntersInvalidPassword(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 277260400,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "user clicks on Login button",
+            "match": {
+              "location": "com.kese.stepdefinitions.US18LoginPageStepD.userClicksOnLoginButton()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 48868000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "user should get the this message \"Email ya da şifre hatalı.\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Email ya da şifre hatalı.\"",
+                  "offset": 33
+                }
+              ],
+              "location": "com.kese.stepdefinitions.US18LoginPageStepD.userShouldGetTheThisMessage(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2022-01-10T16:49:31.528Z",
+        "before": [
+          {
+            "result": {
+              "duration": 4845052400,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.kese.stepdefinitions.Hooks.setUp()"
+            }
+          }
+        ],
+        "line": 20,
+        "name": "Kese Website Login with invalid username valid password",
+        "description": "",
+        "id": "kese-login-page-feature;kese-website-login-with-invalid-username-valid-password",
+        "after": [
+          {
+            "result": {
+              "duration": 7113985800,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.kese.stepdefinitions.Hooks.tearDown(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 2052513000,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "user is on login page \"http://test.kese.nl/login\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"http://test.kese.nl/login\"",
+                  "offset": 22
+                }
+              ],
+              "location": "com.kese.stepdefinitions.US18LoginPageStepD.userIsOnLoginPage(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 238364200,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "users enter invalid username \"zmail@yahoo.com\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"zmail@yahoo.com\"",
+                  "offset": 29
+                }
+              ],
+              "location": "com.kese.stepdefinitions.US18LoginPageStepD.usersEnterInvalidUsername(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 162565100,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "user enters valid password \"3344\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"3344\"",
+                  "offset": 27
+                }
+              ],
+              "location": "com.kese.stepdefinitions.US18LoginPageStepD.userEntersValidPassword(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 150598700,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "user clicks on Login button",
+            "match": {
+              "location": "com.kese.stepdefinitions.US18LoginPageStepD.userClicksOnLoginButton()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 44878700,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "user should get the this message \"Email ya da şifre hatalı.\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Email ya da şifre hatalı.\"",
+                  "offset": 33
+                }
+              ],
+              "location": "com.kese.stepdefinitions.US18LoginPageStepD.userShouldGetTheThisMessage(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2022-01-10T16:49:46.145Z",
+        "before": [
+          {
+            "result": {
+              "duration": 4845050000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.kese.stepdefinitions.Hooks.setUp()"
+            }
+          }
+        ],
+        "line": 27,
+        "name": "Kese Website Login with invalid username invalid password",
+        "description": "",
+        "id": "kese-login-page-feature;kese-website-login-with-invalid-username-invalid-password",
+        "after": [
+          {
+            "result": {
+              "duration": 6360000200,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.kese.stepdefinitions.Hooks.tearDown(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 2197129100,
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "user is on login page \"http://test.kese.nl/login\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"http://test.kese.nl/login\"",
+                  "offset": 22
+                }
+              ],
+              "location": "com.kese.stepdefinitions.US18LoginPageStepD.userIsOnLoginPage(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 277257800,
+              "status": "passed"
+            },
+            "line": 29,
+            "name": "user enters invalid username \"xmail@gmail.com\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"xmail@gmail.com\"",
+                  "offset": 29
+                }
+              ],
+              "location": "com.kese.stepdefinitions.US18LoginPageStepD.userEntersInvalidUsername(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 195476700,
+              "status": "passed"
+            },
+            "line": 30,
+            "name": "user enters invalid password \"ol56\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"ol56\"",
+                  "offset": 29
+                }
+              ],
+              "location": "com.kese.stepdefinitions.US18LoginPageStepD.userEntersInvalidPassword(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 408906300,
+              "status": "passed"
+            },
+            "line": 31,
+            "name": "user clicks on Login button",
+            "match": {
+              "location": "com.kese.stepdefinitions.US18LoginPageStepD.userClicksOnLoginButton()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 120678200,
+              "status": "passed"
+            },
+            "line": 32,
+            "name": "user should get the this message \"Email ya da şifre hatalı.\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Email ya da şifre hatalı.\"",
+                  "offset": 33
+                }
+              ],
+              "location": "com.kese.stepdefinitions.US18LoginPageStepD.userShouldGetTheThisMessage(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Kese Login page feature",
+    "description": "",
+    "id": "kese-login-page-feature",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/US18KeseLoginPage.feature",
+    "tags": []
+  }
+]
