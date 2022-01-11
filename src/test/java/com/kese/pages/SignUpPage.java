@@ -38,6 +38,14 @@ public class SignUpPage extends CommonPage{
     @FindBy( className = "btn-danger")
     public WebElement kayitOl;
 
+
+
+
+
+
+
+
+
     private static final By girisYapButton = By.linkText("Giriş Yap");
 
 
