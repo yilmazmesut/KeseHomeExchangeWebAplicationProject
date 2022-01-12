@@ -57,6 +57,14 @@ public class MainPage extends CommonPage {
 
     }
 
+    @FindBy(xpath = "(//span[@class='tabtext mt-2 mt-md-0 font-weight-semi-bold'])[4]")
+    public WebElement bed;
 
+    @FindBy(xpath = "//span[@class='d-block text-gray-1 font-weight-normal text-left mb-0']")
+    public WebElement gitmek;
+    @FindBy(linkText = "//i[@class='fas fa-home mr-1']")
+    public WebElement ilanVer;
+    @FindBy(xpath = "//a[@class='border d-flex align-items-center btn btn-white py-2  ']")
+    public WebElement profilim;
 }
 
