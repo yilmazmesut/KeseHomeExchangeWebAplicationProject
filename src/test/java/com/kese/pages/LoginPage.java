@@ -36,7 +36,8 @@ public class LoginPage {
 
     }
 
-
+    public static final By emailInputBox = By.name("email");
+    public static final By passwordInputBox = By.name("sifre");
 
 
 
