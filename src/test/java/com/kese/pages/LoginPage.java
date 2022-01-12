@@ -3,13 +3,13 @@ package com.kese.pages;
 import com.kese.utilities.BrowserUtils;
 import org.openqa.selenium.By;
 
-public class US18LoginPage {
+public class LoginPage {
 
 
 
 
-    private static final By emailBox = By.name("email");
-    private static final By passwordBox = By.name("sifre");
+    public static final By emailBox = By.name("email");
+    public static final By passwordBox = By.name("sifre");
     private static final By submitButton = By.xpath("//button[contains(text(),'Giriş Yap')]");
     private static final By errorMessage = By.xpath("//div[@class='form-group text-center py-1']/small");
 
