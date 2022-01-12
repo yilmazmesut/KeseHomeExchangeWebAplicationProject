@@ -1,0 +1,114 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "start_timestamp": "2022-01-12T11:49:02.260Z",
+        "before": [
+          {
+            "result": {
+              "duration": 7036775800,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.kese.stepdefinitions.Hooks.setUp()"
+            }
+          }
+        ],
+        "line": 4,
+        "name": "User should see \"Giris Yap\" button when not logged in",
+        "description": "",
+        "id": "kese-homepage-giris-yap-button-verification;user-should-see-\"giris-yap\"-button-when-not-logged-in",
+        "after": [
+          {
+            "result": {
+              "duration": 4255096400,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.kese.stepdefinitions.Hooks.tearDown(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 3342592500,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "the user should be on the homepage",
+            "match": {
+              "location": "com.kese.stepdefinitions.US30KeseLogoStepD.the_user_should_be_on_the_homepage()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1526058800,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Giris Yap button should be visible and clickable",
+            "match": {
+              "location": "com.kese.stepdefinitions.US009MainPageStepDefs.giris_Yap_button_should_be_visible_and_clickable()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2002543600,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "the user clicks Giris Yap button on HomePage",
+            "match": {
+              "location": "com.kese.stepdefinitions.US009MainPageStepDefs.the_user_clicks_Giris_Yap_button_on_HomePage()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 37975400,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "page url should be \"http://test.kese.nl/login\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"http://test.kese.nl/login\"",
+                  "offset": 19
+                }
+              ],
+              "location": "com.kese.stepdefinitions.US18LoginPageStepD.pageUrlShouldBe(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@US009GirisYapButtonFeatures"
+          }
+        ]
+      }
+    ],
+    "name": "Kese HomePage Giris Yap Button verification",
+    "description": "",
+    "id": "kese-homepage-giris-yap-button-verification",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/US009KeseMainPage.feature",
+    "tags": [
+      {
+        "name": "@US009GirisYapButtonFeatures",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
+  }
+]

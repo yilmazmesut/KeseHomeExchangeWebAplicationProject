@@ -3,7 +3,7 @@ package com.kese.pages;
 import com.kese.utilities.BrowserUtils;
 import org.openqa.selenium.By;
 
-public class US18LoginPage {
+public class LoginPage {
 
 
 
@@ -36,7 +36,8 @@ public class US18LoginPage {
 
     }
 
-
+    public static final By emailInputBox = By.name("email");
+    public static final By passwordInputBox = By.name("sifre");
 
 
 
