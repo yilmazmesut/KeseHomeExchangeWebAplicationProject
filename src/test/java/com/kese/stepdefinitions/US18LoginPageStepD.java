@@ -38,6 +38,7 @@ public class US18LoginPageStepD {
         LoginPage.clickSubmitbutton();
     }
 
+
     @Then("user gets the url of the page")
     public void userGetsTheUrlOfThePage() {
 
