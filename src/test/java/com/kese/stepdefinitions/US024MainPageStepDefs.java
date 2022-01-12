@@ -6,7 +6,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
-public class US024_MainPageStepDefs {
+public class US024MainPageStepDefs {
 
     @Then("the user verifies that he can go to the {string} page")
     public void theUserVerifiesThatHeCanGoToThePage(String page) {
