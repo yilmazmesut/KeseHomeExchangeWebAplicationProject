@@ -13,7 +13,7 @@ public class US001MainPageSloganStepDefs {
     @Then("the user should see {string} message")
     public void the_user_should_see_message(String string) {
 
-        Assert.assertTrue(new MainPage().girisYapButton.isDisplayed());
+        Assert.assertTrue(new MainPage().slogan.isDisplayed());
 
     }
 }
