@@ -55,7 +55,19 @@ public class MainPage extends CommonPage {
         By element = By.linkText(link);
         BrowserUtils.myClickMethod(element);
 
+
     }
+
+
+    //US04 e ait locatorlar
+    @FindBy(xpath = "//span[text()='Birlikte Seyehat']")
+    public WebElement BirlikteSeyehat;
+
+    @FindBy(xpath = "//span[@class='d-block text-gray-1 font-weight-normal text-left mb-0']")
+    public WebElement SeyehatEtmekIstediginizYeriSeciniz;
+
+    @FindBy(xpath = "//div[@class=' css-tlfecz-indicatorContainer']")
+    public WebElement selectDropDown;
 
     @FindBy(xpath = "(//span[@class='tabtext mt-2 mt-md-0 font-weight-semi-bold'])[4]")
     public WebElement bed;
@@ -66,5 +78,6 @@ public class MainPage extends CommonPage {
     public WebElement ilanVer;
     @FindBy(xpath = "//a[@class='border d-flex align-items-center btn btn-white py-2  ']")
     public WebElement profilim;
+
 }
 
