@@ -22,6 +22,7 @@ Feature: US_0014 Bir kullanıcı olarak "/signup" sayfasına girdiğimde, kayıt
       | aziz         | aziz@gmail.com | asdasd   |                 |
 
 
+
   Scenario Outline: Email, kullanıcı adı, şifre ve şifre tekrarı bilgileri eklenmeden "Kayıt Oluştur" butonu kullanılabilir olmamalıdır!
     And user types "<kullaniciAdi>" to the Kullanici Alani input
     And user types "<email>" to the email input
@@ -32,6 +33,7 @@ Feature: US_0014 Bir kullanıcı olarak "/signup" sayfasına girdiğimde, kayıt
     Examples:
       | kullaniciAdi | email          | password | passwordTekrari |
       | aziz         | aziz@gmail.com | asdasd   | asdasd          |
+
 
 
 

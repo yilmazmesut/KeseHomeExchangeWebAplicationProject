@@ -2,6 +2,7 @@
 Feature: US30_TestExecution
 
 	Background:
+
 		Given the user should be on the homepage
 
 	@TEST_META3-74
@@ -10,12 +11,20 @@ Feature: US30_TestExecution
 		And  user hits the KESE logo on the advert page
 		Then system should display homepage
 
+	#Acceptance Criteria
+	#http://test.kese.nl/
+	#Sol üst tarafta logo görünür olmalıdır.
+	#Lullanıcı logoya tıklandığında anasayfaya yönlendirilmelidir.
 
 	@TEST_META3-75
 	Scenario: US30_TC03_The system should NOT navigate different page when clicking KESE logo on homepage
 		When user hits the KESE logo on the homepage
 		Then the system should NOT navigate another page
-
+<
+	#Acceptance Criteria
+	#http://test.kese.nl/
+	#Sol üst tarafta logo görünür olmalıdır.
+	#Lullanıcı logoya tıklandığında anasayfaya yönlendirilmelidir.
 
 	@TEST_META3-72
 	Scenario Outline: US30_TC01_System should display the advert page
