@@ -10,71 +10,37 @@ public class MainPage extends CommonPage {
     @FindBy(xpath = "//a[@class='navbar-brand']")
     public WebElement logo;
 
-    private static final By ilanVerButton = By.linkText(" İlan Ver");
-    private static final By evDegisimiButton = By.linkText("new_home");
-    private static final By odaButton = By.linkText("new_room");
-    private static final By bedAndBreakfastButton = By.linkText("new_bed_breakfast");
-    private static final By birlikteSeyahatButton = By.linkText("[href='/new_car']");
-    private static final By kargoButton = By.linkText("new_cargo");
+    @FindBy(xpath = "//h1[text()='Seyahatin Tadını Çıkartın!']")
+    public WebElement slogan;
+
+    @FindBy(xpath = "//a[text()='Giriş Yap']")
+    public WebElement girisYapButton;
 
 
-    public static boolean ilanVerButtonIsDisplayed() {
-        return BrowserUtils.isDisplayed(ilanVerButton);
 
-    }
-
-    public static boolean EvDegisimilinkIsDisplayed() {
-        return BrowserUtils.isDisplayed(evDegisimiButton);
+    //is Displayed method
+    public static boolean linkTextIsDisplayed(String link) {
+        By linkText = By.linkText(link);
+        return BrowserUtils.isDisplayed(linkText);
 
     }
 
-    public static boolean odalinkIsDisplayed() {
-        return BrowserUtils.isDisplayed(odaButton);
+    //click method
+    public static void clickLinktext(String link) {
+        By element = By.linkText(link);
+        BrowserUtils.myClickMethod(element);
+
 
     }
 
-    public static boolean bedandBreakfastlinkIsDisplayed() {
-        return BrowserUtils.isDisplayed(bedAndBreakfastButton);
-    }
 
-    public static boolean birlikteSeyehatlinkIsDisplayed() {
-        return BrowserUtils.isDisplayed(birlikteSeyahatButton);
+    //US04 e ait locatorlar
+    @FindBy(xpath = "//a[@class='nav-link font-weight-medium active border-0 rounded-3 bg-success  pl-md-5 pl-3']")
+    public WebElement BirlikteSeyehat;
 
-    }
+    @FindBy(xpath = "//span[@class='d-block text-gray-1 font-weight-normal text-left mb-0']")
+    public WebElement SeyehatEtmekIstediginizYeriSeciniz;
 
-    public static boolean kargolinkIsDisplayed() {
-        return BrowserUtils.isDisplayed(kargoButton);
-
-    }
-
-    public static boolean ilanVerButtonIsEnabled() {
-        return BrowserUtils.isEnabled(ilanVerButton);
-
-    }
-
-    public static void clickIlanVerButton() {
-        BrowserUtils.myClickMethod(ilanVerButton);
-
-    }
-
-    public static void clickEvDegisimiButton() {
-        BrowserUtils.myClickMethod(evDegisimiButton);
-    }
-
-    public static void clickOdaButton() {
-        BrowserUtils.myClickMethod(odaButton);
-    }
-
-    public static void clickBedAndBreakfastButton() {
-        BrowserUtils.myClickMethod(bedAndBreakfastButton);
-    }
-
-    public static void clickBirlikteSeyahatButton() {
-        BrowserUtils.myClickMethod(birlikteSeyahatButton);
-    }
-
-    public static void clickCargoButton() {
-        BrowserUtils.myClickMethod(kargoButton);
-    }
-
+    @FindBy(xpath = "//div[@class=' css-tlfecz-indicatorContainer']")
+    public WebElement selectDropDown;
 }
