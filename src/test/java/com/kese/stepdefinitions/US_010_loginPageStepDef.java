@@ -13,8 +13,8 @@ import org.openqa.selenium.WebElement;
 
 public class US_010_loginPageStepDef {
 
-        WebElement emailBoxInput = Driver.get().findElement(LoginPage.emailBox);
-        WebElement sifreBoxInput = Driver.get().findElement(LoginPage.passwordBox);
+        WebElement emailBoxInput = Driver.get().findElement(LoginPage.emailInputBox);
+        WebElement sifreBoxInput = Driver.get().findElement(LoginPage.passwordInputBox);
 
 
         @And("User can click to email input")
