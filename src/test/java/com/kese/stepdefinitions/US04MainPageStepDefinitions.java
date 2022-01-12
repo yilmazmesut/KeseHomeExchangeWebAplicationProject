@@ -7,7 +7,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
-public class US04KeseMainPageStepDefinitions {
+public class US04MainPageStepDefinitions {
     MainPage mainPage = new MainPage();
 
 //    @Given("user goes to homepage")
@@ -24,8 +24,9 @@ public class US04KeseMainPageStepDefinitions {
         Assert.assertTrue(mainPage.SeyehatEtmekIstediginizYeriSeciniz.isDisplayed());
     }
 
-    @Then("user verifies the drop down menu is clickable, under the {string} text")
-    public void userVerifiesTheDropDownMenuIsClickableUnderTheText(String arg0) {
-        mainPage.selectDropDown.click();
+    @Then("user validates the drop down menu is clickable, under the {string} text")
+    public void userValidatesTheDropDownMenuIsClickableUnderTheText(String arg0) {
+        Assert.assertTrue(mainPage.selectDropDown.isEnabled());
+
     }
 }

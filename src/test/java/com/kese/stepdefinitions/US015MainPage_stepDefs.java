@@ -9,7 +9,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 
 
-public class US015_stepDefs {
+public class US015MainPage_stepDefs {
 
         @Given("the user goes to {string} page")
     public void theUserGoesToPage(String signupPageUrl) {

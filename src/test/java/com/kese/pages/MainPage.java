@@ -10,6 +10,31 @@ public class MainPage extends CommonPage {
     @FindBy(xpath = "//a[@class='navbar-brand']")
     public WebElement logo;
 
+
+
+    @FindBy(xpath = "(//span[text()='Kargo'])[1]")
+    public WebElement CargoButton;
+
+    @FindBy(xpath = "//span[text()='Kargo göndermek istediğiniz noktayı seçiniz']")
+    public WebElement Cargomessage;
+
+    // @FindBy(linkText = "/login")
+    @FindBy(css = ".ms-3.btn.py-2.bg-white.border.d-inline")
+    public  WebElement LogButton;
+
+
+
+    @FindBy(xpath = "//h2[text()='Popüler İlanlar']")
+    public WebElement headerPopIlan;
+
+    @FindBy(xpath = "//div[@class='tab-pane  active show']//a")
+    public WebElement activeTab;
+
+
+
+
+
+
     @FindBy(xpath = "//h1[text()='Seyahatin Tadını Çıkartın!']")
     public WebElement slogan;
 
@@ -33,9 +58,8 @@ public class MainPage extends CommonPage {
 
     }
 
-
     //US04 e ait locatorlar
-    @FindBy(xpath = "//a[@class='nav-link font-weight-medium active border-0 rounded-3 bg-success  pl-md-5 pl-3']")
+    @FindBy(xpath = "//span[text()='Birlikte Seyehat']")
     public WebElement BirlikteSeyehat;
 
     @FindBy(xpath = "//span[@class='d-block text-gray-1 font-weight-normal text-left mb-0']")
@@ -44,3 +68,4 @@ public class MainPage extends CommonPage {
     @FindBy(xpath = "//div[@class=' css-tlfecz-indicatorContainer']")
     public WebElement selectDropDown;
 }
+

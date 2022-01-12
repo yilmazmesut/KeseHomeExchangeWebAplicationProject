@@ -19,12 +19,12 @@ public class US07PopulerIlanStepD {
     WebDriver driver= Driver.get();
     MainPage mainPage= new MainPage();
 
-//    @Then("system should display Populer Ilanlar text on the homepage")
-//    public void system_should_display_Populer_Ilanlar_text_on_the_homepage() {
-//        String text = mainPage.headerPopIlan.getText();
-//        System.out.println("text = " + text);
-//        Assert.assertEquals("Popüler İlanlar",text);
-//    }
+    @Then("system should display Populer Ilanlar text on the homepage")
+    public void system_should_display_Populer_Ilanlar_text_on_the_homepage() {
+        String text = mainPage.headerPopIlan.getText();
+        System.out.println("text = " + text);
+        Assert.assertEquals("Popüler İlanlar",text);
+    }
 
     @Then("system should display options on the homepage")
     public void system_should_display_options_on_the_homepage(List<String> expectedOptions) {
@@ -51,11 +51,11 @@ public class US07PopulerIlanStepD {
 
     }
 
-//    @When("system redirects from homepage to {string} pages")
-//    public void system_redirects_from_homepage_to_pages(String partOfUrl) {
-//        String hrefOfTab= mainPage.activeTab.getAttribute("href");
-//        Assert.assertTrue(hrefOfTab.contains(partOfUrl));
-//
-//    }
+    @When("system redirects from homepage to {string} pages")
+    public void system_redirects_from_homepage_to_pages(String partOfUrl) {
+        String hrefOfTab= mainPage.activeTab.getAttribute("href");
+        Assert.assertTrue(hrefOfTab.contains(partOfUrl));
+
+    }
 
 }
