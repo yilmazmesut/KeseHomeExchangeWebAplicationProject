@@ -1,6 +1,5 @@
 package com.kese.utilities;
 
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
@@ -72,8 +71,6 @@ public class Driver {
         if (driver != null) {
             driver.quit();
             driver = null;
-
-
         }
     }
 }
