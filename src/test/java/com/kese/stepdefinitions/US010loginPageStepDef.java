@@ -11,7 +11,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class US_010_loginPageStepDef {
+public class US010loginPageStepDef {
 
         WebElement emailBoxInput = Driver.get().findElement(LoginPage.emailInputBox);
         WebElement sifreBoxInput = Driver.get().findElement(LoginPage.passwordInputBox);
@@ -19,26 +19,26 @@ public class US_010_loginPageStepDef {
 
         @And("User can click to email input")
         public void userCanClickToEmailInput() {
-
                 emailBoxInput.click();
+                Assert.assertTrue(emailBoxInput.isEnabled());
         }
 
         @Then("User can write {string} in the email input")
         public void userCanWriteInTheEmailInput(String email) {
-
                 emailBoxInput.sendKeys(email);
+                Assert.assertTrue(emailBoxInput.isDisplayed());
         }
 
         @And("User can click to sifre input")
         public void userCanClickToSifreInput() {
-
                 sifreBoxInput.click();
+                Assert.assertTrue(sifreBoxInput.isEnabled());
         }
 
         @Then("User can write {string} in the sifre input")
         public void userCanWriteInTheSifreInput(String sifre) {
-
                 sifreBoxInput.sendKeys(sifre);
+                Assert.assertTrue(sifreBoxInput.isDisplayed());
         }
 
         @Then("Assure the {string} default email text")
@@ -58,6 +58,20 @@ public class US_010_loginPageStepDef {
                 Assert.assertEquals(attributeText,text);
               // Assert.assertTrue(attributeText.contains(text));
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
         public void elementIsEnable(String str){
                 String path = "//a[@href ='/" +str+ "']";
@@ -70,6 +84,17 @@ public class US_010_loginPageStepDef {
                 Assert.assertTrue(Driver.getDriver().findElement(By.xpath(path)).isDisplayed());
 
         }
+@FindBy(xpath = "//span[@class='tabtext font-weight-semi-bold'][.='Ev Değişimi']")
+    public WebElement homeExchangeButtonUnderPopularPosting;
+    @FindBy(xpath = "//span[@class='tabtext font-weight-semi-bold'][.='Oda Kirala']")
+    public WebElement roomRentalButtonUnderPopularPosting;
+public WebElement choosePosting(String postingModule) {
+
+        return Driver.getDriver().findElement
+                (By.xpath("//span[@class='tabtext font-weight-semi-bold'][.='"+postingModule+"']"));
+
+    }
+
 
 */
 

@@ -79,5 +79,17 @@ public class MainPage extends CommonPage {
     @FindBy(xpath = "//a[@class='border d-flex align-items-center btn btn-white py-2  ']")
     public WebElement profilim;
 
+
+
+
+
+    @FindBy(xpath = "(//span[text()='Oda Kirala'])[1]")
+    public WebElement odaKiralaButton;
+
+    @FindBy(xpath = "//span[text()='Oda değişimi yapmak istediğiniz yer']")
+    public WebElement odaDegisimiYapmakIstediğinizYer;
+
+
+
 }
 
