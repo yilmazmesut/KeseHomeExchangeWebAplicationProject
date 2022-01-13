@@ -18,15 +18,12 @@ public class MainPage extends CommonPage {
     @FindBy(xpath = "//span[text()='Kargo göndermek istediğiniz noktayı seçiniz']")
     public WebElement Cargomessage;
 
-    // @FindBy(linkText = "/login")
-    @FindBy(css = ".ms-3.btn.py-2.bg-white.border.d-inline")
-    public  WebElement LogButton;
+
+  // @FindBy(css = ".ms-3.btn.py-2.bg-white.border.d-inline")
+   // public  WebElement LogButton;
 
 
 
-
-
-}
 
     @FindBy(xpath = "//h1[text()='Seyahatin Tadını Çıkartın!']")
     public WebElement slogan;
