@@ -1,10 +1,12 @@
 package com.kese.pages;
 
 import com.kese.utilities.BrowserUtils;
+import com.kese.utilities.Driver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
-public class LoginPage {
-
+public class LoginPage extends CommonPage {
 
 
 
