@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class LoginPage<Webelement> extends CommonPage {
+public class LoginPage extends CommonPage {
 
 
 
