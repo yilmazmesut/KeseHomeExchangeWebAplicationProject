@@ -104,3 +104,11 @@ fabric.properties
 # Android studio 3.1+ serialized cache file
 .idea/caches/build_file_checksums.ser
 
+target/cucumber-html-reports/
+target/failed-html-report/
+target/generated-test-sources/
+target/maven-archiver/
+target/maven-status/
+target/surefire-reports/
+target/test-classes/com/
+target/test-classes/features/US010KeseLoginPage.feature
