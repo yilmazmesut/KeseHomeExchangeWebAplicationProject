@@ -10,6 +10,8 @@ src/test/java/runners/
 
 # Log file
 *.log
+*.iml
+*.xml
 
 # BlueJ files
 *.ctxt

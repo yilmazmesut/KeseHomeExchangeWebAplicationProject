@@ -1,18 +1,47 @@
 package com.kese.pages;
 
 import com.kese.utilities.BrowserUtils;
+import com.kese.utilities.Driver;
 import org.openqa.selenium.By;
 
-public class LoginPage {
-
-
-
+public class US12LoginPage {
 
     private static final By emailBox = By.name("email");
     private static final By passwordBox = By.name("sifre");
     private static final By submitButton = By.xpath("//button[contains(text(),'Giriş Yap')]");
     private static final By errorMessage = By.xpath("//div[@class='form-group text-center py-1']/small");
 
+    private static final By sifremiUnuttumText = By.xpath("//a[contains(text(),'Şifremi Unuttum')]");
+
+
+    public static String getMyPageUrl(){
+
+        String myUrl = Driver.get().getCurrentUrl();
+        return myUrl;
+    }
+
+
+    public static void clickMySifremiUnuttumButton(){
+
+        Driver.get().findElement(sifremiUnuttumText).click();
+    }
+
+    public static String getMyCss() {
+        String myCssValue = Driver.get().findElement(sifremiUnuttumText).getCssValue("text-decoration");
+        return myCssValue;
+    }
+
+    public static boolean isMyElementDisplayed(){
+
+         return Driver.get().findElement(sifremiUnuttumText).isDisplayed();
+    }
+
+    public static String getMyText(){
+
+    String myTextMessage = Driver.get().findElement(sifremiUnuttumText).getText();
+    return myTextMessage;
+
+}
 
     public static void enterUserName(String userName)  {
 
@@ -35,11 +64,5 @@ public class LoginPage {
         return BrowserUtils.getSingleElementText(errorMessage);
 
     }
-
-    public static final By emailInputBox = By.name("email");
-    public static final By passwordInputBox = By.name("sifre");
-
-
-
 
 }
