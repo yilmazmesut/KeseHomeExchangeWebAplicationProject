@@ -12,7 +12,6 @@ import static org.junit.Assert.*;
 
 public class BrowserUtils {
 
-
     public static void mySendKeysMethod (By locator, String sendText){
 
         WebElement element = Driver.get().findElement(locator);
@@ -23,6 +22,32 @@ public class BrowserUtils {
                 withMessage("My click method failed");
 
         wait.until(ExpectedConditions.visibilityOf(element)).sendKeys(sendText);
+
+    }
+
+    public static boolean isDisplayed (By locator){
+
+        return waitUntilVisibilityOf(locator).isDisplayed();
+
+    }
+
+    public static WebElement waitUntilVisibilityOf (By locator){
+
+        WebElement element = Driver.get().findElement(locator);
+
+        Wait<WebDriver> wait = new FluentWait<WebDriver>(Driver.get()).
+                withTimeout(Duration.ofSeconds(10)).
+                pollingEvery(Duration.ofSeconds(2)).
+                withMessage("My click method failed");
+
+        return wait.until(ExpectedConditions.visibilityOf(element));
+
+    }
+
+
+    public static boolean isEnabled (By locator){
+
+        return waitUntilVisibilityOf(locator).isEnabled();
 
     }
 
@@ -368,6 +393,24 @@ public class BrowserUtils {
                 waitFor(1);
             }
         }
+    }
+
+
+    /**
+     * This method creates a random string
+     *
+     * @param length number of letters in string
+     * @return random string
+     */
+
+    public static String getRandomString(int length) {
+        String possibleLetters = "abcdefgijklmopqrstuvwxyz";
+        char[] rndWord = new char[length];
+        for (int i = 0; i < length; i++) {
+            int rand = (int) (Math.random() * possibleLetters.length());
+            rndWord[i] = possibleLetters.charAt(rand);
+        }
+        return new String(rndWord);
     }
 
     /**

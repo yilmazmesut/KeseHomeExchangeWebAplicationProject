@@ -1,12 +1,12 @@
 package com.kese.pages;
 
 import com.kese.utilities.BrowserUtils;
+import com.kese.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class LoginPage {
-
+public class LoginPage extends CommonPage {
 
 
 
@@ -38,7 +38,8 @@ public class LoginPage {
 
     }
 
-
+    public static final By emailInputBox = By.name("email");
+    public static final By passwordInputBox = By.name("sifre");
 
 
 

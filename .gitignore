@@ -3,13 +3,15 @@
 
 src/test/java/runners/
 .idea/
-/target
+.target
 
 # Compiled class file
 *.class
 
 # Log file
 *.log
+*.iml
+*.xml
 
 # BlueJ files
 *.ctxt

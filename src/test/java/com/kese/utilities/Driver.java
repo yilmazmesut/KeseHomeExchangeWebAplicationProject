@@ -1,6 +1,5 @@
 package com.kese.utilities;
 
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
@@ -11,6 +10,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.safari.SafariDriver;
+
+import java.util.concurrent.TimeUnit;
 
 public class Driver {
 
@@ -70,8 +71,6 @@ public class Driver {
         if (driver != null) {
             driver.quit();
             driver = null;
-
-
         }
     }
 }
