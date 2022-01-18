@@ -89,6 +89,19 @@ public class MainPage extends CommonPage {
     public WebElement odaDegisimiYapmakIstediğinizYer;
 
 
+    @FindBy   (xpath = "//a[contains(text(),'Giriş Yap')]")
+    public WebElement girisyapButtonu;
+
+    @FindBy (xpath="//li[@class='nav-item']/a[@style='cursor: pointer;']")
+    public WebElement getHomechangeButton;
+
+
+
+    @FindBy  (xpath = "//span[.='Ev değişimi yapmak istediğiniz yer']")
+
+    public WebElement EvDegisimiYeriButton;
+
+}
 
 }
 
