@@ -1,5 +1,12 @@
 package com.kese.pages;
 
+import com.kese.utilities.BrowserUtils;
+import com.kese.utilities.Driver;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
 public class EvDegisimiPage extends CommonPage {
 
     /*
@@ -25,6 +32,34 @@ public class EvDegisimiPage extends CommonPage {
 
 
     * */
+
+
+
+    @FindBy(xpath = "//button[contains(text(),'Geri')]")
+    public WebElement geriButton;
+
+    @FindBy(xpath = "//a[contains(text(),'İlerle')]")
+    public WebElement ilerleButton;
+
+    @FindBy(id = "react-select-2-input")
+    public WebElement page2konumBelirtinizTextBox;
+
+    @FindBy(xpath = "descendant::input[2]")
+    public WebElement page2evIleOtobusDuragiArasi;
+
+    @FindBy(xpath = "descendant::input[3]")
+    public WebElement page2evIleTrenIstasyonArasi;
+
+    @FindBy(xpath = "descendant::input[4]")
+    public WebElement page2evIleTramvayDuragiArasi;
+
+    @FindBy(xpath = "descendant::input[5]")
+    public WebElement page2sahsiAracCheckButton;
+
+
+
+
+
 
 
 
