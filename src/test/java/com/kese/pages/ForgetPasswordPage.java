@@ -28,4 +28,4 @@ public class  ForgetPasswordPage extends CommonPage{
     @FindBy(xpath = "//a[contains(text(),'Giriş Yap')]")
     public WebElement girisyapButtonu;
 }
-}
+

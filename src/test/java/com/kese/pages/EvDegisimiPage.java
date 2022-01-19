@@ -2,6 +2,7 @@ package com.kese.pages;
 
 import com.kese.utilities.BrowserUtils;
 import com.kese.utilities.Driver;
+import org.bouncycastle.pqc.jcajce.provider.qtesla.QTESLAKeyFactorySpi;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -57,9 +58,29 @@ public class EvDegisimiPage extends CommonPage {
     public WebElement page2sahsiAracCheckButton;
 
 
+    @FindBy(xpath = "//div[@class='navbar-nav me-auto fs-3']")
+    public WebElement page10locationStepTextBox;
 
+    @FindBy(xpath = "//h2[contains(text(),'Resim ve Fotoğraflar')]")
+    public WebElement page10TitleName;
 
+    @FindBy(xpath = "//p[contains(text(),'Evinizde müsait olan odaların ve/veya kullandırmak')]")
+    public WebElement page10ExplainTextBox;
 
+    @FindBy(xpath = "//button[normalize-space()='Resimleri Seçin']")
+    public WebElement page10SelectedPictureButton;
+
+    @FindBy(xpath = "//button[contains(text(),'Tüm Resimleri Kaldır')]")
+    public WebElement page10RemoveAllPicturesButton;
+
+    @FindBy(xpath = "//small[normalize-space()='En az 5 en fazla 10 resim yükleyebilirsiniz.']")
+    public WebElement page10UploadMinimumAndMaximumImages;
+
+    @FindBy(xpath = "//div[@class='d-flex flex-column align-items-center']//i[@class='far fa-3x fa-image']")
+    public WebElement page10UploadingFirstImage;
+
+    @FindBy(xpath = "//label[contains(@for,'file-upload2')]//i[contains(@class,'far fa-3x fa-image')]")
+    public WebElement getPage10UploadingSecondImage;
 
 
 
