@@ -1,5 +1,9 @@
 package com.kese.pages;
 
+import com.kese.utilities.BrowserUtils;
+import com.kese.utilities.Driver;
+import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -30,56 +34,31 @@ public class EvDegisimiPage extends CommonPage {
     * */
 
 
-    @FindBy(xpath = "//div[@class='navbar-nav me-auto fs-3']")
-    public WebElement theNumberOfPage;
 
-    @FindBy(xpath = "//div[@class='px-3 py-2']/h2")
-    public WebElement page7aktivitelerText;
+    @FindBy(xpath = "//button[contains(text(),'Geri')]")
+    public WebElement geriButton;
 
-    @FindBy(xpath = "//div[@class='px-3 py-2']/p")
-    public WebElement page7InfoText;
+    @FindBy(xpath = "//a[contains(text(),'İlerle')]")
+    public WebElement ilerleButton;
 
-    @FindBy(xpath = "//i[@class='fas fa-2x flaticon-roller-coaster']")
-    public WebElement page7LunaPark;
+    @FindBy(id = "react-select-2-input")
+    public WebElement page2konumBelirtinizTextBox;
 
-    @FindBy(xpath = "//i[@class='fas fa-2x flaticon-vacations']")
-    public WebElement page7Plaj;
+    @FindBy(xpath = "descendant::input[2]")
+    public WebElement page2evIleOtobusDuragiArasi;
 
-    @FindBy(xpath = "//i[@class='fas fa-2x flaticon-bike-1']")
-    public WebElement page7BisikletYolu;
+    @FindBy(xpath = "descendant::input[3]")
+    public WebElement page2evIleTrenIstasyonArasi;
 
-    @FindBy(xpath = "//i[@class='fas fa-2x flaticon-museum']")
-    public WebElement page7Muze;
+    @FindBy(xpath = "descendant::input[4]")
+    public WebElement page2evIleTramvayDuragiArasi;
 
-    @FindBy(xpath = "//i[@class='fas fa-2x flaticon-fishing']")
-    public WebElement page7BalikTutma;
+    @FindBy(xpath = "descendant::input[5]")
+    public WebElement page2sahsiAracCheckButton;
 
-    @FindBy(xpath = "//i[@class='fas fa-2x flaticon-ski']")
-    public WebElement page7KayakYapma;
 
-    @FindBy(xpath = "//i[@class='fas fa-2x flaticon-dumbbell']")
-    public WebElement page7SporSalonu;
 
-    @FindBy(xpath = "//i[@class='fas fa-2x flaticon-hiking']")
-    public WebElement page7DogaYuruyusu;
 
-    @FindBy(xpath = "//i[@class='fas fa-2x flaticon-times-square']")
-    public WebElement page7UnluMeydan;
-
-    @FindBy(xpath = "//i[@class='fas fa-2x flaticon-slider']")
-    public WebElement page7CocukParki;
-
-    @FindBy(xpath = "//i[@class='fas fa-2x flaticon-halal']")
-    public WebElement page7HelalRestorant;
-
-    @FindBy(xpath = "//i[@class='fas fa-2x flaticon-mall']")
-    public WebElement page7Avm;
-
-    @FindBy(xpath = "//i[@class='fas fa-2x flaticon-cinema']")
-    public WebElement page7Sinema;
-
-    @FindBy(xpath = "//i[@class='fas fa-2x flaticon-mosque']")
-    public WebElement page7CamiiDernek;
 
 
 
