@@ -533,11 +533,52 @@ public class EvDegisimiPage extends CommonPage {
     public WebElement getPage10UploadingSecondImage;
 
 
-
-
-
-
-
+    // 10. Sayfaya kadar Minimum Gereksinimlerle ulasan kodlar icin gerekli locatorlar
+    // Main Page
+    @FindBy (id = "dropdownMenuButton")
+    public WebElement dropdownMenuButton;   // Ilan Ver butonu
+    // Main Page
+    @FindBy (xpath = "//*[contains(text(),' Ev Değişimi')]")
+    public WebElement homeExchangeOption; // Ilan ver butonunda  -> Ev degisimi secenegi
+    // common for all pages
+    @FindBy (xpath = "//*[contains(text(),'İlerle')]")
+    public WebElement nextButton;   // ilerle butonu
+    // 1st page
+    @FindBy (xpath = "//*[contains(text(),'Müstakil Ev')]")
+    public WebElement houseButton;  // Ev Tipi sayfasinda(sayfa1) -> Müstakil Ev
+    // 2nd page
+    @FindBy (xpath = "//*[contains(text(),'Select...')]")
+    public WebElement selectText;
+    // 2nd page
+    @FindBy (id = "react-select-2-input")
+    public WebElement selectTextButton;
+    // 2nd page
+    @FindBy(className = "form-check-input")
+    public WebElement checkBox;
+    // 3rd page
+    @FindBy (id = "size")
+    public WebElement sizeOfAreaUp;
+    // 4th page
+    @FindBy(className = "ml-3")
+    public WebElement plus;
+    // 5th page
+    @FindBy (xpath = "//*[contains(text(),'TV')]")
+    public WebElement tvText;
+    // 6th page
+    @FindBy (id = "home")
+    public WebElement homeExplanation;
+    // 7th page
+    @FindBy (xpath = "//*[contains(text(),'Müze')]")
+    public WebElement museumText;
+    // 8th page
+    @FindBy (xpath = "//*[contains(text(),'Evet')]")
+    public List<WebElement> yesTexts;
+    // 9th page
+    @FindBy (className = "react-datepicker__input-container")
+    public WebElement selectDate;
+    // 9th page
+    @FindBy (xpath = "//*[@tabindex=0]")
+    public WebElement todaysLocator;
 
 
 }
