@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        strict = true,
+      //  strict = true,
         //plugin = {"pretty","html:target/failed-cucumber-reports",
           //      "json:target/cucumber.json",
             //    "rerun:target/rerun.txt"},
