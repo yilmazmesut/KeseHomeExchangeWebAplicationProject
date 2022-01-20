@@ -33,25 +33,29 @@ public void UserEntersValidUserNam(String userName){
       LoginPage.enterPassword(password);
       BrowserUtils.waitFor(3);
   }
-                       @And("user clicks on Login butto")
-                        public void UserClicksOnLoginButton(){
-                           LoginPage.clickSubmitbutton();
-                           BrowserUtils.waitFor(3);
-                       }
+  @And("user clicks on Login butto")
+  public void UserClicksOnLoginButton(){
+  LoginPage.clickSubmitbutton();
+       BrowserUtils.waitFor(3);
+  }
 
-                       @When("{string} is selected,{string} should be visible")
-                        public void IsSelected(String arg0, String arg1){
-                           Assert.assertTrue(mainPage.ilanVer.isSelected());
-                           Assert.assertTrue(mainPage.ilanVer.isDisplayed());
-                        }
-                        @And("The user clicks {string} button")
-                        public void ThUserClicks(String arg0){
+  @When("{string} is selected, {string} should be visible")
+    public void is_selected_should_be_visible(String string, String string2) {
+      Assert.assertTrue(mainPage.ilanVer.isSelected());
+      Assert.assertTrue(mainPage.ilanVer.isDisplayed());
+    }
+
+
+
+
+  @And("The user clicks {string} button")
+    public void ThUserClicks(String arg0){
                        mainPage.profilim.isSelected();
                        }
 
-                       @When("{string}should be visible")
-                       public void IsSelectedShouldBeVisible(String arg1) {
+  @When("{string}should be visible")
+       public void IsSelectedShouldBeVisible(String arg1) {
 
-                          Assert.assertTrue(mainPage.profilim.isDisplayed());
-                      }
-                    }
+     Assert.assertTrue(mainPage.profilim.isDisplayed());
+          }
+  }

@@ -1,6 +1,6 @@
 @US_006
 Feature: Cargo is clickable and visible and message is visible
-  @META3-143
+
   Background:
     Given go to "http://test.kese.nl/" page
 
