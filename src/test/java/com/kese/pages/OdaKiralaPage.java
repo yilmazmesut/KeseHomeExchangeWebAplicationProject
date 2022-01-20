@@ -30,56 +30,37 @@ public class OdaKiralaPage extends CommonPage {
 
     * */
 
-    @FindBy(xpath = "//div[@class='navbar-nav me-auto fs-3']")
-    public WebElement theNumberOfPage;
+    @FindBy(xpath = "//*[text()='Odanız hangi ev türüde yer alıyor, belirtiniz.']")
+    public WebElement page1RoomOdanizHangiEvWritings;
 
-    @FindBy(xpath = "//div[@class='px-3 py-2']/h2")
-    public WebElement page7aktivitelerText;
+    @FindBy(xpath = "(//div[@class='border py-3 rounded false'])[1]")
+    public WebElement page1RoomMustakilEv;
 
-    @FindBy(xpath = "//div[@class='px-3 py-2']/p")
-    public WebElement page7InfoText;
+    @FindBy(xpath = "(//div[@class='border py-3 rounded false'])[2]")
+    public WebElement page1RoomApartman;
 
-    @FindBy(xpath = "//i[@class='fas fa-2x flaticon-roller-coaster']")
-    public WebElement page7LunaPark;
+    @FindBy(xpath = "(//div[@class='border py-3 rounded false'])[3]")
+    public WebElement page1RoomStudyo;
 
-    @FindBy(xpath = "//i[@class='fas fa-2x flaticon-vacations']")
-    public WebElement page7Plaj;
+    @FindBy(xpath = "//*[text()='Değişim & Kirala']")
+    public WebElement page1RoomDegisimKiraTitle;
 
-    @FindBy(xpath = "//i[@class='fas fa-2x flaticon-bike-1']")
-    public WebElement page7BisikletYolu;
+    @FindBy(xpath = "//*[text()='Odanızla ilgili tercihinizi belirtiniz. Eğer sizin için uygunsa iki seçeneği de işaretleyebilirsiniz.']")
+    public WebElement page1RoomTercihWriting;
 
-    @FindBy(xpath = "//i[@class='fas fa-2x flaticon-museum']")
-    public WebElement page7Muze;
+    @FindBy(xpath = "(//label[@class='form-check-label'])[1]")
+    public WebElement page1RoomKiraBoxWriting;
 
-    @FindBy(xpath = "//i[@class='fas fa-2x flaticon-fishing']")
-    public WebElement page7BalikTutma;
+    @FindBy(xpath = "(//label[@class='form-check-label'])[2]")
+    public WebElement page1RoomDegisimBoxWriting;
 
-    @FindBy(xpath = "//i[@class='fas fa-2x flaticon-ski']")
-    public WebElement page7KayakYapma;
+    @FindBy(xpath = "(//input[@class='form-check-input'])[1]")
+    public WebElement page1RoomKiraBox;
 
-    @FindBy(xpath = "//i[@class='fas fa-2x flaticon-dumbbell']")
-    public WebElement page7SporSalonu;
+    @FindBy(xpath = "(//input[@class='form-check-input'])[2]")
+    public WebElement page1RoomDegisimBox;
 
-    @FindBy(xpath = "//i[@class='fas fa-2x flaticon-hiking']")
-    public WebElement page7DogaYuruyusu;
-
-    @FindBy(xpath = "//i[@class='fas fa-2x flaticon-times-square']")
-    public WebElement page7UnluMeydan;
-
-    @FindBy(xpath = "//i[@class='fas fa-2x flaticon-slider']")
-    public WebElement page7CocukParki;
-
-    @FindBy(xpath = "//i[@class='fas fa-2x flaticon-halal']")
-    public WebElement page7HelalRestorant;
-
-    @FindBy(xpath = "//i[@class='fas fa-2x flaticon-mall']")
-    public WebElement page7Avm;
-
-    @FindBy(xpath = "//i[@class='fas fa-2x flaticon-cinema']")
-    public WebElement page7Sinema;
-
-    @FindBy(xpath = "//i[@class='fas fa-2x flaticon-mosque']")
-    public WebElement page7CamiiDernek;
-
+    @FindBy(xpath = "//img[@src='ilanver/room.png']")
+    public WebElement page1RoomImage;
 
 }
