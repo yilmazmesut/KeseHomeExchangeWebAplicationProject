@@ -1,5 +1,8 @@
 package com.kese.pages;
 
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
 public class OdaKiralaPage extends CommonPage {
 
 
@@ -26,8 +29,6 @@ public class OdaKiralaPage extends CommonPage {
 
 
     * */
-
-
 
 
 }
