@@ -48,7 +48,7 @@ public class SignUpPage extends CommonPage{
     public WebElement SignupPasswordBox;
 
     @FindBy(xpath = "//input[@id='sifreTekrar']")
-    public WebElement SignupPasswordBox2;
+    public WebElement repasswordInput;
 
     @FindBy(xpath = "//div[@class='d-flex justify-content-center align-items-center']")
     public WebElement SignupButton;
