@@ -98,6 +98,7 @@ public class US53HomeExchangePage10StepD {
             BrowserUtils.waitFor(1/2);
             page.todaysLocator.click();
             page.nextButton.click();
+            break;
         }
     }
 }
