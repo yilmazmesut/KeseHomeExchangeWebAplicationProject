@@ -49,7 +49,7 @@ public class US18LoginPageStepD {
     @And("page url should be {string}")
     public void pageUrlShouldBe(String expectedUrl) {
 
-
+        System.out.println("You are at the " + expectedUrl + " Page");
         Assert.assertTrue((Driver.get().getCurrentUrl().contains(expectedUrl)));
     }
 
