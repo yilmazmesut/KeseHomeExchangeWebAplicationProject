@@ -2,9 +2,13 @@ package com.kese.stepdefinitions;
 
 import com.kese.pages.EvDegisimiPage;
 import com.kese.pages.LoginPage;
+import com.kese.pages.US53EvDegisimiPage;
 import com.kese.utilities.BrowserUtils;
+import com.kese.utilities.Driver;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.*;
+import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import java.awt.*;
 import java.util.List;
@@ -101,18 +105,42 @@ public class US53HomeExchangePage10StepD {
         }
     }
 
-    @Then("user shouldn't save the pictures without adding minimum five pictures")
-    public void user_shouldn_t_save_the_pictures_without_adding_minimum_five_pictures() {
+    @Then("user shouldn't save the pictures without adding minimum {int} pictures")
+    public void minimumPicturesDestruction(int numberOfPicture) {
+        US53EvDegisimiPage page = new US53EvDegisimiPage();
+        WebElement step10_FileUpload;
+        for(int i=1;i<numberOfPicture;i++){ // it must be five pictures in pictures folder
+            step10_FileUpload = Driver.get().findElement(By.id("file-upload"+i));
+            step10_FileUpload.sendKeys(System.getProperty("user.dir") + "/src/test/resources/pictures/"+(i%5+1)+".jpg");
+            page.step10_ResimleriKaydetButton.click();
+            WebElement publishAdButton = page.step10_publishAdButton;
+            //  'İlanı Yayınla' button mustn't be display here then throws exception
+            Assert.assertThrows(org.openqa.selenium.NoSuchElementException.class, publishAdButton::isDisplayed);
+        }
 
     }
 
-    @Then("user asserts the Resimleri Kaydet button should be clickable after adding five images")
-    public void user_asserts_the_Resimleri_Kaydet_button_should_be_clickable_after_adding_five_images() {
-
+    @When("user adds {int} pictures on the home change page")
+    public void uploadImages(int numberOfImages) {
+        WebElement step10_FileUpload;
+        for(int i=1;i<=numberOfImages;i++){ // it must be five pictures in pictures folder
+            step10_FileUpload = Driver.get().findElement(By.id("file-upload"+i));
+            step10_FileUpload.sendKeys(System.getProperty("user.dir") + "/src/test/resources/pictures/"+(i%5+1)+".jpg");
+        }
     }
 
-    @Then("user asserts that a maximum of ten pictures can upload")
-    public void user_asserts_that_a_maximum_of_ten_pictures_can_upload() {
+    @Then("user asserts that it can't be upload more images")
+    public void maximunPicturesDestriction() {
+        US53EvDegisimiPage page = new US53EvDegisimiPage();
+        // add image frame shouldn't display and throw exeption
+        Assert.assertThrows(org.openqa.selenium.NoSuchElementException.class, page.step10_addImageFrame::isDisplayed);
+    }
 
+    @Then("user asserts that the Resimleri Kaydet button is clickable")
+    public void savePicturesButtonMustClickableAfterImageUpload() {
+        US53EvDegisimiPage page = new US53EvDegisimiPage();
+        WebElement savePicturesButton = page.step10_ResimleriKaydetButton;
+        Assert.assertTrue(savePicturesButton.isDisplayed());
+        Assert.assertTrue(savePicturesButton.isEnabled());
     }
 }
