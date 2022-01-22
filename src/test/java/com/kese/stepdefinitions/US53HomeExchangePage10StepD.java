@@ -16,6 +16,16 @@ import java.util.List;
 import static java.awt.event.KeyEvent.VK_ENTER;
 
 public class US53HomeExchangePage10StepD {
+    EvDegisimiPage page = new EvDegisimiPage();
+    @When("user signed in on sign in page")
+    public void userSignedInOnSignInPage(DataTable table) {
+        List<List<String>> rows = table.asLists(String.class); // I didn't get just list here then I get list of list
+        List<String> row = rows.get(0);
+        LoginPage.enterUserName(row.get(0));
+        LoginPage.enterPassword(row.get(1));
+        LoginPage.clickSubmitbutton();
+        BrowserUtils.waitForPageToLoad(5);
+    }
 
     @And("user navigates to page {int} in Home Exchange")
     public void userNavigatesToPageInHomeExchange(int sayfa) throws AWTException {

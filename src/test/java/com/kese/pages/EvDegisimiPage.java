@@ -535,7 +535,7 @@ public class EvDegisimiPage extends CommonPage {
 
     // 10. Sayfaya kadar Minimum Gereksinimlerle ulasan kodlar icin gerekli locatorlar
     // Main Page
-    @FindBy (id = "dropdownMenuButton")
+    @FindBy (id = "dropdownMenuButton1")
     public WebElement dropdownMenuButton;   // Ilan Ver butonu
     // Main Page
     @FindBy (xpath = "//*[contains(text(),' Ev Değişimi')]")
