@@ -1,5 +1,6 @@
 package com.kese.stepdefinitions;
 
+import com.kese.utilities.BrowserUtils;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 
@@ -7,6 +8,7 @@ public class US076OdaKiralaPageStepD {
 
     @And("user clicks Giris Yap Button")
     public void userClicksGirisYapButton() {
+
     }
 
     @And("user inputs {string} to the email input on the login page")
