@@ -59,11 +59,11 @@ public class US33KeseKonumVeUlasimPageStepD extends OdaKiralaPage {
 //        evDegisimiPage.nextButton.click();
 //    }
 
-    @And("user chooses {string} an address from the list in new home step two page")
-    public void userChoosesAnAddressFromTheListInNewHomeStepTwoPage(String adres) {
-        step2_AddressInput.sendKeys(adres); // Keys.ENTER
-        BrowserUtils.waitFor(3);
-        Driver.get().findElement(By.cssSelector("[id$='-option-0']")).click();
+//    @And("user chooses {string} an address from the list in new home step two page")
+//    public void userChoosesAnAddressFromTheListInNewHomeStepTwoPage(String adres) {
+//        step2_AddressInput.sendKeys(adres); // Keys.ENTER
+//        BrowserUtils.waitFor(3);
+//        Driver.get().findElement(By.cssSelector("[id$='-option-0']")).click();
 
         // Bir webelementin içeriği, HTML olarak seleniumda nasıl görüntülenebilir ?
         /*String icerik = newHomePage.step2_AddressList.getAttribute("innerHTML");
@@ -77,7 +77,7 @@ public class US33KeseKonumVeUlasimPageStepD extends OdaKiralaPage {
                 <div class=" css-yt9ioa-option" id="react-select-2-option-3" tabindex="-1">London, Ohio, Amerika Birleşik Devletleri</div>
                 <div class=" css-yt9ioa-option" id="react-select-2-option-4" tabindex="-1">Londonderry, Birleşik Krallık</div>
         </div>*/
-    }
+   // }
 
     @And("user should able to see Konum ve Ulasim text")
     public void userShouldAbleToSeeKonumVeUlasimText() {
