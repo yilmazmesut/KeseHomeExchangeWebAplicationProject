@@ -405,6 +405,116 @@ public class EvDegisimiPage extends CommonPage {
     @FindBy(xpath = "//i[@class='fas fa-2x flaticon-mosque']")
     public WebElement page7CamiiDernek;
 
+    @FindBy(xpath = "//small[@class='pl-2']") //xpath is not true!!!!!!!!
+    public WebElement page7ActiviteWarningMessage;
+
+
+    public boolean clickable(String selection){
+        Boolean flag = false;
+
+        switch (selection){
+
+            case "Lunapark":
+                flag = page7LunaPark.isEnabled();
+                break;
+            case "Plaj":
+                flag = page7Plaj.isEnabled();
+                break;
+            case "Bisiklet Yolu":
+                flag = page7BisikletYolu.isEnabled();
+                break;
+            case "Müze":
+                flag = page7Muze.isEnabled();
+                break;
+            case "Balık Tutma":
+                flag = page7BalikTutma.isEnabled();
+                break;
+            case "Kayak Yapma":
+                flag = page7KayakYapma.isEnabled();
+                break;
+            case "Spor Salonu":
+                flag = page7SporSalonu.isEnabled();
+                break;
+            case "Doğa Yürüyüşü":
+                flag = page7DogaYuruyusu.isEnabled();
+                break;
+            case "Ünlü Meydan":
+                flag = page7UnluMeydan.isEnabled();
+                break;
+            case "Çocuk Parkı":
+                flag = page7CocukParki.isEnabled();
+                break;
+            case "Helal Restorant":
+                flag = page7HelalRestorant.isEnabled();
+                break;
+            case "AVM":
+                flag = page7Avm.isEnabled();
+                break;
+            case "Sinema":
+                flag = page7Sinema.isEnabled();
+                break;
+            case "Camii & Dernek":
+                flag = page7CamiiDernek.isEnabled();
+                break;
+        }
+
+
+
+        return flag;
+    }
+
+    public void clickAnySelection(String selection){
+
+
+        switch (selection){
+
+            case "Lunapark":
+                page7LunaPark.click();
+                break;
+            case "Plaj":
+                page7Plaj.click();
+                break;
+            case "Bisiklet Yolu":
+                page7BisikletYolu.click();
+                break;
+            case "Müze":
+                page7Muze.click();
+                break;
+            case "Balık Tutma":
+                page7BalikTutma.click();
+                break;
+            case "Kayak Yapma":
+                page7KayakYapma.click();
+                break;
+            case "Spor Salonu":
+                page7SporSalonu.click();
+                break;
+            case "Doğa Yürüyüşü":
+                page7DogaYuruyusu.click();
+                break;
+            case "Ünlü Meydan":
+                page7UnluMeydan.click();
+                break;
+            case "Çocuk Parkı":
+                page7CocukParki.click();
+                break;
+            case "Helal Restorant":
+                page7HelalRestorant.click();
+                break;
+            case "AVM":
+                page7Avm.click();
+                break;
+            case "Sinema":
+                page7Sinema.click();
+                break;
+            case "Camii & Dernek":
+                page7CamiiDernek.click();
+                break;
+        }
+
+
+    }
+
 
     //Page 8
     @FindBy(xpath = "//div[@class='navbar-nav me-auto fs-3']")
