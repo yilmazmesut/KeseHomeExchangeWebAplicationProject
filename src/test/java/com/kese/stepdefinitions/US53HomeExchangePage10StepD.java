@@ -2,7 +2,6 @@ package com.kese.stepdefinitions;
 
 import com.kese.pages.EvDegisimiPage;
 import com.kese.pages.LoginPage;
-import com.kese.pages.US53EvDegisimiPage;
 import com.kese.utilities.BrowserUtils;
 import com.kese.utilities.Driver;
 import io.cucumber.datatable.DataTable;
@@ -108,7 +107,6 @@ public class US53HomeExchangePage10StepD {
 
     @Then("user shouldn't save the pictures without adding minimum {int} pictures")
     public void minimumPicturesDestruction(int numberOfPicture) {
-        US53EvDegisimiPage page = new US53EvDegisimiPage();
         WebElement step10_FileUpload;
         for(int i=1;i<numberOfPicture;i++){ // it must be five pictures in pictures folder
             step10_FileUpload = Driver.get().findElement(By.id("file-upload"+i));
@@ -132,14 +130,12 @@ public class US53HomeExchangePage10StepD {
 
     @Then("user asserts that it can't be upload more images")
     public void maximunPicturesDestriction() {
-        US53EvDegisimiPage page = new US53EvDegisimiPage();
         // add image frame shouldn't display and throw exeption
         Assert.assertThrows(org.openqa.selenium.NoSuchElementException.class, page.step10_addImageText::isDisplayed);
     }
 
     @Then("user asserts that the Resimleri Kaydet button is clickable")
     public void savePicturesButtonMustClickableAfterImageUpload() {
-        US53EvDegisimiPage page = new US53EvDegisimiPage();
         WebElement savePicturesButton = page.step10_ResimleriKaydetButton;
         Assert.assertTrue(savePicturesButton.isDisplayed());
         Assert.assertTrue(savePicturesButton.isEnabled());

@@ -642,6 +642,19 @@ public class EvDegisimiPage extends CommonPage {
     @FindBy(xpath = "//label[contains(@for,'file-upload2')]//i[contains(@class,'far fa-3x fa-image')]")
     public WebElement getPage10UploadingSecondImage;
 
+    @FindBy (xpath = "//*[contains(text(), 'İlanı Yayınla')]")
+    public WebElement step10_publishAdButton; // ilani yayinla butonu
+
+    @FindBy (xpath = "//*[contains(text(), 'Resim Ekle')]")
+    public WebElement step10_addImageText; // resim ekle yazisinin ortak locatoru.
+
+    @FindBy (css = ".border div.rounded")
+
+    public List<WebElement> step10_loadedImages;   // Tum yuklenmis resimlerin listesi
+
+    @FindBy (css = "div.col-6 div")
+    public List<WebElement>  step10_imageFrames;    // Resim ekleme cerceveleri
+
 
     // 10. Sayfaya kadar Minimum Gereksinimlerle ulasan kodlar icin gerekli locatorlar
     // Main Page
