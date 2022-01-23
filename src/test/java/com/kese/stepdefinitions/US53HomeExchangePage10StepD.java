@@ -52,6 +52,7 @@ public class US53HomeExchangePage10StepD {
             robot.keyPress(VK_ENTER);
             BrowserUtils.waitFor(1);
             page.checkBox.click();
+            BrowserUtils.waitFor(2);
             page.nextButton.click();
             if (sayfa == 3)
                 break;
