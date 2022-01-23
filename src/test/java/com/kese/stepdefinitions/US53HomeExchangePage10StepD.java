@@ -133,7 +133,7 @@ public class US53HomeExchangePage10StepD {
     public void maximunPicturesDestriction() {
         US53EvDegisimiPage page = new US53EvDegisimiPage();
         // add image frame shouldn't display and throw exeption
-        Assert.assertThrows(org.openqa.selenium.NoSuchElementException.class, page.step10_addImageFrame::isDisplayed);
+        Assert.assertThrows(org.openqa.selenium.NoSuchElementException.class, page.step10_addImageText::isDisplayed);
     }
 
     @Then("user asserts that the Resimleri Kaydet button is clickable")

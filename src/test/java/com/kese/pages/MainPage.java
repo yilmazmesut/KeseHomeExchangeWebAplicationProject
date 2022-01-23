@@ -10,8 +10,6 @@ public class MainPage extends CommonPage {
     @FindBy(xpath = "//a[@class='navbar-brand']")
     public WebElement logo;
 
-
-
     @FindBy(xpath = "(//span[text()='Kargo'])[1]")
     public WebElement CargoButton;
 
