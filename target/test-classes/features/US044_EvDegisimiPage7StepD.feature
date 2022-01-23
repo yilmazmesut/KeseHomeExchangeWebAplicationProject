@@ -15,7 +15,7 @@ Feature: Bir kullanici olarak "Ev Degisimi" ilan olusturma sayfasinda,
     When user clicks "İlerle" button without any selection
     Then user verifies that "*Lütfen ev tipini seçiniz." warning message appears
 
-  @44
+
   Scenario Outline: "İlerle" button should be clickable after any selection
     When user clicks any "<selection>"
     Then user verifies that ilerle button should be clickable

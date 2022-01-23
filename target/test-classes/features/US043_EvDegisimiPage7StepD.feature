@@ -1,4 +1,4 @@
-Feature: Bir kullanici olarak "Ev Degisimi" ilan olsşturma sayfasinda,
+Feature: Bir kullanici olarak "Ev Degisimi" ilan olusturma sayfasinda,
   7. stepte "Aktiviteler" bilgisini girebilmeliyim
 
   Background: Successful connection to site and coming to step 7 in "Ev Degisimi"

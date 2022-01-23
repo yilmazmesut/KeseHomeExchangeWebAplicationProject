@@ -1,6 +1,6 @@
 Feature: TC_001_US_033_Bir kullanıcı olarak "Konum ve Ulaşım" ilan oluşturma sayfasında, 2. stepte "Konum ve Ulaşım" bilgilerini girebilmeliyim.
 
-  Scenario: : user should able to go next page filling mandatory fields
+  Scenario: : user should able to go next page fiiling mandatory fields
     Given user goes to "http://test.kese.nl" Page
     When "cemile@gmail.com" signed in on sign in page
     And user goes to "http://test.kese.nl/new_home" page
