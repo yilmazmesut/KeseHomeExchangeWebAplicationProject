@@ -24,6 +24,6 @@ public class US059KeseOdaKiralaVeDegisimPageStepD {
         BrowserUtils.waitFor(2);
         Driver.get().findElement(By.xpath("(//input[@type='checkbox'])[1]")).click();
         Driver.get().findElement(By.xpath("(//input[@type='checkbox'])[2]")).click();
-        Driver.get().findElement(By.xpath("(//*[contains(text(),'"+text+"')]/..//@name")).click();
+        //Driver.get().findElement(By.xpath("(//*[contains(text(),'"+text+"')]/..//@name")).click();
     }
 }
