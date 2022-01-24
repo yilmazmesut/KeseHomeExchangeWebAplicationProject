@@ -1,6 +1,9 @@
 Feature: US_53 Bir kullanıcı olarak "Ev Değişimi" ilan oluşturma sayfasında, 10. stepte en az 5 en fazla 10 tane resim ekleyebilmeliyim.
 
+
+
   Background: Successful connection to site and coming to step 10 in "Ev Değişimi"
+
     Given user is on login page "http://test.kese.nl/new_home"
     When user signed in on sign in page
       | coder52@nonmail.com | 1234 |
@@ -16,8 +19,6 @@ Feature: US_53 Bir kullanıcı olarak "Ev Değişimi" ilan oluşturma sayfasınd
   Scenario: TC003_US53 After adding 5 images "Resimleri Kaydet" button must be clickable.
     When user adds 5 pictures on the home change page
     And user asserts that the Resimleri Kaydet button is clickable
-
-
 
 
 
