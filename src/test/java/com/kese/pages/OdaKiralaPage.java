@@ -438,4 +438,48 @@ public class OdaKiralaPage extends CommonPage {
 
     @FindBy(xpath = "//label[contains(@for,'file-upload2')]//i[contains(@class,'far fa-3x fa-image')]")
     public WebElement getPage10UploadingSecondImage;
+
+    @FindBy (id = "dropdownMenuButton")
+    public WebElement dropdownIlanVerButton;   // Ilan Ver butonu
+    // Main Page
+    @FindBy (xpath = "//*[contains(text(),' Oda')]")
+    public WebElement dropDownOda; // Ilan ver butonunda
+
+    @FindBy (id = "room")
+    public WebElement page6roomExplanation;
+
+
+    @FindBy (xpath = "(//div[@class = 'rounded '])[1]")
+    public WebElement  step10_FileUploaded1;
+
+    @FindBy (xpath = "(//div[@class = 'rounded '])[2]")
+    public WebElement step10_FileUploaded2;
+
+    @FindBy (xpath = "(//div[@class = 'rounded '])[3]")
+    public WebElement step10_FileUploaded3;
+
+    @FindBy (xpath = "(//div[@class = 'rounded '])[4]")
+    public WebElement step10_FileUploaded4;
+
+    @FindBy (xpath = "(//div[@class = 'rounded '])[5]")
+    public WebElement step10_FileUploaded5;
+
+    @FindBy (xpath = "(//div[@class = 'rounded '])[6]")
+    public WebElement  step10_FileUploaded6;
+
+    @FindBy (xpath = "(//div[@class = 'rounded '])[7]")
+    public WebElement step10_FileUploaded7;
+
+    @FindBy (xpath = "(//div[@class = 'rounded '])[8]")
+    public WebElement step10_FileUploaded8;
+
+    @FindBy (xpath = "(//div[@class = 'rounded '])[9]")
+    public WebElement step10_FileUploaded9;
+
+    @FindBy (xpath = "(//div[@class = 'rounded '])[10]")
+    public WebElement step10_FileUploaded10;
+
+
+   @FindBy(xpath = "//button[contains(text(),'Resimleri Seçin')]")
+   public WebElement page10ResimleriSecinButton;
 }
