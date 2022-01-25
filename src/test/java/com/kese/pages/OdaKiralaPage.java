@@ -312,6 +312,9 @@ public class OdaKiralaPage extends CommonPage {
     @FindBy(xpath = "//i[@class='fas fa-2x flaticon-mosque']")
     public WebElement page7CamiiDernek;
 
+    @FindBy(xpath = "//small[@class='pl-2']") //xpath is not true!!!!!!!!
+    public WebElement page7ActiviteWarningMessage;
+
 
     //Page 8
     @FindBy(xpath = "//div[@class='navbar-nav me-auto fs-3']")
@@ -439,6 +442,7 @@ public class OdaKiralaPage extends CommonPage {
     @FindBy(xpath = "//label[contains(@for,'file-upload2')]//i[contains(@class,'far fa-3x fa-image')]")
     public WebElement getPage10UploadingSecondImage;
 
+
     // 10. Sayfaya kadar Minimum Gereksinimlerle ulasan kodlar icin gerekli locatorlar
     // Main Page
     @FindBy (id = "dropdownMenuButton")
@@ -492,4 +496,5 @@ public class OdaKiralaPage extends CommonPage {
     // 9th page
     @FindBy (xpath = "//*[@tabindex=0]")
     public WebElement todaysLocator;
+
 }
