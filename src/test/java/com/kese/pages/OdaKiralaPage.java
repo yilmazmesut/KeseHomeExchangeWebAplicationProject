@@ -442,47 +442,59 @@ public class OdaKiralaPage extends CommonPage {
     @FindBy(xpath = "//label[contains(@for,'file-upload2')]//i[contains(@class,'far fa-3x fa-image')]")
     public WebElement getPage10UploadingSecondImage;
 
+
+    // 10. Sayfaya kadar Minimum Gereksinimlerle ulasan kodlar icin gerekli locatorlar
+    // Main Page
     @FindBy (id = "dropdownMenuButton")
-    public WebElement dropdownIlanVerButton;   // Ilan Ver butonu
+    public WebElement dropdownMenuButton;   // Ilan Ver butonu
     // Main Page
     @FindBy (xpath = "//*[contains(text(),' Oda')]")
-    public WebElement dropDownOda; // Ilan ver butonunda
+    public WebElement roomExchangeOption; // Ilan ver butonunda  -> Ev degisimi secenegi
+    // common for all pages
+    @FindBy (xpath = "//*[contains(text(),'İlerle')]")
+    public WebElement nextButton;   // ilerle butonu
+    // 1st page
+    @FindBy (xpath = "//*[contains(text(),'Müstakil Ev')]")
+    public WebElement houseButton;  // Ev Tipi sayfasinda(sayfa1) -> Müstakil Ev
+    // 2nd page
+    @FindBy (xpath = "//*[contains(text(),'Select...')]")
+    public WebElement selectText;
+    // 2nd page
+    @FindBy (id = "react-select-2-input")
+    public WebElement selectTextButton;
+    // 2nd page
+    @FindBy(className = "form-check-input")
+    public WebElement checkBox;
+    // 3rd page
+    @FindBy (id = "size")
+    public WebElement sizeOfAreaUp;
+    // 4th page
+    @FindBy(xpath ="(//div[@class = 'pr-2 pb-2'])[1]")
+    public WebElement YasAraligi1015;
 
+    @FindBy(xpath = "(//div[@class = 'pr-2 pb-2'])[9]")
+    public WebElement CinsiyetKadin;
+
+    @FindBy(xpath = "(//button[@type = 'button'])[3]")
+    public WebElement Kisisayisiartir;
+
+    // 5th page
+    @FindBy (xpath = "//*[contains(text(),'TV')]")
+    public WebElement tvText;
+    // 6th page
     @FindBy (id = "room")
-    public WebElement page6roomExplanation;
+    public WebElement roomExplanation;
+    // 7th page
+    @FindBy (xpath = "//*[contains(text(),'Müze')]")
+    public WebElement museumText;
+    // 8th page
+    @FindBy (xpath = "//*[contains(text(),'Evet')]")
+    public List<WebElement> yesTexts;
+    // 9th page
+    @FindBy (className = "react-datepicker__input-container")
+    public WebElement selectDate;
+    // 9th page
+    @FindBy (xpath = "//*[@tabindex=0]")
+    public WebElement todaysLocator;
 
-
-    @FindBy (xpath = "(//div[@class = 'rounded '])[1]")
-    public WebElement  step10_FileUploaded1;
-
-    @FindBy (xpath = "(//div[@class = 'rounded '])[2]")
-    public WebElement step10_FileUploaded2;
-
-    @FindBy (xpath = "(//div[@class = 'rounded '])[3]")
-    public WebElement step10_FileUploaded3;
-
-    @FindBy (xpath = "(//div[@class = 'rounded '])[4]")
-    public WebElement step10_FileUploaded4;
-
-    @FindBy (xpath = "(//div[@class = 'rounded '])[5]")
-    public WebElement step10_FileUploaded5;
-
-    @FindBy (xpath = "(//div[@class = 'rounded '])[6]")
-    public WebElement  step10_FileUploaded6;
-
-    @FindBy (xpath = "(//div[@class = 'rounded '])[7]")
-    public WebElement step10_FileUploaded7;
-
-    @FindBy (xpath = "(//div[@class = 'rounded '])[8]")
-    public WebElement step10_FileUploaded8;
-
-    @FindBy (xpath = "(//div[@class = 'rounded '])[9]")
-    public WebElement step10_FileUploaded9;
-
-    @FindBy (xpath = "(//div[@class = 'rounded '])[10]")
-    public WebElement step10_FileUploaded10;
-
-
-   @FindBy(xpath = "//button[contains(text(),'Resimleri Seçin')]")
-   public WebElement page10ResimleriSecinButton;
 }
