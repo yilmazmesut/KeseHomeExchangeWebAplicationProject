@@ -55,31 +55,6 @@ public class US33KeseKonumVeUlasimPageStepD extends OdaKiralaPage {
 
     }
 
-//    @And("user clicks to the ilerle button on the new home page")
-//    public void userClicksToTheIlerleButtonOnTheNewHomePage() {
-//        evDegisimiPage.nextButton.click();
-//    }
-
-//    @And("user chooses {string} an address from the list in new home step two page")
-//    public void userChoosesAnAddressFromTheListInNewHomeStepTwoPage(String adres) {
-//        step2_AddressInput.sendKeys(adres); // Keys.ENTER
-//        BrowserUtils.waitFor(3);
-//        Driver.get().findElement(By.cssSelector("[id$='-option-0']")).click();
-
-        // Bir webelementin içeriği, HTML olarak seleniumda nasıl görüntülenebilir ?
-        /*String icerik = newHomePage.step2_AddressList.getAttribute("innerHTML");
-
-        System.out.println(icerik);
-
-        <div class=" css-11unzgr">
-                <div class=" css-1n7v3ny-option" id="react-select-2-option-0" tabindex="-1">London, Birleşik Krallık</div>
-                <div class=" css-yt9ioa-option" id="react-select-2-option-1" tabindex="-1">London, Ontario, Kanada</div>
-                <div class=" css-yt9ioa-option" id="react-select-2-option-2" tabindex="-1">London, Kentucky, Amerika Birleşik Devletleri</div>
-                <div class=" css-yt9ioa-option" id="react-select-2-option-3" tabindex="-1">London, Ohio, Amerika Birleşik Devletleri</div>
-                <div class=" css-yt9ioa-option" id="react-select-2-option-4" tabindex="-1">Londonderry, Birleşik Krallık</div>
-        </div>*/
-   // }
-
     @And("user should able to see Konum ve Ulasim text")
     public void userShouldAbleToSeeKonumVeUlasimText() {
         String actual = Driver.get().findElement(By.xpath("//h2[contains(text(), 'Konum')]")).getText();

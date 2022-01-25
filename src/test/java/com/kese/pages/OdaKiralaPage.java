@@ -1,5 +1,7 @@
 package com.kese.pages;
 
+import com.kese.utilities.Driver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -74,13 +76,13 @@ public class OdaKiralaPage extends CommonPage {
     @FindBy(xpath = "//p[contains(text(), 'Evinizin')]")
     public WebElement page2EvinizinKonumunuBelirtinizYzisi;
 
-    @FindBy (id = "react-select-2-input")
+    @FindBy(id = "react-select-2-input")
     public WebElement page2AddressInput;
 
-    @FindBy (xpath = "//*[@class = ' css-26l3qy-menu']")
+    @FindBy(xpath = "//*[@class = ' css-26l3qy-menu']")
     public WebElement step2_AddressList;
 
-    @FindBy (id = "flexRadioDefault2")
+    @FindBy(id = "flexRadioDefault2")
     public WebElement step2_CheckBox;
 
     @FindBy(xpath = "//h6[contains(text(), 'Eviniz')]")
@@ -94,7 +96,6 @@ public class OdaKiralaPage extends CommonPage {
 
     @FindBy(xpath = "//div[@class='col-7 px-0' and text()='Ev ile tramway durağı arası : ']")
     public WebElement page2EvIleTramway;
-
 
 
     // Page 3:
@@ -125,10 +126,10 @@ public class OdaKiralaPage extends CommonPage {
     @FindBy(xpath = "//span[contains(text(), 'Oturma')]")
     public WebElement page3OturmaOdasi;
 
-    @FindBy (xpath = "//button[text() = '+']")
+    @FindBy(xpath = "//button[text() = '+']")
     public List<WebElement> step3_incrementButtons;
 
-    @FindBy (xpath = "//button[text() = '−']")
+    @FindBy(xpath = "//button[text() = '−']")
     public List<WebElement> step3_decrementButtons;
 
     @FindBy(xpath = "//a[@id='next']")
@@ -248,7 +249,7 @@ public class OdaKiralaPage extends CommonPage {
     @FindBy(xpath = "//h2")
     public WebElement page6AciklamaHeader;
 
-    @FindBy (xpath = "//p")
+    @FindBy(xpath = "//p")
     public WebElement page6Parag;
 
     @FindBy(css = "#home")
@@ -378,7 +379,6 @@ public class OdaKiralaPage extends CommonPage {
     public WebElement page8BakilmasiGerekenBitkiHAYIR;
 
 
-
     // Page 9
 
     //    Same Locators
@@ -398,20 +398,20 @@ public class OdaKiralaPage extends CommonPage {
 //    public WebElement pageInfoText ;
 
     @FindBy(xpath = "//input[@type='text']")
-    public WebElement page9InputCalenderBox ;
+    public WebElement page9InputCalenderBox;
 
     @FindBy(xpath = "//div[@class='react-datepicker__day-name' and text()='Su']")
-    public WebElement page9CalendarPageSu ;
+    public WebElement page9CalendarPageSu;
 
     //    Seçtiğiniz Tarihler
     @FindBy(xpath = "(//div[@class='px-3 py-2']/p)[2]")
-    public WebElement page9BookedDate ;
+    public WebElement page9BookedDate;
 
     @FindBy(xpath = "//div[@class='col-12 px-0']")
-    public WebElement page9BookedDateSummary ;
+    public WebElement page9BookedDateSummary;
 
     @FindBy(xpath = "//button[@class='btn btn-danger rounded px-2 py-1 ']")
-    public WebElement page9CancelButton ;
+    public WebElement page9CancelButton;
 
     // Page 10:
 
@@ -439,47 +439,61 @@ public class OdaKiralaPage extends CommonPage {
     @FindBy(xpath = "//label[contains(@for,'file-upload2')]//i[contains(@class,'far fa-3x fa-image')]")
     public WebElement getPage10UploadingSecondImage;
 
-    @FindBy (id = "dropdownMenuButton")
+    @FindBy(id = "dropdownMenuButton")
     public WebElement dropdownIlanVerButton;   // Ilan Ver butonu
     // Main Page
-    @FindBy (xpath = "//*[contains(text(),' Oda')]")
+    @FindBy(xpath = "//*[contains(text(),' Oda')]")
     public WebElement dropDownOda; // Ilan ver butonunda
 
-    @FindBy (id = "room")
+    @FindBy(id = "room")
     public WebElement page6roomExplanation;
 
 
-    @FindBy (xpath = "(//div[@class = 'rounded '])[1]")
-    public WebElement  step10_FileUploaded1;
+    @FindBy(xpath = "(//div[@class = 'rounded '])[1]")
+    public WebElement step10_FileUploaded1;
 
-    @FindBy (xpath = "(//div[@class = 'rounded '])[2]")
+    @FindBy(xpath = "(//div[@class = 'rounded '])[2]")
     public WebElement step10_FileUploaded2;
 
-    @FindBy (xpath = "(//div[@class = 'rounded '])[3]")
+    @FindBy(xpath = "(//div[@class = 'rounded '])[3]")
     public WebElement step10_FileUploaded3;
 
-    @FindBy (xpath = "(//div[@class = 'rounded '])[4]")
+    @FindBy(xpath = "(//div[@class = 'rounded '])[4]")
     public WebElement step10_FileUploaded4;
 
-    @FindBy (xpath = "(//div[@class = 'rounded '])[5]")
+    @FindBy(xpath = "(//div[@class = 'rounded '])[5]")
     public WebElement step10_FileUploaded5;
 
-    @FindBy (xpath = "(//div[@class = 'rounded '])[6]")
-    public WebElement  step10_FileUploaded6;
+    @FindBy(xpath = "(//div[@class = 'rounded '])[6]")
+    public WebElement step10_FileUploaded6;
 
-    @FindBy (xpath = "(//div[@class = 'rounded '])[7]")
+    @FindBy(xpath = "(//div[@class = 'rounded '])[7]")
     public WebElement step10_FileUploaded7;
 
-    @FindBy (xpath = "(//div[@class = 'rounded '])[8]")
+    @FindBy(xpath = "(//div[@class = 'rounded '])[8]")
     public WebElement step10_FileUploaded8;
 
-    @FindBy (xpath = "(//div[@class = 'rounded '])[9]")
+    @FindBy(xpath = "(//div[@class = 'rounded '])[9]")
     public WebElement step10_FileUploaded9;
 
-    @FindBy (xpath = "(//div[@class = 'rounded '])[10]")
+    @FindBy(xpath = "(//div[@class = 'rounded '])[10]")
     public WebElement step10_FileUploaded10;
 
 
-   @FindBy(xpath = "//button[contains(text(),'Resimleri Seçin')]")
-   public WebElement page10ResimleriSecinButton;
+    @FindBy(xpath = "//button[contains(text(),'Resimleri Seçin')]")
+    public WebElement page10ResimleriSecinButton;
+
+    public boolean isDisplayedButton(String buttonText) {
+        String buttonLocatorText = "//*[contains(text(),'" + buttonText + "')]";
+        WebElement buttonTextLocator = Driver.get().findElement(By.xpath(buttonLocatorText));
+        return buttonTextLocator.isDisplayed();
+
+    }
+    public boolean isEnabledButton(String buttonText) {
+        String buttonLocatorText = "//*[contains(text(),'" + buttonText + "')]";
+        WebElement buttonTextLocator = Driver.get().findElement(By.xpath(buttonLocatorText));
+        return buttonTextLocator.isEnabled();
+
+    }
+
 }

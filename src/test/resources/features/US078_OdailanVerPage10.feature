@@ -7,11 +7,24 @@ Feature:
     And user should click to Ilan Ver go to page 10 in Oda
 
   Scenario: User should be able to attach at least 5 images
-    Given user should be able to attach at least 5 images with "Resimleri Secin" button
-    And user should be able to attach at least 5 images with "Resim Ekle"
+    Given user should be able to attach 5 images with Resimleri Secin button
+    And user should be able to attach 5 images with Resim Ekle
     Then verify the 5 added images
 
+  Scenario:User should be able to attach at most 10 images
+    Given user should be able to attach 10 images with Resimleri Secin button
+    And user should be able to attach 10 images with Resim Ekle
+    Then verify the 10 added images
 
+    Scenario: User should not be able to attach more than 10 images
+      Given user should be able to attach 11 images with Resimleri Secin button
+      And  user should be able to attach 11 images with Resim Ekle
+      Then verify the 11 added images
+
+  Scenario: After adding 5 images, the "Resimleri Kaydet" button should be clickable.
+    Given After adding 5 or more images, the "Resimleri Kaydet" button should be clickable
+    And user adding 4 images, the "Resimleri Kaydet" button should not be clickable
+    Then verify the "Resimleri Kaydet" button
 
 
 
