@@ -8,6 +8,7 @@ Feature: Bir kullanici olarak "Oda Kirala" ilan olusturma sayfasinda,
     And user should click to Ilan Ver go to page 7 in Oda
 
 
+
 #    This user story will be check after bug ticket is closed.
   Scenario: "ilerle" button should be visible
     Then user verifies that "İlerle" button is visible at Oda Kirala

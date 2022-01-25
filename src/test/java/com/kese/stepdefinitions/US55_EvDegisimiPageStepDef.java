@@ -45,7 +45,7 @@ public class US55_EvDegisimiPageStepDef {
         }else if(tip.equalsIgnoreCase("Apartman Dairesi")){
             String classDegerleri = newHomePage.step1_ApartmanDairesiOption.getAttribute("class");
             Assert.assertTrue(classDegerleri.contains("border-warning"));
-        }else{ //Stüdyo Daire
+        }else{ //Studyo Daire
             String classDegerleri = newHomePage.step1_StudyoDaireOption.getAttribute("class");
             Assert.assertTrue(classDegerleri.contains("border-warning"));
         }
