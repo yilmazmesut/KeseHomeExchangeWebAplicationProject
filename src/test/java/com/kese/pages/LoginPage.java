@@ -15,7 +15,6 @@ public class LoginPage extends CommonPage {
     private static final By submitButton = By.xpath("//button[contains(text(),'Giriş Yap')]");
     private static final By errorMessage = By.xpath("//div[@class='form-group text-center py-1']/small");
 
-
     public static void enterUserName(String userName)  {
 
         BrowserUtils.mySendKeysMethod(emailBox, userName);
