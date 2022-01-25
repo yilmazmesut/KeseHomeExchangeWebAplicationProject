@@ -9,12 +9,12 @@ Feature: Bir kullanici olarak "Ev Degisimi" ilan olusturma sayfasinda,
 
 
   Scenario: Title, warning message and number of the page should be visible
-    Then user verifies that "Aktiviteler" is visible
-    Then user verifies that "Evinizin çevresinde yapılabilecek aktiviteleri belirtiniz." message is visible
-    Then user verifies that number of the "7 / 10" page is visible
+    Then user verifies that "Aktiviteler" is visible at Ev degisimi
+    Then user verifies that "Evinizin çevresinde yapılabilecek aktiviteleri belirtiniz." message is visible at Ev degisimi
+    Then user verifies that number of the "7 / 10" page is visible at Ev degisimi
 
   Scenario: All selections should be clickable
-    Then user verifies that all selections should be clickable
+    Then user verifies that all selections should be clickable at Ev degisimi
       | Lunapark        |
       | Plaj            |
       | Bisiklet Yolu   |
