@@ -313,6 +313,9 @@ public class OdaKiralaPage extends CommonPage {
     @FindBy(xpath = "//i[@class='fas fa-2x flaticon-mosque']")
     public WebElement page7CamiiDernek;
 
+    @FindBy(xpath = "//small[@class='pl-2']") //xpath is not true!!!!!!!!
+    public WebElement page7ActiviteWarningMessage;
+
 
     //Page 8
     @FindBy(xpath = "//div[@class='navbar-nav me-auto fs-3']")
@@ -439,6 +442,7 @@ public class OdaKiralaPage extends CommonPage {
     @FindBy(xpath = "//label[contains(@for,'file-upload2')]//i[contains(@class,'far fa-3x fa-image')]")
     public WebElement getPage10UploadingSecondImage;
 
+
     @FindBy(id = "dropdownMenuButton")
     public WebElement dropdownIlanVerButton;   // Ilan Ver butonu
     // Main Page
@@ -495,5 +499,62 @@ public class OdaKiralaPage extends CommonPage {
         return buttonTextLocator.isEnabled();
 
     }
+
+
+
+    // 10. Sayfaya kadar Minimum Gereksinimlerle ulasan kodlar icin gerekli locatorlar
+    // Main Page
+    @FindBy (id = "dropdownMenuButton")
+    public WebElement dropdownMenuButton;   // Ilan Ver butonu
+    // Main Page
+    @FindBy (xpath = "//*[contains(text(),' Oda')]")
+    public WebElement roomExchangeOption; // Ilan ver butonunda  -> Ev degisimi secenegi
+    // common for all pages
+    @FindBy (xpath = "//*[contains(text(),'İlerle')]")
+    public WebElement nextButton;   // ilerle butonu
+    // 1st page
+    @FindBy (xpath = "//*[contains(text(),'Müstakil Ev')]")
+    public WebElement houseButton;  // Ev Tipi sayfasinda(sayfa1) -> Müstakil Ev
+    // 2nd page
+    @FindBy (xpath = "//*[contains(text(),'Select...')]")
+    public WebElement selectText;
+    // 2nd page
+    @FindBy (id = "react-select-2-input")
+    public WebElement selectTextButton;
+    // 2nd page
+    @FindBy(className = "form-check-input")
+    public WebElement checkBox;
+    // 3rd page
+    @FindBy (id = "size")
+    public WebElement sizeOfAreaUp;
+    // 4th page
+    @FindBy(xpath ="(//div[@class = 'pr-2 pb-2'])[1]")
+    public WebElement YasAraligi1015;
+
+    @FindBy(xpath = "(//div[@class = 'pr-2 pb-2'])[9]")
+    public WebElement CinsiyetKadin;
+
+    @FindBy(xpath = "(//button[@type = 'button'])[3]")
+    public WebElement Kisisayisiartir;
+
+    // 5th page
+    @FindBy (xpath = "//*[contains(text(),'TV')]")
+    public WebElement tvText;
+    // 6th page
+    @FindBy (id = "room")
+    public WebElement roomExplanation;
+    // 7th page
+    @FindBy (xpath = "//*[contains(text(),'Müze')]")
+    public WebElement museumText;
+    // 8th page
+    @FindBy (xpath = "//*[contains(text(),'Evet')]")
+    public List<WebElement> yesTexts;
+    // 9th page
+    @FindBy (className = "react-datepicker__input-container")
+    public WebElement selectDate;
+    // 9th page
+    @FindBy (xpath = "//*[@tabindex=0]")
+    public WebElement todaysLocator;
+
 
 }
