@@ -2,6 +2,7 @@ package com.kese.stepdefinitions;
 
 import com.kese.pages.MainPage;
 import com.kese.utilities.Driver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -25,4 +26,6 @@ public class US024MainPageStepDefs {
         Assert.assertTrue(MainPage.linkTextIsDisplayed(link));
 
     }
+
+
 }

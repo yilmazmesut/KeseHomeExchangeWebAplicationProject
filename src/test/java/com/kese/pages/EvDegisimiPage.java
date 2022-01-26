@@ -137,9 +137,11 @@ public class EvDegisimiPage extends CommonPage {
 
     @FindBy (xpath = "//button[text() = '−']")
     public List<WebElement> step3_decrementButtons;
+    //  (//button[text() = '−'])[2]  => Tek tek bu sekilde bulunabilinir
 
     @FindBy(xpath = "//a[@id='next']")
     public WebElement page3IlerleButton;
+
 
     @FindBy(xpath = "//button[@id='next']")
     public WebElement page3GeriButton;
@@ -405,6 +407,116 @@ public class EvDegisimiPage extends CommonPage {
     @FindBy(xpath = "//i[@class='fas fa-2x flaticon-mosque']")
     public WebElement page7CamiiDernek;
 
+    @FindBy(xpath = "//div[@id='root']//small[@class='ps-2']")
+    public WebElement page7ActiviteWarningMessage;
+
+
+    public boolean clickable(String selection){
+        Boolean flag = false;
+
+        switch (selection){
+
+            case "Lunapark":
+                flag = page7LunaPark.isEnabled();
+                break;
+            case "Plaj":
+                flag = page7Plaj.isEnabled();
+                break;
+            case "Bisiklet Yolu":
+                flag = page7BisikletYolu.isEnabled();
+                break;
+            case "Müze":
+                flag = page7Muze.isEnabled();
+                break;
+            case "Balık Tutma":
+                flag = page7BalikTutma.isEnabled();
+                break;
+            case "Kayak Yapma":
+                flag = page7KayakYapma.isEnabled();
+                break;
+            case "Spor Salonu":
+                flag = page7SporSalonu.isEnabled();
+                break;
+            case "Doğa Yürüyüşü":
+                flag = page7DogaYuruyusu.isEnabled();
+                break;
+            case "Ünlü Meydan":
+                flag = page7UnluMeydan.isEnabled();
+                break;
+            case "Çocuk Parkı":
+                flag = page7CocukParki.isEnabled();
+                break;
+            case "Helal Restorant":
+                flag = page7HelalRestorant.isEnabled();
+                break;
+            case "AVM":
+                flag = page7Avm.isEnabled();
+                break;
+            case "Sinema":
+                flag = page7Sinema.isEnabled();
+                break;
+            case "Camii & Dernek":
+                flag = page7CamiiDernek.isEnabled();
+                break;
+        }
+
+
+
+        return flag;
+    }
+
+    public void clickAnySelection(String selection){
+
+
+        switch (selection){
+
+            case "Lunapark":
+                page7LunaPark.click();
+                break;
+            case "Plaj":
+                page7Plaj.click();
+                break;
+            case "Bisiklet Yolu":
+                page7BisikletYolu.click();
+                break;
+            case "Müze":
+                page7Muze.click();
+                break;
+            case "Balık Tutma":
+                page7BalikTutma.click();
+                break;
+            case "Kayak Yapma":
+                page7KayakYapma.click();
+                break;
+            case "Spor Salonu":
+                page7SporSalonu.click();
+                break;
+            case "Doğa Yürüyüşü":
+                page7DogaYuruyusu.click();
+                break;
+            case "Ünlü Meydan":
+                page7UnluMeydan.click();
+                break;
+            case "Çocuk Parkı":
+                page7CocukParki.click();
+                break;
+            case "Helal Restorant":
+                page7HelalRestorant.click();
+                break;
+            case "AVM":
+                page7Avm.click();
+                break;
+            case "Sinema":
+                page7Sinema.click();
+                break;
+            case "Camii & Dernek":
+                page7CamiiDernek.click();
+                break;
+        }
+
+
+    }
+
 
     //Page 8
     @FindBy(xpath = "//div[@class='navbar-nav me-auto fs-3']")
@@ -416,58 +528,58 @@ public class EvDegisimiPage extends CommonPage {
     @FindBy(xpath = "//*[contains(text(),'Odanıza ait')]")
     public WebElement page8OdanizaAitOzelSartalrYazisi;
 
-    @FindBy(xpath = "//div[contains(text(), 'Çocuklarınızı getir')]")
+    @FindBy(xpath = "(//div[@class='col-7'])[1]")
     public WebElement page8Cocuklarinizgetirebilirsiniz;
 
-    @FindBy(xpath = "//div[contains(text(), 'Evcil hayvan getir')]")
+    @FindBy(xpath = "(//div[@class='col-7'])[2]")
     public WebElement page8Evcilhayvanlarigetirebilirsiniz;
 
-    @FindBy(xpath = "//div[contains(text(), 'Evde sigara içme')]")
+    @FindBy(xpath = "(//div[@class='col-7'])[3]")
     public WebElement page8EvdeSigaraIcmeyeIzinVerilir;
 
-    @FindBy(xpath = "//div[contains(text(), 'Araba değişimi')]")
+    @FindBy(xpath = "(//div[@class='col-7'])[4]")
     public WebElement page8ArabaDegisimiOlabilir;
 
-    @FindBy(xpath = "//div[contains(text(), 'Bakılması')]")
+    @FindBy(xpath = "(//div[@class='col-7'])[5]")
     public WebElement page8BakilmasiGerekEvcilHayvan;
 
-    @FindBy(xpath = "//div[contains(text(), 'Bakılması gereken bitki var.')]")
+    @FindBy(xpath = "(//div[@class='col-7'])[6]")
     public WebElement page8BakilmasiGerekenBitki;
 
-    @FindBy(xpath = "//div[@class = 'badge rounded-pill px-2 py-1 bg-success text-white']")
+    @FindBy(xpath = "(//*[text() = 'Evet'])[1]")
     public WebElement page8CocuklarinizgetirebilirsinizEVET;
 
-    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]")
+    @FindBy(xpath = "(//*[text() = 'Hayır'])[1]")
     public WebElement page8CocuklarinizgetirebilirsinizHAYIR;
 
-    @FindBy(xpath = "//div[contains(@class,'row mx-0')]//div[2]//div[2]//div[1]//div[1]")
+    @FindBy(xpath = "(//*[text() = 'Evet'])[2]")
     public WebElement page8EvcilhayvanlarigetirebilirsinizEVET;
 
-    @FindBy(xpath = "//div[contains(@class,'row mx-0')]//div[2]//div[2]//div[1]//div[2]")
+    @FindBy(xpath = "(//*[text() = 'Hayır'])[2]")
     public WebElement page8EvcilhayvanlarigetirebilirsinizHAYIR;
 
-    @FindBy(xpath = "//div[3]//div[2]//div[1]//div[1]")
+    @FindBy(xpath = "(//*[text() = 'Evet'])[3]")
     public WebElement page8EvdeSigaraIcmeyeIzinVerilirEVET;
 
-    @FindBy(xpath = "//div[3]//div[2]//div[1]//div[2]")
+    @FindBy(xpath = "(//*[text() = 'Hayır'])[3]")
     public WebElement page8EvdeSigaraIcmeyeIzinVerilirHAYIR;
 
-    @FindBy(xpath = "//div[4]//div[2]//div[1]//div[1]")
+    @FindBy(xpath = "(//*[text() = 'Evet'])[4]")
     public WebElement page8ArabaDegisimiOlabilirEVET;
 
-    @FindBy(xpath = "//div[4]//div[2]//div[1]//div[2]")
+    @FindBy(xpath = "(//*[text() = 'Hayır'])[4]")
     public WebElement page8ArabaDegisimiOlabilirHAYIR;
 
-    @FindBy(xpath = "//div[5]//div[2]//div[1]//div[1]")
+    @FindBy(xpath = "(//*[text() = 'Evet'])[5]")
     public WebElement page8BakilmasiGerekEvcilHayvanEVET;
 
-    @FindBy(xpath = "//div[5]//div[2]//div[1]//div[2]")
+    @FindBy(xpath = "(//*[text() = 'Hayır'])[5]")
     public WebElement page8BakilmasiGerekEvcilHayvanHAYIR;
 
-    @FindBy(xpath = "//div[6]//div[2]//div[1]//div[1]")
+    @FindBy(xpath = "(//*[text() = 'Evet'])[5]")
     public WebElement page8BakilmasiGerekenBitkiEVET;
 
-    @FindBy(xpath = "//div[6]//div[2]//div[1]//div[2]")
+    @FindBy(xpath = "(//*[text() = 'Hayır'])[6]")
     public WebElement page8BakilmasiGerekenBitkiHAYIR;
 
 
@@ -480,15 +592,15 @@ public class EvDegisimiPage extends CommonPage {
 //
 //    @FindBy(xpath = "//button[@id='next']")
 //    public WebElement geriButton ;
-//
-//    @FindBy(xpath = "//div[@class='navbar-nav me-auto fs-3']")
-//    public WebElement theNumberOfPage ;
-//
-//    @FindBy(xpath = "//div[@class='px-3 py-2']/h2")
-//    public WebElement  pageTitleText;
-//
-//    @FindBy(xpath = "(//div[@class='px-3 py-2']/p)[1]")
-//    public WebElement pageInfoText ;
+
+    @FindBy(xpath = "//div[@class='navbar-nav me-auto fs-3']")
+    public WebElement theNumberOfPage ;
+
+    @FindBy(xpath = "//div[@class='px-3 py-2']/h2")
+    public WebElement  pageTitleText;
+
+    @FindBy(xpath = "(//div[@class='px-3 py-2']/p)[1]")
+    public WebElement pageInfoText ;
 
     @FindBy(xpath = "//input[@type='text']")
     public WebElement page9InputCalenderBox ;
@@ -531,6 +643,19 @@ public class EvDegisimiPage extends CommonPage {
 
     @FindBy(xpath = "//label[contains(@for,'file-upload2')]//i[contains(@class,'far fa-3x fa-image')]")
     public WebElement getPage10UploadingSecondImage;
+
+    @FindBy (xpath = "//*[contains(text(), 'İlanı Yayınla')]")
+    public WebElement step10_publishAdButton; // ilani yayinla butonu
+
+    @FindBy (xpath = "//*[contains(text(), 'Resim Ekle')]")
+    public WebElement step10_addImageText; // resim ekle yazisinin ortak locatoru.
+
+    @FindBy (css = ".border div.rounded")
+
+    public List<WebElement> step10_loadedImages;   // Tum yuklenmis resimlerin listesi
+
+    @FindBy (css = "div.col-6 div")
+    public List<WebElement>  step10_imageFrames;    // Resim ekleme cerceveleri
 
 
     // 10. Sayfaya kadar Minimum Gereksinimlerle ulasan kodlar icin gerekli locatorlar
@@ -586,7 +711,7 @@ public class EvDegisimiPage extends CommonPage {
     @FindBy (xpath = "//*[text() = 'Müstakil Ev']/../../div")
     public WebElement step1_MustakilEvOption;
 
-    @FindBy (xpath = "//*[text() = 'Apartaman Dairesi']/../../div")
+    @FindBy (xpath = "//*[text() = 'Apartman Dairesi']/../../div")
     public WebElement step1_ApartmanDairesiOption;
 
     @FindBy (xpath = "//*[text() = 'Stüdyo Daire']/../../div")
@@ -710,6 +835,14 @@ public class EvDegisimiPage extends CommonPage {
 
         return null;
     }
+
+
+    @FindBy (xpath = "//*[contains(text(), '*Lütfen özel şart seçiniz.')]")
+    public WebElement LutfenOzelSartlarSecinizUyarisi;
+
+
+
+
 
 
 }
