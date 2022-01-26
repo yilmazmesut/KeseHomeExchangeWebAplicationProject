@@ -2,12 +2,10 @@ package com.kese.stepdefinitions;
 
 import com.kese.pages.EvDegisimiPage;
 import com.kese.utilities.Driver;
-import io.cucumber.java.bs.A;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class US042_HomeExchangePage6StepD {

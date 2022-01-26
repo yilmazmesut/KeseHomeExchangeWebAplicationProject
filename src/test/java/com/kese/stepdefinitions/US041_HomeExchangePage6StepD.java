@@ -2,7 +2,6 @@ package com.kese.stepdefinitions;
 
 import com.kese.pages.EvDegisimiPage;
 import com.kese.utilities.Driver;
-import io.cucumber.java.bs.A;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
