@@ -2,8 +2,11 @@ package com.kese.stepdefinitions;
 
 import com.kese.pages.EvDegisimiPage;
 import com.kese.utilities.BrowserUtils;
+import com.kese.utilities.Driver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import java.awt.*;
@@ -13,9 +16,9 @@ public class US045HomeExchanePage8StepD {
 
     EvDegisimiPage page = new EvDegisimiPage();
 
+    @And("user navigates to page {int} in HomeExchange")
+    public void userNavigatesToPageInHomeExchange(int j) throws AWTException, InterruptedException{
 
-    @Then("user navigates to page {int} in Home Exchange")
-    public void user_navigates_to_page_in_Home_Exchange(int j) throws AWTException, InterruptedException{
 
         page.dropdownMenuButton.click();
         page.homeExchangeOption.click();
@@ -27,10 +30,12 @@ public class US045HomeExchanePage8StepD {
                 break;
             //2.sayfa
             page.selectText.click();
-            page.selectTextButton.sendKeys("Frankfurt, Almanya");
-            Thread.sleep(1000);
-            Robot robot = new Robot();
-            robot.keyPress(KeyEvent.VK_ENTER);
+            page.selectTextButton.sendKeys("London, Birleşik Krallık");
+            BrowserUtils.waitFor(1);
+            Driver.get().findElement(By.cssSelector("[id$='-option-0']")).click();
+//            Robot robot = new Robot();
+//            robot.keyPress(KeyEvent.VK_ENTER);
+            page.step2_CheckBox.click();
             page.nextButton.click();
             if (j == 3)
                 break;
@@ -143,5 +148,6 @@ public class US045HomeExchanePage8StepD {
     public void user_see_current_page_eight_is_visible() {
         Assert.assertTrue(page.theNumberOfPage.isDisplayed());
     }
+
 
 }

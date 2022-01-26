@@ -1,11 +1,11 @@
 Feature: US_045_Bir kullanıcı olarak "Ev Değişimi" ilan oluşturma sayfasında, 8. stepte "Özel Şartlar" bilgisini girebilmeliyim.
 
-  Background: login to page and go to step eight
-
+  Background:
+  #Successful connection to site and coming to step 10 in "Ev Değişimi"
     Given user is on login page "http://test.kese.nl/new_home"
     When user signed in on sign in page
       | coder52@nonmail.com | 1234 |
-    Then user navigates to page 8 in Home Exchange
+    And user navigates to page 8 in HomeExchange
 
 
 

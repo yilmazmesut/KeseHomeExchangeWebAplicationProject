@@ -587,11 +587,11 @@ public class EvDegisimiPage extends CommonPage {
     // Page 9
 
     //    Same Locators
-    @FindBy(xpath = "//a[@id='next']")
-    public WebElement ilerleButton ;
-
-    @FindBy(xpath = "//button[@id='next']")
-    public WebElement geriButton ;
+//    @FindBy(xpath = "//a[@id='next']")
+//    public WebElement ilerleButton ;
+//
+//    @FindBy(xpath = "//button[@id='next']")
+//    public WebElement geriButton ;
 
     @FindBy(xpath = "//div[@class='navbar-nav me-auto fs-3']")
     public WebElement theNumberOfPage ;
@@ -835,6 +835,14 @@ public class EvDegisimiPage extends CommonPage {
 
         return null;
     }
+
+
+    @FindBy (xpath = "//*[contains(text(), '*Lütfen özel şart seçiniz.')]")
+    public WebElement LutfenOzelSartlarSecinizUyarisi;
+
+
+
+
 
 
 }
