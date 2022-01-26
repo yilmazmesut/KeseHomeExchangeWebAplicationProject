@@ -4,8 +4,8 @@ Feature: As a user, I should be able to enter the "Remarks" information in step 
     Given user is on login page "http://test.kese.nl/new_room"
     When user signed in on sign in page
       | coder52@nonmail.com | 1234 |
-    Then user navigates to page 6 in Room Exchange Page
-@wip
+    Then user should click to Ilan Ver go to page 6 in Oda
+
   Scenario: user should see the Aciklamalar header on the RoomExchange Page in 6th step
     Then user should see the "Açıklamalar" header on the 6th roomExchange Page
 

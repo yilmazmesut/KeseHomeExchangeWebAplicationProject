@@ -39,13 +39,14 @@ public class US066_RoomExchangePage6StepD {
 
     @When("user enters {string} explanation to the inputbox on the 6th roomExchange page")
     public void user_enters_explanation_to_the_inputbox_on_the_6th_roomExchange_page(String text) {
-        roomExchange.page6textArea.sendKeys(text);
+        roomExchange.page6roomExplanation.sendKeys(text);
+
     }
 
 
     @Then("verify input box accept {string} explanation correctly on the 6th roomExchange page")
     public void verify_input_box_accept_explanation_correctly_on_the_6th_roomExchange_page(String text) {
-        Assert.assertEquals(text, roomExchange.page6textArea.getText());
+        Assert.assertEquals(text, roomExchange.page6roomExplanation.getText());
     }
 
     @Then("verify user is on the {string} roomExchange page")
