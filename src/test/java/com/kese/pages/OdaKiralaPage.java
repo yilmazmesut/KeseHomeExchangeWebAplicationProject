@@ -442,6 +442,19 @@ public class OdaKiralaPage extends CommonPage {
     @FindBy(xpath = "//label[contains(@for,'file-upload2')]//i[contains(@class,'far fa-3x fa-image')]")
     public WebElement getPage10UploadingSecondImage;
 
+    //sevda
+
+    @FindBy (xpath = "//h2[text()='Cinsiyet, Yaş Aralığı ve Kişi Sayısı']")
+    public WebElement page4HeadMain;
+
+    @FindBy (xpath = "//*[text()='Hangi yaş aralığındaki ve cinsiyetteki kişiyi evinizde ağırlamak istersiniz.']")
+    public WebElement page4AgeGapP;
+
+    @FindBy (className = "input-number-value")
+    public WebElement page4kisiSayisi;
+
+    @FindBy (xpath = "//small[text()='*Lütfen cinsiyet ve yaş aralığı seçiniz.']")
+    public WebElement page4DefaultWarning;
 
     @FindBy(id = "dropdownMenuButton")
     public WebElement dropdownIlanVerButton;   // Ilan Ver butonu

@@ -37,7 +37,11 @@ Feature: US_055	Bir kullanıcı olarak "Ev Değişimi" ilan oluşturma sayfasın
     And user clicks to the ilerle button on the new home page
     And user verifies the geri button is enabled
     And user clicks to the geri button
+<<<<<<< HEAD
+#    And user verifies that the numbers are 2 2 2 2 2 2 2 2 on the new home step four page
+=======
     And user verifies that the numbers are 2 2 2 2 2 2 2 2 on the new home step four page
+>>>>>>> master
     And user clicks to the ilerle button on the new home page
     And user clicks to the all options on the new home step five page
     And user clicks to the ilerle button on the new home page
@@ -68,10 +72,17 @@ Feature: US_055	Bir kullanıcı olarak "Ev Değişimi" ilan oluşturma sayfasın
     And user clicks to the ilerle button on the new home page
     And user verifies the geri button is enabled
     And user clicks to the geri button
+<<<<<<< HEAD
+=======
 
+>>>>>>> master
     Examples:
       | loginPageUrl | userName | password | ev tipi |
       |"http://test.kese.nl/login"|"email@gmail.com"|"3344"|Mustakil Ev|
       |"http://test.kese.nl/login"|"email@gmail.com"|"3344"|Apartman Dairesi|
+<<<<<<< HEAD
+      |"http://test.kese.nl/login"|"email@gmail.com"|"3344"|Stüdyo Daire|
+=======
       |"http://test.kese.nl/login"|"email@gmail.com"|"3344"|Studyo Daire|
+>>>>>>> master
 
