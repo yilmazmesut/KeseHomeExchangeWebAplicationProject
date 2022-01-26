@@ -15,13 +15,17 @@ public class US046HomeExchangePage8StepD {
 
     @Then("user asserts ilerle button should not be clickable as a default")
     public void userAssertsIlerleButtonShouldNotBeClickableAsADefault() {
-        Assert.assertFalse(page.ilerleButton.isEnabled());
+        page.ilerleButton.click();
+
+        Assert.assertTrue(page.ilerleButton.isEnabled());
 
     }
 
     @Then("user asserts ilerle button should not be clickable if required informations are not filled")
     public void userAssertsIlerleButtonShouldNotBeClickableIfRequiredInformationsAreNotFilled() {
-        Assert.assertFalse(page.ilerleButton.isEnabled());
+        page.ilerleButton.click();
+
+        Assert.assertTrue(page.LutfenOzelSartlarSecinizUyarisi.isDisplayed());
 
     }
 
