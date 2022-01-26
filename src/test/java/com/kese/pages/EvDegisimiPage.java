@@ -717,11 +717,11 @@ public class EvDegisimiPage extends CommonPage {
     @FindBy (xpath = "//*[text() = 'Stüdyo Daire']/../../div")
     public WebElement step1_StudyoDaireOption;
 
-    @FindBy (xpath = "//*[@id='next' and contains(text(), 'İlerle')]")
-    public WebElement ilerleButton;
-
-    @FindBy(xpath = "//button[text() = 'Geri']")
-    public WebElement geriButton;
+//    @FindBy (xpath = "//*[@id='next' and contains(text(), 'İlerle')]")
+//    public WebElement ilerleButton;
+//
+//    @FindBy(xpath = "//button[text() = 'Geri']")
+//    public WebElement geriButton;
 
     @FindBy (xpath = "//input[@type='text']")
     public WebElement step2_AddressInput;
