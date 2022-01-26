@@ -22,10 +22,10 @@ Feature: As a user, I should be able to enter the "Remarks" information in step 
 
   @TEST_META3-463
   Scenario Outline: user should send keys to explanation input box
-    When user enters "<text>" explanation to the inputbox on the 6th page
-    Then verify input box accept "<text>" explanation correctly on the 6th page
+    When user enters "<textHome>" explanation to the inputbox on the 6th page
+    Then verify input box accept "<textHome>" explanation correctly on the 6th page
     Examples:
-    |text|
+    |textHome|
     |Home Sweet Home|
     |123456789/*-+|
     |фдылвфждывжфыдлвжф--üğşüçşöiıöçşiğü---^^^%&|
