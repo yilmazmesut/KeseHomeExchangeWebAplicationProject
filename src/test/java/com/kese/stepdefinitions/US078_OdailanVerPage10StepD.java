@@ -4,6 +4,7 @@ import com.kese.pages.EvDegisimiPage;
 import com.kese.pages.OdaKiralaPage;
 import com.kese.utilities.BrowserUtils;
 import com.kese.utilities.Driver;
+import io.cucumber.java.bs.A;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -12,6 +13,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import java.awt.*;
+import java.lang.ref.SoftReference;
 import java.util.List;
 
 import static java.awt.event.KeyEvent.VK_ENTER;
@@ -103,43 +105,119 @@ public class US078_OdailanVerPage10StepD {
             // Here you are in 10th page
         }
     }
-    @And("user should be able to attach at least {int} images with {string}")
-    public void userShouldBeAbleToAttachAtLeastImagesWith(int numOfPicture, String arg1) {
+    @And("user should be able to attach {int} images with Resim Ekle")
+    public void userShouldBeAbleToAttachAtLeastImagesWithResimEkle(int numOfPicture) {
         page.page10RemoveAllPicturesButton.click();
         WebElement step10_FileUpload;
-        for(int i=1;i<=numOfPicture;i++){ // it must be five pictures in pictures folder
-            step10_FileUpload = Driver.get().findElement(By.id("file-upload"+i));
-            step10_FileUpload.sendKeys(System.getProperty("user.dir") + "/src/test/resources/pictures/"+(i%5+1)+".jpg");
-        }
-
+        for(int i=1;i<=numOfPicture;i++) { // it must be five pictures in pictures folder
+            try {
+                BrowserUtils.waitFor(1);
+                step10_FileUpload = Driver.get().findElement(By.id("file-upload" + i));
+                step10_FileUpload.sendKeys(System.getProperty("user.dir") + "/src/test/resources/pictures/Room_" + (i % 5 + 1) + ".jpg");
+            }catch(Exception e) {
+            }
+            }
     }
 
-    @Given("user should be able to attach at least {int} images with {string} button")
-    public void userShouldBeAbleToAttachAtLeastImagesWithButton(int arg0, String arg1) {
-
-        // page.page10SelectedPictureButton.click();
-        page.step10_FileUpload1.sendKeys(System.getProperty("user.dir") + "/src/test/resources/pictures/1.jpg");
-        ///  page.page10SelectedPictureButton.click();
-        page.step10_FileUpload2.sendKeys(System.getProperty("user.dir") + "/src/test/resources/pictures/2.jpg");
-        //   page.page10SelectedPictureButton.click();
-        page.step10_FileUpload3.sendKeys(System.getProperty("user.dir") + "/src/test/resources/pictures/3.jpg");
-        //  page.page10SelectedPictureButton.click();
-        page.step10_FileUpload4.sendKeys(System.getProperty("user.dir") + "/src/test/resources/pictures/4.jpg");
-        //  page.page10SelectedPictureButton.click();
-        page.step10_FileUpload5.sendKeys(System.getProperty("user.dir") + "/src/test/resources/pictures/5.jpg");
-
-
+    @Given("user should be able to attach {int} images with Resimleri Secin button")
+    public void userShouldBeAbleToAttachImagesWithResimleriSecinButton(int numOfPicture) {
+        WebElement pictureLocator;
+        for (int i = 1; i <= numOfPicture; i++) {
+            try {
+                BrowserUtils.waitFor(1);
+                pictureLocator = Driver.get().findElement(By.id("file-upload" + i));
+                page1.page10ResimleriSecinButton.click();
+                pictureLocator.sendKeys(System.getProperty("user.dir") + "/src/test/resources/pictures/Room_" + (i % 5 + 1) + ".jpg");
+            } catch (Exception e) {
+                page1.page10RemoveAllPicturesButton.click();
+            }
+        }
     }
 
     @Then("verify the {int} added images")
     public void verifyTheAddedImages(int numOfPicture) {
-        Assert.assertTrue(page1.step10_FileUploaded1.isDisplayed());
-        Assert.assertTrue(page1.step10_FileUploaded2.isDisplayed());
-        Assert.assertTrue(page1.step10_FileUploaded3.isDisplayed());
-        Assert.assertTrue(page1.step10_FileUploaded4.isDisplayed());
-        Assert.assertTrue(page1.step10_FileUploaded5.isDisplayed());
+        WebElement addedPictureLocator;
+
+        for(int i=1;i<=numOfPicture;i++) {
+            addedPictureLocator=Driver.get().findElement(By.xpath("(//div[@class = 'rounded '])["+i+"]"));
+            if(numOfPicture>10) {
+                System.out.println(addedPictureLocator.isEnabled());
+                System.out.println(addedPictureLocator.isDisplayed());
+                Assert.assertFalse(addedPictureLocator.isDisplayed());
+
+            }else
+            Assert.assertTrue( addedPictureLocator.isDisplayed());
+            System.out.println(addedPictureLocator.isEnabled());
+
+        }
+    }
+//       Assert.assertTrue(page1.step10_FileUploaded1.isDisplayed());
+//        Assert.assertTrue(page1.step10_FileUploaded2.isDisplayed());
+//        Assert.assertTrue(page1.step10_FileUploaded3.isDisplayed());
+//        Assert.assertTrue(page1.step10_FileUploaded4.isDisplayed());
+//        Assert.assertTrue(page1.step10_FileUploaded5.isDisplayed());
+
+
+
+    @And("user should not be adding {int} images")
+    public void userShouldNotBeAddingImages(int numOfPicture) {
+        userShouldBeAbleToAttachAtLeastImagesWithResimEkle(numOfPicture);
+        verifyTheAddedImages(numOfPicture);
 
 
     }
+
+    @Given("After adding {int} or more images, the {string} button should be clickable")
+    public void afterAddingOrMoreImagesTheButtonShouldBeClickable(int numOfPicture, String text) {
+        userShouldBeAbleToAttachAtLeastImagesWithResimEkle(numOfPicture);
+        verifyTheButton(text);
+
+    }
+
+    @And("user adding {int} images, the {string} button should not be clickable")
+    public void userAddingImagesTheButtonShouldNotBeClickable(int numOfPicture, String text) {
+        userShouldBeAbleToAttachAtLeastImagesWithResimEkle(numOfPicture);
+       // System.out.println(page1.isDisplayedButton(text));
+      //  System.out.println(!page1.isEnabledButton(text));
+        Assert.assertTrue(page1.isDisplayedButton(text));
+        Assert.assertFalse(!page1.isEnabledButton(text));
+
+    }
+
+    @Then("verify the {string} button")
+    public void verifyTheButton(String text) {
+      Assert.assertTrue(page1.isDisplayedButton(text));
+      Assert.assertTrue(page1.isEnabledButton(text));
+
+    }
+
+
+
+
+//        page1.page10ResimleriSecinButton.click();
+//        page.step10_FileUpload1.sendKeys( System.getProperty("user.dir") + "/src/test/resources/pictures/Room_1.jpg");
+//        page1.page10ResimleriSecinButton.click();
+//        page.step10_FileUpload2.sendKeys( System.getProperty("user.dir") + "/src/test/resources/pictures/Room_2.jpg");
+//        page1.page10ResimleriSecinButton.click();
+//        page.step10_FileUpload3.sendKeys(System.getProperty("user.dir") + "/src/test/resources/pictures/Room_3.jpg");
+//        page1.page10ResimleriSecinButton.click();
+//        page.step10_FileUpload4.sendKeys(System.getProperty("user.dir") + "/src/test/resources/pictures/Room_4.jpg");
+//        page1.page10ResimleriSecinButton.click();
+//        page.step10_FileUpload5.sendKeys(System.getProperty("user.dir") + "/src/test/resources/pictures/Room_5.jpg");
+//        page1.page10ResimleriSecinButton.click();
+//        page.step10_FileUpload6.sendKeys(System.getProperty("user.dir") + "/src/test/resources/pictures/1.jpg");
+//        page1.page10ResimleriSecinButton.click();
+//        page.step10_FileUpload7.sendKeys(System.getProperty("user.dir") + "/src/test/resources/pictures/2.jpg");
+//        page1.page10ResimleriSecinButton.click();
+//        page.step10_FileUpload8.sendKeys(System.getProperty("user.dir") + "/src/test/resources/pictures/3.jpg");
+//        page1.page10ResimleriSecinButton.click();
+//        page.step10_FileUpload9.sendKeys( System.getProperty("user.dir") + "/src/test/resources/pictures/3.jpg");
+//        page1.page10ResimleriSecinButton.click();
+//        page.step10_FileUpload10.sendKeys(System.getProperty("user.dir") + "/src/test/resources/pictures/5.jpg");
+
+
+
+
 }
+
 
