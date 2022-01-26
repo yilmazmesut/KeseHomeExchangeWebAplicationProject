@@ -9,11 +9,11 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         strict = true,
         //plugin = {"pretty","html:target/failed-cucumber-reports",
-          //      "json:target/cucumber.json",
-            //    "rerun:target/rerun.txt"},
+        //      "json:target/cucumber.json",
+        //    "rerun:target/rerun.txt"},
         features = "src/test/resources/features",
         glue = "com/kese/stepdefinitions",
-        tags = "",
+        tags = "@44",
         dryRun = false
 
 
