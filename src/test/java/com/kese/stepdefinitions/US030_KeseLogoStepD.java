@@ -12,7 +12,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class US30KeseLogoStepD {
+public class US030_KeseLogoStepD {
 
     String homePageTitle;
     String advertPageTitle;

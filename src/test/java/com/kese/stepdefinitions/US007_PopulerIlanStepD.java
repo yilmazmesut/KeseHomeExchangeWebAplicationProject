@@ -14,7 +14,7 @@ import org.openqa.selenium.WebElement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class US07PopulerIlanStepD {
+public class US007_PopulerIlanStepD {
 
     WebDriver driver= Driver.get();
     MainPage mainPage= new MainPage();
