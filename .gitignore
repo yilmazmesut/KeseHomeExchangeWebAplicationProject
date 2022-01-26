@@ -3,7 +3,7 @@
 
 src/test/java/runners/
 .idea/
-.target
+/target
 
 # Compiled class file
 *.class

@@ -313,7 +313,7 @@ public class OdaKiralaPage extends CommonPage {
     @FindBy(xpath = "//i[@class='fas fa-2x flaticon-mosque']")
     public WebElement page7CamiiDernek;
 
-    @FindBy(xpath = "//small[@class='pl-2']") //xpath is not true!!!!!!!!
+    @FindBy(xpath = "//div[@id='root']//small[@class='ps-2']")
     public WebElement page7ActiviteWarningMessage;
 
 

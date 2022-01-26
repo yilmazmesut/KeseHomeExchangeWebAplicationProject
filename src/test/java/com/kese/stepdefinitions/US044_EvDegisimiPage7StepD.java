@@ -22,18 +22,22 @@ public class US044_EvDegisimiPage7StepD {
 
     @Then("user verifies that {string} button shouldn't be clickable as a default at Ev Degisimi")
     public void user_verifies_that_button_shouldn_t_be_clickable_as_a_defaultAtEvDegisimi(String link) {
-//        Assert.assertFalse(BrowserUtils.waitUntilVisibilityOf(By.linkText(link)).isEnabled());
+        Boolean flag = true;
+        if(evDegisimiPage.ilerleButton.getAttribute("style").substring(8, 19).equals("not-allowed")){
+            flag = false;
+        }
+        Assert.assertFalse(flag);
     }
 
     @When("user clicks {string} button without any selection at Ev Degisimi")
     public void user_clicks_button_without_any_selectionAtEvDegisimi(String link) {
-        BrowserUtils.myClickMethod(By.linkText(link));
+        evDegisimiPage.ilerleButton.click();
     }
 
     @Then("user verifies that {string} warning message appears at Ev Degisimi")
     public void user_verifies_that_warning_message_appearsAtEvDegisimi(String expectedWarningMessage) {
-//        String actualWarningMessage = evDegisimiPage.page7ActiviteWarningMessage.getText();
-//        Assert.assertEquals(expectedWarningMessage,actualWarningMessage);
+        String actualWarningMessage = evDegisimiPage.page7ActiviteWarningMessage.getText();
+        Assert.assertEquals(expectedWarningMessage,actualWarningMessage);
 
     }
 

@@ -21,19 +21,23 @@ public class US069_OdaKiralaPage7StepD {
 
     @Then("user verifies that {string} button shouldn't be clickable as a default at Oda Kirala")
     public void user_verifies_that_button_shouldn_t_be_clickable_as_a_default_at_oda_kirala(String link) {
-//                Assert.assertFalse(BrowserUtils.waitUntilVisibilityOf(By.linkText(link)).isEnabled());
-
+        Boolean flag = true;
+        if(evDegisimiPage.ilerleButton.getAttribute("style").substring(8, 19).equals("not-allowed")){
+            flag = false;
+        }
+        Assert.assertFalse(flag);
     }
+
 
     @When("user clicks {string} button without any selection at Oda Kirala")
     public void user_clicks_button_without_any_selection_at_oda_kirala(String link) {
-        BrowserUtils.myClickMethod(By.linkText(link));
+        evDegisimiPage.ilerleButton.click();
     }
 
     @Then("user verifies that {string} warning message appears at Oda Kirala")
     public void user_verifies_that_warning_message_appears_at_oda_kirala(String expectedWarningMessage) {
-//        String actualWarningMessage = odaKiralaPage.page7ActiviteWarningMessage.getText();
-//        Assert.assertEquals(expectedWarningMessage, actualWarningMessage);
+        String actualWarningMessage = odaKiralaPage.page7ActiviteWarningMessage.getText();
+        Assert.assertEquals(expectedWarningMessage, actualWarningMessage);
     }
 
     @When("user clicks any {string} at Oda Kirala")
