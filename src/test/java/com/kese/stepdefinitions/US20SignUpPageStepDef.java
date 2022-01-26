@@ -16,6 +16,7 @@ public class US20SignUpPageStepDef {
 
     @Given("user goes to {string} page")
     public void userGoesToPage(String url) {
+        BrowserUtils.waitFor(3);
         Driver.get().get(url);
     }
 
