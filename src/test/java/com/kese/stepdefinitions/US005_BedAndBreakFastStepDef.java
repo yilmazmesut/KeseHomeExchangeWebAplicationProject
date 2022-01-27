@@ -8,11 +8,11 @@ import io.cucumber.java.en.Then;
 public class US005_BedAndBreakFastStepDef {
     MainPage bed =new MainPage();
 
-    @Given("the user should be on the homepage")
-  public void userGoesToHomepage() {
+   // @Given("the user should be on the homepage")
+  //public void userGoesToHomepage() {
         
         
-    }
+  //  }
 
     @And("The user clicks the")
     public void theUserClicksThe() {
