@@ -44,18 +44,6 @@ public void UserEntersValidUserNam(String userName){
 
 
 
-
-  @And("The user clicks {string} button")
-    public void ThUserClicks(String arg0){
-                       mainPage.profilim.isSelected();
-                       }
-
-  @When("{string}should be visible")
-       public void IsSelectedShouldBeVisible(String arg1) {
-
-     Assert.assertTrue(mainPage.profilim.isDisplayed());
-          }
-
     @When("{string} is selected, {string} should be")
     public void isSelectedShouldBe(String arg0, String arg1) {
     }
@@ -63,5 +51,16 @@ public void UserEntersValidUserNam(String userName){
     @And("The user clicks Login button")
     public void theUserClicksLoginButton() {
 
+    }
+
+
+    @When("{string} should be visibl")
+    public void shouldBeVisibl(String arg0) {
+        Assert.assertTrue(mainPage.profilim.isDisplayed());
+    }
+
+    @And("{string} is selected")
+    public void isSelected(String arg0) {
+        Assert.assertTrue(mainPage.profilim.isSelected());
     }
 }

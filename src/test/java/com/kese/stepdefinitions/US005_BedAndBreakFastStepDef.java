@@ -8,7 +8,7 @@ import io.cucumber.java.en.Then;
 public class US005_BedAndBreakFastStepDef {
     MainPage bed =new MainPage();
 
-    @Given(" the user goes to")
+    @Given("the user should be on the homepage")
   public void userGoesToHomepage() {
         
         
@@ -27,4 +27,8 @@ public class US005_BedAndBreakFastStepDef {
     public void userVerifiesTheDropDownMenuIsClickableUnderTheText(String arg0) {
 
     }
+
+  @And("{string} is selected,")
+  public void isSelected(String arg0) {
+  }
 }
