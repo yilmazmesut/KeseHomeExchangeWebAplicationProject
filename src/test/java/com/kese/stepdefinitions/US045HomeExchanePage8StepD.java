@@ -2,8 +2,11 @@ package com.kese.stepdefinitions;
 
 import com.kese.pages.EvDegisimiPage;
 import com.kese.utilities.BrowserUtils;
+import com.kese.utilities.Driver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import java.awt.*;
@@ -13,6 +16,69 @@ public class US045HomeExchanePage8StepD {
 
     EvDegisimiPage page = new EvDegisimiPage();
 
+    @And("user navigates to page {int} in HomeExchange")
+    public void userNavigatesToPageInHomeExchange(int j) throws AWTException, InterruptedException{
+
+        page.dropdownMenuButton.click();
+        page.homeExchangeOption.click();
+        do{
+            // 1.Sayfa
+            page.houseButton.click();
+            page.nextButton.click();
+            if (j == 2)
+                break;
+            //2.sayfa
+            page.selectText.click();
+            page.selectTextButton.sendKeys("London, Birleşik Krallık");
+            BrowserUtils.waitFor(1);
+            Driver.get().findElement(By.cssSelector("[id$='-option-0']")).click();
+//            Robot robot = new Robot();
+//            robot.keyPress(KeyEvent.VK_ENTER);
+            page.step2_CheckBox.click();
+            page.nextButton.click();
+            if (j == 3)
+                break;
+            //3. sayfa
+            page.sizeOfAreaUp.sendKeys("50");
+            page.nextButton.click();
+            if (j == 4)
+                break;
+            // 4.sayfa
+            page.plus.click();
+            page.nextButton.click();
+            if (j == 5)
+                break;
+            //5. sayfa
+            page.tvText.click();
+            page.nextButton.click();
+            if (j == 6)
+                break;
+            //6. sayfa
+            page.homeExplanation.sendKeys("My home, sweet home.");
+            page.nextButton.click();
+            if (j == 7)
+                break;
+            //7.sayfa
+            page.museumText.click();
+            page.nextButton.click();
+            if (j == 8)
+                break;
+            //8. sayfa
+            for (WebElement element : page.yesTexts) {
+                element.click();
+            }
+            page.nextButton.click();
+            if (j == 9)
+                break;
+            //9. sayfa
+            page.selectDate.click();
+            page.todaysLocator.click();
+            page.todaysLocator.click();
+            page.nextButton.click();
+            if (j == 10)
+                break;
+        }while(true);
+    }
 
 
     @Then("user able to see ozel Sartlar title is visible")
@@ -80,5 +146,6 @@ public class US045HomeExchanePage8StepD {
     public void user_see_current_page_eight_is_visible() {
         Assert.assertTrue(page.theNumberOfPage.isDisplayed());
     }
+
 
 }

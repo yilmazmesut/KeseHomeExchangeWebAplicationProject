@@ -13,6 +13,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.lang.ref.SoftReference;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -46,7 +47,7 @@ public class US078_OdailanVerPage10StepD {
             page.selectTextButton.sendKeys("London, Birleşik Krallık");
             BrowserUtils.waitFor(1);
             Robot robot = new Robot();
-            robot.keyPress(VK_ENTER);
+            robot.keyPress(KeyEvent.VK_ENTER);
             BrowserUtils.waitFor(1);
             page1.step2_CheckBox.click();
             page.ilerleButton.click();

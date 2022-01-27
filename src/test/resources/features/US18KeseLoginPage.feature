@@ -1,6 +1,6 @@
 Feature: Kese Login page feature
 
-
+  @smoketest
   Scenario Outline: Kese Website Login with valid username valid password
     Given user is on login page <loginPageUrl>
     When user enters valid username <userName>
@@ -11,7 +11,7 @@ Feature: Kese Login page feature
     Examples:
       | loginPageUrl                | userName          | password | expectedUrl            |
       | "http://test.kese.nl/login" | "email@gmail.com" | "3344"   | "http://test.kese.nl/" |
-
+  @smoketest
   Scenario Outline: Kese Website Login with valid username invalid password
     Given user is on login page <loginPageUrl>
     When user enters valid username <userName>
@@ -22,7 +22,7 @@ Feature: Kese Login page feature
       | loginPageUrl                | userName          | invalidPassword | expectederrorMessage        |
       | "http://test.kese.nl/login" | "email@gmail.com" | "abcd"          | "Email ya da şifre hatalı." |
 
-
+  @smoketest
   Scenario Outline: Kese Website Login with invalid username valid password
     Given user is on login page <loginPageUrl>
     When users enter invalid username <invalidUsername>
@@ -32,7 +32,7 @@ Feature: Kese Login page feature
     Examples:
       | loginPageUrl                | invalidUsername   | password | expectederrorMessage        |
       | "http://test.kese.nl/login" | "zmail@yahoo.com" | "3344"   | "Email ya da şifre hatalı." |
-
+  @smoketest
   Scenario Outline: Kese Website Login with invalid username invalid password
     Given user is on login page <loginPageUrl>
     When user enters invalid username <invalidUsername>
