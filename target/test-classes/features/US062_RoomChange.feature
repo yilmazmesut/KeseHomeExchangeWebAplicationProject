@@ -28,10 +28,10 @@ Feature: US_062 New Room 4/10
 
 
   Scenario Outline: US062_TC05- "Cinsiyet" selection should be selectable, more than one selection should not be allowed.
-    And user clicks on "<SelectedGender>"
+    And user clicks on "<GenderOption>"
     Then assert thatother gender options are not selected
     Examples:
-      | SelectedGender |
+      | GenderOption |
       | Kadin          |
       | Erkek          |
       | Farketmez      |
