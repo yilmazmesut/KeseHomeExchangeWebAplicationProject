@@ -11,9 +11,9 @@ public class US051_EvDegisimiPage10Step extends LoginPage {
 
     EvDegisimiPage page10 = new EvDegisimiPage();
 
-    @When("user signed in on sign in page")
-    public void userSignedInOnSignInPage() {
-    }
+   // @When("user signed in on sign in page")
+   // public void userSignedInOnSignInPage() {
+   // }
 
     @And("user navigates to page {int} in home Page")
     public void userNavigatesToPageInHomePage(int arg0) {
