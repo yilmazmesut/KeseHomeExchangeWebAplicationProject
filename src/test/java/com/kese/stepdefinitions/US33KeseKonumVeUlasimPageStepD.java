@@ -111,5 +111,8 @@ public class US33KeseKonumVeUlasimPageStepD extends OdaKiralaPage {
     }
 
 
+    @And("user verifies that ilerle button should not be clickable")
+    public void userVerifiesThatIlerleButtonShouldNotBeClickable() {
 
+    }
 }
