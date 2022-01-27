@@ -1,7 +1,7 @@
 Feature:US078
 
   Background:
-    Given user is on login page "http://test.kese.nl/login"
+    Given user is on login page "http://test.kese.nl/new_home"
     When user signed in on sign in page
       | hamza@gmail.com | 1234 |
     And user should click to Ilan Ver go to page 10 in Oda
