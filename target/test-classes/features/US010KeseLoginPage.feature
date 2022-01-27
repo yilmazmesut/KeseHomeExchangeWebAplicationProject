@@ -1,5 +1,7 @@
 Feature:US_010    User can acces to login page and inputs of the login should be available
 
+  @smoketest
+
   Background:
     Given user is on login page "http://test.kese.nl/login"
 

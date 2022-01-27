@@ -1,12 +1,12 @@
-Feature:
+Feature:US078
 
   Background:
-    Given user is on login page "http://test.kese.nl/new_home"
+    Given user is on login page "http://test.kese.nl/login"
     When user signed in on sign in page
       | hamza@gmail.com | 1234 |
     And user should click to Ilan Ver go to page 10 in Oda
 
-  Scenario: User should be able to attach at least 5 images
+Scenario: User should be able to attach 5 images
     Given user should be able to attach 5 images with Resimleri Secin button
     And user should be able to attach 5 images with Resim Ekle
     Then verify the 5 added images
@@ -17,9 +17,9 @@ Feature:
     Then verify the 10 added images
 
     Scenario: User should not be able to attach more than 10 images
-      Given user should be able to attach 11 images with Resimleri Secin button
-      And  user should be able to attach 11 images with Resim Ekle
-      Then verify the 11 added images
+      Given user should not be able to attach 11 images with Resimleri Secin button
+      And  user should not be able to attach 11 images with Resim Ekle
+      Then verify should not be able yo add 11 images
 
   Scenario: After adding 5 images, the "Resimleri Kaydet" button should be clickable.
     Given After adding 5 or more images, the "Resimleri Kaydet" button should be clickable

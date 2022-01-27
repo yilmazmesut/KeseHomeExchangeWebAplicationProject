@@ -15,6 +15,7 @@ import org.openqa.selenium.WebElement;
 import java.awt.*;
 import java.lang.ref.SoftReference;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 import static java.awt.event.KeyEvent.VK_ENTER;
 
@@ -106,8 +107,7 @@ public class US078_OdailanVerPage10StepD {
         }
     }
     @And("user should be able to attach {int} images with Resim Ekle")
-    public void userShouldBeAbleToAttachAtLeastImagesWithResimEkle(int numOfPicture) {
-        page.page10RemoveAllPicturesButton.click();
+    public void userShouldBeAbleToAttachImagesWithResimEkle(int numOfPicture) {
         WebElement step10_FileUpload;
         for(int i=1;i<=numOfPicture;i++) { // it must be five pictures in pictures folder
             try {
@@ -138,17 +138,22 @@ public class US078_OdailanVerPage10StepD {
     public void verifyTheAddedImages(int numOfPicture) {
         WebElement addedPictureLocator;
 
-        for(int i=1;i<=numOfPicture;i++) {
-            addedPictureLocator=Driver.get().findElement(By.xpath("(//div[@class = 'rounded '])["+i+"]"));
-            if(numOfPicture>10) {
-                System.out.println(addedPictureLocator.isEnabled());
-                System.out.println(addedPictureLocator.isDisplayed());
-                Assert.assertFalse(addedPictureLocator.isDisplayed());
+        for (int i = 1; i <= numOfPicture; i++) {
+          try {
+                addedPictureLocator = Driver.get().findElement(By.xpath("(//div[@class = 'rounded '])[" + i + "]"));
+                if (numOfPicture < 11) {
+                    Assert.assertTrue(addedPictureLocator.isDisplayed());
+                    System.out.println(addedPictureLocator.isEnabled());
 
-            }else
-            Assert.assertTrue( addedPictureLocator.isDisplayed());
-            System.out.println(addedPictureLocator.isEnabled());
+                } else {
+//                    System.out.println(addedPictureLocator.isEnabled());
+//                    System.out.println(addedPictureLocator.isDisplayed());
+//                    Assert.assertFalse(addedPictureLocator.isDisplayed());
+                    Assert.assertFalse((Driver.get().findElement(By.id("file-upload" + i)).isDisplayed()));
 
+                }
+            } catch(Exception e) {
+         }
         }
     }
 //       Assert.assertTrue(page1.step10_FileUploaded1.isDisplayed());
@@ -157,26 +162,23 @@ public class US078_OdailanVerPage10StepD {
 //        Assert.assertTrue(page1.step10_FileUploaded4.isDisplayed());
 //        Assert.assertTrue(page1.step10_FileUploaded5.isDisplayed());
 
-
-
-    @And("user should not be adding {int} images")
-    public void userShouldNotBeAddingImages(int numOfPicture) {
-        userShouldBeAbleToAttachAtLeastImagesWithResimEkle(numOfPicture);
+    @Then("verify should not be able yo add {int} images")
+    public void verifyShouldNotBeAbleYoAddImages(int numOfPicture) {
         verifyTheAddedImages(numOfPicture);
-
-
     }
+
+
 
     @Given("After adding {int} or more images, the {string} button should be clickable")
     public void afterAddingOrMoreImagesTheButtonShouldBeClickable(int numOfPicture, String text) {
-        userShouldBeAbleToAttachAtLeastImagesWithResimEkle(numOfPicture);
+        userShouldBeAbleToAttachImagesWithResimEkle(numOfPicture);
         verifyTheButton(text);
 
     }
 
     @And("user adding {int} images, the {string} button should not be clickable")
     public void userAddingImagesTheButtonShouldNotBeClickable(int numOfPicture, String text) {
-        userShouldBeAbleToAttachAtLeastImagesWithResimEkle(numOfPicture);
+        userShouldBeAbleToAttachImagesWithResimEkle(numOfPicture);
        // System.out.println(page1.isDisplayedButton(text));
       //  System.out.println(!page1.isEnabledButton(text));
         Assert.assertTrue(page1.isDisplayedButton(text));
@@ -189,6 +191,16 @@ public class US078_OdailanVerPage10StepD {
       Assert.assertTrue(page1.isDisplayedButton(text));
       Assert.assertTrue(page1.isEnabledButton(text));
 
+    }
+
+    @Given("user should not be able to attach {int} images with Resimleri Secin button")
+    public void userShouldNotBeAbleToAttachImagesWithResimleriSecinButton(int numOfPicture) {
+        userShouldBeAbleToAttachImagesWithResimleriSecinButton(numOfPicture);
+    }
+
+    @And("user should not be able to attach {int} images with Resim Ekle")
+    public void userShouldNotBeAbleToAttachImagesWithResimEkle(int numOfPicture) {
+        userShouldBeAbleToAttachImagesWithResimEkle(numOfPicture);
     }
 
 

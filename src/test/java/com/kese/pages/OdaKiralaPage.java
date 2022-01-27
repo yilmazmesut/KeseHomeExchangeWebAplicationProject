@@ -499,7 +499,8 @@ public class OdaKiralaPage extends CommonPage {
         return buttonTextLocator.isEnabled();
 
     }
-
+    @FindBy (xpath = "//*[contains(text(), 'Resim Ekle')]")
+    public WebElement step10_addImageText; // resim ekle yazisinin ortak locatoru.
 
 
     // 10. Sayfaya kadar Minimum Gereksinimlerle ulasan kodlar icin gerekli locatorlar
