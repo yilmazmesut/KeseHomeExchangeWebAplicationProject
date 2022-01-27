@@ -8,6 +8,7 @@ import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import java.awt.*;
 import java.util.List;
@@ -47,8 +48,7 @@ public class US53HomeExchangePage10StepD {
             page.selectText.click();
             page.selectTextButton.sendKeys("Frankfurt, Almanya");
             BrowserUtils.waitFor(1);
-            Robot robot = new Robot();
-            robot.keyPress(VK_ENTER);
+            page.selectTextButton.sendKeys(Keys.ENTER);
             BrowserUtils.waitFor(1);
             page.checkBox.click();
             BrowserUtils.waitFor(2);
