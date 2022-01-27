@@ -131,7 +131,7 @@ public class US53HomeExchangePage10StepD {
     @Then("user asserts that it can't be upload more images")
     public void maximunPicturesDestriction() {
         // add image frame shouldn't display and throw exeption
-        Assert.assertThrows(org.openqa.selenium.NoSuchElementException.class, page.step10_addImageText::isDisplayed);
+
     }
 
     @Then("user asserts that the Resimleri Kaydet button is clickable")

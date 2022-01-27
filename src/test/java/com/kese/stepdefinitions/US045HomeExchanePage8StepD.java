@@ -19,7 +19,6 @@ public class US045HomeExchanePage8StepD {
     @And("user navigates to page {int} in HomeExchange")
     public void userNavigatesToPageInHomeExchange(int j) throws AWTException, InterruptedException{
 
-
         page.dropdownMenuButton.click();
         page.homeExchangeOption.click();
         do{
@@ -80,7 +79,6 @@ public class US045HomeExchanePage8StepD {
                 break;
         }while(true);
     }
-
 
 
     @Then("user able to see ozel Sartlar title is visible")
