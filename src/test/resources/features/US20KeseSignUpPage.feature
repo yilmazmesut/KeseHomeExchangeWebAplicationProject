@@ -3,7 +3,7 @@ Feature: US_20 Bir kullanıcı olarak "/signup" sayfasına girdiğimde, yeni bir
   Background: Successful connection to site and sign up
     Given user is on login page "http://test.kese.nl/signup"
     When user creates a random credentials and signup
-
+  @smoketest
   Scenario Outline: TC_001_US_20 signup block because of repeated email or username
     And user tries to use the same "<credentialPart>" for signup again
     Then user verifies "<text>" and can't signup on signup page
