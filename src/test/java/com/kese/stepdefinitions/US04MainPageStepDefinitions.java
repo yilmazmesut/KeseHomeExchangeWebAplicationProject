@@ -15,8 +15,8 @@ public class US04MainPageStepDefinitions {
 //    }
 
     @And("the user clicks the {string} button")
-    public void theUserClicksTheButton(String arg0) {
-        mainPage.BirlikteSeyehat.click();
+    public void theUserClicksTheButton(String linkText) {
+        mainPage.clickPopulerMenu(linkText);
     }
 
     @When("{string} is selected, the text {string} should be visible.")
