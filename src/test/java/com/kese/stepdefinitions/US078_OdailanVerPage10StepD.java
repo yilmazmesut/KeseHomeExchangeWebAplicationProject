@@ -45,7 +45,7 @@ public class US078_OdailanVerPage10StepD {
             // Here you are in 2nd page
             page.selectText.click();
             page.selectTextButton.sendKeys("London, Birleşik Krallık");
-            BrowserUtils.waitFor(1);
+            BrowserUtils.waitFor(2);
             Robot robot = new Robot();
             robot.keyPress(KeyEvent.VK_ENTER);
             BrowserUtils.waitFor(1);
