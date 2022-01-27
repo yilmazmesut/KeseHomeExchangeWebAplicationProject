@@ -313,7 +313,7 @@ public class OdaKiralaPage extends CommonPage {
     @FindBy(xpath = "//i[@class='fas fa-2x flaticon-mosque']")
     public WebElement page7CamiiDernek;
 
-    @FindBy(xpath = "//small[@class='pl-2']") //xpath is not true!!!!!!!!
+    @FindBy(xpath = "//div[@id='root']//small[@class='ps-2']")
     public WebElement page7ActiviteWarningMessage;
 
 
@@ -391,8 +391,8 @@ public class OdaKiralaPage extends CommonPage {
 //    @FindBy(xpath = "//button[@id='next']")
 //    public WebElement geriButton ;
 //
-//    @FindBy(xpath = "//div[@class='navbar-nav me-auto fs-3']")
-//    public WebElement theNumberOfPage ;
+    @FindBy(xpath = "//div[@class='navbar-nav me-auto fs-3']")
+    public WebElement theNumberOfPage ;
 //
 //    @FindBy(xpath = "//div[@class='px-3 py-2']/h2")
 //    public WebElement  pageTitleText;
@@ -442,6 +442,19 @@ public class OdaKiralaPage extends CommonPage {
     @FindBy(xpath = "//label[contains(@for,'file-upload2')]//i[contains(@class,'far fa-3x fa-image')]")
     public WebElement getPage10UploadingSecondImage;
 
+    //sevda
+
+    @FindBy (xpath = "//h2[text()='Cinsiyet, Yaş Aralığı ve Kişi Sayısı']")
+    public WebElement page4HeadMain;
+
+    @FindBy (xpath = "//*[text()='Hangi yaş aralığındaki ve cinsiyetteki kişiyi evinizde ağırlamak istersiniz.']")
+    public WebElement page4AgeGapP;
+
+    @FindBy (className = "input-number-value")
+    public WebElement page4kisiSayisi;
+
+    @FindBy (xpath = "//small[text()='*Lütfen cinsiyet ve yaş aralığı seçiniz.']")
+    public WebElement page4DefaultWarning;
 
     @FindBy(id = "dropdownMenuButton")
     public WebElement dropdownIlanVerButton;   // Ilan Ver butonu

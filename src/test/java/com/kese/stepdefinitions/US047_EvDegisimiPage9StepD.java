@@ -15,40 +15,41 @@ public class US047_EvDegisimiPage9StepD {
 
     @When("{string} input should be clickable")
     public void inputShouldBeClickable(String arg0) {
-
-
-
+        Assert.assertTrue(evDegisimiPage.page9InputCalenderBox.isEnabled());
     }
 
     @And("if user clicks {string} input, the date selection window should open")
     public void ifUserClicksInputTheDateSelectionWindowShouldOpen(String arg0) {
-
+        evDegisimiPage.page9InputCalenderBox.click();
+        Assert.assertTrue(evDegisimiPage.page9CalendarPageSu.isDisplayed());
     }
 
-    @Then("verify if the header {string} is visible")
-    public void verifyIfTheHeaderIsVisible(String header) {
-        String headerLocatorText = "//h2[contains(text(),'"+header+"')]";
-        WebElement headerLocator = Driver.get().findElement(By.xpath(headerLocatorText));
-        Assert.assertTrue(headerLocator.isDisplayed());
-    }
 
     @And("verify if the description {string} is visible")
     public void verifyIfTheDescriptionIsVisible(String description) {
-        String descriptionLocatorText = "//p[contains(text(),'"+description+"')]";
+        String descriptionLocatorText = "//*[contains(text(),'"+description+"')]";
         WebElement descriptionLocator = Driver.get().findElement(By.xpath(descriptionLocatorText));
         Assert.assertTrue(descriptionLocator.isDisplayed());
 
     }
 
     @And("verify if the number of page {string} is visible")
-    public void verifyIfTheNumberOfPageIsVisible(String arg0) {
-        Assert.assertTrue(evDegisimiPage.theNumberOfPage.isDisplayed());
+    public void verifyIfTheNumberOfPageIsVisible(String numberOfPge) {
+        String text = evDegisimiPage.theNumberOfPage.getText();
+        Assert.assertEquals(numberOfPge, text);
+//        Assert.assertTrue(evDegisimiPage.theNumberOfPage.isDisplayed());
     }
 
-//    @Then("user verifies that {string} warning message appears at Ev Degisimi")
-//    public void user_verifies_that_warning_message_appearsAtEvDegisimi(String expectedWarningMessage) {
-//        String actualWarningMessageText = "//small[contains(text(), '"+expectedWarningMessage+"')]";
-//        String actualWarningMessage = Driver.get().findElement(By.xpath(actualWarningMessageText)).getText();
-//        Assert.assertEquals(expectedWarningMessage,actualWarningMessage);
-//    }
+    @Then("verify if the header {string} is visible")
+    public void verifyIfTheHeaderIsVisible(String header) {
+        String headerLocatorText = "//*[contains(text(),'"+header+"')]";
+        WebElement headerLocator = Driver.get().findElement(By.xpath(headerLocatorText));
+        Assert.assertTrue(headerLocator.isDisplayed());
+    }
+
+    @And("verify if the description {string} is visible in Home Exchange")
+    public void verifyIfTheDescriptionIsVisibleInHomeExchange(String arg0) {
+    }
+
+
 }

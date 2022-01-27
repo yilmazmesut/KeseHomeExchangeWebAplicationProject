@@ -407,7 +407,7 @@ public class EvDegisimiPage extends CommonPage {
     @FindBy(xpath = "//i[@class='fas fa-2x flaticon-mosque']")
     public WebElement page7CamiiDernek;
 
-    @FindBy(xpath = "//small[@class='pl-2']") //xpath is not true!!!!!!!!
+    @FindBy(xpath = "//div[@id='root']//small[@class='ps-2']")
     public WebElement page7ActiviteWarningMessage;
 
 
@@ -587,11 +587,11 @@ public class EvDegisimiPage extends CommonPage {
     // Page 9
 
     //    Same Locators
-    @FindBy(xpath = "//a[@id='next']")
-    public WebElement ilerleButton ;
-
-    @FindBy(xpath = "//button[@id='next']")
-    public WebElement geriButton ;
+//    @FindBy(xpath = "//a[@id='next']")
+//    public WebElement ilerleButton ;
+//
+//    @FindBy(xpath = "//button[@id='next']")
+//    public WebElement geriButton ;
 
     @FindBy(xpath = "//div[@class='navbar-nav me-auto fs-3']")
     public WebElement theNumberOfPage ;
@@ -717,11 +717,11 @@ public class EvDegisimiPage extends CommonPage {
     @FindBy (xpath = "//*[text() = 'Stüdyo Daire']/../../div")
     public WebElement step1_StudyoDaireOption;
 
-//    @FindBy (xpath = "//*[@id='next' and contains(text(), 'İlerle')]")
-//    public WebElement ilerleButton;
-//
-//    @FindBy(xpath = "//button[text() = 'Geri']")
-//    public WebElement geriButton;
+    @FindBy (xpath = "//*[@id='next' and contains(text(), 'İlerle')]")
+    public WebElement ilerleButton;
+
+    @FindBy(xpath = "//button[text() = 'Geri']")
+    public WebElement geriButton;
 
     @FindBy (xpath = "//input[@type='text']")
     public WebElement step2_AddressInput;
@@ -835,6 +835,14 @@ public class EvDegisimiPage extends CommonPage {
 
         return null;
     }
+
+
+    @FindBy (xpath = "//*[contains(text(), '*Lütfen özel şart seçiniz.')]")
+    public WebElement LutfenOzelSartlarSecinizUyarisi;
+
+
+
+
 
 
 }
