@@ -391,8 +391,8 @@ public class OdaKiralaPage extends CommonPage {
 //    @FindBy(xpath = "//button[@id='next']")
 //    public WebElement geriButton ;
 //
-//    @FindBy(xpath = "//div[@class='navbar-nav me-auto fs-3']")
-//    public WebElement theNumberOfPage ;
+    @FindBy(xpath = "//div[@class='navbar-nav me-auto fs-3']")
+    public WebElement theNumberOfPage ;
 //
 //    @FindBy(xpath = "//div[@class='px-3 py-2']/h2")
 //    public WebElement  pageTitleText;
