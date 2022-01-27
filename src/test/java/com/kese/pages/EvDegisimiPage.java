@@ -840,8 +840,20 @@ public class EvDegisimiPage extends CommonPage {
     @FindBy (xpath = "//*[contains(text(), '*Lütfen özel şart seçiniz.')]")
     public WebElement LutfenOzelSartlarSecinizUyarisi;
 
+    @FindBy(xpath = "//div/div[contains(text(),'16')]")
+    public WebElement pickAnyDate;
 
+    @FindBy(tagName = "li")
+    public WebElement page9SelectedDate ;
 
+    @FindBy(xpath = "//button[@class='btn btn-danger rounded px-2 py-1 ']")
+    public WebElement page9XButton;
+
+    @FindBy(xpath="//input[@placeholder='Tarih seçmek için tıklayınız']")
+    public WebElement page9clickOnDate;
+
+    @FindBy(xpath="//p[@class='pt-3 false']")
+    public WebElement page9SectiginizTarihler;
 
 
 
