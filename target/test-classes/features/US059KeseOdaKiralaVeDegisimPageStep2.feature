@@ -17,7 +17,7 @@ Feature: TC_001_US_058-Bir kullanıcı olarak "Oda Kirala & Değişim"
     And Ev ile tren istasyonu arasi input field should be usable
     And Ev ile tramway duragi arasi input field should be usable
     And Sadece sahsi arac ile... checkbox button should be usable
-    And user verifies that ilerle button should be clickable
+    And verify if ilerle button should be clickable
 
   Scenario: : NEGATIVE user should not able to go next page with out input any mandatory fields
     And user verifies that ilerle button should not be clickable

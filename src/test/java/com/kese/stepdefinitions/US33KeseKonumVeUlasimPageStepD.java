@@ -68,7 +68,7 @@ public class US33KeseKonumVeUlasimPageStepD extends OdaKiralaPage {
     public void userShouldAbleToSeeEvinizinKonumunuBelirtinizAcikAdresVermenizeGerekYokturText() {
         String actualEvKonumuYazisi = page2EvinizinKonumunuBelirtinizYzisi.getText();
         System.out.println("actualEvKonumuYazisi = " + actualEvKonumuYazisi);
-        String expectedEvKonumuYazisi = "Evinizin konumunu belirtiniz. Açık adres vermenize gerek yoktur.";
+        String expectedEvKonumuYazisi = "Evinizin konumunu belirtiniz. Açık adres vermenize gerek yoktur";
         Assert.assertEquals(actualEvKonumuYazisi, expectedEvKonumuYazisi);
     }
 

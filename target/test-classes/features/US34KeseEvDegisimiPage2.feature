@@ -16,7 +16,7 @@ Feature: TC_001_US_033_US_034-Bir kullanıcı olarak "Ev Değişimi" ilan oluşt
       And Ev ile tren istasyonu arasi input field should be usable
       And Ev ile tramway duragi arasi input field should be usable
       And Sadece sahsi arac ile... checkbox button should be usable
-      And user verifies that ilerle button should be clickable
+      And verify if ilerle button should be clickable
 
 
   Scenario: : NEGATIVE user should not able to go next page with out input any mandatory fields
