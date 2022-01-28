@@ -1,3 +1,4 @@
+@META3-478
 Feature: Bir kullanici olarak "Ev Degisimi" ilan olusturma sayfasinda,
   7. stepten 8. stepe gecis yapabilmeliyim.
 
@@ -8,17 +9,17 @@ Feature: Bir kullanici olarak "Ev Degisimi" ilan olusturma sayfasinda,
     And user navigates to page 7 in Home Exchange
 
 
-#    This user story will be check after bug ticket is closed.
+  @TEST_META3-441
   Scenario: "ilerle" button should be visible
-    Then user verifies that "İlerle" button is visible
-    Then user verifies that "İlerle" button shouldn't be clickable as a default
-    When user clicks "İlerle" button without any selection
-    Then user verifies that "*Lütfen ev tipini seçiniz." warning message appears
+    Then user verifies that "İlerle" button is visible at Ev Degisimi
+    Then user verifies that "İlerle" button shouldn't be clickable as a default at Ev Degisimi
+    When user clicks "İlerle" button without any selection at Ev Degisimi
+    Then user verifies that "*Lütfen aktivite seçiniz." warning message appears at Ev Degisimi
 
-
+  @TEST_META3-443
   Scenario Outline: "İlerle" button should be clickable after any selection
-    When user clicks any "<selection>"
-    Then user verifies that ilerle button should be clickable
+    When user clicks any "<selection>" at Ev Degisimi
+    Then user verifies that ilerle button should be clickable at Ev Degisimi
 
     Examples:
       | selection       |

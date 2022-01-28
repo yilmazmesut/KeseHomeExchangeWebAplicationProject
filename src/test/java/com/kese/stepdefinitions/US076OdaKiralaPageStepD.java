@@ -1,128 +1,99 @@
 package com.kese.stepdefinitions;
 
+import com.kese.pages.EvDegisimiPage;
+import com.kese.pages.LoginPage;
+import com.kese.utilities.BrowserUtils;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
+import org.openqa.selenium.WebElement;
 
-public class US076OdaKiralaPageStepD {
+import java.awt.*;
+import java.util.List;
 
-    @And("user clicks Giris Yap Button")
-    public void userClicksGirisYapButton() {
-    }
+import static java.awt.event.KeyEvent.VK_ENTER;
 
-    @And("user inputs {string} to the email input on the login page")
-    public void userInputsToTheEmailInputOnTheLoginPage(String arg0) {
-    }
+public class US076OdaKiralaPageStepD extends LoginPage {
 
-    @And("user inputs {string} to the password input on the login page")
-    public void userInputsToThePasswordInputOnTheLoginPage(String arg0) {
-    }
+    EvDegisimiPage page = new EvDegisimiPage();
 
-    @And("user clicks on the giris yap button one the login page")
-    public void userClicksOnTheGirisYapButtonOneTheLoginPage() {
-    }
+        @And("user navigates to page {int} in Room Exchange Page")
+    public void userNavigatesToPageInRoomExchangePage(int sayfa) throws AWTException {
+        while (true) {
+            if (sayfa < 1 || sayfa > 10) {
+                throw new IllegalArgumentException("Not valid page number :" + sayfa);
+            }
+            // Here you are in Main page
+            page.dropdownMenuButton.click();
+            page.homeExchangeOption.click();
+            if (sayfa == 1)
+                break;
+            // Here you are in 1st page
+            BrowserUtils.waitFor(1);
+            page.houseButton.click();
+            page.nextButton.click();
+            if (sayfa == 2)
+                break;
+            // Here you are in 2nd page
+            page.selectText.click();
+            page.selectTextButton.sendKeys("Frankfurt, Almanya");
+            BrowserUtils.waitFor(1);
+            Robot robot = new Robot();
+            robot.keyPress(VK_ENTER);
+            BrowserUtils.waitFor(1);
+            page.checkBox.click();
+            BrowserUtils.waitFor(2);
+            page.nextButton.click();
+            if (sayfa == 3)
+                break;
+            // Here you are in 3rd page
+            BrowserUtils.waitFor(1);
+            page.sizeOfAreaUp.sendKeys("50");
+            page.nextButton.click();
+            if (sayfa == 4)
+                break;
+            // Here you are in 4th page
+            BrowserUtils.waitFor(1);
+            page.plus.click();
+            page.nextButton.click();
+            if (sayfa == 5)
+                break;
+            // Here you are in 5th page
+            BrowserUtils.waitFor(1);
+            page.tvText.click();
+            page.nextButton.click();
+            if (sayfa == 6)
+                break;
+            // Here you are in 6th page
+            BrowserUtils.waitFor(1);
+            page.homeExplanation.sendKeys("My home, sweet home.");
+            page.nextButton.click();
+            if (sayfa == 7)
+                break;
+            // Here you are in 7th page
+            BrowserUtils.waitFor(1);
+            page.museumText.click();
+            page.nextButton.click();
+            if (sayfa == 8)
+                break;
+            // Here you are in 8th page
+            for (WebElement element : page.yesTexts) {
+                element.click();
+                BrowserUtils.waitFor(1 / 2);
+            }
+            page.nextButton.click();
+            if (sayfa == 9)
+                break;
+            // Here you are in 9th page
+            BrowserUtils.waitFor(1);
+            page.selectDate.click();
+            page.todaysLocator.click();
+            BrowserUtils.waitFor(1 / 2);
+            page.todaysLocator.click();
+            page.nextButton.click();
+            break;
+            // Here you are in 10th page
+        }
 
-    @And("user clicks on Ilan Ver Button on the main page")
-    public void userClicksOnIlanVerButtonOnTheMainPage() {
-    }
-
-    @And("user clicks on Oda Button on the main page")
-    public void userClicksOnOdaButtonOnTheMainPage() {
-    }
-
-    @And("user is on the {string} new_room page")
-    public void userIsOnTheNew_roomPage(String arg0) {
-    }
-
-    @And("user chooses a House Type on the new room step one page")
-    public void userChoosesAHouseTypeOnTheNewRoomStepOnePage() {
-    }
-
-    @And("user selects Odami Kiraya vermek istiyorum from Degisim and Kirala on the new_room step one page")
-    public void userSelectsOdamiKirayaVermekIstiyorumFromDegisimAndKiralaOnTheNew_roomStepOnePage() {
-    }
-
-    @And("user clicks to the ilerle button on the new_room step one page")
-    public void userClicksToTheIlerleButtonOnTheNew_roomStepOnePage() {
-    }
-
-    @And("user chooses an address from the list in new_room step two page")
-    public void userChoosesAnAddressFromTheListInNew_roomStepTwoPage() {
-    }
-
-    @And("user clicks to the checkbox on the new_room step two page")
-    public void userClicksToTheCheckboxOnTheNew_roomStepTwoPage() {
-    }
-
-    @And("user clicks to the ilerle button on the new_room page")
-    public void userClicksToTheIlerleButtonOnTheNew_roomPage() {
-    }
-
-    @And("user inputs into the usage area on the new_room step three page")
-    public void userInputsIntoTheUsageAreaOnTheNew_roomStepThreePage() {
-    }
-
-    @And("user clicks on the increment buttons on the new_room step three page")
-    public void userClicksOnTheIncrementButtonsOnTheNew_roomStepThreePage() {
-    }
-
-    @And("user clicks on the ilerle button on the new_room step three page")
-    public void userClicksOnTheIlerleButtonOnTheNew_roomStepThreePage() {
-    }
-
-    @And("user selects Yas Araligi on the new_room step four page")
-    public void userSelectsYasAraligiOnTheNew_roomStepFourPage() {
-    }
-
-    @And("user selects Cinsiyet on the new_room step four page")
-    public void userSelectsCinsiyetOnTheNew_roomStepFourPage() {
-    }
-
-    @And("user increases Kisi Sayisi by clicking on the increment button on the new_room step four page")
-    public void userIncreasesKisiSayisiByClickingOnTheIncrementButtonOnTheNew_roomStepFourPage() {
-    }
-
-    @And("user clicks on the ilerle button on the new_room step four page")
-    public void userClicksOnTheIlerleButtonOnTheNew_roomStepFourPage() {
-    }
-
-    @And("user select WIFI option from Ev Imkanlari on the new_room step five page")
-    public void userSelectWIFIOptionFromEvImkanlariOnTheNew_roomStepFivePage() {
-    }
-
-    @And("user clicks on the ilerle button on the new_room five page page")
-    public void userClicksOnTheIlerleButtonOnTheNew_roomFivePagePage() {
-    }
-
-    @And("user inputs a description into the description box on the new_room step six page")
-    public void userInputsADescriptionIntoTheDescriptionBoxOnTheNew_roomStepSixPage() {
-    }
-
-    @And("user clicks on the ilerle button on the new_room step six page")
-    public void userClicksOnTheIlerleButtonOnTheNew_roomStepSixPage() {
-    }
-
-    @And("user clicks on the Helal Restaurant option from Aktiviteler on the new_room step seven page")
-    public void userClicksOnTheHelalRestaurantOptionFromAktivitelerOnTheNew_roomStepSevenPage() {
-    }
-
-    @And("user clicks on the ilerle button on the new_room step seven page")
-    public void userClicksOnTheIlerleButtonOnTheNew_roomStepSevenPage() {
-    }
-
-    @And("user clicks on the all Hayir options on the new_room step eight page")
-    public void userClicksOnTheAllHayirOptionsOnTheNew_roomStepEightPage() {
-    }
-
-    @And("user clicks on the ilerle button on the new_room step eight page")
-    public void userClicksOnTheIlerleButtonOnTheNew_roomStepEightPage() {
-    }
-
-    @And("user selects the date on the new_room step nine page")
-    public void userSelectsTheDateOnTheNew_roomStepNinePage() {
-    }
-
-    @And("user clicks on the ilerle button on the new_room step nine page")
-    public void userClicksOnTheIlerleButtonOnTheNew_roomStepNinePage() {
     }
 
     @Then("user verifies that there is a {string} Page Step Number visible on the new room_step ten page")
