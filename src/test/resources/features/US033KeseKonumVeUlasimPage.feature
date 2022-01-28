@@ -17,28 +17,6 @@ Feature: TC_001_US_033_Bir kullanıcı olarak "Konum ve Ulaşım" ilan oluşturm
     And Ev ile tramway duragi arasi input field should be usable
     And Sadece sahsi arac ile... checkbox button should be usable
 
-  Scenario: : NEGATIVE user should not able to go next page with out input any mandatory fields
-    And user verifies that ilerle button should not be clickable
-
-  Scenario: NEGATIVE user should not able to go to next page only with input location
-    And user chooses "London, Birleşik Krallık" an address from the list in new home step two page
-    And user verifies that ilerle button should not be clickable
-
-  Scenario: NEGATIVE user should not able to go to next page only with input Ev ile Otobus Duragi field
-    And Ev ile otobus duragi arasi input field should be usable
-    And user verifies that ilerle button should not be clickable
-
-  Scenario: NEGATIVE user should not able to go to next page only with input Ev ile Tren Istasyonu field
-    And Ev ile tren istasyonu arasi input field should be usable
-    And user verifies that ilerle button should not be clickable
-
-  Scenario: NEGATIVE user should not able to go to next page only with input Ev ile Tramvay field
-    And Ev ile tramway duragi arasi input field should be usable
-    And user verifies that ilerle button should not be clickable
-
-  Scenario: NEGATIVE user should not able to go to next page only with check checkbox
-    And Sadece sahsi arac ile... checkbox button should be usable
-    And user verifies that ilerle button should not be clickable
 
 
 

@@ -19,13 +19,13 @@ public class US33KeseKonumVeUlasimPageStepD extends OdaKiralaPage {
     @FindBy(xpath = "(//input[@type='number'])[1]")
     public WebElement step2_EvOtobusInput;
 
-    @FindBy (xpath = "(//input[@type='number'])[2]")
+    @FindBy(xpath = "(//input[@type='number'])[2]")
     public WebElement step2_EvTrenInput;
 
-    @FindBy (xpath = "(//input[@type='number'])[3]")
+    @FindBy(xpath = "(//input[@type='number'])[3]")
     public WebElement step2_EvTramwayInput;
 
-    @FindBy (xpath = "//input[@type='text']")
+    @FindBy(xpath = "//input[@type='text']")
     public WebElement step2_AddressInput;
 
 
@@ -40,6 +40,7 @@ public class US33KeseKonumVeUlasimPageStepD extends OdaKiralaPage {
     @When("{string} signed in on sign in page")
     public void signedInOnSignInPage(String user) {
         BrowserUtils.waitForPageToLoad(3);
+        BrowserUtils.waitFor(3);
         Driver.get().findElement(By.name("email")).sendKeys(user);
         Driver.get().findElement(By.name("sifre")).sendKeys("1234");
         BrowserUtils.waitFor(3);
@@ -66,7 +67,7 @@ public class US33KeseKonumVeUlasimPageStepD extends OdaKiralaPage {
     public void userShouldAbleToSeeEvinizinKonumunuBelirtinizAcikAdresVermenizeGerekYokturText() {
         String actualEvKonumuYazisi = page2EvinizinKonumunuBelirtinizYzisi.getText();
         System.out.println("actualEvKonumuYazisi = " + actualEvKonumuYazisi);
-        String expectedEvKonumuYazisi = "Evinizin konumunu belirtiniz. Açık adres vermenize gerek yoktur";
+        String expectedEvKonumuYazisi = "Evinizin konumunu belirtiniz. Açık adres vermenize gerek yoktur.";
         Assert.assertEquals(actualEvKonumuYazisi, expectedEvKonumuYazisi);
     }
 
@@ -83,7 +84,7 @@ public class US33KeseKonumVeUlasimPageStepD extends OdaKiralaPage {
         step2_EvOtobusInput.clear();
         step2_EvOtobusInput.sendKeys("4");
         String value = step2_EvOtobusInput.getAttribute("value");
-        Assert.assertEquals(value,"4");
+        Assert.assertEquals(value, "4");
 
     }
 
@@ -92,7 +93,7 @@ public class US33KeseKonumVeUlasimPageStepD extends OdaKiralaPage {
         step2_EvTrenInput.clear();
         step2_EvTrenInput.sendKeys("3");
         String value = step2_EvTrenInput.getAttribute("value");
-        Assert.assertEquals(value,"3");
+        Assert.assertEquals(value, "3");
 
     }
 
@@ -101,7 +102,7 @@ public class US33KeseKonumVeUlasimPageStepD extends OdaKiralaPage {
         step2_EvTramwayInput.clear();
         step2_EvTramwayInput.sendKeys("5");
         String value = step2_EvTramwayInput.getAttribute("value");
-        Assert.assertEquals(value,"5");
+        Assert.assertEquals(value, "5");
     }
 
     @And("Sadece sahsi arac ile... checkbox button should be usable")
@@ -110,9 +111,4 @@ public class US33KeseKonumVeUlasimPageStepD extends OdaKiralaPage {
         Assert.assertTrue(step2_CheckBox.isSelected());
     }
 
-
-    @And("user verifies that ilerle button should not be clickable")
-    public void userVerifiesThatIlerleButtonShouldNotBeClickable() {
-
-    }
 }
