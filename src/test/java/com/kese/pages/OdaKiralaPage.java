@@ -1,11 +1,17 @@
 package com.kese.pages;
 
+import com.kese.utilities.BrowserUtils;
 import com.kese.utilities.Driver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
+import java.util.Map;
 
 public class OdaKiralaPage extends CommonPage {
 
@@ -391,8 +397,8 @@ public class OdaKiralaPage extends CommonPage {
 //    @FindBy(xpath = "//button[@id='next']")
 //    public WebElement geriButton ;
 //
-//    @FindBy(xpath = "//div[@class='navbar-nav me-auto fs-3']")
-//    public WebElement theNumberOfPage ;
+    @FindBy(xpath = "//div[@class='navbar-nav me-auto fs-3']")
+    public WebElement theNumberOfPage ;
 //
 //    @FindBy(xpath = "//div[@class='px-3 py-2']/h2")
 //    public WebElement  pageTitleText;
@@ -512,7 +518,8 @@ public class OdaKiralaPage extends CommonPage {
         return buttonTextLocator.isEnabled();
 
     }
-
+    @FindBy (xpath = "//*[contains(text(), 'Resim Ekle')]")
+    public WebElement step10_addImageText; // resim ekle yazisinin ortak locatoru.
 
 
     // 10. Sayfaya kadar Minimum Gereksinimlerle ulasan kodlar icin gerekli locatorlar
@@ -568,6 +575,212 @@ public class OdaKiralaPage extends CommonPage {
     // 9th page
     @FindBy (xpath = "//*[@tabindex=0]")
     public WebElement todaysLocator;
+
+    //US_80
+    @FindBy(xpath = "//input[@type='text']")
+    public WebElement page2SelectAdressInbox;
+
+    @FindBy(xpath = "//input[@type='checkbox']")
+    public WebElement page2SahsiAracCheckbox;
+
+    @FindBy(css = ".input-number-value")
+    public WebElement page4MaxPersonInput;
+
+    @FindBy(xpath = "//textarea")
+    public WebElement page6AciklamaTextarea;
+
+    @FindBy(xpath = "//div[contains(@class,'react-datepicker__portal')]//span[contains(@class,'next')]")
+    public WebElement page9NextMonthIcon;
+
+    @FindBy(css = ".react-datepicker__day.react-datepicker__day--001")
+    public WebElement page9NextMonthDay1Icon;
+
+    @FindBy(css = ".react-datepicker__day.react-datepicker__day--007")
+    public WebElement page9NextMonthDay7Icon;
+
+    @FindBy(xpath = "//button[text()='Resimleri Kaydet']")
+    public WebElement page10SavePicturesButton;
+
+    @FindBy(xpath = "//div[@class= 'rounded ']")
+    public List<WebElement> page10UploadedImagesList;
+
+    @FindBy(xpath = "//button[.='İlerle']")
+    public WebElement ilerleButton;
+
+    @FindBy(xpath = "//button[.='Geri']")
+    public WebElement geriButton;
+
+    public void selectPage1HomeType(String homeType) {
+        Driver.get().findElement(By.xpath("//small[text()='"+homeType+"']")).click();
+    }
+
+    public String getPage1SelectedHomeType(){
+        //*[contains(@class,'border-warning')]
+        return Driver.get().findElement(By.xpath("//*[contains(@class,'border-warning')]")).getText();
+    }
+
+    public void clickRoomTypePage1(String roomType) {
+        String roomTypeLocator = "//label[.='" + roomType + "']/preceding-sibling::input[@type='checkbox']";
+        Driver.get().findElement(By.xpath(roomTypeLocator)).click();
+    }
+
+    public boolean isPage1SelectedRoomType(String roomType) {
+        String roomTypeLocator = "//label[.='" + roomType + "']/preceding-sibling::input[@type='checkbox']";
+        return (Driver.get().findElement(By.xpath(roomTypeLocator)).isSelected());
+    }
+
+
+    public void setPage2TransportationDistances(Map<String, String> transportationOpportunities) {
+        for (Map.Entry<String, String> transportation : transportationOpportunities.entrySet()) {
+            String transportationLocator = "//div[@class='col-7 px-0' and text()='" + transportation.getKey() +" ']/following-sibling::div//input";
+            Driver.get().findElement(By.xpath(transportationLocator)).clear();
+            Driver.get().findElement(By.xpath(transportationLocator)).sendKeys(transportation.getValue());
+        }
+    }
+
+    public String getpage2TransportationOpportunity(String transportationDistance) {
+        String transportationLocator = "//div[@class='col-7 px-0' and text()='" + transportationDistance +" ']/following-sibling::div//input";
+        return Driver.get().findElement(By.xpath(transportationLocator)).getAttribute("value");
+    }
+
+    public void setPage2DistanceFromHome(Double distance, String location) {
+        String locationTypeLocator = "//div[@class='col-7 px-0' and text()='" + location + " ']/following-sibling::div//child::input";
+        WebElement distanceFromHome = Driver.get().findElement(By.xpath(locationTypeLocator));
+        distanceFromHome.clear();
+        distanceFromHome.sendKeys(distance.toString());
+    }
+
+    public Double getPage2DistanceFromHome(String location) {
+        String locationTypeLocator = "//div[@class='col-7 px-0' and text()='" + location + " ']/following-sibling::div//child::input";
+        return Double.parseDouble(Driver.get().findElement(By.xpath(locationTypeLocator)).getAttribute("value"));
+    }
+
+    public void setPage3CommonAreas(Map<String, String> commonAreas) {
+        for (Map.Entry<String, String> commonArea : commonAreas.entrySet()) {
+            int clickCount = 0;
+            String commonAreaLocator = "//*[text()='" + commonArea.getKey() + "']//following::span//following-sibling::button";
+            if (commonArea.getKey().equals("Yatak Odası"))  // there is a bug frontend code *******
+                clickCount=1;
+            for (; clickCount<Integer.parseInt(commonArea.getValue()) ; clickCount++) {
+                Driver.get().findElement(By.xpath(commonAreaLocator)).click();
+            }
+        }
+    }
+
+    public String getPage3CommonArea(String commonArea) {
+        String commonAreaLocator = "(//*[text()='"+ commonArea +"']//following::span)[1]";
+        return Driver.get().findElement(By.xpath(commonAreaLocator)).getText();
+    }
+
+    public void clickPage4AgeOptions(List<String> ageList) {
+        for (String ageText : ageList) {
+            String ageLocator = "//span[.='" + ageText + "']";
+            Driver.get().findElement(By.xpath(ageLocator)).click();
+        }
+    }
+
+    public void clickPage4GenderOptions(String gender) {
+        // locator will be improved
+        String genderLocator = "//span[text()='" + gender + "']";
+        Driver.get().findElement(By.xpath(genderLocator)).click();
+    }
+
+    public void setPage4MaxPerson(Integer maxPerson) {
+        for (int i = 0; i < maxPerson; i++)
+            page4KisiSayisiPlus.click();
+    }
+
+    public String getPage4SelectedAge(String ageInterval) {
+        // if class contains "success", it means it is selected
+        String ageLocator = "//span[.='" + ageInterval + "' and contains(@class,'success')]";
+        return Driver.get().findElement(By.xpath(ageLocator)).getText();
+    }
+
+    public String getPage4SelectedGender(String gender) {
+        // if class contains "success", it means it is selected
+        String genderLocator = "//h5[.='Cinsiyet']//following::span[.='" + gender + "' and contains(@class,'success')]";
+        return Driver.get().findElement(By.xpath(genderLocator)).getText();
+
+    }
+
+    public void setPage5HomeOpportunities(List<String> homeOpportunities) {
+        for (String opportunity : homeOpportunities) {
+            String opportunityLocator = "//small[.='" + opportunity + "']";
+            Driver.get().findElement(By.xpath(opportunityLocator)).click();
+        }
+    }
+
+    public String getPage5HomeOpportunity(String opportunity) {
+        // by this locator, it shows this opportunity is selected
+        String opportunityLocator = "//small[.='" + opportunity + "']//parent::div[contains(@class,'text-warning')]";
+        return Driver.get().findElement(By.xpath(opportunityLocator)).getText();
+    }
+
+    public void setPage7Activities(List<String> activities) {
+        for (String activity : activities) {
+            String activityLocator = "//small[.='" + activity + "']";
+            Driver.get().findElement(By.xpath(activityLocator)).click();
+        }
+    }
+
+    public String getPage7Activity(String selectedActivity) {
+        // by this locator, it shows this activity is selected
+        String activityLocator = "//small[.='" + selectedActivity + "']//parent::div[contains(@class,'text-warning')]";
+        return Driver.get().findElement(By.xpath(activityLocator)).getText();
+    }
+
+    public void setPage8SpecialConditions(Map<String, String> specialConditions) {
+        for (Map.Entry<String, String> condition : specialConditions.entrySet()) {
+            String conditionLocator = "//*[text()='" + condition.getKey() + "']//following-sibling::div/div/div[.='" + condition.getValue() + "']";
+            Driver.get().findElement(By.xpath(conditionLocator)).click();
+        }
+    }
+
+    public boolean getPage8SpecialCondition(String conditionKey, String conditionValue) {
+        // if it is selected, returns true
+        String conditionLocator = "//*[text()='" + conditionKey + "']//following-sibling::div/div/div[text()='" + conditionValue + "']";
+        return Driver.get().findElement(By.xpath(conditionLocator)).getAttribute("class").contains("text-white");
+    }
+
+    public void setPage9RentingDates() {
+
+        JavascriptExecutor executor = (JavascriptExecutor) Driver.get();
+
+        page9InputCalenderBox.click();
+        BrowserUtils.waitFor(1);
+        executor.executeScript("arguments[0].click();", page9NextMonthIcon);
+        BrowserUtils.waitFor(1);
+        executor.executeScript("arguments[0].click();", page9NextMonthDay1Icon);
+        BrowserUtils.waitFor(1);
+        executor.executeScript("arguments[0].click();", page9NextMonthDay7Icon);
+    }
+
+    public String getPage9BookedDate() {
+
+        String pattern = "d MMMMM yyyy EEEEE";
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern, new Locale("tr", "TR"));
+
+        Calendar calendar = Calendar.getInstance();
+        // selects next month and 1. day
+        calendar.add(Calendar.MONTH, 1);
+        calendar.set(Calendar.DAY_OF_MONTH, 1);
+
+        String dateBegin = simpleDateFormat.format(calendar.getTime());
+        // selects next month's 7.day
+        calendar.set(Calendar.DAY_OF_MONTH, 7);
+        String dateEnd = simpleDateFormat.format(calendar.getTime());
+
+        // returns String format of displayed booked dates
+        return dateBegin + " - " + dateEnd;
+
+    }
+
+    public void uploadPage10Images(int totalPictureNumber) {
+        for (int i = 1; i <= totalPictureNumber; i++)
+            Driver.get().findElement(By.id("file-upload" + i)).
+                    sendKeys((System.getProperty("user.dir") + "/src/test/resources/pictures/" + i + ".jpg"));
+
+    }
 
 
 }

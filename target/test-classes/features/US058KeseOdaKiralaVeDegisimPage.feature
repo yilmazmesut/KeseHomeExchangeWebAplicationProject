@@ -10,6 +10,7 @@ Feature: TC_001_US_058-Bir kullanıcı olarak "Oda Kirala & Değişim"
     And user clicks "Karşılıklı oda değişimi yapmak istiyorum." button
     And user clicks to the ilerle button on the new home page
     And user should able to see page number
+    And user should able to see Evinizin konumunu belirtiniz. Acik adres vermenize gerek yoktur text
     And user chooses "London, Birleşik Krallık" an address from the list in new home step two page
     And Ev ile otobus duragi arasi input field should be usable
     And Ev ile tren istasyonu arasi input field should be usable
