@@ -18,13 +18,13 @@ Feature: As a user, I should be able to switch from step 6 to step 7 on the "Roo
     Then verify Ilerle button is active on 6th roomExchange page
 
 
-  Scenario: US042_TC04_before providing min requirement of the page clicking "Ilerle" button
+  Scenario: before providing min requirement of the page clicking "Ilerle" button
     When user enters "" explanation to the inputbox on the 6th roomExchange page
     And user clicks Ilerle button on the 6th roomExchange page
     Then verify user sees "*Lütfen eviniz ve odanızı tanımlayınız." text near to Ilerle button on the 6th roomExchange page
 
 
-  Scenario: US042_TC05_user should navigate 6th page to 7th page
+  Scenario: user should navigate 6th page to 7th page
     When user enters "N" explanation to the inputbox on the 6th roomExchange page
     And user clicks Ilerle button on the 6th roomExchange page
     Then verify user is on the "7 / 10" page
