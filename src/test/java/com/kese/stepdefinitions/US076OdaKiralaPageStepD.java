@@ -2,94 +2,110 @@ package com.kese.stepdefinitions;
 
 import com.kese.pages.EvDegisimiPage;
 import com.kese.pages.LoginPage;
+import com.kese.pages.OdaKiralaPage;
 import com.kese.utilities.BrowserUtils;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
+import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 
 import java.awt.*;
-import java.util.List;
 
 import static java.awt.event.KeyEvent.VK_ENTER;
 
 public class US076OdaKiralaPageStepD extends LoginPage {
 
-    EvDegisimiPage page = new EvDegisimiPage();
+    EvDegisimiPage homePage = new EvDegisimiPage();
+    OdaKiralaPage roomPage = new OdaKiralaPage();
 
-        @And("user navigates to page {int} in Room Exchange Page")
-    public void userNavigatesToPageInRoomExchangePage(int sayfa) throws AWTException {
+    @And("user navigates to page {int} in Room Exchange Page")
+    public void userNavigatesToPageInRoomExchangePage(int sayfa) throws AWTException, InterruptedException {
         while (true) {
             if (sayfa < 1 || sayfa > 10) {
                 throw new IllegalArgumentException("Not valid page number :" + sayfa);
             }
             // Here you are in Main page
-            page.dropdownMenuButton.click();
-            page.homeExchangeOption.click();
+            homePage.dropdownMenuButton.click();
+            roomPage.dropDownOda.click();
             if (sayfa == 1)
                 break;
             // Here you are in 1st page
             BrowserUtils.waitFor(1);
-            page.houseButton.click();
-            page.nextButton.click();
+            roomPage.page1RoomMustakilEv.click();
+            roomPage.page1RoomKiraBox.click();
+            homePage.ilerleButton.click();
             if (sayfa == 2)
                 break;
             // Here you are in 2nd page
-            page.selectText.click();
-            page.selectTextButton.sendKeys("Frankfurt, Almanya");
+            homePage.selectText.click();
+            homePage.selectTextButton.sendKeys("Sevilla, İspanya");
             BrowserUtils.waitFor(1);
             Robot robot = new Robot();
             robot.keyPress(VK_ENTER);
             BrowserUtils.waitFor(1);
-            page.checkBox.click();
+            roomPage.step2_CheckBox.click();
             BrowserUtils.waitFor(2);
-            page.nextButton.click();
+            homePage.nextButton.click();
             if (sayfa == 3)
                 break;
             // Here you are in 3rd page
             BrowserUtils.waitFor(1);
-            page.sizeOfAreaUp.sendKeys("50");
-            page.nextButton.click();
+            roomPage.page3KullanimAlaniInput.sendKeys("90");
+            for (WebElement e : roomPage.step3_incrementButtons){
+                e.click();
+            }
+            homePage.nextButton.click();
             if (sayfa == 4)
                 break;
             // Here you are in 4th page
             BrowserUtils.waitFor(1);
-            page.plus.click();
-            page.nextButton.click();
+            roomPage.page4AgeFarketmez.click();
+            roomPage.page4GenderFarketmez.click();
+            roomPage.page4KisiSayisiPlus.click();
+            homePage.ilerleButton.click();
             if (sayfa == 5)
                 break;
             // Here you are in 5th page
             BrowserUtils.waitFor(1);
-            page.tvText.click();
-            page.nextButton.click();
+            homePage.tvText.click();
+            roomPage.page5TV.click();
+            roomPage.page5WIFI.click();
+            roomPage.page5BulasikMakinesi.click();
+            roomPage.page5Klima.click();
+            roomPage.page5Mikrodalga.click();
+            homePage.ilerleButton.click();
             if (sayfa == 6)
                 break;
             // Here you are in 6th page
             BrowserUtils.waitFor(1);
-            page.homeExplanation.sendKeys("My home, sweet home.");
-            page.nextButton.click();
+            roomPage.page6roomExplanation.sendKeys("The room is fully furnished and has a Cable TV");
+            homePage.nextButton.click();
             if (sayfa == 7)
                 break;
             // Here you are in 7th page
             BrowserUtils.waitFor(1);
-            page.museumText.click();
-            page.nextButton.click();
+            roomPage.page7Plaj.click();
+            roomPage.page7CamiiDernek.click();
+            roomPage.page7HelalRestorant.click();
+            homePage.museumText.click();
+            homePage.nextButton.click();
             if (sayfa == 8)
                 break;
             // Here you are in 8th page
-            for (WebElement element : page.yesTexts) {
+            for (WebElement element : homePage.noTexts) {
                 element.click();
                 BrowserUtils.waitFor(1 / 2);
             }
-            page.nextButton.click();
+            homePage.nextButton.click();
             if (sayfa == 9)
                 break;
             // Here you are in 9th page
             BrowserUtils.waitFor(1);
-            page.selectDate.click();
-            page.todaysLocator.click();
+            roomPage.page9InputCalenderBox.click();
+            homePage.todaysLocator.click();
             BrowserUtils.waitFor(1 / 2);
-            page.todaysLocator.click();
-            page.nextButton.click();
+            homePage.todaysLocator.click();
+            homePage.nextButton.click();
             break;
             // Here you are in 10th page
         }
@@ -97,15 +113,23 @@ public class US076OdaKiralaPageStepD extends LoginPage {
     }
 
     @Then("user verifies that there is a {string} Page Step Number visible on the new room_step ten page")
-    public void userVerifiesThatThereIsAPageStepNumberVisibleOnTheNewRoom_stepTenPage(String arg0) {
+    public void userVerifiesThatThereIsAPageStepNumberVisibleOnTheNewRoom_stepTenPage(String pageStepNumber) {
+
+        Assert.assertTrue(roomPage.page10locationStepTextBox.isDisplayed());
+        System.out.println(roomPage.page10locationStepTextBox);
     }
 
     @Then("user verifies that the title {string} should be visible on the new_room step ten page")
-    public void userVerifiesThatTheTitleShouldBeVisibleOnTheNew_roomStepTenPage(String arg0) {
+    public void userVerifiesThatTheTitleShouldBeVisibleOnTheNew_roomStepTenPage(String title) {
+        Assert.assertTrue(roomPage.page10TitleName.isDisplayed());
+        System.out.println(roomPage.page10TitleName);
     }
 
-    @Then("user verifies that the description of Resim ve Fotograflar should be visible on the new room_step ten page")
-    public void userVerifiesThatTheDescriptionOfResimVeFotograflarShouldBeVisibleOnTheNewRoom_stepTenPage() {
+    @Then("user verifies that {string} should be visible on the new room_step ten page")
+    public void userVerifiesThatShouldBeVisibleOnTheNewRoom_stepTenPage(String description) {
+
+        Assert.assertTrue(roomPage.page10Resim_ve_FotograflarAciklama.isDisplayed());
+        System.out.println(roomPage.page10Resim_ve_FotograflarAciklama);
     }
 
     @Then("user verifies that Resimleri Secin button is active and functional on the new room_step ten page")
@@ -119,4 +143,6 @@ public class US076OdaKiralaPageStepD extends LoginPage {
     @Then("user verifies that the description of the maximum loading pictures should be visible on the new room_step ten page")
     public void userVerifiesThatTheDescriptionOfTheMaximumLoadingPicturesShouldBeVisibleOnTheNewRoom_stepTenPage() {
     }
+
+
 }

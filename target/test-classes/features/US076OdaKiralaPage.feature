@@ -19,7 +19,7 @@ Feature: US_076 Bir kullanıcı olarak "Oda Kirala & Değişim" ilan oluşturma 
   Scenario: US_076 TC_001 Buttons and the descriptions should be visible
     Then user verifies that there is a "10 / 10" Page Step Number visible on the new room_step ten page
     Then user verifies that the title "Resim ve Fotograflar" should be visible on the new_room step ten page
-    Then user verifies that the description of Resim ve Fotograflar should be visible on the new room_step ten page
+    Then user verifies that "the description of Resim ve Fotograflar" should be visible on the new room_step ten page
     Then user verifies that Resimleri Secin button is active and functional on the new room_step ten page
     Then user verifies that Tum Resimleri Kaldir button is active and functional on the new room_step ten page
     Then user verifies that the description of the maximum loading pictures should be visible on the new room_step ten page
