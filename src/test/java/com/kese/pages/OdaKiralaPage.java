@@ -2,10 +2,16 @@ package com.kese.pages;
 
 import com.kese.utilities.BrowserUtils;
 import org.openqa.selenium.By;
+import com.kese.utilities.Driver;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
+import java.util.Map;
 
 public class OdaKiralaPage extends CommonPage {
 
@@ -76,13 +82,13 @@ public class OdaKiralaPage extends CommonPage {
     @FindBy(xpath = "//p[contains(text(), 'Evinizin')]")
     public WebElement page2EvinizinKonumunuBelirtinizYzisi;
 
-    @FindBy(id = "react-select-2-input")
+    @FindBy (id = "react-select-2-input")
     public WebElement page2AddressInput;
 
-    @FindBy(xpath = "//*[@class = ' css-26l3qy-menu']")
+    @FindBy (xpath = "//*[@class = ' css-26l3qy-menu']")
     public WebElement step2_AddressList;
 
-    @FindBy(id = "flexRadioDefault2")
+    @FindBy (id = "flexRadioDefault2")
     public WebElement step2_CheckBox;
 
     @FindBy(xpath = "//h6[contains(text(), 'Eviniz')]")
@@ -96,6 +102,7 @@ public class OdaKiralaPage extends CommonPage {
 
     @FindBy(xpath = "//div[@class='col-7 px-0' and text()='Ev ile tramway durağı arası : ']")
     public WebElement page2EvIleTramway;
+
 
 
     // Page 3:
@@ -126,10 +133,10 @@ public class OdaKiralaPage extends CommonPage {
     @FindBy(xpath = "//span[contains(text(), 'Oturma')]")
     public WebElement page3OturmaOdasi;
 
-    @FindBy(xpath = "//button[text() = '+']")
+    @FindBy (xpath = "//button[text() = '+']")
     public List<WebElement> step3_incrementButtons;
 
-    @FindBy(xpath = "//button[text() = '−']")
+    @FindBy (xpath = "//button[text() = '−']")
     public List<WebElement> step3_decrementButtons;
 
     @FindBy(xpath = "//a[@id='next']")
@@ -249,7 +256,7 @@ public class OdaKiralaPage extends CommonPage {
     @FindBy(xpath = "//h2")
     public WebElement page6AciklamaHeader;
 
-    @FindBy(xpath = "//p")
+    @FindBy (xpath = "//p")
     public WebElement page6Parag;
 
     @FindBy(css = "#home")
@@ -313,7 +320,7 @@ public class OdaKiralaPage extends CommonPage {
     @FindBy(xpath = "//i[@class='fas fa-2x flaticon-mosque']")
     public WebElement page7CamiiDernek;
 
-    @FindBy(xpath = "//small[@class='pl-2']") //xpath is not true!!!!!!!!
+    @FindBy(xpath = "//div[@id='root']//small[@class='ps-2']")
     public WebElement page7ActiviteWarningMessage;
 
 
@@ -391,8 +398,8 @@ public class OdaKiralaPage extends CommonPage {
 //    @FindBy(xpath = "//button[@id='next']")
 //    public WebElement geriButton ;
 //
-//    @FindBy(xpath = "//div[@class='navbar-nav me-auto fs-3']")
-//    public WebElement theNumberOfPage ;
+    @FindBy(xpath = "//div[@class='navbar-nav me-auto fs-3']")
+    public WebElement theNumberOfPage ;
 //
 //    @FindBy(xpath = "//div[@class='px-3 py-2']/h2")
 //    public WebElement  pageTitleText;
@@ -442,6 +449,20 @@ public class OdaKiralaPage extends CommonPage {
     @FindBy(xpath = "//label[contains(@for,'file-upload2')]//i[contains(@class,'far fa-3x fa-image')]")
     public WebElement getPage10UploadingSecondImage;
 
+    //sevda
+
+    @FindBy (xpath = "//h2[text()='Cinsiyet, Yaş Aralığı ve Kişi Sayısı']")
+    public WebElement page4HeadMain;
+
+    @FindBy (xpath = "//*[text()='Hangi yaş aralığındaki ve cinsiyetteki kişiyi evinizde ağırlamak istersiniz.']")
+    public WebElement page4AgeGapP;
+
+    @FindBy (className = "input-number-value")
+    public WebElement page4kisiSayisi;
+
+    @FindBy (xpath = "//small[text()='*Lütfen cinsiyet ve yaş aralığı seçiniz.']")
+    public WebElement page4DefaultWarning;
+
     @FindBy(id = "dropdownMenuButton")
     public WebElement dropdownIlanVerButton;   // Ilan Ver butonu
     // Main Page
@@ -482,8 +503,286 @@ public class OdaKiralaPage extends CommonPage {
     @FindBy(xpath = "(//div[@class = 'rounded '])[10]")
     public WebElement step10_FileUploaded10;
 
+
     @FindBy(xpath = "//button[contains(text(),'Resimleri Seçin')]")
     public WebElement page10ResimleriSecinButton;
+
+    public boolean isDisplayedButton(String buttonText) {
+        String buttonLocatorText = "//*[contains(text(),'" + buttonText + "')]";
+        WebElement buttonTextLocator = Driver.get().findElement(By.xpath(buttonLocatorText));
+        return buttonTextLocator.isDisplayed();
+
+    }
+    public boolean isEnabledButton(String buttonText) {
+        String buttonLocatorText = "//*[contains(text(),'" + buttonText + "')]";
+        WebElement buttonTextLocator = Driver.get().findElement(By.xpath(buttonLocatorText));
+        return buttonTextLocator.isEnabled();
+
+    }
+    @FindBy (xpath = "//*[contains(text(), 'Resim Ekle')]")
+    public WebElement step10_addImageText; // resim ekle yazisinin ortak locatoru.
+
+
+    // 10. Sayfaya kadar Minimum Gereksinimlerle ulasan kodlar icin gerekli locatorlar
+    // Main Page
+    @FindBy (id = "dropdownMenuButton")
+    public WebElement dropdownMenuButton;   // Ilan Ver butonu
+    // Main Page
+    @FindBy (xpath = "//*[contains(text(),' Oda')]")
+    public WebElement roomExchangeOption; // Ilan ver butonunda  -> Ev degisimi secenegi
+    // common for all pages
+    @FindBy (xpath = "//*[contains(text(),'İlerle')]")
+    public WebElement nextButton;   // ilerle butonu
+    // 1st page
+    @FindBy (xpath = "//*[contains(text(),'Müstakil Ev')]")
+    public WebElement houseButton;  // Ev Tipi sayfasinda(sayfa1) -> Müstakil Ev
+    // 2nd page
+    @FindBy (xpath = "//*[contains(text(),'Select...')]")
+    public WebElement selectText;
+    // 2nd page
+    @FindBy (id = "react-select-2-input")
+    public WebElement selectTextButton;
+    // 2nd page
+    @FindBy(className = "form-check-input")
+    public WebElement checkBox;
+    // 3rd page
+    @FindBy (id = "size")
+    public WebElement sizeOfAreaUp;
+    // 4th page
+    @FindBy(xpath ="(//div[@class = 'pr-2 pb-2'])[1]")
+    public WebElement YasAraligi1015;
+
+    @FindBy(xpath = "(//div[@class = 'pr-2 pb-2'])[9]")
+    public WebElement CinsiyetKadin;
+
+    @FindBy(xpath = "(//button[@type = 'button'])[3]")
+    public WebElement Kisisayisiartir;
+
+    // 5th page
+    @FindBy (xpath = "//*[contains(text(),'TV')]")
+    public WebElement tvText;
+    // 6th page
+    @FindBy (id = "room")
+    public WebElement roomExplanation;
+    // 7th page
+    @FindBy (xpath = "//*[contains(text(),'Müze')]")
+    public WebElement museumText;
+    // 8th page
+    @FindBy (xpath = "//*[contains(text(),'Evet')]")
+    public List<WebElement> yesTexts;
+    // 9th page
+    @FindBy (className = "react-datepicker__input-container")
+    public WebElement selectDate;
+    // 9th page
+    @FindBy (xpath = "//*[@tabindex=0]")
+    public WebElement todaysLocator;
+
+    //US_80
+    @FindBy(xpath = "//input[@type='text']")
+    public WebElement page2SelectAdressInbox;
+
+    @FindBy(xpath = "//input[@type='checkbox']")
+    public WebElement page2SahsiAracCheckbox;
+
+    @FindBy(css = ".input-number-value")
+    public WebElement page4MaxPersonInput;
+
+    @FindBy(xpath = "//textarea")
+    public WebElement page6AciklamaTextarea;
+
+    @FindBy(xpath = "//div[contains(@class,'react-datepicker__portal')]//span[contains(@class,'next')]")
+    public WebElement page9NextMonthIcon;
+
+    @FindBy(css = ".react-datepicker__day.react-datepicker__day--001")
+    public WebElement page9NextMonthDay1Icon;
+
+    @FindBy(css = ".react-datepicker__day.react-datepicker__day--007")
+    public WebElement page9NextMonthDay7Icon;
+
+    @FindBy(xpath = "//button[text()='Resimleri Kaydet']")
+    public WebElement page10SavePicturesButton;
+
+    @FindBy(xpath = "//div[@class= 'rounded ']")
+    public List<WebElement> page10UploadedImagesList;
+
+    @FindBy(xpath = "//button[.='İlerle']")
+    public WebElement ilerleButton;
+
+    @FindBy(xpath = "//button[.='Geri']")
+    public WebElement geriButton;
+
+    public void selectPage1HomeType(String homeType) {
+        Driver.get().findElement(By.xpath("//small[text()='"+homeType+"']")).click();
+    }
+
+    public String getPage1SelectedHomeType(){
+        //*[contains(@class,'border-warning')]
+        return Driver.get().findElement(By.xpath("//*[contains(@class,'border-warning')]")).getText();
+    }
+
+    public void clickRoomTypePage1(String roomType) {
+        String roomTypeLocator = "//label[.='" + roomType + "']/preceding-sibling::input[@type='checkbox']";
+        Driver.get().findElement(By.xpath(roomTypeLocator)).click();
+    }
+
+    public boolean isPage1SelectedRoomType(String roomType) {
+        String roomTypeLocator = "//label[.='" + roomType + "']/preceding-sibling::input[@type='checkbox']";
+        return (Driver.get().findElement(By.xpath(roomTypeLocator)).isSelected());
+    }
+
+
+    public void setPage2TransportationDistances(Map<String, String> transportationOpportunities) {
+        for (Map.Entry<String, String> transportation : transportationOpportunities.entrySet()) {
+            String transportationLocator = "//div[@class='col-7 px-0' and text()='" + transportation.getKey() +" ']/following-sibling::div//input";
+            Driver.get().findElement(By.xpath(transportationLocator)).clear();
+            Driver.get().findElement(By.xpath(transportationLocator)).sendKeys(transportation.getValue());
+        }
+    }
+
+    public String getpage2TransportationOpportunity(String transportationDistance) {
+        String transportationLocator = "//div[@class='col-7 px-0' and text()='" + transportationDistance +" ']/following-sibling::div//input";
+        return Driver.get().findElement(By.xpath(transportationLocator)).getAttribute("value");
+    }
+
+    public void setPage2DistanceFromHome(Double distance, String location) {
+        String locationTypeLocator = "//div[@class='col-7 px-0' and text()='" + location + " ']/following-sibling::div//child::input";
+        WebElement distanceFromHome = Driver.get().findElement(By.xpath(locationTypeLocator));
+        distanceFromHome.clear();
+        distanceFromHome.sendKeys(distance.toString());
+    }
+
+    public Double getPage2DistanceFromHome(String location) {
+        String locationTypeLocator = "//div[@class='col-7 px-0' and text()='" + location + " ']/following-sibling::div//child::input";
+        return Double.parseDouble(Driver.get().findElement(By.xpath(locationTypeLocator)).getAttribute("value"));
+    }
+
+    public void setPage3CommonAreas(Map<String, String> commonAreas) {
+        for (Map.Entry<String, String> commonArea : commonAreas.entrySet()) {
+            int clickCount = 0;
+            String commonAreaLocator = "//*[text()='" + commonArea.getKey() + "']//following::span//following-sibling::button";
+            if (commonArea.getKey().equals("Yatak Odası"))  // there is a bug frontend code *******
+                clickCount=1;
+            for (; clickCount<Integer.parseInt(commonArea.getValue()) ; clickCount++) {
+                Driver.get().findElement(By.xpath(commonAreaLocator)).click();
+            }
+        }
+    }
+
+    public String getPage3CommonArea(String commonArea) {
+        String commonAreaLocator = "(//*[text()='"+ commonArea +"']//following::span)[1]";
+        return Driver.get().findElement(By.xpath(commonAreaLocator)).getText();
+    }
+
+    public void clickPage4AgeOptions(List<String> ageList) {
+        for (String ageText : ageList) {
+            String ageLocator = "//span[.='" + ageText + "']";
+            Driver.get().findElement(By.xpath(ageLocator)).click();
+        }
+    }
+
+    public void clickPage4GenderOptions(String gender) {
+        // locator will be improved
+        String genderLocator = "//span[text()='" + gender + "']";
+        Driver.get().findElement(By.xpath(genderLocator)).click();
+    }
+
+    public void setPage4MaxPerson(Integer maxPerson) {
+        for (int i = 0; i < maxPerson; i++)
+            page4KisiSayisiPlus.click();
+    }
+
+    public String getPage4SelectedAge(String ageInterval) {
+        // if class contains "success", it means it is selected
+        String ageLocator = "//span[.='" + ageInterval + "' and contains(@class,'success')]";
+        return Driver.get().findElement(By.xpath(ageLocator)).getText();
+    }
+
+    public String getPage4SelectedGender(String gender) {
+        // if class contains "success", it means it is selected
+        String genderLocator = "//h5[.='Cinsiyet']//following::span[.='" + gender + "' and contains(@class,'success')]";
+        return Driver.get().findElement(By.xpath(genderLocator)).getText();
+
+    }
+
+    public void setPage5HomeOpportunities(List<String> homeOpportunities) {
+        for (String opportunity : homeOpportunities) {
+            String opportunityLocator = "//small[.='" + opportunity + "']";
+            Driver.get().findElement(By.xpath(opportunityLocator)).click();
+        }
+    }
+
+    public String getPage5HomeOpportunity(String opportunity) {
+        // by this locator, it shows this opportunity is selected
+        String opportunityLocator = "//small[.='" + opportunity + "']//parent::div[contains(@class,'text-warning')]";
+        return Driver.get().findElement(By.xpath(opportunityLocator)).getText();
+    }
+
+    public void setPage7Activities(List<String> activities) {
+        for (String activity : activities) {
+            String activityLocator = "//small[.='" + activity + "']";
+            Driver.get().findElement(By.xpath(activityLocator)).click();
+        }
+    }
+
+    public String getPage7Activity(String selectedActivity) {
+        // by this locator, it shows this activity is selected
+        String activityLocator = "//small[.='" + selectedActivity + "']//parent::div[contains(@class,'text-warning')]";
+        return Driver.get().findElement(By.xpath(activityLocator)).getText();
+    }
+
+    public void setPage8SpecialConditions(Map<String, String> specialConditions) {
+        for (Map.Entry<String, String> condition : specialConditions.entrySet()) {
+            String conditionLocator = "//*[text()='" + condition.getKey() + "']//following-sibling::div/div/div[.='" + condition.getValue() + "']";
+            Driver.get().findElement(By.xpath(conditionLocator)).click();
+        }
+    }
+
+    public boolean getPage8SpecialCondition(String conditionKey, String conditionValue) {
+        // if it is selected, returns true
+        String conditionLocator = "//*[text()='" + conditionKey + "']//following-sibling::div/div/div[text()='" + conditionValue + "']";
+        return Driver.get().findElement(By.xpath(conditionLocator)).getAttribute("class").contains("text-white");
+    }
+
+    public void setPage9RentingDates() {
+
+        JavascriptExecutor executor = (JavascriptExecutor) Driver.get();
+
+        page9InputCalenderBox.click();
+        BrowserUtils.waitFor(1);
+        executor.executeScript("arguments[0].click();", page9NextMonthIcon);
+        BrowserUtils.waitFor(1);
+        executor.executeScript("arguments[0].click();", page9NextMonthDay1Icon);
+        BrowserUtils.waitFor(1);
+        executor.executeScript("arguments[0].click();", page9NextMonthDay7Icon);
+    }
+
+    public String getPage9BookedDate() {
+
+        String pattern = "d MMMMM yyyy EEEEE";
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern, new Locale("tr", "TR"));
+
+        Calendar calendar = Calendar.getInstance();
+        // selects next month and 1. day
+        calendar.add(Calendar.MONTH, 1);
+        calendar.set(Calendar.DAY_OF_MONTH, 1);
+
+        String dateBegin = simpleDateFormat.format(calendar.getTime());
+        // selects next month's 7.day
+        calendar.set(Calendar.DAY_OF_MONTH, 7);
+        String dateEnd = simpleDateFormat.format(calendar.getTime());
+
+        // returns String format of displayed booked dates
+        return dateBegin + " - " + dateEnd;
+
+    }
+
+    public void uploadPage10Images(int totalPictureNumber) {
+        for (int i = 1; i <= totalPictureNumber; i++)
+            Driver.get().findElement(By.id("file-upload" + i)).
+                    sendKeys((System.getProperty("user.dir") + "/src/test/resources/pictures/" + i + ".jpg"));
+
+    }
+
 
     @FindBy(xpath = "//p[contains(text(),'Odanızın ve evinizin ilgili alanlarının fotoğrafla')]")
     public WebElement page10Resim_ve_FotograflarAciklama;
