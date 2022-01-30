@@ -146,6 +146,86 @@ public class EvDegisimiPage extends CommonPage {
     @FindBy(xpath = "//button[@id='next']")
     public WebElement page3GeriButton;
 
+
+    @FindBy(xpath = "//div[@class='form-group row align-items-center ']/div[@class='input-number-container col-5']/div[@class='w-100   d-flex justify-content-center align-items-center']/button[@class='btn btn-light border py-1 px-2 mr-3']")
+    public WebElement page3yatakodasieksibutonu;
+
+    @FindBy(xpath = "//div[@class='form-group row  align-items-center pt-2'][1]/div[@class='input-number-container col-5']/div[@class='w-100   d-flex justify-content-center align-items-center']/button[@class='btn btn-light border py-1 px-2 mr-3']")
+    public WebElement page3banyoeksibutonu;
+
+    @FindBy(xpath = "//div[@class='form-group row  align-items-center pt-2'][2]/div[@class='input-number-container col-5']/div[@class='w-100   d-flex justify-content-center align-items-center']/button[@class='btn btn-light border py-1 px-2 mr-3']")
+    public WebElement page3tuvaleteksibutonu;
+
+
+    @FindBy(xpath = "//div[@class='form-group row  align-items-center pt-2'][3]/div[@class='input-number-container col-5']/div[@class='w-100   d-flex justify-content-center align-items-center']/button[@class='btn btn-light border py-1 px-2 mr-3']")
+    public WebElement page3oturmaodasieksibutonu;
+
+
+    @FindBy(xpath = "//div[@class='form-group row align-items-center ']/div[@class='input-number-container col-5']/div[@class='w-100   d-flex justify-content-center align-items-center']/button[@class='btn btn-light border py-1 px-2 ml-3']")
+    public WebElement page3yatakodasiartibutonu;
+
+
+    @FindBy(xpath = "//div[@class='form-group row  align-items-center pt-2'][1]/div[@class='input-number-container col-5']/div[@class='w-100   d-flex justify-content-center align-items-center']/button[@class='btn btn-light border py-1 px-2 ml-3']")
+    public WebElement page3banyoartibutonu;
+
+    @FindBy(xpath = "//div[@class='form-group row  align-items-center pt-2'][2]/div[@class='input-number-container col-5']/div[@class='w-100   d-flex justify-content-center align-items-center']/button[@class='btn btn-light border py-1 px-2 ml-3']")
+    public WebElement page3tuvaletartibutonu;
+
+
+    @FindBy(xpath = "//div[@class='form-group row  align-items-center pt-2'][3]/div[@class='input-number-container col-5']/div[@class='w-100   d-flex justify-content-center align-items-center']/button[@class='btn btn-light border py-1 px-2 ml-3']")
+    public WebElement page3oturmaodasiartibutonu;
+
+    @FindBy(xpath = "//div[@class='form-group row align-items-center ']/div[@class='input-number-container col-5']/div[@class='w-100   d-flex justify-content-center align-items-center']/span[@class='input-number-value']")
+    public WebElement page3yatakodasisayisi;
+
+
+    @FindBy(xpath = "//div[@class='form-group row  align-items-center pt-2'][1]/div[@class='input-number-container col-5']/div[@class='w-100   d-flex justify-content-center align-items-center']/span[@class='input-number-value']")
+    public WebElement page3banyosayisi;
+
+
+    @FindBy(xpath = "//div[@class='form-group row  align-items-center pt-2'][2]/div[@class='input-number-container col-5']/div[@class='w-100   d-flex justify-content-center align-items-center']/span[@class='input-number-value']")
+    public WebElement page3tuvaletsayisi;
+
+
+    @FindBy(xpath = "//div[@class='form-group row  align-items-center pt-2'][3]/div[@class='input-number-container col-5']/div[@class='w-100   d-flex justify-content-center align-items-center']/span[@class='input-number-value']")
+    public WebElement page3oturmaodasisayisi;
+
+
+   // @FindBy(className = "input-number-value")
+   // public List<WebElement> step3_AllNumbers;
+
+
+    @FindBy(xpath = "//div[@class=' css-1hwfws3']")
+    public WebElement adresbutonusayfa2;
+
+
+    @FindBy(id = "flexRadioDefault2")
+    public WebElement clickbutonusayfa2;
+
+    @FindBy(xpath = "//div[@class='ms-2']/*[@id='next']")
+    public WebElement page3ilerlebutonu;
+
+
+    @FindBy(xpath = "//small[contains(text(),'kullanım alanlarını giriniz.')]")
+    public WebElement page3lütfenkullnimalanigirinyazisi;
+
+    @FindBy(xpath = "//small[contains(text(),' yüzey alanını giriniz.')]")
+    public WebElement page3lütfenyüzeyalanigirinizyazisi;
+
+
+    @FindBy(xpath = "//p[contains(text(), 'Odanizin')]")
+    public WebElement page3OdanizinKullanimAlaniniBelirtinizYazisi;
+
+    public void incrementFifteenTimes() {
+        for (int i = 1; i <= 15; i++) {
+            page3yatakodasiartibutonu.click();
+            page3banyoartibutonu.click();
+            page3tuvaletartibutonu.click();
+            page3oturmaodasiartibutonu.click();
+        }
+
+    }
+
     //----------------------------------------------------------------------
     // Page 4 Titles
 
