@@ -33,7 +33,8 @@ public class US068_OdaKiralaPage7StepD {
 
 
     @Then("user verifies that all selections should be clickable at Oda Kirala")
-    public void userVerifiesThatAllSelectionsShouldBeClickableAtOdaKirala(List<String> selections) {
+    public void
+    userVerifiesThatAllSelectionsShouldBeClickableAtOdaKirala(List<String> selections) {
         for (String selection : selections) {
             Assert.assertTrue(new EvDegisimiPage().clickable(selection));
 

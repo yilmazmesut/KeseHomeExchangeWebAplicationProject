@@ -1,4 +1,4 @@
-@signUp28
+@smoketest
 Feature: As a user I should be see and access "/usage" and "/privacy"
   Background:
     Given user is on login page "http://test.kese.nl/signup"

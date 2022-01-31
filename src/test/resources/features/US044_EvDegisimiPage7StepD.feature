@@ -9,7 +9,7 @@ Feature: Bir kullanici olarak "Ev Degisimi" ilan olusturma sayfasinda,
     And user navigates to page 7 in Home Exchange
 
 
-  @TEST_META3-441
+  @TEST_META3-441 @44
   Scenario: "ilerle" button should be visible
     Then user verifies that "İlerle" button is visible at Ev Degisimi
     Then user verifies that "İlerle" button shouldn't be clickable as a default at Ev Degisimi

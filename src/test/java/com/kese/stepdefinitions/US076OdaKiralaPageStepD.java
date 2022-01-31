@@ -92,7 +92,7 @@ public class US076OdaKiralaPageStepD extends LoginPage {
             if (sayfa == 8)
                 break;
             // Here you are in 8th page
-            for (WebElement element : homePage.noTexts) {
+            for (WebElement element : homePage.yesTexts) {
                 element.click();
                 BrowserUtils.waitFor(1 / 2);
             }
