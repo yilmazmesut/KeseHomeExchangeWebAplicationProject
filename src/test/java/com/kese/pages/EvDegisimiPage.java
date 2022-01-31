@@ -695,9 +695,14 @@ public class EvDegisimiPage extends CommonPage {
     // 7th page
     @FindBy (xpath = "//*[contains(text(),'Müze')]")
     public WebElement museumText;
+
     // 8th page
     @FindBy (xpath = "//*[contains(text(),'Evet')]")
     public List<WebElement> yesTexts;
+
+    @FindBy (xpath = "//*[contains(text(),'Hayır')]")
+    public List<WebElement> noTexts;
+
     // 9th page
     @FindBy (className = "react-datepicker__input-container")
     public WebElement selectDate;
