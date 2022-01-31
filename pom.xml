@@ -117,6 +117,8 @@
         <artifactId>maven-surefire-plugin</artifactId>
         <version>2.22.2</version>
         <configuration>
+            <encoding>UTF-8</encoding>
+            <encoding>Cp1254</encoding>
             <runOrder>Alphabetical</runOrder>
             <testFailureIgnore>true</testFailureIgnore>
             <includes>

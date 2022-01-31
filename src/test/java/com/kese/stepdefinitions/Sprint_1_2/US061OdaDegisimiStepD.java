@@ -31,7 +31,7 @@ public class US061OdaDegisimiStepD {
     public void the_user_not_enters_required_information_she_sees(String string) {
 
         BrowserUtils.waitFor(2);
-        Assert.assertTrue(evDegisimiPage.page3lütfenyüzeyalanigirinizyazisi.isDisplayed());
+        Assert.assertTrue(evDegisimiPage.page3lutfenyuzeyalanigirinizyazisi.isDisplayed());
 
     }
 

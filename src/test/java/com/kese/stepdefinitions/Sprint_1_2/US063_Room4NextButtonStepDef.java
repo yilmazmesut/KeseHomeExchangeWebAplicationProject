@@ -15,16 +15,16 @@ public class US063_Room4NextButtonStepDef {
     WebDriver driver= Driver.get();
 
 
-    @Then("user asserts İlerle button is visible sevda")
-    public void userAssertsİlerleButtonIsVisibleSevda() {
-        Assert.assertTrue(page2.nextButton.isDisplayed());
-    }
+//    @Then("user asserts İlerle button is visible sevda")
+//    public void userAssertsİlerleButtonIsVisibleSevda() {
+//        Assert.assertTrue(page2.nextButton.isDisplayed());
+//    }
 
 
-    @Then("user assert İlerle button is not clickable")
-    public void userAssertİlerleButtonIsNotClickable() {
-        Assert.assertFalse( page2.nextButton.isEnabled());
-    }
+//    @Then("user assert İlerle button is not clickable")
+//    public void userAssertİlerleButtonIsNotClickable() {
+//        Assert.assertFalse( page2.nextButton.isEnabled());
+//    }
 
     @And("user enter age as Farketmez")
     public void userEnterAgeAsFarketmez() {
@@ -37,16 +37,16 @@ public class US063_Room4NextButtonStepDef {
         page.page4GenderFarketmez.click();
     }
 
-    @Then("user assert İlerle button is clickable")
-    public void userAssertİlerleButtonIsClickable() {
-        Assert.assertTrue(page2.nextButton.isEnabled());
+//    @Then("user assert İlerle button is clickable")
+//    public void userAssertİlerleButtonIsClickable() {
+//        Assert.assertTrue(page2.nextButton.isEnabled());
+//
+//    }
 
-    }
-
-    @And("user clicks on İlerle button")
-    public void userClicksOnİlerleButtonSevda() {
-        page2.nextButton.click();
-    }
+//    @And("user clicks on İlerle button")
+//    public void userClicksOnİlerleButtonSevda() {
+//        page2.nextButton.click();
+//    }
 
     @And("user clicks on {string}")
     public void userClicksOn(String genderSelected) {
@@ -87,5 +87,25 @@ public class US063_Room4NextButtonStepDef {
             Assert.assertEquals(notSelected, page.page4GenderErkek.getCssValue("color"));
 
         }
+    }
+
+    @Then("user asserts ilerle button is visible sevda")
+    public void userAssertsIlerleButtonIsVisibleSevda() {
+        Assert.assertTrue(page2.nextButton.isDisplayed());
+    }
+
+    @Then("user assert ilerle button is not clickable")
+    public void userAssertIlerleButtonIsNotClickable() {
+        Assert.assertFalse( page2.nextButton.isEnabled());
+    }
+
+    @And("user clicks on ilerle button")
+    public void userClicksOnIlerleButton() {
+        page2.nextButton.click();
+    }
+
+    @Then("user assert ilerle button is clickable")
+    public void userAssertIlerleButtonIsClickable() {
+        Assert.assertTrue(page2.nextButton.isEnabled());
     }
 }

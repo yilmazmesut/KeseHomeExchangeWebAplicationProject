@@ -9,17 +9,17 @@ public class US050EvDegisimPage9StepDef {
 
     EvDegisimiPage  edp1 = new EvDegisimiPage();
 
-    @Then("user verifies selected dates {string} are added under Seçtiğiniz Tarihler")
-    public void user_verifies_selected_dates_are_added_under_seçtiğiniz_tarihler(String expectedDate) {
-
-       String actualDate= edp1.page9SelectedDate.getText();
-
-        System.out.println(actualDate);
-
-        Assert.assertEquals(actualDate, expectedDate );
-
-
-    }
+//    @Then("user verifies selected dates {string} are added under Seçtiğiniz Tarihler")
+//    public void user_verifies_selected_dates_are_added_under_sectiginiz_tarihler(String expectedDate) {
+//
+//       String actualDate= edp1.page9SelectedDate.getText();
+//
+//        System.out.println(actualDate);
+//
+//        Assert.assertEquals(actualDate, expectedDate );
+//
+//
+//    }
     @When("user select a date user should see  x button on the right side")
     public void user_select_a_date_user_should_see_x_button_on_the_right_side() {
 
@@ -38,23 +38,40 @@ public class US050EvDegisimPage9StepDef {
 
     }
 
-    @When("user delete date on the frame selected date Seçtiğiniz Tarihler shouldn't be displayed")
-    public void userDeleteDateOnTheFrameSelectedDateSeçtiğinizTarihlerShouldnTBeDisplayed() {
+//    @When("user delete date on the frame selected date Seçtiğiniz Tarihler shouldn't be displayed")
+//    public void userDeleteDateOnTheFrameSelectedDateSeçtiğinizTarihlerShouldnTBeDisplayed() {
+//
+//   try{
+//       edp1.page9SectiginizTarihler.isDisplayed();
+//
+//   }catch(RuntimeException exception){
+//       System.out.println("Seçtiğiniz Tarihler doesn't exist on the frame");
+//        }
+//
+//
+//
+//
+//    }
 
-   try{
-       edp1.page9SectiginizTarihler.isDisplayed();
 
-   }catch(RuntimeException exception){
-       System.out.println("Seçtiğiniz Tarihler doesn't exist on the frame");
+    @Then("user verifies selected dates {string} are added under Sectiginiz Tarihler")
+    public void userVerifiesSelectedDatesAreAddedUnderSectiginizTarihler(String expectedDate) {
+        String actualDate= edp1.page9SelectedDate.getText();
+
+        System.out.println(actualDate);
+
+        Assert.assertEquals(actualDate, expectedDate );
+    }
+
+    @When("user delete date on the frame selected date Sectiginiz Tarihler shouldn't be displayed")
+    public void userDeleteDateOnTheFrameSelectedDateSectiginizTarihlerShouldnTBeDisplayed() {
+        try{
+            edp1.page9SectiginizTarihler.isDisplayed();
+
+        }catch(RuntimeException exception){
+            System.out.println("Seçtiğiniz Tarihler doesn't exist on the frame");
         }
 
 
-
-
     }
-
-
-
-
-
 }

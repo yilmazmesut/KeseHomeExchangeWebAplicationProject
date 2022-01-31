@@ -20,7 +20,7 @@ Feature: Bir kullanıcı olarak "Oda Kirala & Değişim" ilan oluşturma sayfas�
 
   Scenario: Eklediğim tarih bilgisi "Seçtiğiniz Tarihler" bölümüne eklenmelidir.
     When user pick a date
-    Then user verifies selected dates "16 Ocak 2022 Pazar - 16 Ocak 2022 Pazar" are added under Seçtiğiniz Tarihler
+    Then user verifies selected dates "16 Ocak 2022 Pazar - 16 Ocak 2022 Pazar" are added under Sectiginiz Tarihler
 
   Scenario: Tarih bilgisini eklediğim inputun yanında "çarpı" butonu yer almalıdır.
     When user pick a date
@@ -33,4 +33,4 @@ Feature: Bir kullanıcı olarak "Oda Kirala & Değişim" ilan oluşturma sayfas�
   Scenario:  Kaldırdığım tarih bilgisi, "Seçtiğiniz Tarihler" bölümünden kaldırılmalıdır.
     When user pick a date
     When user click on the x button date frame should be clear and "Tarih seçmek için tıklayınız" should be exist.
-    When user delete date on the frame selected date Seçtiğiniz Tarihler shouldn't be displayed
+    When user delete date on the frame selected date Sectiginiz Tarihler shouldn't be displayed
