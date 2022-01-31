@@ -1,4 +1,4 @@
-@ForgotPasswordPage
+@smoketest
 Feature: When I enter the "forgot_password" page as a user the change password button should be available
 
   Scenario:The Change "My Password" button should be active and visible

@@ -5,6 +5,7 @@ import com.kese.utilities.BrowserUtils;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import org.junit.Assert;
 
 public class US28SignUpStepD {
     SignUpPage signUpPage = new SignUpPage();
@@ -35,7 +36,8 @@ public class US28SignUpStepD {
             case "/privacy":
                 BrowserUtils.verifyElementDisplayed(signUpPage.privacy);
                 break;
-
+            default:
+                Assert.assertTrue(false);
 
         }
 
