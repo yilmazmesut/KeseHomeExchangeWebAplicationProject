@@ -28,7 +28,7 @@ public class US53HomeExchangePage10StepD {
     }
 
     @And("user navigates to page {int} in Home Exchange")
-    public void userNavigatesToPageInHomeExchange(int sayfa) throws AWTException {
+    public void userNavigatesToPageInHomeExchange(int sayfa) {
         while(true){
             if( sayfa < 1 || sayfa > 10 ){
                 throw new IllegalArgumentException("Not valid page number :"+sayfa);
@@ -131,7 +131,9 @@ public class US53HomeExchangePage10StepD {
     @Then("user asserts that it can't be upload more images")
     public void maximunPicturesDestriction() {
         // add image frame shouldn't display and throw exeption
-
+        WebElement addImageText = page.step10_addImageText;
+        // 'Resim Ekle' frame mustn't be display here then throws exception
+        Assert.assertThrows(org.openqa.selenium.NoSuchElementException.class, addImageText::isDisplayed);
     }
 
     @Then("user asserts that the Resimleri Kaydet button is clickable")
