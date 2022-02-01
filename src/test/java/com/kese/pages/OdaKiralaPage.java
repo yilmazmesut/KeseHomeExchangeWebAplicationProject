@@ -585,6 +585,9 @@ public class OdaKiralaPage extends CommonPage {
     @FindBy(xpath = "//input[@type='checkbox']")
     public WebElement page2SahsiAracCheckbox;
 
+    @FindBy(xpath = "//div[@class='py-3']//b")
+    public WebElement page2SectinizAdresTextValue;
+
     @FindBy(css = ".input-number-value")
     public WebElement page4MaxPersonInput;
 
