@@ -3,7 +3,15 @@
 
 src/test/java/runners/
 .idea/
-.target
+*.iml
+.idea/
+target/
+src/main/
+target/generated-test-sources/
+target/test-classes/pages/
+target/test-classes/runners/
+target/test-classes/step_definitions/
+target/test-classes/utilities/
 
 # Compiled class file
 *.class
