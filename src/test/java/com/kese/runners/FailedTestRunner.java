@@ -7,9 +7,9 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         plugin = {"html:target/failed-html-report"},
-        features = "src/test/resources/features/US055_EvDegisimiPageStepD.feature",
-        glue = "com/kese/stepdefinitions",
-        dryRun = false
+        features = "@target/rerun.txt",
+        glue ="com/kese/stepdefinitions"
+
 )
 
 public class FailedTestRunner {

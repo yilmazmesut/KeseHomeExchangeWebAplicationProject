@@ -1,8 +1,8 @@
 package com.kese.pages;
 
 import com.kese.utilities.BrowserUtils;
-import com.kese.utilities.Driver;
 import org.openqa.selenium.By;
+import com.kese.utilities.Driver;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -82,13 +82,13 @@ public class OdaKiralaPage extends CommonPage {
     @FindBy(xpath = "//p[contains(text(), 'Evinizin')]")
     public WebElement page2EvinizinKonumunuBelirtinizYzisi;
 
-    @FindBy(id = "react-select-2-input")
+    @FindBy (id = "react-select-2-input")
     public WebElement page2AddressInput;
 
-    @FindBy(xpath = "//*[@class = ' css-26l3qy-menu']")
+    @FindBy (xpath = "//*[@class = ' css-26l3qy-menu']")
     public WebElement step2_AddressList;
 
-    @FindBy(id = "flexRadioDefault2")
+    @FindBy (id = "flexRadioDefault2")
     public WebElement step2_CheckBox;
 
     @FindBy(xpath = "//h6[contains(text(), 'Eviniz')]")
@@ -102,6 +102,7 @@ public class OdaKiralaPage extends CommonPage {
 
     @FindBy(xpath = "//div[@class='col-7 px-0' and text()='Ev ile tramway durağı arası : ']")
     public WebElement page2EvIleTramway;
+
 
 
     // Page 3:
@@ -132,10 +133,10 @@ public class OdaKiralaPage extends CommonPage {
     @FindBy(xpath = "//span[contains(text(), 'Oturma')]")
     public WebElement page3OturmaOdasi;
 
-    @FindBy(xpath = "//button[text() = '+']")
+    @FindBy (xpath = "//button[text() = '+']")
     public List<WebElement> step3_incrementButtons;
 
-    @FindBy(xpath = "//button[text() = '−']")
+    @FindBy (xpath = "//button[text() = '−']")
     public List<WebElement> step3_decrementButtons;
 
     @FindBy(xpath = "//a[@id='next']")
@@ -255,7 +256,7 @@ public class OdaKiralaPage extends CommonPage {
     @FindBy(xpath = "//h2")
     public WebElement page6AciklamaHeader;
 
-    @FindBy(xpath = "//p")
+    @FindBy (xpath = "//p")
     public WebElement page6Parag;
 
     @FindBy(css = "#home")
@@ -583,6 +584,9 @@ public class OdaKiralaPage extends CommonPage {
     @FindBy(xpath = "//input[@type='checkbox']")
     public WebElement page2SahsiAracCheckbox;
 
+    @FindBy(xpath = "//div[@class='py-3']//b")
+    public WebElement page2SectinizAdresTextValue;
+
     @FindBy(css = ".input-number-value")
     public WebElement page4MaxPersonInput;
 
@@ -783,4 +787,22 @@ public class OdaKiralaPage extends CommonPage {
     }
 
 
+    @FindBy(xpath = "//p[contains(text(),'Odanızın ve evinizin ilgili alanlarının fotoğrafla')]")
+    public WebElement page10Resim_ve_FotograflarAciklama;
+
+    public static final By page10theStepNumberOfPage = By.className("//div[@class='navbar-nav me-auto fs-3']");
+    public static final By page10Resim_ve_Fotograflar = By.xpath("//h2[contains(text(),'Resim ve Fotoğraflar')]");
+    public static final By page10aciklama = By.xpath("//p[contains(text(),'Odanızın ve evinizin ilgili alanlarının fotoğrafla')]");
+    public static final By page10ResimleriSecin = By.linkText(" Resimleri Seçin");
+    public static final By page10tumResimleriKaldir = By.linkText(" Tüm Resimleri Kaldır");
+    public static final By page10enAzBesEnFazlaOnResim = By.linkText("En az 5 en fazla 10 resim yükleyebilirsiniz.");
+    public static final By page10FirstResimEkle = By.xpath("//div[@class='d-flex flex-column align-items-center']");
+    public static final By page10SecondResimEkle = By.xpath("//div[@class='col-6 col-sm-4 col-md-4 col-lg-3  h-100'][2]");
+    public static final By page10ThirdResimEkle = By.xpath("//div[@class='col-6 col-sm-4 col-md-4 col-lg-3  h-100'][3]");
+    public static final By page10FourthResimEkle = By.xpath("//div[@class='col-6 col-sm-4 col-md-4 col-lg-3  h-100'][4]");
+
+    public static boolean stepNumberIsDisplayed(String pageStepNumber) {
+        By stepNumber = By.linkText(pageStepNumber);
+        return BrowserUtils.isDisplayed(stepNumber);
+    }
 }
