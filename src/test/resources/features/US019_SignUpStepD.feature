@@ -1,7 +1,8 @@
+@smoketest
 Feature: US_019 As a user, When I enter the "/signup" page , I should be able to register to the system
 
 
-  @Rejep_US_19
+
   Scenario: I should be able to register to the system.
     Given user is on signup page "http://test.kese.nl/signup"
     And user types "rejep" to the username input on the signup page
