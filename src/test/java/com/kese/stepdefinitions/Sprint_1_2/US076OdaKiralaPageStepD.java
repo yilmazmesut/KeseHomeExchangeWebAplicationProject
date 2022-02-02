@@ -4,9 +4,11 @@ import com.kese.pages.EvDegisimiPage;
 import com.kese.pages.LoginPage;
 import com.kese.pages.OdaKiralaPage;
 import com.kese.utilities.BrowserUtils;
+import com.kese.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import java.awt.*;
@@ -119,13 +121,19 @@ public class US076OdaKiralaPageStepD extends LoginPage {
         System.out.println(roomPage.page10locationStepTextBox);
     }
 
-    @Then("user verifies that the title {string} should be visible on the new_room step ten page")
+    @Then("user verifies that the title {string} is visible on the new_room step ten page")
     public void userVerifiesThatTheTitleShouldBeVisibleOnTheNew_roomStepTenPage(String title) {
+        String resimVeFotograflarTitle = "//h2[contains(text(),'Resim ve Fotoğraflar')],'"+title+"')]";
+        WebElement page10TitleName = Driver.get().findElement(By.xpath(resimVeFotograflarTitle));
+        //Assert.assertTrue(resimVeFotograflarTitle.isDisplayed());
+
         Assert.assertTrue(roomPage.page10TitleName.isDisplayed());
         System.out.println(roomPage.page10TitleName);
+
+
     }
 
-    @Then("user verifies that {string} should be visible on the new room_step ten page")
+    @Then("user verifies that {string} is visible on the new room_step ten page")
     public void userVerifiesThatShouldBeVisibleOnTheNewRoom_stepTenPage(String description) {
 
         Assert.assertTrue(roomPage.page10Resim_ve_FotograflarAciklama.isDisplayed());
@@ -140,7 +148,7 @@ public class US076OdaKiralaPageStepD extends LoginPage {
     public void userVerifiesThatTumResimleriKaldirButtonIsActiveAndFunctionalOnTheNewRoom_stepTenPage() {
     }
 
-    @Then("user verifies that the description of the maximum loading pictures should be visible on the new room_step ten page")
+    @Then("user verifies that the description of the maximum loading pictures are visible on the new room_step ten page")
     public void userVerifiesThatTheDescriptionOfTheMaximumLoadingPicturesShouldBeVisibleOnTheNewRoom_stepTenPage() {
     }
 
