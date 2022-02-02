@@ -1,4 +1,4 @@
-@US80
+@US080
 
 Feature: "Oda Kirala & Değişimi" - Geri button enability and saved data verification
   # Bir kullanıcı olarak "Oda Kirala & Değişim" ilan oluşturma sayfasında, ilk adım hariç diğer adımlarda geriye dönebilmeliyim.
@@ -24,7 +24,7 @@ Feature: "Oda Kirala & Değişimi" - Geri button enability and saved data verifi
     And "Karşılıklı oda değişimi yapmak istiyorum." checkbox should be clicked on step one on oda kirala page
     When user clicks to the ilerle button on oda kirala page
     Then step 2 should be displayed on oda kirala page
-    And user enters "London, Birleşik Krallık" to address input on step two on oda kirala page
+    And user enters "San Fernando, Şili" to address input on step two on oda kirala page
     And user enters ulasim olanaklari from home on step two on oda kirala page
       | Ev ile otobüs durağı arası :  | 2 |
       | Ev ile tren istasyonu arası : | 3 |
@@ -34,11 +34,12 @@ Feature: "Oda Kirala & Değişimi" - Geri button enability and saved data verifi
     Then step 3 should be displayed on oda kirala page
     And the geri button should be enabled
     When user clicks to the geri button on oda kirala page
+    Then "San Fernando, Şili" should be displayed as sectiginiz adres on step two on oda kirala page
     Then below ulasim olanaklari should be displayed on step two on oda kirala page
       | Ev ile otobüs durağı arası :  | 2 |
       | Ev ile tren istasyonu arası : | 3 |
       | Ev ile tramway durağı arası : | 4 |
-    And sahsi arac ulasim box should be clicked
+    And sahsi arac ulasim box should be clicked on step two on oda kirala page
     When user clicks to the ilerle button on oda kirala page
     Then user enters "80" to ev kullanim alani on oda kirala page
     And user defines below ortak kullanim alanlari on step three on oda kirala page
