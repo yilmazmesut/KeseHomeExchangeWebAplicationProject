@@ -50,11 +50,12 @@ public class US023_IlanVerStep {
 
     @And("{string} is selected")
     public void isSelected(String arg0) {
-
+       // Assert.assertTrue(mainPage.profilim.isSelected());
     }
 
     @When("{string} should be visib")
     public void shouldBeVisib(String arg0) {
+       //   Assert.assertTrue(mainPage.profilim.isSelected());
     }
 }
 
