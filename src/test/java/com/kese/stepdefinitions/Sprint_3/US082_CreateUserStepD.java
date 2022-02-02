@@ -2,6 +2,7 @@ package com.kese.stepdefinitions.Sprint_3;
 
 import com.github.javafaker.Faker;
 import com.google.gson.JsonObject;
+import com.kese.pages.API.Users;
 import com.kese.utilities.ConfigurationReader;
 import io.cucumber.java.en.*;
 import io.restassured.RestAssured;
@@ -18,6 +19,8 @@ import static io.restassured.RestAssured.given;
 
 public class US082_CreateUserStepD {
 
+    Users users = new Users();
+
     Faker faker = new Faker();
     String username = faker.name().username();
     String email = faker.internet().emailAddress();
@@ -30,12 +33,16 @@ public class US082_CreateUserStepD {
 
     @Given("user creates new user")
     public void user_creates_new_user() {
-        JSONObject requestParams = new JSONObject();
-        requestParams.put("email",email).put("kullanici_adi",username).put("sifre",password);
-        response = given().contentType(ContentType.JSON)
-                .spec(request)
-                .body(requestParams.toString())
-                .post("/user/account");
+
+//        JSONObject requestParams = new JSONObject();
+//        requestParams.put("email",email).put("kullanici_adi",username).put("sifre",password);
+//        response = given().contentType(ContentType.JSON)
+//                .spec(request)
+//                .body(requestParams.toString())
+//                .post("/user/account");
+
+        response = users.createNewUser(email, username, password);
+
     }
 
     @Then("user verifies that status code is {int}")
@@ -45,27 +52,32 @@ public class US082_CreateUserStepD {
         Assert.assertEquals(expectedStatusCode, actualStatusCode);
 
 
-
     }
 
-    @Then("user verifies that response body has sonuc is {string}")
-    public void user_verifies_that_response_body_has_sonuc_is(String expectedResponseSonuc) {
+    @Then("user verifies that response body has {string} is {string}")
+    public void user_verifies_that_response_body_has_sonuc_is(String responseKey, String expectedResponseSonuc) {
 
-        JsonPath jsonPath = response.jsonPath();
-        String actualResponseSonuc = jsonPath.getString("sonuc");
-        Assert.assertEquals(expectedResponseSonuc,actualResponseSonuc);
+//        JsonPath jsonPath = response.jsonPath();
+//        String actualResponseSonuc = jsonPath.getString(responseKey);
+
+
+        String actualResponseSonuc = users.getValue(response, responseKey);
+        Assert.assertEquals(expectedResponseSonuc, actualResponseSonuc);
 
     }
 
 
     @Given("user creates new user with used mail")
     public void user_creates_new_user_with_used_mail() {
-        JSONObject requestParams = new JSONObject();
-        requestParams.put("email","Aykut@mail.com").put("kullanici_adi",username).put("sifre",password);
-        response = given().contentType(ContentType.JSON)
-                .spec(request)
-                .body(requestParams.toString())
-                .post("/user/account");
+//        JSONObject requestParams = new JSONObject();
+//        requestParams.put("email","Aykut@mail.com").put("kullanici_adi",username).put("sifre",password);
+//        response = given().contentType(ContentType.JSON)
+//                .spec(request)
+//                .body(requestParams.toString())
+//                .post("/user/account");
+
+        response = users.createNewUser("Aykut@mail.com", username, password);
+
     }
 
     @Given("user creates new user with used username")
@@ -77,13 +89,15 @@ public class US082_CreateUserStepD {
 //                .multiPart("sifre", password)
 //                .when().post("/user/account");
 //        ------------------------------------------------------------------------
-        JSONObject requestParams = new JSONObject();
-        requestParams.put("email",email).put("kullanici_adi","Aykut").put("sifre",password);
-        response = given().contentType(ContentType.JSON)
-                .spec(request)
-                .body(requestParams.toString())
-                .post("/user/account");
+//        JSONObject requestParams = new JSONObject();
+//        requestParams.put("email",email).put("kullanici_adi","Aykut").put("sifre",password);
+//        response = given().contentType(ContentType.JSON)
+//                .spec(request)
+//                .body(requestParams.toString())
+//                .post("/user/account");
 
+
+        response = users.createNewUser(email, "Aykut", password);
 
 
     }
