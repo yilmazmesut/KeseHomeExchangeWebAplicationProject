@@ -31,5 +31,9 @@ public class US005_BedAndVreakFastStep {
         @And("{string} is selected,")
         public void isSelected(String arg0) {
         }
-    }
+
+        @Then("{string} should be")
+        public void shouldBe(String arg0) {
+        }
+}
 

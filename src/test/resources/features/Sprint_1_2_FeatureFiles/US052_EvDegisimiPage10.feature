@@ -4,7 +4,7 @@ Feature: US_052 Bir kullanıcı olarak "Ev Değişim" ilan oluşturma sayfasınd
     Given user is on login page "http://test.kese.nl/new_home"
     When user signed in on sign in page
       | coder52@nonmail.com | 1234 |
-    And user navigates to page 10 in Home Exchange
+    And user navigates to page 10 in home Page
 
   Scenario: US_052 TC_001 Buttons and the descriptions should be visible
     Then user verifty that the four picture loading buttons are visible as default on the new home_step ten page

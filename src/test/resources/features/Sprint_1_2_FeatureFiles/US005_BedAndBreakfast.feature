@@ -6,5 +6,5 @@ Feature:US_005 Bir kullanıcı olarak ana sayfaya girdiğimde, "Bed & Breakfast"
 
   Scenario:TC002
     And "Bed & Breakfast" is selected,
-    Then "Gitmek istediğiniz Yer" should be visible
+    Then "Gitmek istediğiniz Yer" should be
     Then user verifies the drop down menu is clickable ,under the "Gitmek istediğiniz Yer" text

@@ -140,10 +140,17 @@ public class US080_OdaKiralaPageStepD {
 
     }
 
-    @Then("sahsi arac ulasim box should be clicked")
-    public void sahsi_arac_ulasim_box_should_be_clicked() {
+    @Then("sahsi arac ulasim box should be clicked on step two on oda kirala page")
+    public void sahsi_arac_ulasim_box_should_be_clickedon_step_two_on_oda_kirala_page() {
 
         Assert.assertTrue(odaKiralaPage.page2SahsiAracCheckbox.isSelected());
+
+    }
+
+    @Then("{string} should be displayed as sectiginiz adres on step two on oda kirala page")
+    public void should_be_displayed_as_sectiginiz_adres_on_step_two_on_oda_kirala_page(String homeLocation) {
+
+        Assert.assertEquals(homeLocation, odaKiralaPage.page2SectinizAdresTextValue.getAttribute("outerText"));
 
     }
 
