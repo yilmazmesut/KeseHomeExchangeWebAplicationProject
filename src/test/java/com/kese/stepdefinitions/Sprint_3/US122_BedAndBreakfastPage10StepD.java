@@ -11,7 +11,8 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
 public class US122_BedAndBreakfastPage10StepD {
-    EvDegisimiPage page = new EvDegisimiPage();
+    BedAndBreakfastPage page = new BedAndBreakfastPage();
+    EvDegisimiPage evDegisimiPage = new EvDegisimiPage();
     @And("user navigates to page {int} in Bed & Breakfast")
     public void navigateToPageInBedBreakfast(int sayfa) {
         while(true){
@@ -19,83 +20,77 @@ public class US122_BedAndBreakfastPage10StepD {
                 Assert.fail("Not valid page number :"+sayfa);
             }
             // Here you are in Main page
-            page.dropdownMenuButton.click();
+            evDegisimiPage.dropdownMenuButton.click();
             // Ana sayfada ki Ilan Ver menusu icinde ki Bed & Breakfast secenegi
             Driver.get().findElement(By.xpath("//*[contains(text(),' Bed & Breakfast')]")).click();
             if (sayfa == 1)
                 break;
             // Here you are in 1st page
             BrowserUtils.waitFor(1);
-            page.houseButton.click();
-            page.nextButton.click();
+            page.step1_houseButton.click();
+            evDegisimiPage.nextButton.click();
             if (sayfa == 2)
                 break;
             // Here you are in 2nd page
-            page.selectText.click();
-            page.selectTextButton.sendKeys("Frankfurt, Almanya");
+            page.step2_selectText.click();
+            page.step2_selectTextButton.sendKeys("Frankfurt, Almanya");
             BrowserUtils.waitFor(1);
-            page.selectTextButton.sendKeys(Keys.ENTER);
+            page.step2_selectTextButton.sendKeys(Keys.ENTER);
             BrowserUtils.waitFor(1);
-            page.checkBox.click();
+            page.step2_checkBox.click();
             BrowserUtils.waitFor(2);
-            page.nextButton.click();
+            evDegisimiPage.nextButton.click();
             if (sayfa == 3)
                 break;
             // Here you are in 3rd page
             BrowserUtils.waitFor(1);
-            page.sizeOfAreaUp.sendKeys("50");
-            page.nextButton.click();
+            page.step3_sizeOfAreaUp.sendKeys("50");
+            evDegisimiPage.nextButton.click();
             if (sayfa == 4)
                 break;
             // Here you are in 4th page
             BrowserUtils.waitFor(1);
-            // Yas araligi opsiyonunlarindan 10-15 araligi
-            Driver.get().findElement(By.xpath("//*[contains(text(),'10-15')]")).click();
-            // Cinsiyet opsiyonlarindan Erkek
-            Driver.get().findElement(By.xpath("//*[contains(text(),'Erkek')]")).click();
-            page.plus.click();
-            page.nextButton.click();
-
+            page.page4Age1.click();
+            page.page4GenderErkek.click();
+            page.step4_plus.click();
+            evDegisimiPage.nextButton.click();
             if (sayfa == 5)
                 break;
             // Here you are in 5th page
             BrowserUtils.waitFor(1);
-            page.tvText.click();
-            page.nextButton.click();
+            page.step5_tvText.click();
+            evDegisimiPage.nextButton.click();
             if (sayfa == 6)
                 break;
             // Here you are in 6th page
             BrowserUtils.waitFor(1);
-            // Kullandirilacak Oda hakkinda bilgi
-            Driver.get().findElement(By.id("room")).sendKeys("Large and spacious");
-            // Ev hakkinda bilgi
-            page.homeExplanation.sendKeys("My home, sweet home.");
-            //Kahvalti hakkinda bilgi
-            Driver.get().findElement(By.id("breakfast")).sendKeys("Cheese, bread, tea.");
-            page.nextButton.click();
+            page.page6inputBoxRoom.sendKeys("Large and spacious");
+            page.step6_homeExplanation.sendKeys("My home, sweet home.");
+            page.page6inputBoxBreakf.sendKeys("Cheese, bread, tea.");
+            evDegisimiPage.nextButton.click();
             if (sayfa == 7)
                 break;
             // Here you are in 7th page
             BrowserUtils.waitFor(1);
-            page.museumText.click();
-            page.nextButton.click();
+            page.step7_museumText.click();
+            evDegisimiPage.nextButton.click();
             if (sayfa == 8)
                 break;
             // Here you are in 8th page
-            for(WebElement element:page.yesTexts){
+            for(WebElement element:page.step8_yesTexts){
                 element.click();
                 BrowserUtils.waitFor(1/2);
             }
-            page.nextButton.click();
+            evDegisimiPage.nextButton.click();
             if (sayfa == 9)
                 break;
             // Here you are in 9th page
             BrowserUtils.waitFor(1);
-            page.selectDate.click();
-            page.todaysLocator.click();
+            page.step9_selectDate.click();
+            page.step9_todaysLocator.click();
             BrowserUtils.waitFor(1/2);
-            page.todaysLocator.click();
-            page.nextButton.click();
+            page.step9_todaysLocator.click();
+            evDegisimiPage.nextButton.click();
             break;
             // Here you are in 10th page
         }
