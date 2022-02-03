@@ -1,5 +1,6 @@
 package com.kese.pages;
 
+
 import com.kese.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -581,5 +582,6 @@ public class BedAndBreakfastPage extends CommonPage {
 
     @FindBy(xpath = "//*[@class='navbar-nav me-auto fs-3']")
     public WebElement page5BesOn;
+
 
 }
