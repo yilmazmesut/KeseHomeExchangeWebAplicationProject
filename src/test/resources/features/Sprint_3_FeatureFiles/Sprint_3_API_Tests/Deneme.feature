@@ -8,5 +8,6 @@ Feature: US_088	Bir kullanıcı olarak "/api/homes" sayfasına "post" tipinde ba
     Given user connects to "/api/homes"
     When user adds a new home advertise
     Then user verifies the home advertise added
+#    deneme1
 
 
