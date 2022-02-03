@@ -40,7 +40,8 @@ public class US023_IlanVerStep {
 
     @When("{string} is selecte,")
     public void isSelecte(String arg0) {
-      //  Assert.assertTrue(mainPage.ilanVer.isSelected());
+       // Assert.assertTrue(mainPage.ilanVer.isSelected());
+       // BrowserUtils.waitFor(1);
     }
 
     @When("{string} should be visibl")
