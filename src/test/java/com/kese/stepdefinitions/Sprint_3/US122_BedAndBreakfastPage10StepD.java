@@ -13,7 +13,7 @@ import org.openqa.selenium.WebElement;
 public class US122_BedAndBreakfastPage10StepD {
     EvDegisimiPage page = new EvDegisimiPage();
     @And("user navigates to page {int} in Bed & Breakfast")
-    public void userNavigatesToPageInBedBreakfast(int sayfa) {
+    public void navigateToPageInBedBreakfast(int sayfa) {
         while(true){
             if( sayfa < 1 || sayfa > 10 ){
                 Assert.fail("Not valid page number :"+sayfa);
