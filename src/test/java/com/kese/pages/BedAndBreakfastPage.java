@@ -11,7 +11,7 @@ public class BedAndBreakfastPage extends CommonPage {
 
     //Common Locators
 
-    @FindBy(xpath = "//a[@id='next']")
+    @FindBy(xpath = "//*[contains(text(),'İlerle')]")
     public WebElement ilerleButton ;
 
     @FindBy(xpath = "//button[@id='next']")
@@ -505,5 +505,81 @@ public class BedAndBreakfastPage extends CommonPage {
     // 9th page
     @FindBy (xpath = "//*[@tabindex=0]")
     public WebElement step9_todaysLocator;
+
+
+    /**--------------------------------------------------------------------------------------------------------------*/
+    // Page 5 by Adem
+
+    @FindBy(xpath = "//small[@class='pt-1 px-0' and text()='TV']")
+    public WebElement page5TV;
+
+    @FindBy(xpath = "//small[@class='pt-1 px-0' and text()='Mini Buzdolabı']")
+    public WebElement page5MiniBuzdolabi;
+
+    @FindBy(xpath = "//small[@class='pt-1 px-0' and text()='Wi-Fi']")
+    public WebElement page5WIFI;
+
+    @FindBy(xpath = "//small[@class='pt-1 px-0' and text()='Kurutma Makinesi']")
+    public WebElement page5KurutmaMakinesi;
+
+    @FindBy(xpath = "//small[@class='pt-1 px-0' and text()='Çay Makinesi']")
+    public WebElement page5CayMakinasi;
+
+    @FindBy(xpath = "//small[@class='pt-1 px-0' and text()='Kahve Makinesi']")
+    public WebElement page5KahveMakinasi;
+
+    @FindBy(xpath = "//small[@class='pt-1 px-0' and text()='Microdalga Fırın']")
+    public WebElement page5Mikrodalga;
+
+    @FindBy(xpath = "//small[@class='pt-1 px-0' and text()='Asansör']")
+    public WebElement page5Asansor;
+
+    @FindBy(xpath = "//small[@class='pt-1 px-0' and text()='Bebek arabası']")
+    public WebElement page5BebekArabasi;
+
+    @FindBy(xpath = "//small[@class='pt-1 px-0' and text()='Bilgisayar']")
+    public WebElement page5Bilgisayar;
+
+    @FindBy(xpath = "//small[@class='pt-1 px-0' and text()='Bahçe']")
+    public WebElement page5Bahce;
+
+    @FindBy(xpath = "//small[@class='pt-1 px-0' and text()='Ücretsiz Park Alanı']")
+    public WebElement page5UcretsizPark;
+
+    @FindBy(xpath = "//small[@class='pt-1 px-0' and text()='Ücretli Park Alanı']")
+    public WebElement page5UcretliPark;
+
+    @FindBy(xpath = "//small[@class='pt-1 px-0' and text()='Bisiklet']")
+    public WebElement page5Bisiklet;
+
+    @FindBy(xpath = "//small[@class='pt-1 px-0' and text()='Çocuk Bisikleti']")
+    public WebElement page5CocukBisikleti;
+
+    @FindBy(xpath = "//small[@class='pt-1 px-0' and text()='Oyun konsolu']")
+    public WebElement page5OyunKonsolu;
+
+    @FindBy(xpath = "//small[@class='pt-1 px-0' and text()='Balkon']")
+    public WebElement page5Balkon;
+
+    @FindBy(xpath = "//small[@class='pt-1 px-0' and text()='Teras']")
+    public WebElement page5Teras;
+
+    @FindBy(xpath = "//*[text()='Ev İmkanları']")
+    public WebElement page5EvImkanlari;
+
+    @FindBy(xpath = "//*[text()='Odanızda ne tür imkanlar sunacağınızı belirtiniz.']")
+    public WebElement page5OdanizdaNeTurImkan;
+
+    @FindBy(xpath = "//*[text()='*Lütfen ev olanaklarını seçiniz.']")
+    public WebElement page5Uyari;
+
+    @FindBy(xpath = "//*[@class='btn btn-light py-1']")
+    public WebElement page5Geri;
+
+    @FindBy(xpath = "//*[@class='btn btn-light py-1  bg-light']")
+    public WebElement page5Ileri;
+
+    @FindBy(xpath = "//*[@class='navbar-nav me-auto fs-3']")
+    public WebElement page5BesOn;
 
 }
