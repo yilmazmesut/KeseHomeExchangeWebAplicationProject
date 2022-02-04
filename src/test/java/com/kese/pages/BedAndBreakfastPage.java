@@ -1,11 +1,13 @@
 package com.kese.pages;
 
+
 import com.kese.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
+import java.util.Map;
 
 public class BedAndBreakfastPage extends CommonPage {
 
@@ -52,12 +54,6 @@ public class BedAndBreakfastPage extends CommonPage {
     /**--------------------------------------------------------------------------------------------------------------*/
     //Page 2 by Nursel
 
-    @FindBy(xpath = "//h2")
-    public WebElement page2KonumUlasimHeadText;
-
-    @FindBy(xpath = "//p[contains(text(), 'Evinizin')]")
-    public WebElement page2EvinizinKonumuText;
-
     @FindBy(xpath = "//div[@class='py-3']//b")
     public WebElement page2SectinizAdresTextValue;
 
@@ -79,7 +75,24 @@ public class BedAndBreakfastPage extends CommonPage {
     @FindBy(id = "flexRadioDefault2")
     public WebElement page2SahsiAracCheckBox;
 
+    public void clickPage1RoomType(String roomType) {
+        String roomTypeLocator = "//label[.='" + roomType + "']/preceding-sibling::input[@type='checkbox']";
+        Driver.get().findElement(By.xpath(roomTypeLocator)).click();
+    }
 
+
+    public boolean isPage2TransportationOptionEnabled(String transportationOption) {
+        String transportationLocator = "//div[@class='col-7 px-0' and text()='" + transportationOption + " ']/following-sibling::div//input";
+        return Driver.get().findElement(By.xpath(transportationLocator)).isEnabled();
+    }
+
+    public void setPage2TransportationDistances(Map<String, String> transportationOpportunities) {
+        for (Map.Entry<String, String> transportation : transportationOpportunities.entrySet()) {
+            String transportationLocator = "//div[@class='col-7 px-0' and text()='" + transportation.getKey() + " ']/following-sibling::div//input";
+            Driver.get().findElement(By.xpath(transportationLocator)).clear();
+            Driver.get().findElement(By.xpath(transportationLocator)).sendKeys(transportation.getValue());
+        }
+    }
 
     /**--------------------------------------------------------------------------------------------------------------*/
     //Page 3 by Berrin
@@ -581,5 +594,6 @@ public class BedAndBreakfastPage extends CommonPage {
 
     @FindBy(xpath = "//*[@class='navbar-nav me-auto fs-3']")
     public WebElement page5BesOn;
+
 
 }
