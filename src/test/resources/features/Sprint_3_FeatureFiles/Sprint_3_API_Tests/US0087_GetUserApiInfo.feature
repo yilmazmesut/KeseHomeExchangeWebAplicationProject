@@ -1,6 +1,5 @@
 Feature: US_087	As a user, I should be able to see user information when I connect to the "/api/user/information" page in the "get" type.
 #  http://test.kese.nl/api/homes
-#  Zorunlu bilgiler gönderilerek yeni bir ev ilanı oluşturulabilmelidir.
 #  Kullanıcı giriş yapmış olmalıdır. (token)
 #  "Gönderilecek datalar :  swagger dökümanınde belirtilmiştir"
 
