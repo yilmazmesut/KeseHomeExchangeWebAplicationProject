@@ -15,11 +15,15 @@ Feature: US103 - BAB Page - Step 2 next function from Step 2 to Step 3
   Scenario: Step 2 Ilerle Button Not Clickability By Default
     * ilerle button should be visible on bab page
     But ilerle button should not be clickable on bab page
+    When user clicks to the ilerle button on bab page
+    Then warning message "*Lütfen ulaşım olanağı bilgisi ekleyin." should be displayed on step "2 / 10" on bab page
 
   Scenario: Step 2 Missing Info 1 Ulasim Olanaklari Ilerle Button Not Clickability
     When user enters "Litvanya" to address input on step two on bab page
     Then sectiginiz adres "Litvanya" should be displayed on step two on bab page
     But ilerle button should not be clickable on bab page
+    When user clicks to the ilerle button on bab page
+    Then warning message "*Lütfen ulaşım olanağı bilgisi ekleyin." should be displayed on step "2 / 10" on bab page
 
   Scenario: Step 2 Missing Info 2 Home Location Ilerle Button Not Clickability
     When user enters ulasim olanaklari from home on step two on bab page
@@ -28,6 +32,8 @@ Feature: US103 - BAB Page - Step 2 next function from Step 2 to Step 3
       | Ev ile tramway durağı arası : | 0.5 |
     And user clicks sahsi arac ulasim checkbox on step two on bab page
     Then ilerle button should not be clickable on bab page
+    When user clicks to the ilerle button on bab page
+    Then warning message "*Lütfen ulaşım olanağı bilgisi ekleyin." should be displayed on step "2 / 10" on bab page
 
   Scenario: Step 2 Complete Info 1 Ilerle Button Clickability
      When user enters "San Fernando, Şili" to address input on step two on bab page
@@ -41,3 +47,4 @@ Feature: US103 - BAB Page - Step 2 next function from Step 2 to Step 3
      Then sectiginiz adres "Venedig, Venedik, İtalya" should be displayed on step two on bab page
      When user clicks sahsi arac ulasim checkbox on step two on bab page
      Then ilerle button should be clickable on bab page
+

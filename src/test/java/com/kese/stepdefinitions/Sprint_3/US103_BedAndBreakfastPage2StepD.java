@@ -63,4 +63,13 @@ public class US103_BedAndBreakfastPage2StepD {
 
     }
 
+    @Then("warning message {string} should be displayed on step {string} on bab page")
+    public void warning_message_should_be_displayed_on_step_on_bab_page(String warningText, String stepNumber) {
+
+        Assert.assertEquals(warningText, babPage.missingInfoWarningText.getAttribute("innerText"));
+        Assert.assertEquals(stepNumber, babPage.theNumberOfPage.getAttribute("textContent"));
+
+    }
+
+
 }
