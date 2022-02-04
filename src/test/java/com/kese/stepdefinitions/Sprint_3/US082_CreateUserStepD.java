@@ -102,4 +102,8 @@ public class US082_CreateUserStepD {
 
     }
 
+    @Given("user creates new user with invalid {string}, {string} and {string}")
+    public void userCreatesNewUserWithAnd(String invalidEmail , String invalidUsername, String invalidPassword) {
+        response = users.createNewUser(invalidEmail,invalidUsername,invalidPassword);
+    }
 }
