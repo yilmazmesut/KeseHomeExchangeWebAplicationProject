@@ -13,6 +13,7 @@ Feature: US111 - BAB Page - Step 6 next function from Step 6 to Step 7
     When user clicks to the ilerle button on bab page
     Then warning message "*Lütfen eviniz, odanız ve kahvaltınızı tanımlayınız." should be displayed on step "6 / 10" on bab page
 
+
     Examples:
       | Odanız    | Eviniz   | Kahvaltınız    |
       |           |          |                |
