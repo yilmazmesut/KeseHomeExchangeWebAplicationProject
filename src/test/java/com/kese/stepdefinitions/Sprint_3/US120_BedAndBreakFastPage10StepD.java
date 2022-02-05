@@ -8,10 +8,7 @@ import io.cucumber.java.en.Then;
 
 public class US120_BedAndBreakFastPage10StepD {
 
-    BedAndBreakfastPage page = new BedAndBreakfastPage();
-
     BedAndBreakfastPage page1 = new BedAndBreakfastPage();
-
 
     @Then("user verifty that there is a {string} Page Step Number visible on the bed and breakfast ten page")
     public void userVeriftyThatThereIsAPageStepNumberVisibleOnTheBedAndBreakfastTenPage(String arg0) {
@@ -29,7 +26,7 @@ public class US120_BedAndBreakFastPage10StepD {
 
     @Then("user verifty that Tum Resimleri Kaldir button is active and functional on the bed and breakfast  ten page")
     public void userVeriftyThatTumResimleriKaldirButtonIsActiveAndFunctionalOnTheBedAndBreakfastTenPage() {
-
+        
     }
 
     @Then("user verifty that Resimleri Secin button is active and functional on the bed and breakfast ten page")
