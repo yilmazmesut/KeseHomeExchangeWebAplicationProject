@@ -1,3 +1,4 @@
+@US014
 Feature: US_0014 Bir kullanıcı olarak "/signup" sayfasına girdiğimde, kayıt oluştur butonu kullanılabilir olmalıdır.
   Email, kullanıcı adı, şifre ve şifre tekrarı bilgileri eklenmeden "Kayıt Oluştur" butonu kullanılabilir olmamalıdır!
 
