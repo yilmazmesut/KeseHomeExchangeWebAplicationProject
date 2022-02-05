@@ -111,6 +111,13 @@ public class MainPage extends CommonPage {
 
     public WebElement EvDegisimiYeriButton;
 
+
+    @FindBy (id = "dropdownMenuButton")
+    public WebElement dropdownMenuButton;
+
+    @FindBy (xpath = "//*[contains(text(),' Bed & Breakfast')]")
+    public WebElement bedAndBreakfastOption;
+
 }
 
 
