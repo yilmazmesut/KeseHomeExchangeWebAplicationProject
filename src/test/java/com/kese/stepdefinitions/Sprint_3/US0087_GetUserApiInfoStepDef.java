@@ -13,8 +13,7 @@ import static org.junit.Assert.assertEquals;
 
 public class US0087_GetUserApiInfoStepDef {
 
-    String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYxZmQzYzI4NjYwNmNkMzg5MTkzZGE2NyIsImVtYWlsIjoiYXNsYW5AZ21haWwuY29tIiwicm9sIjoia3VsbGFuaWNpIiwia3VsbGFuaWNpX2FkaSI6Im1laG1ldDEyMyIsImR1cnVtIjoxfSwiaWF0IjoxNjQzOTg2MDEwLCJleHAiOjE2NzU1MjIwMTB9.SbaamCjKLtHlUnaWU6AXz7cDntnDjJwRKqO8ilP7opQ";
-    String url = "http://test.kese.nl/api/user/bilgi";
+
     Response response = null;
     RequestSpecification request = new RequestSpecBuilder()
             .setBaseUri("http://test.kese.nl/api")
@@ -24,13 +23,12 @@ public class US0087_GetUserApiInfoStepDef {
     @Given("user connect to {string}")
     public void userConnectTo(String endPoint) {
         response = given().
-                queryParam("secret_token", token).
+                queryParam("secret_token", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYxZmQzYzI4NjYwNmNkMzg5MTkzZGE2NyIsImVtYWlsIjoiYXNsYW5AZ21haWwuY29tIiwicm9sIjoia3VsbGFuaWNpIiwia3VsbGFuaWNpX2FkaSI6Im1laG1ldDEyMyIsImR1cnVtIjoxfSwiaWF0IjoxNjQzOTg2MDEwLCJleHAiOjE2NzU1MjIwMTB9.SbaamCjKLtHlUnaWU6AXz7cDntnDjJwRKqO8ilP7opQ").
                         contentType(ContentType.JSON).
                 spec(request).
                 get(endPoint);
 
         System.out.println("response.statusCode() = " + response.statusCode());
-        assertEquals(200, response.getStatusCode());
         response.prettyPrint();
     }
 
@@ -38,7 +36,7 @@ public class US0087_GetUserApiInfoStepDef {
     public void userVerifiesThatStatusCodeIs(int arg0) {
         Json json = new Json();
 
-        response = given().queryParam("secret_token", token).
+        response = given().queryParam("secret_token").
                 contentType(ContentType.JSON).
                 spec(request).
                 body(json.toString()).
