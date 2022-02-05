@@ -21,7 +21,7 @@ public class US076OdaKiralaPageStepD extends LoginPage {
     OdaKiralaPage roomPage = new OdaKiralaPage();
 
     @And("user navigates to page {int} in Room Exchange Page")
-    public void userNavigatesToPageInRoomExchangePage(int sayfa) throws AWTException, InterruptedException {
+    public void userNavigatesToPageInRoomExchangePage(int sayfa) throws AWTException {
         while (true) {
             if (sayfa < 1 || sayfa > 10) {
                 throw new IllegalArgumentException("Not valid page number :" + sayfa);
@@ -123,13 +123,8 @@ public class US076OdaKiralaPageStepD extends LoginPage {
 
     @Then("user verifies that the title {string} is visible on the new_room step ten page")
     public void userVerifiesThatTheTitleShouldBeVisibleOnTheNew_roomStepTenPage(String title) {
-        String resimVeFotograflarTitle = "//h2[contains(text(),'Resim ve Fotoğraflar')],'"+title+"')]";
-        WebElement page10TitleName = Driver.get().findElement(By.xpath(resimVeFotograflarTitle));
-        //Assert.assertTrue(resimVeFotograflarTitle.isDisplayed());
-
         Assert.assertTrue(roomPage.page10TitleName.isDisplayed());
         System.out.println(roomPage.page10TitleName);
-
 
     }
 
@@ -137,19 +132,26 @@ public class US076OdaKiralaPageStepD extends LoginPage {
     public void userVerifiesThatShouldBeVisibleOnTheNewRoom_stepTenPage(String description) {
 
         Assert.assertTrue(roomPage.page10Resim_ve_FotograflarAciklama.isDisplayed());
-        System.out.println(roomPage.page10Resim_ve_FotograflarAciklama);
+        System.out.println(roomPage.page10Resim_ve_FotograflarAciklama.getText());
     }
 
     @Then("user verifies that Resimleri Secin button is active and functional on the new room_step ten page")
     public void userVerifiesThatResimleriSecinButtonIsActiveAndFunctionalOnTheNewRoom_stepTenPage() {
+        Assert.assertTrue(roomPage.page10ResimleriSecinButton.isDisplayed());
+        Assert.assertTrue(roomPage.page10ResimleriSecinButton.isEnabled());
     }
 
     @Then("user verifies that Tum Resimleri Kaldir button is active and functional on the new room_step ten page")
     public void userVerifiesThatTumResimleriKaldirButtonIsActiveAndFunctionalOnTheNewRoom_stepTenPage() {
+        Assert.assertTrue(roomPage.page10RemoveAllPicturesButton.isDisplayed());
+        Assert.assertTrue(roomPage.page10RemoveAllPicturesButton.isEnabled());
+
     }
 
     @Then("user verifies that the description of the maximum loading pictures are visible on the new room_step ten page")
     public void userVerifiesThatTheDescriptionOfTheMaximumLoadingPicturesShouldBeVisibleOnTheNewRoom_stepTenPage() {
+        Assert.assertTrue(OdaKiralaPage.page10enAzBesEnFazlaOnResimAciklamasi());
+
     }
 
 
