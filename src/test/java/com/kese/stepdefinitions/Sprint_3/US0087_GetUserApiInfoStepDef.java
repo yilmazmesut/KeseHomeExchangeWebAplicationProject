@@ -6,8 +6,10 @@ import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
+import org.openqa.selenium.json.Json;
 
 import static io.restassured.RestAssured.given;
+import static org.junit.Assert.assertEquals;
 
 public class US0087_GetUserApiInfoStepDef {
 
@@ -31,15 +33,19 @@ public class US0087_GetUserApiInfoStepDef {
 
     @Then("user verifies that status code is {int}")
     public void userVerifiesThatStatusCodeIs(int arg0) {
+        Json json=new Json();
 
-        response = given().
-                queryParam("secret_token", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYxZmQzYzI4NjYwNmNkMzg5MTkzZGE2NyIsImVtYWlsIjoiYXNsYW5AZ21haWwuY29tIiwicm9sIjoia3VsbGFuaWNpIiwia3VsbGFuaWNpX2FkaSI6Im1laG1ldDEyMyIsImR1cnVtIjoxfSwiaWF0IjoxNjQzOTg2MDEwLCJleHAiOjE2NzU1MjIwMTB9.SbaamCjKLtHlUnaWU6AXz7cDntnDjJwRKqO8ilP7opQ").
+        response = given().queryParam("secret_token", token).
                 contentType(ContentType.JSON).
                 spec(request).
-                get();
-
+                body(json.toString()).
+                        when().
+                patch("/user/account");
         response.prettyPrint();
-        System.out.println(response.getStatusCode());
+        System.out.println("response.statusCode() = " + response.statusCode());
+        assertEquals(202,response.statusCode());
+    }
+
     }
 
     @Then("user verifies that response body has sonuc is {string}")
