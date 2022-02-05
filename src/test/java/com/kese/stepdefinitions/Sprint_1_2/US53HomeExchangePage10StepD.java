@@ -10,7 +10,16 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.awt.*;
+import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.time.Duration;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import static java.awt.event.KeyEvent.VK_ENTER;
@@ -28,7 +37,7 @@ public class US53HomeExchangePage10StepD {
     }
 
     @And("user navigates to page {int} in Home Exchange")
-    public void userNavigatesToPageInHomeExchange(int sayfa) throws AWTException {
+    public void userNavigatesToPageInHomeExchange(int sayfa) {
         while(true){
             if( sayfa < 1 || sayfa > 10 ){
                 throw new IllegalArgumentException("Not valid page number :"+sayfa);
@@ -107,31 +116,59 @@ public class US53HomeExchangePage10StepD {
 
     @Then("user shouldn't save the pictures without adding minimum {int} pictures")
     public void minimumPicturesDestruction(int numberOfPicture) {
+        // For the code to work, there must be pictures folder in the directory.
+        // and it must be minimum five pictures in pictures folder
+        String originDirectory = System.getProperty("user.dir") + "/src/test/resources/pictures";
+        // Get all names of files from origin Directory
+        File originDir = new File(originDirectory);
+        File[] listOfFiles = originDir.listFiles();
+        // There must be file in folder
+        assert listOfFiles != null;
+        // It's time to send paths of files
         WebElement step10_FileUpload;
-        for(int i=1;i<numberOfPicture;i++){ // it must be five pictures in pictures folder
+        for(int i=1;i<=numberOfPicture;i++){ // it must be five pictures in pictures folder
+            // path of picture
+            Path pathOfFile = Paths.get(originDir.getPath()).resolve(listOfFiles[i%listOfFiles.length].getName());
             step10_FileUpload = Driver.get().findElement(By.id("file-upload"+i));
-            step10_FileUpload.sendKeys(System.getProperty("user.dir") + "/src/test/resources/pictures/"+(i%5+1)+".jpg");
-            page.step10_ResimleriKaydetButton.click();
-            WebElement publishAdButton = page.step10_publishAdButton;
-            //  'İlanı Yayınla' button mustn't be display here then throws exception
-            Assert.assertThrows(org.openqa.selenium.NoSuchElementException.class, publishAdButton::isDisplayed);
+            step10_FileUpload.sendKeys(pathOfFile.toString());
+            BrowserUtils.waitFor(1);
+            double opacitySaveImageButton = Double.parseDouble(page.step10_ResimleriKaydetButton.getCssValue("opacity"));
+            if(i<=4){
+                Assert.assertTrue(opacitySaveImageButton < 1 );
+            } else {
+                Assert.assertTrue(opacitySaveImageButton == 1 );
+            }
         }
-
     }
 
     @When("user adds {int} pictures on the home change page")
     public void uploadImages(int numberOfImages) {
+        // For the code to work, there must be pictures folder in the directory.
+        // and it must be minimum five pictures in pictures folder
+        String originDirectory = System.getProperty("user.dir") + "/src/test/resources/pictures";
+        // Get all names of files from origin Directory
+        File originDir = new File(originDirectory);
+        File[] listOfFiles = originDir.listFiles();
+        // There must be file in folder
+        assert listOfFiles != null;
+        // It's time to send paths of files
         WebElement step10_FileUpload;
-        for(int i=1;i<=numberOfImages;i++){ // it must be five pictures in pictures folder
+        for(int i=1;i<=numberOfImages;i++){
+            // path of picture
+            Path pathOfFile = Paths.get(originDir.getPath()).resolve(listOfFiles[i%listOfFiles.length].getName());
             step10_FileUpload = Driver.get().findElement(By.id("file-upload"+i));
-            step10_FileUpload.sendKeys(System.getProperty("user.dir") + "/src/test/resources/pictures/"+(i%5+1)+".jpg");
+            step10_FileUpload.sendKeys(pathOfFile.toString());
+            BrowserUtils.waitFor(1);
         }
+
     }
 
     @Then("user asserts that it can't be upload more images")
     public void maximunPicturesDestriction() {
         // add image frame shouldn't display and throw exeption
-
+        WebElement addImageText = page.step10_addImageText;
+        // 'Resim Ekle' frame mustn't be display here then throws exception
+        Assert.assertThrows(org.openqa.selenium.NoSuchElementException.class, addImageText::isDisplayed);
     }
 
     @Then("user asserts that the Resimleri Kaydet button is clickable")
