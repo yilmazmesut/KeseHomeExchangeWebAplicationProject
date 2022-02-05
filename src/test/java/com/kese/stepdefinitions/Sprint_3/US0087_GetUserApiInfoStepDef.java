@@ -11,12 +11,13 @@ import org.junit.Assert;
 import org.openqa.selenium.json.Json;
 
 import static io.restassured.RestAssured.given;
+import static io.restassured.RestAssured.request;
 import static org.junit.Assert.assertEquals;
 
 public class US0087_GetUserApiInfoStepDef {
 
-/*
-    Response response = null;
+
+  /*  Response response = null;
     RequestSpecification request = new RequestSpecBuilder()
             .setBaseUri("http://test.kese.nl/api")
             .build();
@@ -47,18 +48,20 @@ public class US0087_GetUserApiInfoStepDef {
 
     @Then("user verifies that status code is {int}")
     public void userVerifiesThatStatusCodeIs(int statusCode) {
+       int gelencode=statusCode;
         given()
                 .when()
                 .get("http://test.kese.nl/api/user/bilgi?id=61fe0eaa26c152053806d935")
-                .then()
-                .statusCode(200)
-                .log().status();
+                .then();
+
+        Assert.assertEquals(gelencode,statusCode);
+        System.out.println("gelenCode: "+ statusCode);
          }
 
 
     @Then("user verifies that response body has sonuc is {string}")
-    public void userVerifiesThatResponseBodyHasSonucIs(String arg0) {
-
+    public void userVerifiesThatResponseBodyHasSonucIs(String sonuc) {
+        String gelenDeger=sonuc;
         given()
                 .when()
                 .get("http://test.kese.nl/api/user/bilgi?id=61fe0eaa26c152053806d935")
@@ -66,6 +69,8 @@ public class US0087_GetUserApiInfoStepDef {
                 .statusCode(200)
                 .log().all();
 
+        Assert.assertEquals(gelenDeger,sonuc);
+        System.out.println("gelenDeger: " + sonuc);
     }
 
 }
