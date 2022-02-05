@@ -30,14 +30,16 @@ public class US0087_GetUserApiInfoStepDef {
                 spec(request).
                 get(endPoint );
 
-        System.out.println();
+        System.out.println("response.statusCode() = " + response.statusCode());
+
+        response.prettyPrint();
     }
 
     @Then("user verifies that status code is {int}")
     public void userVerifiesThatStatusCodeIs(int statusCode) {
       int gelenCevap =response.getStatusCode();
      // Assert.assertEquals(gelenCevap,statusCode);
-
+      //  assertEquals(200, response.getStatusCode());
 
          }
 
