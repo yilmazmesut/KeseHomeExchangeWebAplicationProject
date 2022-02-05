@@ -32,7 +32,14 @@ public class US0087_GetUserApiInfoStepDef {
     @Then("user verifies that status code is {int}")
     public void userVerifiesThatStatusCodeIs(int arg0) {
 
+        response = given().
+                queryParam("secret_token", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYxZmQzYzI4NjYwNmNkMzg5MTkzZGE2NyIsImVtYWlsIjoiYXNsYW5AZ21haWwuY29tIiwicm9sIjoia3VsbGFuaWNpIiwia3VsbGFuaWNpX2FkaSI6Im1laG1ldDEyMyIsImR1cnVtIjoxfSwiaWF0IjoxNjQzOTg2MDEwLCJleHAiOjE2NzU1MjIwMTB9.SbaamCjKLtHlUnaWU6AXz7cDntnDjJwRKqO8ilP7opQ").
+                contentType(ContentType.JSON).
+                spec(request).
+                get();
 
+        response.prettyPrint();
+        System.out.println(response.getStatusCode());
     }
 
     @Then("user verifies that response body has sonuc is {string}")
