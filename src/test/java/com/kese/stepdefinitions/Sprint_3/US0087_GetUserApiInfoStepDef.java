@@ -15,16 +15,26 @@ import static org.junit.Assert.assertEquals;
 
 public class US0087_GetUserApiInfoStepDef {
 
-
+/*
     Response response = null;
     RequestSpecification request = new RequestSpecBuilder()
             .setBaseUri("http://test.kese.nl/api")
             .build();
-
+*/
 
     @Given("user connect to {string}")
     public void userConnectTo(String endPoint) {
-        response = given().
+
+        given()
+                .when()
+                .get("http://test.kese.nl/api/user/bilgi")
+                .then()
+                .statusCode(200);
+
+
+
+
+      /*  response = given().
                 queryParam("id", "61d22c3189708a2d2aeeda1c").
                 contentType(ContentType.JSON).
                 spec(request).
@@ -32,23 +42,29 @@ public class US0087_GetUserApiInfoStepDef {
 
         System.out.println("response.statusCode() = " + response.statusCode());
 
-        response.prettyPrint();
+        response.prettyPrint();*/
     }
 
     @Then("user verifies that status code is {int}")
     public void userVerifiesThatStatusCodeIs(int statusCode) {
-      int gelenCevap =response.getStatusCode();
-     // Assert.assertEquals(gelenCevap,statusCode);
-      //  assertEquals(200, response.getStatusCode());
-
+        given()
+                .when()
+                .get("http://test.kese.nl/api/user/bilgi?id=61fe0eaa26c152053806d935")
+                .then()
+                .statusCode(200)
+                .log().status();
          }
 
 
     @Then("user verifies that response body has sonuc is {string}")
     public void userVerifiesThatResponseBodyHasSonucIs(String arg0) {
-//String sonucDegeri= response.jsonPath().getString("sonuc");
-    //    System.out.println(sonucDegeri);
 
+        given()
+                .when()
+                .get("http://test.kese.nl/api/user/bilgi?id=61fe0eaa26c152053806d935")
+                .then()
+                .statusCode(200)
+                .log().all();
 
     }
 
