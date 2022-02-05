@@ -10,6 +10,9 @@ public class US120_BedAndBreakFastPage10StepD {
 
     BedAndBreakfastPage page = new BedAndBreakfastPage();
 
+    BedAndBreakfastPage page1 = new BedAndBreakfastPage();
+
+
     @Then("user verifty that there is a {string} Page Step Number visible on the bed and breakfast ten page")
     public void userVeriftyThatThereIsAPageStepNumberVisibleOnTheBedAndBreakfastTenPage(String arg0) {
     }
