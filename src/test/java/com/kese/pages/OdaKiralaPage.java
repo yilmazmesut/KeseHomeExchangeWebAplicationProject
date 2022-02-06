@@ -82,13 +82,13 @@ public class OdaKiralaPage extends CommonPage {
     @FindBy(xpath = "//p[contains(text(), 'Evinizin')]")
     public WebElement page2EvinizinKonumunuBelirtinizYzisi;
 
-    @FindBy (id = "react-select-2-input")
+    @FindBy(id = "react-select-2-input")
     public WebElement page2AddressInput;
 
-    @FindBy (xpath = "//*[@class = ' css-26l3qy-menu']")
+    @FindBy(xpath = "//*[@class = ' css-26l3qy-menu']")
     public WebElement step2_AddressList;
 
-    @FindBy (id = "flexRadioDefault2")
+    @FindBy(id = "flexRadioDefault2")
     public WebElement step2_CheckBox;
 
     @FindBy(xpath = "//h6[contains(text(), 'Eviniz')]")
@@ -102,7 +102,6 @@ public class OdaKiralaPage extends CommonPage {
 
     @FindBy(xpath = "//div[@class='col-7 px-0' and text()='Ev ile tramway durağı arası : ']")
     public WebElement page2EvIleTramway;
-
 
 
     // Page 3:
@@ -133,10 +132,10 @@ public class OdaKiralaPage extends CommonPage {
     @FindBy(xpath = "//span[contains(text(), 'Oturma')]")
     public WebElement page3OturmaOdasi;
 
-    @FindBy (xpath = "//button[text() = '+']")
+    @FindBy(xpath = "//button[text() = '+']")
     public List<WebElement> step3_incrementButtons;
 
-    @FindBy (xpath = "//button[text() = '−']")
+    @FindBy(xpath = "//button[text() = '−']")
     public List<WebElement> step3_decrementButtons;
 
     @FindBy(xpath = "//a[@id='next']")
@@ -256,7 +255,7 @@ public class OdaKiralaPage extends CommonPage {
     @FindBy(xpath = "//h2")
     public WebElement page6AciklamaHeader;
 
-    @FindBy (xpath = "//p")
+    @FindBy(xpath = "//p")
     public WebElement page6Parag;
 
     @FindBy(css = "#home")
@@ -399,7 +398,7 @@ public class OdaKiralaPage extends CommonPage {
 //    public WebElement geriButton ;
 //
     @FindBy(xpath = "//div[@class='navbar-nav me-auto fs-3']")
-    public WebElement theNumberOfPage ;
+    public WebElement theNumberOfPage;
 //
 //    @FindBy(xpath = "//div[@class='px-3 py-2']/h2")
 //    public WebElement  pageTitleText;
@@ -451,16 +450,16 @@ public class OdaKiralaPage extends CommonPage {
 
     //sevda
 
-    @FindBy (xpath = "//h2[text()='Cinsiyet, Yaş Aralığı ve Kişi Sayısı']")
+    @FindBy(xpath = "//h2[text()='Cinsiyet, Yaş Aralığı ve Kişi Sayısı']")
     public WebElement page4HeadMain;
 
-    @FindBy (xpath = "//*[text()='Hangi yaş aralığındaki ve cinsiyetteki kişiyi evinizde ağırlamak istersiniz.']")
+    @FindBy(xpath = "//*[text()='Hangi yaş aralığındaki ve cinsiyetteki kişiyi evinizde ağırlamak istersiniz.']")
     public WebElement page4AgeGapP;
 
-    @FindBy (className = "input-number-value")
+    @FindBy(className = "input-number-value")
     public WebElement page4kisiSayisi;
 
-    @FindBy (xpath = "//small[text()='*Lütfen cinsiyet ve yaş aralığı seçiniz.']")
+    @FindBy(xpath = "//small[text()='*Lütfen cinsiyet ve yaş aralığı seçiniz.']")
     public WebElement page4DefaultWarning;
 
     @FindBy(id = "dropdownMenuButton")
@@ -513,43 +512,45 @@ public class OdaKiralaPage extends CommonPage {
         return buttonTextLocator.isDisplayed();
 
     }
+
     public boolean isEnabledButton(String buttonText) {
         String buttonLocatorText = "//*[contains(text(),'" + buttonText + "')]";
         WebElement buttonTextLocator = Driver.get().findElement(By.xpath(buttonLocatorText));
         return buttonTextLocator.isEnabled();
 
     }
-    @FindBy (xpath = "//*[contains(text(), 'Resim Ekle')]")
+
+    @FindBy(xpath = "//*[contains(text(), 'Resim Ekle')]")
     public WebElement step10_addImageText; // resim ekle yazisinin ortak locatoru.
 
 
     // 10. Sayfaya kadar Minimum Gereksinimlerle ulasan kodlar icin gerekli locatorlar
     // Main Page
-    @FindBy (id = "dropdownMenuButton")
+    @FindBy(id = "dropdownMenuButton")
     public WebElement dropdownMenuButton;   // Ilan Ver butonu
     // Main Page
-    @FindBy (xpath = "//*[contains(text(),' Oda')]")
+    @FindBy(xpath = "//*[contains(text(),' Oda')]")
     public WebElement roomExchangeOption; // Ilan ver butonunda  -> Ev degisimi secenegi
     // common for all pages
-    @FindBy (xpath = "//*[contains(text(),'İlerle')]")
+    @FindBy(xpath = "//*[contains(text(),'İlerle')]")
     public WebElement nextButton;   // ilerle butonu
     // 1st page
-    @FindBy (xpath = "//*[contains(text(),'Müstakil Ev')]")
+    @FindBy(xpath = "//*[contains(text(),'Müstakil Ev')]")
     public WebElement houseButton;  // Ev Tipi sayfasinda(sayfa1) -> Müstakil Ev
     // 2nd page
-    @FindBy (xpath = "//*[contains(text(),'Select...')]")
+    @FindBy(xpath = "//*[contains(text(),'Select...')]")
     public WebElement selectText;
     // 2nd page
-    @FindBy (id = "react-select-2-input")
+    @FindBy(id = "react-select-2-input")
     public WebElement selectTextButton;
     // 2nd page
     @FindBy(className = "form-check-input")
     public WebElement checkBox;
     // 3rd page
-    @FindBy (id = "size")
+    @FindBy(id = "size")
     public WebElement sizeOfAreaUp;
     // 4th page
-    @FindBy(xpath ="(//div[@class = 'pr-2 pb-2'])[1]")
+    @FindBy(xpath = "(//div[@class = 'pr-2 pb-2'])[1]")
     public WebElement YasAraligi1015;
 
     @FindBy(xpath = "(//div[@class = 'pr-2 pb-2'])[9]")
@@ -559,22 +560,22 @@ public class OdaKiralaPage extends CommonPage {
     public WebElement Kisisayisiartir;
 
     // 5th page
-    @FindBy (xpath = "//*[contains(text(),'TV')]")
+    @FindBy(xpath = "//*[contains(text(),'TV')]")
     public WebElement tvText;
     // 6th page
-    @FindBy (id = "room")
+    @FindBy(id = "room")
     public WebElement roomExplanation;
     // 7th page
-    @FindBy (xpath = "//*[contains(text(),'Müze')]")
+    @FindBy(xpath = "//*[contains(text(),'Müze')]")
     public WebElement museumText;
     // 8th page
-    @FindBy (xpath = "//*[contains(text(),'Evet')]")
+    @FindBy(xpath = "//*[contains(text(),'Evet')]")
     public List<WebElement> yesTexts;
     // 9th page
-    @FindBy (className = "react-datepicker__input-container")
+    @FindBy(className = "react-datepicker__input-container")
     public WebElement selectDate;
     // 9th page
-    @FindBy (xpath = "//*[@tabindex=0]")
+    @FindBy(xpath = "//*[@tabindex=0]")
     public WebElement todaysLocator;
 
     //US_80
@@ -615,10 +616,10 @@ public class OdaKiralaPage extends CommonPage {
     public WebElement geriButton;
 
     public void selectPage1HomeType(String homeType) {
-        Driver.get().findElement(By.xpath("//small[text()='"+homeType+"']")).click();
+        Driver.get().findElement(By.xpath("//small[text()='" + homeType + "']")).click();
     }
 
-    public String getPage1SelectedHomeType(){
+    public String getPage1SelectedHomeType() {
         //*[contains(@class,'border-warning')]
         return Driver.get().findElement(By.xpath("//*[contains(@class,'border-warning')]")).getText();
     }
@@ -636,14 +637,14 @@ public class OdaKiralaPage extends CommonPage {
 
     public void setPage2TransportationDistances(Map<String, String> transportationOpportunities) {
         for (Map.Entry<String, String> transportation : transportationOpportunities.entrySet()) {
-            String transportationLocator = "//div[@class='col-7 px-0' and text()='" + transportation.getKey() +" ']/following-sibling::div//input";
+            String transportationLocator = "//div[@class='col-7 px-0' and text()='" + transportation.getKey() + " ']/following-sibling::div//input";
             Driver.get().findElement(By.xpath(transportationLocator)).clear();
             Driver.get().findElement(By.xpath(transportationLocator)).sendKeys(transportation.getValue());
         }
     }
 
     public String getpage2TransportationOpportunity(String transportationDistance) {
-        String transportationLocator = "//div[@class='col-7 px-0' and text()='" + transportationDistance +" ']/following-sibling::div//input";
+        String transportationLocator = "//div[@class='col-7 px-0' and text()='" + transportationDistance + " ']/following-sibling::div//input";
         return Driver.get().findElement(By.xpath(transportationLocator)).getAttribute("value");
     }
 
@@ -664,15 +665,15 @@ public class OdaKiralaPage extends CommonPage {
             int clickCount = 0;
             String commonAreaLocator = "//*[text()='" + commonArea.getKey() + "']//following::span//following-sibling::button";
             if (commonArea.getKey().equals("Yatak Odası"))  // there is a bug frontend code *******
-                clickCount=1;
-            for (; clickCount<Integer.parseInt(commonArea.getValue()) ; clickCount++) {
+                clickCount = 1;
+            for (; clickCount < Integer.parseInt(commonArea.getValue()); clickCount++) {
                 Driver.get().findElement(By.xpath(commonAreaLocator)).click();
             }
         }
     }
 
     public String getPage3CommonArea(String commonArea) {
-        String commonAreaLocator = "(//*[text()='"+ commonArea +"']//following::span)[1]";
+        String commonAreaLocator = "(//*[text()='" + commonArea + "']//following::span)[1]";
         return Driver.get().findElement(By.xpath(commonAreaLocator)).getText();
     }
 
@@ -790,12 +791,13 @@ public class OdaKiralaPage extends CommonPage {
     @FindBy(xpath = "//p[contains(text(),'Odanızın ve evinizin ilgili alanlarının fotoğrafla')]")
     public WebElement page10Resim_ve_FotograflarAciklama;
 
+    //MSEN OdapageStep10
     public static final By page10theStepNumberOfPage = By.className("//div[@class='navbar-nav me-auto fs-3']");
     public static final By page10Resim_ve_Fotograflar = By.xpath("//h2[contains(text(),'Resim ve Fotoğraflar')]");
     public static final By page10aciklama = By.xpath("//p[contains(text(),'Odanızın ve evinizin ilgili alanlarının fotoğrafla')]");
     public static final By page10ResimleriSecin = By.linkText(" Resimleri Seçin");
     public static final By page10tumResimleriKaldir = By.linkText(" Tüm Resimleri Kaldır");
-    public static final By page10enAzBesEnFazlaOnResim = By.linkText("En az 5 en fazla 10 resim yükleyebilirsiniz.");
+    public static final By page10enAzBesEnFazlaOnResim = By.xpath("//*[contains(text(),'En az 5 en fazla 10 resim yükleyebilirsiniz.')]");
     public static final By page10FirstResimEkle = By.xpath("//div[@class='d-flex flex-column align-items-center']");
     public static final By page10SecondResimEkle = By.xpath("//div[@class='col-6 col-sm-4 col-md-4 col-lg-3  h-100'][2]");
     public static final By page10ThirdResimEkle = By.xpath("//div[@class='col-6 col-sm-4 col-md-4 col-lg-3  h-100'][3]");
@@ -804,5 +806,28 @@ public class OdaKiralaPage extends CommonPage {
     public static boolean stepNumberIsDisplayed(String pageStepNumber) {
         By stepNumber = By.linkText(pageStepNumber);
         return BrowserUtils.isDisplayed(stepNumber);
+
     }
+
+    public static boolean titleOfTheOdaPage10(String titleOfThePage) {
+        By titleOfThePage10 = By.xpath(titleOfThePage);
+        return BrowserUtils.isDisplayed(titleOfThePage10);
+    }
+
+    public static boolean page10aciklama(String descriptionOfPage) {
+        By descriptionOfThePage = By.xpath(descriptionOfPage);
+        return BrowserUtils.isDisplayed(descriptionOfThePage);
+
+    }
+
+    public static boolean ResimleriSecinButton(String explanation) {
+        By explanationOfThePage = By.xpath(explanation);
+        return BrowserUtils.isEnabled(explanationOfThePage);
+
+    }
+    public static boolean page10enAzBesEnFazlaOnResimAciklamasi(){
+        return BrowserUtils.isDisplayed(page10enAzBesEnFazlaOnResim);
+    }
+
 }
+
