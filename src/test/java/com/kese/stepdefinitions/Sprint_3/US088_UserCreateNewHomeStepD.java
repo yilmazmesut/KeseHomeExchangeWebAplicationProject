@@ -1,10 +1,9 @@
 package com.kese.stepdefinitions.Sprint_3;
 
-import com.kese.pages.API.HomeDatas;
+import com.kese.pages.API.Homes;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.http.ContentType;
-import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.Assert;
 
@@ -16,11 +15,13 @@ public class US088_UserCreateNewHomeStepD {
 
     Response response = null;
 
-    File photo0 = new File("C:\\MyIntelijProject\\CucumberRestAPILibrary\\src\\test\\resources\\photos\\1.jpg");
-    File photo1 = new File("C:\\MyIntelijProject\\CucumberRestAPILibrary\\src\\test\\resources\\photos\\2.jpg");
-    File photo2 = new File("C:\\MyIntelijProject\\CucumberRestAPILibrary\\src\\test\\resources\\photos\\3.jpg");
-    File photo3 = new File("C:\\MyIntelijProject\\CucumberRestAPILibrary\\src\\test\\resources\\photos\\4.jpg");
-    File photo4 = new File("C:\\MyIntelijProject\\CucumberRestAPILibrary\\src\\test\\resources\\photos\\5.jpg");
+
+
+    File photo0 = new File(System.getProperty("user.dir")+"/src/test/resources/pictures/1.jpg");
+    File photo1 = new File(System.getProperty("user.dir")+"/src/test/resources/pictures/2.jpg");
+    File photo2 = new File(System.getProperty("user.dir")+"/src/test/resources/pictures/3.jpg");
+    File photo3 = new File(System.getProperty("user.dir")+"/src/test/resources/pictures/4.jpg");
+    File photo4 = new File(System.getProperty("user.dir")+"/src/test/resources/pictures/5.jpg");
 
 
 
@@ -31,9 +32,9 @@ public class US088_UserCreateNewHomeStepD {
 
                 .queryParam("secret_token","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYxZmFmNGQ0NjYwNmNkMzg5MThhY2ViOSIsImVtYWlsIjoiY2VtYWxAZ21haWwuY29tIiwicm9sIjoia3VsbGFuaWNpIiwia3VsbGFuaWNpX2FkaSI6IkNlbWFsUUEiLCJkdXJ1bSI6MX0sImlhdCI6MTY0MzgzNjg5NiwiZXhwIjoxNjc1MzcyODk2fQ.cf9bcgMj9XcrbcrucSoX97on7cLs3gX9BKzHs78bPTY" )
 
-                .formParams(HomeDatas.dataMap())
+                .formParams(Homes.dataMap())
                 .contentType(ContentType.JSON)
-                //.body(hms)// bunu deneyecem
+                //.body(hms)// bunu denedim ama olmadi galiba photo lardan dolayi
                 .contentType("multipart/form-data; charset=UTF-8")
 
 
