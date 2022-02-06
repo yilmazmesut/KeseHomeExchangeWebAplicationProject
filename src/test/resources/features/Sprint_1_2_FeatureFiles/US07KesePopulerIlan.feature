@@ -15,6 +15,7 @@ Feature: As a user i should be able to see "Populer Ilanlar" part on the homepag
       | Oda Kirala      |
       | Bed & Breakfast |
 
+
   @TEST_META3-124
   Scenario Outline: User should select options such as "Ev Degisimi" , "Oda Kirala" , "Bed & Breakfast"
     When click "<options>" on the homepage
