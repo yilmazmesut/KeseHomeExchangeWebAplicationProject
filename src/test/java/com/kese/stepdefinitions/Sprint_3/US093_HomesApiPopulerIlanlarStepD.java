@@ -12,7 +12,7 @@ import java.util.List;
 import static io.restassured.RestAssured.given;
 
 
-public class US093_HomesApiStepD {
+public class US093_HomesApiPopulerIlanlarStepD {
 
     String baseUrl= "http://test.kese.nl/api/";
     RequestSpecification request = new RequestSpecBuilder()
