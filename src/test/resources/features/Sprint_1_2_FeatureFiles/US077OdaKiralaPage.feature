@@ -13,12 +13,7 @@ Feature: US_077 Bir kullanıcı olarak "Oda Kirala & Değişim" ilan oluşturma 
     And user navigates to page 10 in Room Exchange Page
 
   Scenario: US_077 TC_001 Buttons and the descriptions should be visible
-    Then user verifies that the four image add buttons are visible as default on the new room_step ten page
-    Then user verifies that only the first image add buttons is clickable as default on the new room_step ten page
-    Then user verifies that the rest of the image add buttons are disabled on the new room_step ten page
-    When user uploads an image "file-upload1" "Room 6.jfif"
-    Then user verifies that the second image button becomes active after adding an image
-    When user uploads an image "file-upload2" "Room 7.jfif"
-    Then user verifies that the third image button becomes active after adding an image
-    When user uploads an image "file-upload3" "Room 8.jfif"
-    Then user verifies that the fourth image button becomes active after adding an image
+    Then user verifies that the four picture loading buttons are visible as default on the new room_step ten page
+    Then user verifies that the first picture loading buttons is clickable as default on the new room_step ten page
+    Then user verifies that the rest of the picture loading buttons are disabled on the new room_step ten page
+    Then user verifies that after adding the first image, the second Add image Button should become active and this should continue until the last picture on the new room_step ten page
