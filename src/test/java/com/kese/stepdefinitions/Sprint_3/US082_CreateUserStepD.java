@@ -45,7 +45,7 @@ public class US082_CreateUserStepD {
 
     }
 
-    @Then("user verifies that status code is {int}")
+    @Then("user verifies that status code is {int} for create user")
     public void user_verifies_that_status_code_is(int expectedStatusCode) {
 
         int actualStatusCode = response.statusCode();
