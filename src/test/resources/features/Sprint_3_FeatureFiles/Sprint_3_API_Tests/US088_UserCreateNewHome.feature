@@ -5,9 +5,8 @@ Feature: US_088	Bir kullanıcı olarak "/api/homes" sayfasına "post" tipinde ba
 #  "Gönderilecek datalar :  swagger dökümanınde belirtilmiştir"
 
   Scenario: user should be create new home advertise
-    Given user connects to "/api/homes"
-    When user adds a new home advertise
-    Then user verifies the home advertise added
-#    deneme1
+    Given user connects to "/homes" and adds a new home adds
+    Then user verifies the home advertise added and status code is 202
+
 
 
