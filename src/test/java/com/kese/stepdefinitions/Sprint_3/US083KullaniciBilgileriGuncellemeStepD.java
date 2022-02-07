@@ -15,6 +15,7 @@ import java.util.Map;
 
 import static io.restassured.RestAssured.*;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class US083KullaniciBilgileriGuncellemeStepD {
 
@@ -68,6 +69,50 @@ public class US083KullaniciBilgileriGuncellemeStepD {
                 patch("/user/account");
         response.prettyPrint();
         System.out.println("response.statusCode() = " + response.statusCode());
-        assertEquals(202,response.statusCode());
+        assertEquals(202, response.statusCode());
+    }
+
+    @Given("assert that user connects with invalid credential and verifies status code")
+    public void assertThatUserConnectsWithInvalidCredentialAndVerifiesStatusCode() {
+
+        String invalidToken = "yJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYxZjg4MDNkOGNhN2VjNDM2YzViODhhZiIsImVtYWlsIjoiYXppemkuMTRAZ21haWwuY29tIiwicm9sIjoia3VsbGFuaWNpIiwia3VsbGFuaWNpX2FkaSI6ImF6aXozNDM4IiwiZHVydW0iOjF9LCJpYXQiOjE2NDM4OTc3NDAsImV4cCI6MTY3NTQzMzc0MH0.2zWIRRSvKaVDWba0B1CsqRSHWH4r9dNGaDX5ImAFq4Y";
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("email", "azizi.14@gmail.com");
+        jsonObject.put("kullanici_adi", "aziz40");
+
+
+        response = given().queryParam("secret_token", invalidToken).
+                contentType(ContentType.JSON).
+                spec(request).
+                body(jsonObject.toString()).
+                        when().
+                patch("/user/account");
+        response.prettyPrint(); //body ekrana yazdir
+        System.out.println("response.statusCode() = " + response.statusCode()); //status code ekrana yazdir
+        assertEquals(401, response.statusCode());
+
+    }
+
+    @Given("assert that can not patch with invalid email address")
+    public void assertThatCanNotPatchWithInvalidEmailAddress() {
+
+        String invalidToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYxZjg4MDNkOGNhN2VjNDM2YzViODhhZiIsImVtYWlsIjoiYXppemkuMTRAZ21haWwuY29tIiwicm9sIjoia3VsbGFuaWNpIiwia3VsbGFuaWNpX2FkaSI6ImF6aXozNDM4IiwiZHVydW0iOjF9LCJpYXQiOjE2NDM4OTc3NDAsImV4cCI6MTY3NTQzMzc0MH0.2zWIRRSvKaVDWba0B1CsqRSHWH4r9dNGaDX5ImAFq4Y";
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("email", "azizi.14gmail.com");
+        jsonObject.put("kullanici_adi", "aziz40");
+
+
+        response = given().queryParam("secret_token", invalidToken).
+                contentType(ContentType.JSON).
+                spec(request).
+                body(jsonObject.toString()).
+                when().
+                patch("/user/account");
+        response.prettyPrint(); //body ekrana yazdir
+        System.out.println("response.statusCode() = " + response.statusCode()); //status code ekrana yazdir
+        assertEquals(200, response.statusCode());
+        System.out.println("response.jsonPath().getString(\"sonuc\") = " + response.jsonPath().getString("sonuc")); //patch yapinca gelen bodydeki sonuc property degerini aliyor
+        assertEquals("false",response.jsonPath().getString("sonuc"));
+        System.out.println("response.getBody().jsonPath().get(\"sonuc\") = " + response.getBody().jsonPath().get("sonuc")); //buda yukardaki kodla ayni isi yapiyor.
     }
 }
