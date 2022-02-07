@@ -55,8 +55,8 @@ public class US102_BedAndBreakfastPage2StepD {
 
     }
 
-    @Then("step number {string} should be displayed on step two on bab page")
-    public void step_number_should_be_displayed_on_step_two_on_bab_page(String stepNumber) {
+    @Then("step number {string} should be displayed on bab page")
+    public void step_number_should_be_displayed_on_bab_page(String stepNumber) {
 
         Assert.assertEquals(babPage.theNumberOfPage.getText(), stepNumber);
         Assert.assertTrue(babPage.theNumberOfPage.isDisplayed());
