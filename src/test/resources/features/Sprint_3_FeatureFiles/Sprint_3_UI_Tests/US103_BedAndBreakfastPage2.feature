@@ -10,7 +10,7 @@ Feature: US103 - BAB Page - Step 2 next function from Step 2 to Step 3
     When user clicks "Bed & Breakfast" in ilan ver menu
     And user clicks "Apartman Dairesi" option on on step one on oda kirala page
     And user clicks to the ilerle button on bab page
-    Then step number "2 / 10" should be displayed on step two on bab page
+    Then step number "2 / 10" should be displayed on bab page
 
   Scenario: Step 2 Ilerle Button Not Clickability By Default
     * ilerle button should be visible on bab page
@@ -41,10 +41,15 @@ Feature: US103 - BAB Page - Step 2 next function from Step 2 to Step 3
      When user enters ulasim olanaklari from home on step two on bab page
       | Ev ile otobüs durağı arası :  | 1.4 |
      Then ilerle button should be clickable on bab page
+    And user clicks to the ilerle button on bab page
+    Then step number "3 / 10" should be displayed on bab page
 
   Scenario: Step 2 Complete Info 2 Ilerle Button Clickability
      When user enters "Venedig, Venedik, İtalya" to address input on step two on bab page
      Then sectiginiz adres "Venedig, Venedik, İtalya" should be displayed on step two on bab page
      When user clicks sahsi arac ulasim checkbox on step two on bab page
      Then ilerle button should be clickable on bab page
+     And user clicks to the ilerle button on bab page
+     Then step number "3 / 10" should be displayed on bab page
+
 
