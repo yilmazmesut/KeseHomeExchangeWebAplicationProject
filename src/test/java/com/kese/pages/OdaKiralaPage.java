@@ -797,7 +797,7 @@ public class OdaKiralaPage extends CommonPage {
     public static final By page10aciklama = By.xpath("//p[contains(text(),'Odanızın ve evinizin ilgili alanlarının fotoğrafla')]");
     public static final By page10ResimleriSecin = By.linkText(" Resimleri Seçin");
     public static final By page10tumResimleriKaldir = By.linkText(" Tüm Resimleri Kaldır");
-    public static final By page10enAzBesEnFazlaOnResim = By.linkText("En az 5 en fazla 10 resim yükleyebilirsiniz.");
+    public static final By page10enAzBesEnFazlaOnResim = By.xpath("//*[contains(text(),'En az 5 en fazla 10 resim yükleyebilirsiniz.')]");
     public static final By page10FirstResimEkle = By.xpath("//div[@class='d-flex flex-column align-items-center']");
     public static final By page10SecondResimEkle = By.xpath("//div[@class='col-6 col-sm-4 col-md-4 col-lg-3  h-100'][2]");
     public static final By page10ThirdResimEkle = By.xpath("//div[@class='col-6 col-sm-4 col-md-4 col-lg-3  h-100'][3]");
@@ -824,6 +824,9 @@ public class OdaKiralaPage extends CommonPage {
         By explanationOfThePage = By.xpath(explanation);
         return BrowserUtils.isEnabled(explanationOfThePage);
 
+    }
+    public static boolean page10enAzBesEnFazlaOnResimAciklamasi(){
+        return BrowserUtils.isDisplayed(page10enAzBesEnFazlaOnResim);
     }
 
 }
