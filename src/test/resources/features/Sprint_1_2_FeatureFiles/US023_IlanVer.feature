@@ -12,9 +12,9 @@ Feature:US023_Bir kullanıcı olarak anasayfada, giriş yaptıktan sonra sağ ü
   @smoketest
   Scenario:TC002
     And user clicks on Login butto
-    When "ilan Ver" is selected,
-    When "ilan Ver" should be visible
+    When "ilan Ver" is selecte,
+    When "ilan Ver" should be visibl
   @smoketest
   Scenario:TC003
     And  "Profilim" is selected
-    When "Profilim" should be visibl
+    When "Profilim" should be visib

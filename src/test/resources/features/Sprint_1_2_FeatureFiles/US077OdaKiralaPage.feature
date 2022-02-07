@@ -1,13 +1,12 @@
-# US_076 Bir kullanıcı olarak "Oda Kirala & Değişim" ilan oluşturma sayfasında, 10. stepte "Resim ve Fotoğraflar" bölümlerinde butonları ve açıklamaları görebilmeliyim.
+# US_077 Bir kullanıcı olarak "Oda Kirala & Değişim" ilan oluşturma sayfasında, 10. stepte "Resim ve Fotoğraflar" ekleyebilmeliyim.
 # http://test.kese.nl/new_room
-# Sayfada default olarak 4 tane resim ekleme butonu görünür olmalıdır.
-# Default olarak sadece ilk buton tıklanabilir olmalı, diğerleri "disabled" olmalıdır.
-# İlk resim eklenince, ikinci resim ekle butonu aktif hale gelmelidir, bu son resime kadar böyle devam etmelidir.
+#Sayfada default olarak 4 tane resim ekleme butonu görünür olmalıdır.
+#Default olarak sadece ilk buton tıklanabilir olmalı, diğerleri "disabled" olmalıdır.
+#İlk resim eklenince, ikinci resim ekle butonu aktif hale gelmelidir, bu son resime kadar böyle devam etmelidir.
 
+Feature: US_077 Bir kullanıcı olarak "Oda Kirala & Değişim" ilan oluşturma sayfasında, 10. stepte "Resim ve Fotoğraflar" ekleyebilmeliyim.
 
-Feature: US_076 Bir kullanıcı olarak "Oda Kirala & Değişim" ilan oluşturma sayfasında, 10. stepte "Resim ve Fotoğraflar" bölümlerinde butonları ve açıklamaları görebilmeliyim.
-
-    Background: Successful connection to site and coming to step 10 in "Ev Değişimi"
+  Background: Successful connection to site and coming to step 10 in "Ev Değişimi"
     Given user is on login page "http://test.kese.nl/new_home"
     When user signed in on sign in page
       | coder52@nonmail.com | 1234 |
