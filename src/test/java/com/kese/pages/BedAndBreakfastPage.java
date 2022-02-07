@@ -754,4 +754,6 @@ public class BedAndBreakfastPage extends CommonPage {
     public WebElement page9SectiginizTarihler;
 
 
+
 }
+
