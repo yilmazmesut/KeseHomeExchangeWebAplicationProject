@@ -822,12 +822,49 @@ public class OdaKiralaPage extends CommonPage {
 
     public static boolean ResimleriSecinButton(String explanation) {
         By explanationOfThePage = By.xpath(explanation);
-        return BrowserUtils.isEnabled(explanationOfThePage);
+        return BrowserUtils.isEnabled(page10aciklama);
 
     }
+
     public static boolean page10enAzBesEnFazlaOnResimAciklamasi(){
         return BrowserUtils.isDisplayed(page10enAzBesEnFazlaOnResim);
     }
+
+    public static boolean page10FirstResimEkleIsDisplayed(){
+        return BrowserUtils.isDisplayed(page10FirstResimEkle);
+    }
+
+    public static boolean page10SecondResimEkleIsDisplayed() {
+        return BrowserUtils.isDisplayed(page10SecondResimEkle);
+    }
+//Enabled
+    public static boolean page10SecondResimEkleIsEnabled() {
+        return BrowserUtils.isDisabled(By.id("file-upload2"));
+    }
+
+    public static boolean page10FirstResimEkleIsEnabled() {
+        return BrowserUtils.isDisabled(By.id("file-upload1"));
+
+    }
+    public static boolean page10ThirdResimEkleIsEnabled() {
+        return BrowserUtils.isDisabled(By.id("file-upload3"));
+    }
+
+    public static boolean page10FourthResimEkleIsEnabled() {
+        return BrowserUtils.isDisabled(By.id("file-upload4"));
+
+    }
+
+    public static boolean page10ThirdResimEkleIsDisplayed() {
+        return BrowserUtils.isDisplayed(page10ThirdResimEkle);
+
+    }
+    public static boolean page10FourthResimEkleIsDisplayed() {
+        return BrowserUtils.isDisplayed(page10FourthResimEkle);
+
+    }
+
+
 
 }
 
