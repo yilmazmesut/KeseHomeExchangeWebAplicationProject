@@ -12,7 +12,7 @@ Feature: US_077 Bir kullanıcı olarak "Oda Kirala & Değişim" ilan oluşturma 
       | coder52@nonmail.com | 1234 |
     And user navigates to page 10 in Room Exchange Page
 
-  Scenario: US_076 TC_001 Buttons and the descriptions should be visible
+  Scenario: US_077 TC_001 Buttons and the descriptions should be visible
     Then user verifies that the four picture loading buttons are visible as default on the new room_step ten page
     Then user verifies that the first picture loading buttons is clickable as default on the new room_step ten page
     Then user verifies that the rest of the picture loading buttons are disabled on the new room_step ten page
