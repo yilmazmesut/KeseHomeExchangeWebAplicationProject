@@ -2,7 +2,9 @@ package com.kese.stepdefinitions.Sprint_3;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.junit.Assert;
@@ -25,6 +27,8 @@ public class US093_HomesApiPopulerIlanlarStepD {
         response = given()
                 .spec(request)
                 .get(endPoint);
+
+        Assert.assertEquals(response.getStatusCode(), 200);
     }
 
     @Then("system should display max {int} populer ev ilani for home API")
