@@ -3,7 +3,15 @@
 
 src/test/java/runners/
 .idea/
-.target
+*.iml
+.idea/
+target/
+src/main/
+target/generated-test-sources/
+target/test-classes/pages/
+target/test-classes/runners/
+target/test-classes/step_definitions/
+target/test-classes/utilities/
 
 # Compiled class file
 *.class
@@ -104,3 +112,11 @@ fabric.properties
 # Android studio 3.1+ serialized cache file
 .idea/caches/build_file_checksums.ser
 
+target/cucumber-html-reports/
+target/failed-html-report/
+target/generated-test-sources/
+target/maven-archiver/
+target/maven-status/
+target/surefire-reports/
+target/test-classes/com/
+target/test-classes/features/US010KeseLoginPage.feature

@@ -1,6 +1,7 @@
 package com.kese.pages;
 
 import com.kese.utilities.BrowserUtils;
+import com.kese.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,8 +10,6 @@ public class MainPage extends CommonPage {
 
     @FindBy(xpath = "//a[@class='navbar-brand']")
     public WebElement logo;
-
-
 
     @FindBy(xpath = "(//span[text()='Kargo'])[1]")
     public WebElement CargoButton;
@@ -88,7 +87,38 @@ public class MainPage extends CommonPage {
     @FindBy(xpath = "//span[text()='Oda değişimi yapmak istediğiniz yer']")
     public WebElement odaDegisimiYapmakIstediğinizYer;
 
+    public void clickPopulerMenu (String menuTitle){
 
+        String menuTitleLocatorText = "//span[text()='"+ menuTitle +"']";
+
+        WebElement menuTitleLocator = Driver.get().findElement(By.xpath(menuTitleLocatorText));
+
+        menuTitleLocator.click();
+
+
+
+    }
+
+    @FindBy   (xpath = "//a[contains(text(),'Giriş Yap')]")
+    public WebElement girisyapButtonu;
+
+    @FindBy (xpath="//li[@class='nav-item']/a[@style='cursor: pointer;']")
+    public WebElement getHomechangeButton;
+
+
+
+    @FindBy  (xpath = "//span[.='Ev değişimi yapmak istediğiniz yer']")
+
+    public WebElement EvDegisimiYeriButton;
+
+
+    @FindBy (id = "dropdownMenuButton")
+    public WebElement dropdownMenuButton;
+
+    @FindBy (xpath = "//*[contains(text(),' Bed & Breakfast')]")
+    public WebElement bedAndBreakfastOption;
 
 }
+
+
 

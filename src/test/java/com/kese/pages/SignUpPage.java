@@ -48,7 +48,7 @@ public class SignUpPage extends CommonPage{
     public WebElement SignupPasswordBox;
 
     @FindBy(xpath = "//input[@id='sifreTekrar']")
-    public WebElement SignupPasswordBox2;
+    public WebElement repasswordInput;
 
     @FindBy(xpath = "//div[@class='d-flex justify-content-center align-items-center']")
     public WebElement SignupButton;
@@ -82,6 +82,22 @@ public class SignUpPage extends CommonPage{
         BrowserUtils.myClickMethod(girisYapButton);
     }
 
+    @FindBy(xpath = "//*[@class=\"mt-2 btn btn-danger btn-block w-100 \"]")
+    public WebElement registerClick;
 
+    @FindBy(xpath = "(//*[text()=\"Kayıt Ol\"])[2]")
+    public WebElement kayitOlPage;
+
+    @FindBy(xpath = "//*[@id=\"inputUsername\"]")
+    public WebElement kullaniciAdi;
+
+    @FindBy(xpath = "//*[@id=\"staticEmail\"]")
+    public WebElement emailAdres;
+
+    @FindBy(xpath = "//*[@id=\"sifre\"]")
+    public WebElement sifre;
+
+    @FindBy(xpath = "//*[@id=\"sifreTekrar\"]")
+    public WebElement sifreTekrar;
 
 }
