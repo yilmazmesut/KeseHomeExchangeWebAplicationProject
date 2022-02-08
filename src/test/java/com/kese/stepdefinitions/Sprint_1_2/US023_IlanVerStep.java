@@ -40,23 +40,23 @@ public class US023_IlanVerStep {
 
     @When("{string} is selecte,")
     public void isSelecte(String arg0) {
-       // Assert.assertTrue(mainPage.ilanVer.isSelected());
-       // BrowserUtils.waitFor(1);
+        Assert.assertTrue(mainPage.ilanVer.isSelected());
+        BrowserUtils.waitFor(2);
     }
 
     @When("{string} should be visibl")
     public void shouldBeVisibl(String arg0) {
-     //Assert.assertTrue(mainPage.ilanVer.isDisplayed());
+     Assert.assertTrue(mainPage.ilanVer.isDisplayed());
     }
 
     @And("{string} is selected")
     public void isSelected(String arg0) {
-       // Assert.assertTrue(mainPage.profilim.isSelected());
+        Assert.assertTrue(mainPage.profilim.isSelected());
     }
 
     @When("{string} should be visib")
     public void shouldBeVisib(String arg0) {
-       //   Assert.assertTrue(mainPage.profilim.isSelected());
+         Assert.assertTrue(mainPage.profilim.isSelected());
     }
 }
 
