@@ -400,6 +400,10 @@ public class BedAndBreakfastPage extends CommonPage {
     @FindBy(xpath = "//button[@class='btn btn-danger rounded px-2 py-1 ']")
     public WebElement page9CancelButton ;
 
+    @FindBy(xpath = "//div[@class='react-datepicker__current-month']")
+    public WebElement cuurentMonthText ;
+
+
 
 
     /**--------------------------------------------------------------------------------------------------------------*/
@@ -449,8 +453,13 @@ public class BedAndBreakfastPage extends CommonPage {
     @FindBy(xpath = "//button[contains(text(),'Resimleri Seçin')]")
     public WebElement page10ResimleriSecinButton;
 
-    @FindBy(xpath = "//div[@class='navbar-nav me-auto fs-3']")
+    @FindBy(xpath = "//div[@class='navbar-nav me-auto fs-3']")//div[@class='navbar-nav me-auto fs-3' and contains(text(),'2')]
     public WebElement page10StepTextBox;
+
+    public void pageRateText(int numberOfPage){
+        String pageRateLocator="//div[@class='navbar-nav me-auto fs-3' and contains(text(),'"+numberOfPage+"')]";
+        WebElement pageStepRateText=Driver.get().findElement(By.xpath(pageRateLocator));
+    }
 
     public void pictureLoaded(int pictureNum) {
         String pictureLoadedLocator = "(//div[@class = 'rounded '])[" + pictureNum + "]";
