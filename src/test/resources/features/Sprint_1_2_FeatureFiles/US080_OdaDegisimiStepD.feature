@@ -85,6 +85,7 @@ Feature: "Oda Kirala & Değişimi" - Geri button enability and saved data verifi
       | Bahçe              |
       | Mangal/Barbekü     |
       | Balkon             |
+      | Oyun Konsolu       |
     When user clicks to the ilerle button on oda kirala page
     Then step 6 should be displayed on oda kirala page
     And the geri button should be enabled

@@ -7,6 +7,7 @@ Feature: Cargo is clickable and visible and message is visible
   @META3-128
   Scenario:  Cargo is clickable and visible
     Then Cargo button should be clickeable and display
+    
 
 
   @META3-144
