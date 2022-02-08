@@ -1,4 +1,5 @@
-Feature: Bir kullanıcı olarak "Ev Değişimi" ilan oluşturma sayfasında, 9. stepte "Değişim Tarihi" bilgisini girmek için ilgili inputu kullanabilmeliyim.
+Feature: Bir kullanıcı olarak "Ev Değişimi" ilan oluşturma sayfasında, 9. stepte "Değişim Tarihi"
+  bilgisini girmek için ilgili inputu kullanabilmeliyim.
 
 #  İnput içerisinde default olarak "Tarih seçmek için tıklayınız" yazısı yer almalıdır.
 #  Seçtiğim tarih aralığı input içerisinde yer almalıdır.
