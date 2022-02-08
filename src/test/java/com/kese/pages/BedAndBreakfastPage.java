@@ -753,5 +753,4 @@ public class BedAndBreakfastPage extends CommonPage {
     @FindBy(xpath="//p[@class='pt-3 false']")
     public WebElement page9SectiginizTarihler;
 
-
 }
