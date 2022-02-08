@@ -89,23 +89,5 @@ public class US063_Room4NextButtonStepDef {
         }
     }
 
-    @Then("user asserts ilerle button is visible sevda")
-    public void userAssertsIlerleButtonIsVisibleSevda() {
-        Assert.assertTrue(page2.nextButton.isDisplayed());
-    }
 
-    @Then("user assert ilerle button is not clickable")
-    public void userAssertIlerleButtonIsNotClickable() {
-        Assert.assertFalse( page2.nextButton.isEnabled());
-    }
-
-    @And("user clicks on ilerle button")
-    public void userClicksOnIlerleButton() {
-        page2.nextButton.click();
-    }
-
-    @Then("user assert ilerle button is clickable")
-    public void userAssertIlerleButtonIsClickable() {
-        Assert.assertTrue(page2.nextButton.isEnabled());
-    }
 }
