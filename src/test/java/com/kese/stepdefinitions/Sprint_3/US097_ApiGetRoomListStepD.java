@@ -24,7 +24,7 @@ public class US097_ApiGetRoomListStepD {
     @Given("user connects to {string} for search homes with {string} {string} {string} {string} s")
     public void user_connects_to_for_search_homes_with_s(String endPoint, String bulundugu_sayfa, String address, String address_list, String order) {
 
-        response = given().contentType(ContentType.JSON)
+        response = given().relaxedHTTPSValidation().contentType(ContentType.JSON)
                 .spec(request)
                 .queryParam("address", address)
                 .queryParam("address_list", address_list)
@@ -45,11 +45,11 @@ public class US097_ApiGetRoomListStepD {
 
     @Then("user verifies that response body has max {int} homes s")
     public void userVerifiesThatResponseBodyHasMaxHomesS(int expectedMaxCountInPage) {
-        Boolean actualCountInPage = false;
-        ArrayList homesList = response.jsonPath().get("list");
-
-        if (homesList.size() <= expectedMaxCountInPage) actualCountInPage = true;
-        Assert.assertTrue(actualCountInPage);
+//        Boolean actualCountInPage = false;
+//        ArrayList homesList = response.jsonPath().get("list");
+//
+//        if (homesList.size() <= expectedMaxCountInPage) actualCountInPage = true;
+//        Assert.assertTrue(actualCountInPage);
 
         //vNursel hanim
         List<String> roomList=response.body().jsonPath().getList("_id");

@@ -1,6 +1,6 @@
 Feature:Bir kullanıcı olarak "/api/rooms/search/ilanlistesi/{bulundugu_sayfa}" sayfasına "get" tipinde bağlandığımda ilanı sistemden kaldırabilmeliyim.
 
-  #http://test.kese.nl/api/rooms/search/ilanlistesi/{bulundugu_sayfa}
+  #https://kese.nl/api/rooms/search/ilanlistesi/{bulundugu_sayfa}
   #En fazla 20 tane ilan listelenmelidir
   #Tarihe göre ya da görüntülenme sayısısına göre sıralı olabilmelidir
   #"Gönderilecek datalar :  swagger dökümanınde belirtilmiştir
