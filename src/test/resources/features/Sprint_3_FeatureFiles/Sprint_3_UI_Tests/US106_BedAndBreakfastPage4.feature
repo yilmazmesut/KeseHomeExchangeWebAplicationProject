@@ -51,7 +51,7 @@ Feature: Bir kullanıcı olarak "Bed & Breakfast" ilan oluşturma sayfasında, 4
 
   Scenario: US106_TC07  Özel Oda İmkanı, Kahvaltı, Bol Çeşit options should be selectable.
     And user clicks on Özel Oda İmkanı button
-    Then user verifies button isAclickable
+    Then user verifies button is clickable
     And user clicks on Kahvaltı button
     Then user verifies Bol Cesit hayır button is visible
 
