@@ -115,7 +115,7 @@ public class MainPage extends CommonPage {
     @FindBy (id = "dropdownMenuButton")
     public WebElement dropdownMenuButton;
 
-    @FindBy (xpath = "//*[contains(text(),' Bed & Breakfast')]")
+    @FindBy (xpath = "(//*[contains(text(),' Bed & Breakfast')])[2]")
     public WebElement bedAndBreakfastOption;
 
     @FindBy (xpath = "(//*[contains(text(),' Bed & Breakfast')])[2]")
