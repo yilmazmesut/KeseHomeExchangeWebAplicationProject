@@ -3,7 +3,7 @@
 Feature: ForgotPassword
 
 
-  // @wip
+#   @wip
   Scenario: "Home Change" button should be clickable and visible
     Given User is on login page
     Then The user sees the home change button
