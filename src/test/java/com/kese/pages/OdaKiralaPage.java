@@ -465,7 +465,7 @@ public class OdaKiralaPage extends CommonPage {
     @FindBy(id = "dropdownMenuButton")
     public WebElement dropdownIlanVerButton;   // Ilan Ver butonu
     // Main Page
-    @FindBy(xpath = "//*[contains(text(),' Oda')]")
+    @FindBy(xpath = "(//*[contains(text(),' Oda')])[2]")
     public WebElement dropDownOda; // Ilan ver butonunda
 
     @FindBy(id = "room")
