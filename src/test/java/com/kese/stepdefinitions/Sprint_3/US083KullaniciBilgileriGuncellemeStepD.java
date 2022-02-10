@@ -23,7 +23,7 @@ public class US083KullaniciBilgileriGuncellemeStepD {
     String url = "http://test.kese.nl/api/user/account";  //kullanmadim
     Response response = null;
     RequestSpecification request = new RequestSpecBuilder()
-            .setBaseUri("http://test.kese.nl/api")
+            .setBaseUri("https://kese.nl/api")
             .build();
 
 
@@ -33,7 +33,7 @@ public class US083KullaniciBilgileriGuncellemeStepD {
         jsonObject.put("email", "azizi.14@gmail.com");
         jsonObject.put("sifre", "1234");
 
-        response = given().contentType(ContentType.JSON).
+        response = given().relaxedHTTPSValidation().contentType(ContentType.JSON).
                 spec(request).
                 body(jsonObject.toString()).
                 post(endPoint + "/login");
@@ -61,7 +61,7 @@ public class US083KullaniciBilgileriGuncellemeStepD {
          putMap.put("kullanici_adi", "ahmet");
          */
 
-        response = given().queryParam("secret_token", token).
+        response = given().queryParam("secret_token", token).relaxedHTTPSValidation().
                 contentType(ContentType.JSON).
                 spec(request).
                 body(jsonObject.toString()). //bodyi burda yolluyoruz
@@ -81,11 +81,11 @@ public class US083KullaniciBilgileriGuncellemeStepD {
         jsonObject.put("kullanici_adi", "aziz40");
 
 
-        response = given().queryParam("secret_token", invalidToken).
+        response = given().queryParam("secret_token", invalidToken).relaxedHTTPSValidation().
                 contentType(ContentType.JSON).
                 spec(request).
                 body(jsonObject.toString()).
-                        when().
+                when().
                 patch("/user/account");
         response.prettyPrint(); //body ekrana yazdir
         System.out.println("response.statusCode() = " + response.statusCode()); //status code ekrana yazdir
@@ -102,7 +102,7 @@ public class US083KullaniciBilgileriGuncellemeStepD {
         jsonObject.put("kullanici_adi", "aziz40");
 
 
-        response = given().queryParam("secret_token", invalidToken).
+        response = given().queryParam("secret_token", invalidToken).relaxedHTTPSValidation().
                 contentType(ContentType.JSON).
                 spec(request).
                 body(jsonObject.toString()).
@@ -112,7 +112,7 @@ public class US083KullaniciBilgileriGuncellemeStepD {
         System.out.println("response.statusCode() = " + response.statusCode()); //status code ekrana yazdir
         assertEquals(200, response.statusCode());
         System.out.println("response.jsonPath().getString(\"sonuc\") = " + response.jsonPath().getString("sonuc")); //patch yapinca gelen bodydeki sonuc property degerini aliyor
-        assertEquals("false",response.jsonPath().getString("sonuc"));
+        assertEquals("false", response.jsonPath().getString("sonuc"));
         System.out.println("response.getBody().jsonPath().get(\"sonuc\") = " + response.getBody().jsonPath().get("sonuc")); //buda yukardaki kodla ayni isi yapiyor.
     }
 }
