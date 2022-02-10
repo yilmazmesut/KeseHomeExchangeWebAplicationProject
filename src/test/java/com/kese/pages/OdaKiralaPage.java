@@ -826,26 +826,29 @@ public class OdaKiralaPage extends CommonPage {
 
     }
 
-    public static boolean page10enAzBesEnFazlaOnResimAciklamasi(){
+    public static boolean page10enAzBesEnFazlaOnResimAciklamasi() {
         return BrowserUtils.isDisplayed(page10enAzBesEnFazlaOnResim);
     }
 
-    public static boolean page10FirstResimEkleIsDisplayed(){
+    public static boolean page10FirstResimEkleIsDisplayed() {
         return BrowserUtils.isDisplayed(page10FirstResimEkle);
     }
 
     public static boolean page10SecondResimEkleIsDisplayed() {
         return BrowserUtils.isDisplayed(page10SecondResimEkle);
     }
-//Enabled
-    public static boolean page10SecondResimEkleIsEnabled() {
-        return BrowserUtils.isDisabled(By.id("file-upload2"));
-    }
 
+    //Enabled
     public static boolean page10FirstResimEkleIsEnabled() {
         return BrowserUtils.isDisabled(By.id("file-upload1"));
 
     }
+
+    public static boolean page10SecondResimEkleIsEnabled() {
+        return BrowserUtils.isDisabled(By.id("file-upload2"));
+
+    }
+
     public static boolean page10ThirdResimEkleIsEnabled() {
         return BrowserUtils.isDisabled(By.id("file-upload3"));
     }
@@ -859,6 +862,7 @@ public class OdaKiralaPage extends CommonPage {
         return BrowserUtils.isDisplayed(page10ThirdResimEkle);
 
     }
+
     public static boolean page10FourthResimEkleIsDisplayed() {
         return BrowserUtils.isDisplayed(page10FourthResimEkle);
 
