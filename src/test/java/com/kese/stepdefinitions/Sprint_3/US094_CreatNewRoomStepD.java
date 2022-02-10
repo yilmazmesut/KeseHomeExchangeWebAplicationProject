@@ -19,7 +19,7 @@ import java.util.Random;
 import static io.restassured.RestAssured.given;
 
 public class US094_CreatNewRoomStepD {
-
+    public static String roomID;
     public static String tokenID;
     public static String userID;
     public static String username;
@@ -129,7 +129,8 @@ public class US094_CreatNewRoomStepD {
                 .post("/rooms");
         response1.prettyPrint();
         System.out.println("response1.statusCode() = " + response1.statusCode());
-
+        roomID= response1.path("_id").toString();
+        System.out.println("roomID = " + roomID);
 
     }
     @Then("verify status code is {int}")

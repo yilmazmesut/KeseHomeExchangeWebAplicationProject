@@ -799,5 +799,22 @@ public class BedAndBreakfastPage extends CommonPage {
     public WebElement page9SectiginizTarihler;
 
 
+    //US123
+    public boolean isDisplayedButton(String buttonText) {
+        String buttonLocatorText = "//*[contains(text(),'" + buttonText + "')]";
+        WebElement buttonTextLocator = Driver.get().findElement(By.xpath(buttonLocatorText));
+        return buttonTextLocator.isDisplayed();
+
+    }
+
+    public boolean isEnabledButton(String buttonText) {
+        String buttonLocatorText = "//*[contains(text(),'" + buttonText + "')]";
+        WebElement buttonTextLocator = Driver.get().findElement(By.xpath(buttonLocatorText));
+        return buttonTextLocator.isEnabled();
+
+    }
+
+
+
 }
 
