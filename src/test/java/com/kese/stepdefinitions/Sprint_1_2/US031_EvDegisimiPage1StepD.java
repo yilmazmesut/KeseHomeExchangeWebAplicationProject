@@ -37,16 +37,6 @@ public class US031_EvDegisimiPage1StepD {
         WebElement apartman=  Driver.get().findElement(By.xpath("(//div[@class='border py-3 rounded false'])[2]"));
         WebElement studyo=  Driver.get().findElement(By.xpath("(//div[@class='border py-3 rounded false'])[3]"));
 
-        if(evturu.equals("Mustakil Ev")){
-            Assert.assertTrue(mustakilEv.isDisplayed());
-            Assert.assertTrue(mustakilEv.isEnabled());
-        } else if(evturu.equals("Apartaman Dairesi")){
-            Assert.assertTrue(apartman.isDisplayed());
-            Assert.assertTrue(apartman.isEnabled());
-        }else{
-            Assert.assertTrue(studyo.isDisplayed());
-            Assert.assertTrue(studyo.isEnabled());
-        }
 
 
     }
