@@ -664,9 +664,9 @@ public class EvDegisimiPage extends CommonPage {
 
 
 
-    // Page 9
+// Page 9
 
-    //    Same Locators
+//    Same Locators
 //    @FindBy(xpath = "//a[@id='next']")
 //    public WebElement ilerleButton ;
 //

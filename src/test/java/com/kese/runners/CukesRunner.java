@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
                 "rerun:target/rerun.txt"},
         features = "src/test/resources/features",
         glue = "com/kese/stepdefinitions",
-        tags = "@MH-138",
+        tags = "@wip",
         dryRun = false
 
 

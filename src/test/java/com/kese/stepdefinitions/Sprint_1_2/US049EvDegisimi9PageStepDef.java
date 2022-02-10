@@ -15,6 +15,7 @@ public class US049EvDegisimi9PageStepDef {
     public void userVerifySholdBeExist(String expectedText) {
 
         String actualText = edp.page9InputCalenderBox.getAttribute("placeholder");
+        System.out.println("aCTUAL TEXT FROM ui"+ actualText);
         Assert.assertTrue(actualText.contains(expectedText));
 
 
@@ -32,8 +33,11 @@ public class US049EvDegisimi9PageStepDef {
 
     @Then("user verify picked date should be exist in the input")
     public void userVerifyPickedDateShouldBeExistInTheInput() {
+
+
         String actualDateText = edp.page9InputCalenderBox.getAttribute("value");
-        Assert.assertTrue(actualDateText.contains("01/16/2022 - 01/16/2022"));
+        System.out.println("Actual date " +actualDateText);
+       Assert.assertTrue(actualDateText.contains("02/16/2022 - 02/16/2022"));
     }
 
     @Then("user verify pick date input should be enabled")
