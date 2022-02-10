@@ -1,4 +1,4 @@
-package com.kese.stepdefinitions.Sprint_1_2;
+package com.kese.stepdefinitions.Sprint_3;
 
 import com.kese.pages.BedAndBreakfastPage;
 import com.kese.pages.EvDegisimiPage;
@@ -12,30 +12,30 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public class US079_OdailanVerPage10StepD  {
+public class US123_BedAndBreakfastPage10StepD {
 
-    OdaKiralaPage page = new OdaKiralaPage();
-    EvDegisimiPage page1 = new EvDegisimiPage();
+    BedAndBreakfastPage page = new BedAndBreakfastPage();
 
-    @Given("user should be able to click on {string} button after adding the images.")
-    public void userShouldBeAbleToClickOnButtonAfterAddingTheImages(String textRemove) {
-        validateUserAddedTheImageOnInsertionInputAfterTheOtherOneMustBeAbleToInsertion();
+
+    @Given("on BAB user should be able to click on {string} button after adding the images.")
+    public void onBABuserShouldBeAbleToClickOnButtonAfterAddingTheImages(String textRemove) {
+        onBABvalidateUserAddedTheImageOnInsertionInputAfterTheOtherOneMustBeAbleToInsertion();
         Assert.assertTrue(page.isDisplayedButton(textRemove));
         Assert.assertTrue(page.isEnabledButton(textRemove));
 
     }
 
-    @Then("validate to remove all added images.")
-    public void validateToRemoveAllAddedImages() {
+    @Then("on BAB validate to remove all added images.")
+    public void onBABvalidateToRemoveAllAddedImages() {
         page.page10RemoveAllPicturesButton.click();
         for (int i = 1; i <= 4; i++) {
-        Assert.assertFalse((Driver.get().findElement(By.id("file-upload" + i)).isDisplayed()));
-       }
+            Assert.assertFalse((Driver.get().findElement(By.id("file-upload" + i)).isDisplayed()));
+        }
 
-   }
+    }
 
-    @Given("user should be able to clicks on insertion input and  the others must be disabled.")
-    public void userShouldBeAbleToClicksOnInsertionInputAndTheOthersMustBeDisabled() {
+    @Given("on BAB user should be able to clicks on insertion input and  the others must be disabled.")
+    public void onBABuserShouldBeAbleToClicksOnInsertionInputAndTheOthersMustBeDisabled() {
         WebElement pictureLocator;
         for (int i = 1; i <=4; i++) {
             BrowserUtils.waitFor(1);
@@ -51,8 +51,8 @@ public class US079_OdailanVerPage10StepD  {
     }
 
 
-    @And("validate user added the image on insertion input after the other one must be able to insertion.")
-    public void validateUserAddedTheImageOnInsertionInputAfterTheOtherOneMustBeAbleToInsertion() {
+    @And("on BAB validate user added the image on insertion input after the other one must be able to insertion.")
+    public void onBABvalidateUserAddedTheImageOnInsertionInputAfterTheOtherOneMustBeAbleToInsertion() {
         WebElement pictureLocator;
         for (int i = 1; i <=9; i++) {
             BrowserUtils.waitFor(1);
@@ -66,6 +66,4 @@ public class US079_OdailanVerPage10StepD  {
     }
 
 
-
 }
-

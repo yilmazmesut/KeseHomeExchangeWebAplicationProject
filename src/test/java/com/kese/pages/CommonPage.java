@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.Select;
 
 public abstract class CommonPage {
     public CommonPage (){
+
         PageFactory.initElements(Driver.get(), this);
     }
 

@@ -108,4 +108,5 @@ public class US063_Room4NextButtonStepDef {
     public void userAssertIlerleButtonIsClickable() {
         Assert.assertTrue(page2.nextButton.isEnabled());
     }
+
 }
