@@ -1,4 +1,5 @@
 @US086
+
 #Nursel
 Feature: User API Get List of Ilans
   # Bir kullanıcı olarak "/api/user/listofilans" sayfasına
