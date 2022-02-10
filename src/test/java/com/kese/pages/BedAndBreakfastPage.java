@@ -14,25 +14,27 @@ public class BedAndBreakfastPage extends CommonPage {
     //Common Locators
 
     @FindBy(xpath = "//*[contains(text(),'İlerle')]")
-    public WebElement ilerleButton ;
+    public WebElement ilerleButton;
 
     @FindBy(xpath = "//button[@id='next']")
-    public WebElement geriButton ;
+    public WebElement geriButton;
 
     @FindBy(xpath = "//div[@class='navbar-nav me-auto fs-3']")
     public WebElement theNumberOfPage;
 
     @FindBy(xpath = "//div[@class='px-3 py-2']/h2")
-    public WebElement  pageTitleText;
+    public WebElement pageTitleText;
 
     @FindBy(xpath = "(//div[@class='px-3 py-2']/p)[1]")
-    public WebElement pageInfoText ;
+    public WebElement pageInfoText;
 
-    @FindBy (xpath = "//small[@class='ps-2']")
+    @FindBy(xpath = "//small[@class='ps-2']")
     public WebElement missingInfoWarningText;
 
 
-    /**--------------------------------------------------------------------------------------------------------------*/
+    /**
+     * --------------------------------------------------------------------------------------------------------------
+     */
     //Page 1 by Aziz
 
     @FindBy(xpath = "(//div[@class='border py-3 rounded false'])[1]")
@@ -51,7 +53,9 @@ public class BedAndBreakfastPage extends CommonPage {
     public WebElement bedAndBreakfastp1HouseTypeWarning;
 
 
-    /**--------------------------------------------------------------------------------------------------------------*/
+    /**
+     * --------------------------------------------------------------------------------------------------------------
+     */
     //Page 2 by Nursel
 
     @FindBy(xpath = "//div[@class='py-3']//b")
@@ -60,7 +64,7 @@ public class BedAndBreakfastPage extends CommonPage {
     @FindBy(css = ".fas.fa-check.text-success")
     public WebElement page2SectinizAdresText;
 
-    @FindBy (id = "react-select-2-input")
+    @FindBy(id = "react-select-2-input")
     public WebElement page2AddressInputBox;
 
     @FindBy(xpath = "(//input[@type='number'])[1]")
@@ -94,7 +98,9 @@ public class BedAndBreakfastPage extends CommonPage {
         }
     }
 
-    /**--------------------------------------------------------------------------------------------------------------*/
+    /**
+     * --------------------------------------------------------------------------------------------------------------
+     */
     //Page 3 by Berrin
 
     @FindBy(xpath = "//div[@class='navbar-nav me-auto fs-3']")
@@ -106,7 +112,7 @@ public class BedAndBreakfastPage extends CommonPage {
     @FindBy(xpath = "//input[@type = 'number']")
     public WebElement page3KullanimAlaniInput;
 
-    @FindBy (xpath = "//button[text() = '+']")
+    @FindBy(xpath = "//button[text() = '+']")
     public List<WebElement> step3_incrementButtons;
 
     @FindBy(xpath = "//div[@class='form-group row align-items-center ']/div[@class='input-number-container col-5']/div[@class='w-100   d-flex justify-content-center align-items-center']/button[@class='btn btn-light border py-1 px-2 mr-3']")
@@ -178,9 +184,9 @@ public class BedAndBreakfastPage extends CommonPage {
     }
 
 
-
-
-    /**--------------------------------------------------------------------------------------------------------------*/
+    /**
+     * --------------------------------------------------------------------------------------------------------------
+     */
     //Page 4 (first 3 is min requirement) by Sevda
 
     @FindBy(xpath = "(//span[text()='Farketmez'])[1]")
@@ -240,29 +246,60 @@ public class BedAndBreakfastPage extends CommonPage {
     @FindBy(xpath = "(//*[text() = 'Hayır'])[3]")
     public WebElement page4BolCesitHAYIR;
 
+    @FindBy(xpath = "//*[text()='*Lütfen cinsiyet, yaş aralığı ve kişi sayısı seçiniz.']")
+    public WebElement page4Uyarı;
+
+    @FindBy(xpath = "//button[text()='+']")
+    public WebElement page4plusbutton;
+
+    //@FindBy(css = ".navbar-nav.me-auto.fs-3")
+    @FindBy(xpath = "//div[text()='5']")
+    public WebElement page4to5thPageVerification;
+
+    public void clickPage4Ageoptions(String ageText) {
+        String ageLocator = "//*[text()='" + ageText + "']";
+        Driver.get().findElement(By.xpath(ageLocator)).click();
+    }
+
+    public void clickPage4Gender(String gender) {
+        String genderLocator = "//span[text()='" + gender + "']";
+        Driver.get().findElement(By.xpath(genderLocator)).click();
+    }
 
 
-    /**--------------------------------------------------------------------------------------------------------------*/
+  /*  public void clickPage4AgeOptions(List<String> ageList) {
+        for (String ageText : ageList) {
+            String ageLocator = "//span[.='" + ageText + "']";
+            Driver.get().findElement(By.xpath(ageLocator)).click();
+        }
+    }
+*/
+
+
+    /**
+     * --------------------------------------------------------------------------------------------------------------
+     */
     //Page 6 by nur
 
     @FindBy(xpath = "//h2")
     public WebElement page6header;
 
-    @FindBy (xpath = "//p[@class='pt-3']")
+    @FindBy(xpath = "//p[@class='pt-3']")
     public List<WebElement> page6inputBoxHeaders;
 
-    @FindBy (xpath = "//textarea[@id='room']")
-    public  WebElement page6inputBoxRoom;
+    @FindBy(xpath = "//textarea[@id='room']")
+    public WebElement page6inputBoxRoom;
 
-    @FindBy (xpath = "//textarea[@id='home']")
-    public  WebElement page6inputBoxHome;
+    @FindBy(xpath = "//textarea[@id='home']")
+    public WebElement page6inputBoxHome;
 
-    @FindBy (xpath = "//textarea[@id='breakfast']")
-    public  WebElement page6inputBoxBreakf;
+    @FindBy(xpath = "//textarea[@id='breakfast']")
+    public WebElement page6inputBoxBreakf;
 
 
-
-    /**--------------------------------------------------------------------------------------------------------------*/
+    /**
+     * --------------------------------------------------------------------------------------------------------------
+     */
     // Page 7 by AykutC
 
     @FindBy(xpath = "//div[@class='navbar-nav me-auto fs-3']")
@@ -319,9 +356,16 @@ public class BedAndBreakfastPage extends CommonPage {
     @FindBy(xpath = "//div[@id='root']//small[@class='ps-2']")
     public WebElement page7ActiviteWarningMessage;
 
+    /*
+    page 4-----------------------------------------------------------
+     */
+    @FindBy(xpath = "//a[@class='btn py-1 bg-light']")
+    public WebElement page4İleriTuşu;
 
 
-    /**--------------------------------------------------------------------------------------------------------------*/
+    /**
+     * --------------------------------------------------------------------------------------------------------------
+     */
     //Page 8 by RejepA
 
     @FindBy(xpath = "(//div[@class='col-7'])[1]")
@@ -379,30 +423,32 @@ public class BedAndBreakfastPage extends CommonPage {
     public WebElement page8BakilmasiGerekenBitkiHAYIR;
 
 
-
-    /**--------------------------------------------------------------------------------------------------------------*/
+    /**
+     * --------------------------------------------------------------------------------------------------------------
+     */
     // Page 9 by Selen
 
 
     @FindBy(xpath = "//input[@type='text']")
-    public WebElement page9InputCalenderBox ;
+    public WebElement page9InputCalenderBox;
 
     @FindBy(xpath = "//div[@class='react-datepicker__day-name' and text()='Su']")
-    public WebElement page9CalendarPageSu ;
+    public WebElement page9CalendarPageSu;
 
     //    Seçtiğiniz Tarihler
     @FindBy(xpath = "(//div[@class='px-3 py-2']/p)[2]")
-    public WebElement page9BookedDate ;
+    public WebElement page9BookedDate;
 
     @FindBy(xpath = "//div[@class='col-12 px-0']")
-    public WebElement page9BookedDateSummary ;
+    public WebElement page9BookedDateSummary;
 
     @FindBy(xpath = "//button[@class='btn btn-danger rounded px-2 py-1 ']")
-    public WebElement page9CancelButton ;
+    public WebElement page9CancelButton;
 
 
-
-    /**--------------------------------------------------------------------------------------------------------------*/
+    /**
+     * --------------------------------------------------------------------------------------------------------------
+     */
     //Page 10 by MSen
 
     public static final By stepNumberPage = By.xpath("//div[@class='navbar-nav me-auto fs-3']");
@@ -428,13 +474,15 @@ public class BedAndBreakfastPage extends CommonPage {
     public static final By resimleriKaydtButton = By.linkText("Resimleri Kaydet");
 
 
-    /**--------------------------------------------------------------------------------------------------------------*/
+    /**
+     * --------------------------------------------------------------------------------------------------------------
+     */
     //Page 10 by Nuray
 
     @FindBy(xpath = "//*[contains(text(), 'Resimleri Kaydet')]")
     public WebElement page10ResimleriKaydetButton;
 
-    @FindBy (xpath = "//*[contains(text(), 'İlanı Yayınla')]")
+    @FindBy(xpath = "//*[contains(text(), 'İlanı Yayınla')]")
     public WebElement page10publishAdButton; // ilani yayinla butonu
 
     @FindBy(xpath = "//button[contains(text(),'Tüm Resimleri Kaldır')]")
@@ -456,71 +504,76 @@ public class BedAndBreakfastPage extends CommonPage {
         String pictureLoadedLocator = "(//div[@class = 'rounded '])[" + pictureNum + "]";
         WebElement page10PictureLocator = Driver.get().findElement(By.xpath(pictureLoadedLocator));
     }
+
     public void pictureFrame(int frameNum) {
-        String pictureFrameLocator = "//label[@for='file-upload"+frameNum+"']";
+        String pictureFrameLocator = "//label[@for='file-upload" + frameNum + "']";
         WebElement page10PictureFrameLocator = Driver.get().findElement(By.id(pictureFrameLocator));
     }
 
 
-    /**--------------------------------------------------------------------------------------------------------------*/
+    /**
+     * --------------------------------------------------------------------------------------------------------------
+     */
     //Page 10 by Muhsin
 
     // resim eklemeye yarayançerçevelerde ki Resim Ekle
-    @FindBy (xpath = "//*[contains(text(), 'Resim Ekle')]")
+    @FindBy(xpath = "//*[contains(text(), 'Resim Ekle')]")
     public WebElement step10_addImageText;
 
     //all locators min request by Muhsin
     // 1st page
-    @FindBy (xpath = "//*[contains(text(),'Müstakil Ev')]")
+    @FindBy(xpath = "//*[contains(text(),'Müstakil Ev')]")
     public WebElement step1_houseButton;  //  Müstakil Ev
     // 2nd page
-    @FindBy (xpath = "//*[contains(text(),'Select...')]")
+    @FindBy(xpath = "//*[contains(text(),'Select...')]")
     public WebElement step2_selectText;
     // 2nd page
-    @FindBy (id = "react-select-2-input")
+    @FindBy(id = "react-select-2-input")
     public WebElement step2_selectTextButton;
     // 2nd page
     @FindBy(className = "form-check-input")
     public WebElement step2_checkBox;
     // 3rd page
-    @FindBy (id = "size")
+    @FindBy(id = "size")
     public WebElement step3_sizeOfAreaUp;
     // 4th page
-    @FindBy (xpath = "//*[contains(text(),'10-15')]")
+    @FindBy(xpath = "//*[contains(text(),'10-15')]")
     public WebElement step4_10_15AgeOption;
     // 4th page
-    @FindBy (xpath = "//*[contains(text(),'Erkek')]")
+    @FindBy(xpath = "//*[contains(text(),'Erkek')]")
     public WebElement step4_ErkekOption;
     // 4th page
     @FindBy(className = "ml-3")
     public WebElement step4_plus; //Kişi sayısı
     // 5th page
-    @FindBy (xpath = "//*[contains(text(),'TV')]")
+    @FindBy(xpath = "//*[contains(text(),'TV')]")
     public WebElement step5_tvText;
     // 6th page
-    @FindBy (id = "room")
+    @FindBy(id = "room")
     public WebElement step6_roomExplanation;
     // 6th page
-    @FindBy (id = "home")
+    @FindBy(id = "home")
     public WebElement step6_homeExplanation;
     // 6th page
-    @FindBy (id = "breakfast")
+    @FindBy(id = "breakfast")
     public WebElement step6_breakfastExplanation;
     // 7th page
-    @FindBy (xpath = "//*[contains(text(),'Müze')]")
+    @FindBy(xpath = "//*[contains(text(),'Müze')]")
     public WebElement step7_museumText;
     // 8th page
-    @FindBy (xpath = "//*[contains(text(),'Evet')]")
+    @FindBy(xpath = "//*[contains(text(),'Evet')]")
     public List<WebElement> step8_yesTexts;
     // 9th page
-    @FindBy (className = "react-datepicker__input-container")
+    @FindBy(className = "react-datepicker__input-container")
     public WebElement step9_selectDate;
     // 9th page
-    @FindBy (xpath = "//*[@tabindex=0]")
+    @FindBy(xpath = "//*[@tabindex=0]")
     public WebElement step9_todaysLocator;
 
 
-    /**--------------------------------------------------------------------------------------------------------------*/
+    /**
+     * --------------------------------------------------------------------------------------------------------------
+     */
     // Page 5 by Adem
 
     @FindBy(xpath = "//small[@class='pt-1 px-0' and text()='TV']")
@@ -596,4 +649,155 @@ public class BedAndBreakfastPage extends CommonPage {
     public WebElement page5BesOn;
 
 
+    // US124 icin cogu locatorlar kullanilamadigi icin gerekli locaterlar yeniden olusturuldu
+
+    @FindBy(xpath = "//span[@class='input-number-value']")
+    public WebElement maximumKisiSayisi;
+
+
+    @FindBy(xpath = "//*[text() = 'Müstakil Ev']/../../div")
+    public WebElement step1_MustakilEvOption;
+
+    @FindBy(xpath = "//*[text() = 'Apartman Dairesi']/../../div")
+    public WebElement step1_ApartmanDairesiOption;
+
+    @FindBy(xpath = "//*[text() = 'Stüdyo Daire']/../../div")
+    public WebElement step1_StudyoDaireOption;
+
+//    @FindBy (xpath = "//*[@id='next' and contains(text(), 'İlerle')]")
+//    public WebElement ilerleButton;
+//
+//    @FindBy(xpath = "//button[text() = 'Geri']")
+//    public WebElement geriButton;
+
+    @FindBy(xpath = "//input[@type='text']")
+    public WebElement step2_AddressInput;
+
+
+    @FindBy(xpath = "(//input[@type='number'])[1]")
+    public WebElement step2_EvOtobusInput;
+
+    @FindBy(xpath = "(//input[@type='number'])[2]")
+    public WebElement step2_EvTrenInput;
+
+    @FindBy(xpath = "(//input[@type='number'])[3]")
+    public WebElement step2_EvTramwayInput;
+
+
+    @FindBy(id = "size")
+    public WebElement step3_UsageAreaInput;
+
+    @FindBy(className = "input-number-value")
+    public List<WebElement> step3_AllNumbers;
+
+
+    @FindBy(xpath = "//button[text() = '+']")
+    public WebElement step4_incrementButtonOfTekKisilikYatak;
+
+    @FindBy(xpath = "//button[text() = '+']")
+    public List<WebElement> step4_incrementButtons;
+
+    @FindBy(className = "input-number-value")
+    public List<WebElement> step4_AllNumbers;
+
+    @FindBy(xpath = "//*[text() = 'TV']")
+    public WebElement step5_TvOption;
+
+    @FindBy(css = ".row.d-flex.align-items-center.justify-content-center > div > div")
+    public List<WebElement> step5_AllOptions;
+
+    @FindBy(id = "home")
+    public WebElement step6_DescInput;
+
+    @FindBy(xpath = "//*[text() = 'Lunapark']")
+    public WebElement step7_LuneparkOption;
+
+    @FindBy(css = ".row.d-flex.align-items-center.justify-content-center > div > div")
+    public List<WebElement> step7_AllOptions;
+
+    @FindBy(xpath = "//*[text() = 'Hayır']")
+    public List<WebElement> step8_HayirOptions;
+
+    @FindBy(xpath = "//*[text() = 'Evet']")
+    public List<WebElement> step8_EvetOptions;
+
+    @FindBy(xpath = "//input[@placeholder = 'Tarih seçmek için tıklayınız'][1]")
+    public WebElement step9_FirstDatePickerInput;
+
+    @FindBy(css = " [class~=react-datepicker__day--today]")
+    public WebElement step9_TodayOption;
+
+    @FindBy(id = "file-upload1")
+    public WebElement step10_FileUpload1;
+
+    @FindBy(id = "file-upload2")
+    public WebElement step10_FileUpload2;
+
+    @FindBy(id = "file-upload3")
+    public WebElement step10_FileUpload3;
+
+    @FindBy(id = "file-upload4")
+    public WebElement step10_FileUpload4;
+
+    @FindBy(id = "file-upload5")
+    public WebElement step10_FileUpload5;
+
+    @FindBy(id = "file-upload6")
+    public WebElement step10_FileUpload6;
+
+    @FindBy(id = "file-upload7")
+    public WebElement step10_FileUpload7;
+
+    @FindBy(id = "file-upload8")
+    public WebElement step10_FileUpload8;
+
+    @FindBy(id = "file-upload9")
+    public WebElement step10_FileUpload9;
+
+    @FindBy(id = "file-upload10")
+    public WebElement step10_FileUpload10;
+
+    @FindBy(xpath = "//*[contains(text(), 'Resimleri Kaydet')]")
+    public WebElement step10_ResimleriKaydetButton;
+
+    public WebElement getStep5Option(String text) {
+        for (WebElement e : step5_AllOptions) {
+            if (e.getText().equalsIgnoreCase(text)) {
+                return e;
+            }
+        }
+
+        return null;
+    }
+
+    public WebElement getStep7Option(String text) {
+        for (WebElement e : step7_AllOptions) {
+            if (e.getText().equalsIgnoreCase(text)) {
+                return e;
+            }
+        }
+
+        return null;
+    }
+
+    @FindBy(xpath = "//*[contains(text(), '*Lütfen özel şart seçiniz.')]")
+    public WebElement LutfenOzelSartlarSecinizUyarisi;
+
+    @FindBy(xpath = "//div/div[contains(text(),'16')]")
+    public WebElement pickAnyDate;
+
+    @FindBy(tagName = "li")
+    public WebElement page9SelectedDate;
+
+    @FindBy(xpath = "//button[@class='btn btn-danger rounded px-2 py-1 ']")
+    public WebElement page9XButton;
+
+    @FindBy(xpath = "//input[@placeholder='Tarih seçmek için tıklayınız']")
+    public WebElement page9clickOnDate;
+
+    @FindBy(xpath = "//p[@class='pt-3 false']")
+    public WebElement page9SectiginizTarihler;
+
+
 }
+
