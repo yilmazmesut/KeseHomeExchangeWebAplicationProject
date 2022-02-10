@@ -85,7 +85,7 @@ public class MainPage extends CommonPage {
     public WebElement odaKiralaButton;
 
     @FindBy(xpath = "//span[text()='Oda değişimi yapmak istediğiniz yer']")
-    public WebElement odaDegisimiYapmakIstediğinizYer;
+    public WebElement odaDegisimiYapmakIstediginizYer;
 
     public void clickPopulerMenu (String menuTitle){
 
@@ -115,7 +115,7 @@ public class MainPage extends CommonPage {
     @FindBy (id = "dropdownMenuButton")
     public WebElement dropdownMenuButton;
 
-    @FindBy (xpath = "//*[contains(text(),' Bed & Breakfast')]")
+    @FindBy (xpath = "(//*[contains(text(),' Bed & Breakfast')])[2]")
     public WebElement bedAndBreakfastOption;
 
 }
