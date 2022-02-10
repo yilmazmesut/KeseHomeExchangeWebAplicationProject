@@ -12,7 +12,7 @@ Feature: As a user, I should be able to switch from step 6 to step 7 on the "Roo
   Scenario: As a default "Ilerle" Button should NOT be clickable
     Then verify Ilerle button is NOT enable on 6th roomExchange page
 
-  @wip
+#  @wip
   Scenario: after providing min requirement of the page the "Ilerle" button should be clickable on the page
     When user enters "N" explanation to the inputbox on the 6th roomExchange page
     Then verify Ilerle button is active on 6th roomExchange page
