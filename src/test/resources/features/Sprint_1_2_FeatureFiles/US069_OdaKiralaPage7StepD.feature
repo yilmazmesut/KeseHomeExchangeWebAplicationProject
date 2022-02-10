@@ -3,7 +3,7 @@ Feature: Bir kullanici olarak "Oda Kirala" ilan olusturma sayfasinda,
   7. stepten 8. stepe gecis yapabilmeliyim.
 
   Background: Successful connection to site and coming to step 7 in "Ev Degisimi"
-    Given user is on login page "http://test.kese.nl/new_home"
+    Given user is on login page "https://kese.nl/new_home"
     When user signed in on sign in page
       | coder52@nonmail.com | 1234 |
     And user should click to Ilan Ver go to page 7 in Oda

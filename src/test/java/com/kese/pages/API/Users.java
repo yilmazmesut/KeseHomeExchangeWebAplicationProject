@@ -20,7 +20,7 @@ public class Users {
                 .build();
         JSONObject requestParams = new JSONObject();
         requestParams.put("email",email).put("kullanici_adi",username).put("sifre",password);
-        Response response = given().contentType(ContentType.JSON)
+        Response response = given().relaxedHTTPSValidation().contentType(ContentType.JSON)
                 .spec(request)
                 .body(requestParams.toString())
                 .post("/user/account");
