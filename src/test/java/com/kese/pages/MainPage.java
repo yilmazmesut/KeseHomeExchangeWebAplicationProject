@@ -118,6 +118,9 @@ public class MainPage extends CommonPage {
     @FindBy (xpath = "//*[contains(text(),' Bed & Breakfast')]")
     public WebElement bedAndBreakfastOption;
 
+    @FindBy (xpath = "(//*[contains(text(),' Bed & Breakfast')])[2]")
+    public WebElement bedAndBreakfastOption2;
+
 }
 
 
