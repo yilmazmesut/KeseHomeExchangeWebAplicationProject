@@ -23,6 +23,8 @@ public class US083KullaniciBilgileriGuncellemeStepD {
     String url = "http://test.kese.nl/api/user/account";  //kullanmadim
     Response response = null;
     RequestSpecification request = new RequestSpecBuilder()
+            .setRelaxedHTTPSValidation()
+            .setContentType(ContentType.JSON)
             .setBaseUri("https://kese.nl/api")
             .build();
 
@@ -33,10 +35,10 @@ public class US083KullaniciBilgileriGuncellemeStepD {
         jsonObject.put("email", "azizi.14@gmail.com");
         jsonObject.put("sifre", "1234");
 
-        response = given().relaxedHTTPSValidation().contentType(ContentType.JSON).
-                spec(request).
-                body(jsonObject.toString()).
-                post(endPoint + "/login");
+        response = given()
+                .spec(request)
+                .body(jsonObject.toString())
+                .post(endPoint + "/login");
 
         System.out.println("response.statusCode() = " + response.statusCode());
         assertEquals(200, response.getStatusCode());
@@ -61,12 +63,11 @@ public class US083KullaniciBilgileriGuncellemeStepD {
          putMap.put("kullanici_adi", "ahmet");
          */
 
-        response = given().queryParam("secret_token", token).relaxedHTTPSValidation().
-                contentType(ContentType.JSON).
-                spec(request).
-                body(jsonObject.toString()). //bodyi burda yolluyoruz
-                        when().
-                patch("/user/account");
+        response = given().queryParam("secret_token", token)
+                .spec(request)
+                .body(jsonObject.toString()) //bodyi burda yolluyoruz
+                .when()
+                .patch("/user/account");
         response.prettyPrint();
         System.out.println("response.statusCode() = " + response.statusCode());
         assertEquals(202, response.statusCode());
@@ -75,18 +76,17 @@ public class US083KullaniciBilgileriGuncellemeStepD {
     @Given("assert that user connects with invalid credential and verifies status code")
     public void assertThatUserConnectsWithInvalidCredentialAndVerifiesStatusCode() {
 
-        String invalidToken = "yJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYxZjg4MDNkOGNhN2VjNDM2YzViODhhZiIsImVtYWlsIjoiYXppemkuMTRAZ21haWwuY29tIiwicm9sIjoia3VsbGFuaWNpIiwia3VsbGFuaWNpX2FkaSI6ImF6aXozNDM4IiwiZHVydW0iOjF9LCJpYXQiOjE2NDM4OTc3NDAsImV4cCI6MTY3NTQzMzc0MH0.2zWIRRSvKaVDWba0B1CsqRSHWH4r9dNGaDX5ImAFq4Y";
+        String invalidToken = "invalidToken";
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("email", "azizi.14@gmail.com");
         jsonObject.put("kullanici_adi", "aziz40");
 
+        response = given().queryParam("secret_token", invalidToken)
+                .spec(request)
+                .body(jsonObject.toString())
+                .when()
+                .patch("/user/account");
 
-        response = given().queryParam("secret_token", invalidToken).relaxedHTTPSValidation().
-                contentType(ContentType.JSON).
-                spec(request).
-                body(jsonObject.toString()).
-                when().
-                patch("/user/account");
         response.prettyPrint(); //body ekrana yazdir
         System.out.println("response.statusCode() = " + response.statusCode()); //status code ekrana yazdir
         assertEquals(401, response.statusCode());
@@ -101,13 +101,12 @@ public class US083KullaniciBilgileriGuncellemeStepD {
         jsonObject.put("email", "azizi.14gmail.com");
         jsonObject.put("kullanici_adi", "aziz40");
 
+        response = given().queryParam("secret_token", invalidToken)
+                .spec(request)
+                .body(jsonObject.toString())
+                .when()
+                .patch("/user/account");
 
-        response = given().queryParam("secret_token", invalidToken).relaxedHTTPSValidation().
-                contentType(ContentType.JSON).
-                spec(request).
-                body(jsonObject.toString()).
-                when().
-                patch("/user/account");
         response.prettyPrint(); //body ekrana yazdir
         System.out.println("response.statusCode() = " + response.statusCode()); //status code ekrana yazdir
         assertEquals(200, response.statusCode());
