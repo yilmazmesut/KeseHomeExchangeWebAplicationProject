@@ -1,5 +1,6 @@
 package com.kese.stepdefinitions.Sprint_1_2;
 
+import com.kese.pages.BedAndBreakfastPage;
 import com.kese.pages.EvDegisimiPage;
 import com.kese.pages.OdaKiralaPage;
 import com.kese.utilities.BrowserUtils;
