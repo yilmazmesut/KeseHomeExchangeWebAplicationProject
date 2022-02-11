@@ -31,6 +31,11 @@ public class BrowserUtils {
 
     }
 
+    public static boolean isDisabled (By locator){
+
+        return Boolean.parseBoolean(Driver.get().findElement(locator).getAttribute("disabled"));
+    }
+
     public static WebElement waitUntilVisibilityOf (By locator){
 
         WebElement element = Driver.get().findElement(locator);
