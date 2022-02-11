@@ -36,6 +36,7 @@ public class US047_EvDegisimiPage9StepD {
     @And("verify if the number of page {string} is visible")
     public void verifyIfTheNumberOfPageIsVisible(String numberOfPge) {
         String text = evDegisimiPage.theNumberOfPage.getText();
+        System.out.println(text);
         Assert.assertEquals(numberOfPge, text);
 //        Assert.assertTrue(evDegisimiPage.theNumberOfPage.isDisplayed());
     }

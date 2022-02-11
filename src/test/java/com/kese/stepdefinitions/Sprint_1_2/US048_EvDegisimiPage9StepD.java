@@ -15,6 +15,7 @@ public class US048_EvDegisimiPage9StepD {
 
     @Then("verify if {string} warning message appears")
     public void verifyIfWarningMessageAppears(String expectedWarningMessage) {
+        page.nextButton.click();
         String actualWarningMessageText = "//small[contains(text(), '"+expectedWarningMessage+"')]";
         String actualWarningMessage = Driver.get().findElement(By.xpath(actualWarningMessageText)).getText();
         Assert.assertEquals(expectedWarningMessage,actualWarningMessage);

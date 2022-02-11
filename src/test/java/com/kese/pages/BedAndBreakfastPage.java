@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+
 import java.util.List;
 import java.util.Map;
 
@@ -384,7 +385,7 @@ public class BedAndBreakfastPage extends CommonPage {
     // Page 9 by Selen
 
 
-    @FindBy(xpath = "//input[@type='text']")
+    @FindBy(xpath = "//input[@placeholder='Tarih seçmek için tıklayınız']")
     public WebElement page9InputCalenderBox ;
 
     @FindBy(xpath = "//div[@class='react-datepicker__day-name' and text()='Su']")
@@ -401,7 +402,7 @@ public class BedAndBreakfastPage extends CommonPage {
     public WebElement page9CancelButton ;
 
     @FindBy(xpath = "//div[@class='react-datepicker__current-month']")
-    public WebElement cuurentMonthText ;
+    public WebElement page9currentMonthText ;
 
 
 
@@ -761,6 +762,9 @@ public class BedAndBreakfastPage extends CommonPage {
 
     @FindBy(xpath="//p[@class='pt-3 false']")
     public WebElement page9SectiginizTarihler;
+
+    @FindBy (xpath = "//*[@tabindex=0]")
+    public WebElement page9todaysLocator;
 
 
 

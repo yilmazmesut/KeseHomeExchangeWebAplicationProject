@@ -7,13 +7,10 @@ Feature: US_047 Bir kullanıcı olarak "Ev Değişimi" ilan oluşturma sayfasın
     And user navigates to page 9 in Bed & Breakfast
 
   Scenario: "ilerle" button should be visible and clickable
-    Then verify if "İlerle" button is visible
-    Then verify if "İlerle" button shouldn't be clickable as a default
-    When user clicks "İlerle" button without any selection in page
+    Then verify if "İlerle" button is visible ,shouldn't be clickable as a default
     Then verify if "*Lütfen tarih seçiniz." warning message appears
-    When user clicks any date on page nine
-    When user clicks to the ilerle button on the new home page
-    Then verify if the "Resim ve Fotoğraflar" is visible
+    When user clicks any date and ilerle button on page nine
+    Then verify if the "Resim ve Fotoğraflar"  is visible
 
 
 
