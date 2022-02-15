@@ -14,8 +14,8 @@ public class US060OdaDegisimiStepD {
 
 
 
-    @Then("The user sees the title {string}")
-    public void the_user_sees_the_title(String string) {
+    @Then("The user sees the titlee {string}")
+    public void the_user_sees_the_titlee(String string) {
         BrowserUtils.waitFor(5);
 
 
@@ -24,20 +24,20 @@ public class US060OdaDegisimiStepD {
     }
 
 
-    @Then("The user sees description of {string}")
-    public void the_user_sees_description_of(String string) {
+    @Then("user sees description of {string}")
+    public void user_sees_description_of(String string) {
 
         Assert.assertTrue(evDegisimiPage.page3OdanizinKullanimAlaniniBelirtinizYazisi.isDisplayed());
     }
 
-    @Then("The user clicks {string} button and enters the {string} of the house")
-    public void the_user_clicks_button_and_enters_the_of_the_house(String string, String string2) {
+    @Then("user clicks {string} button and enters the {string} of the house")
+    public void user_clicks_button_and_enters_the_of_the_house(String string, String string2) {
 
         evDegisimiPage.page3KullanimAlaniInput.sendKeys("120");
     }
 
-    @Then("The user can increase or decrease the numbers by clicking the bedroom bathroom toilet living room buttons")
-    public void the_user_can_increase_or_decrease_the_numbers_by_clicking_the_bedroom_bathroom_toilet_living_room_buttons() {
+    @Then("The user can increase or decrease the numbers by clicking the bedroom bathroom toilet living room buttonss")
+    public void the_user_can_increase_or_decrease_the_numbers_by_clicking_the_bedroom_bathroom_toilet_living_room_buttonss() {
         BrowserUtils.waitFor(5);
         Assert.assertTrue(evDegisimiPage.page3yatakodasiartibutonu.isEnabled());
         Assert.assertTrue(evDegisimiPage.page3banyoartibutonu.isEnabled());
@@ -51,15 +51,15 @@ public class US060OdaDegisimiStepD {
 
     }
 
-    @And("User should able to click increment button fifteen times for Kullanilabilecek Alanlar")
-    public void userShouldAbleToClickIncrementButtonFifteenTimesForKullanilabilecekAlanlar() {
+    @And("The user should able to click increment button fifteen times for Kullanilabilecek Alanlar")
+    public void TheuserShouldAbleToClickIncrementButtonFifteenTimesForKullanilabilecekAlanlar() {
         evDegisimiPage.incrementFifteenTimes();
     }
 
 
 
-    @And("user verifies that the numbers are max {int} {int} {int} {int} on the new home page step three")
-    public void userVerifiesThatTheNumbersAreMaxOnTheNewHomePageStepThree(int arg1, int arg2, int arg3, int arg4) {
+    @And("user verifies that the numbers are max {int} {int} {int} {int} on the new home page step three3")
+    public void userVerifiesThatTheNumbersAreMaxOnTheNewHomePageStepThree3(int arg1, int arg2, int arg3, int arg4) {
         BrowserUtils.waitFor(5);
 
 
@@ -75,8 +75,8 @@ public class US060OdaDegisimiStepD {
         public void userNavigatesToPageInHomeExchanges(int arg0) {
         }
     */
-    @And("The user can see the text ucboluon on the top of the page")
-    public void theUserCanSeeTheTextUcboluonOnTheTopOfThePage () {
+    @And("The user can see the text ucboluon on the top of the pages")
+    public void theUserCanSeeTheTextUcboluonOnTheTopOfThePages () {
 
         Assert.assertTrue(evDegisimiPage.theNumberOfPage3.isDisplayed());
     }
