@@ -1,5 +1,6 @@
 package com.kese.pages.API;
 
+<<<<<<< HEAD
 import java.util.HashMap;
 import java.util.Map;
 
@@ -32,3 +33,7 @@ public class Cars {
 }
 
 
+=======
+public class Cars {
+}
+>>>>>>> a6f72ed (02/15/2022)
