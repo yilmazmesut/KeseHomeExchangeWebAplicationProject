@@ -2,6 +2,7 @@ package com.kese.stepdefinitions.Sprint_1_2;
 
 import com.kese.pages.LoginPage;
 import com.kese.pages.SignUpPage;
+import com.kese.utilities.BrowserUtils;
 import com.kese.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -58,6 +59,7 @@ public class US019_StepDefs {
 
     @And("user verifies {string} is visible")
     public void userVerifiesIsVisible(String text) {
+       // BrowserUtils.waitFor(2);
         WebElement yazi = Driver.get().findElement(By.xpath("//*[contains(text(), '"+text+"')]"));
         System.out.println(text);
         Assert.assertTrue(yazi.isDisplayed());
