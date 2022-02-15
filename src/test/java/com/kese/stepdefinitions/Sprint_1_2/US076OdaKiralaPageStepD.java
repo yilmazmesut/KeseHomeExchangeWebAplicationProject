@@ -124,7 +124,7 @@ public class US076OdaKiralaPageStepD extends LoginPage {
     @Then("user verifies that the title {string} is visible on the new_room step ten page")
     public void userVerifiesThatTheTitleShouldBeVisibleOnTheNew_roomStepTenPage(String title) {
         Assert.assertTrue(roomPage.page10TitleName.isDisplayed());
-        System.out.println(roomPage.page10TitleName);
+        //System.out.println(roomPage.page10TitleName);
 
     }
 
@@ -132,7 +132,7 @@ public class US076OdaKiralaPageStepD extends LoginPage {
     public void userVerifiesThatShouldBeVisibleOnTheNewRoom_stepTenPage(String description) {
 
         Assert.assertTrue(roomPage.page10Resim_ve_FotograflarAciklama.isDisplayed());
-        System.out.println(roomPage.page10Resim_ve_FotograflarAciklama.getText());
+        //System.out.println(roomPage.page10Resim_ve_FotograflarAciklama.getText());
     }
 
     @Then("user verifies that Resimleri Secin button is active and functional on the new room_step ten page")

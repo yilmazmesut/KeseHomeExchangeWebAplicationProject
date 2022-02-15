@@ -17,63 +17,55 @@ import static org.junit.Assert.assertEquals;
 public class US0087_GetUserApiInfoStepDef {
 
 
-  /*  Response response = null;
     RequestSpecification request = new RequestSpecBuilder()
-            .setBaseUri("http://test.kese.nl/api")
+            .setRelaxedHTTPSValidation()
+            .setBaseUri("https://kese.nl/api")
             .build();
-*/
+
+
 
     @Given("user connect to {string}")
     public void userConnectTo(String endPoint) {
 
-        given()
+       given()
                 .when()
-                .get("http://test.kese.nl/api/user/bilgi")
                 .then()
                 .statusCode(200);
 
 
-
-
-      /*  response = given().
-                queryParam("id", "61d22c3189708a2d2aeeda1c").
-                contentType(ContentType.JSON).
-                spec(request).
-                get(endPoint );
-
-        System.out.println("response.statusCode() = " + response.statusCode());
-
-        response.prettyPrint();*/
     }
 
     @Then("user verifies that status code is {int}")
     public void userVerifiesThatStatusCodeIs(int statusCode) {
        int gelencode=statusCode;
         given()
+                .relaxedHTTPSValidation()
                 .when()
-                .get("http://test.kese.nl/api/user/bilgi?id=61fe0eaa26c152053806d935")
+                .get("https://kese.nl/api/user/bilgi?id=6203d3276939c771620a1db1")
                 .then();
 
         Assert.assertEquals(gelencode,statusCode);
         System.out.println("gelenCode: "+ statusCode);
-         }
 
 
-    @Then("user verifies that response body has sonuc is {string}")
-    public void userVerifiesThatResponseBodyHasSonucIs(String sonuc) {
+    }
+        @Then("user verifies that response body has sonuc is {string}")
+        public void userVerifiesThatResponseBodyHasSonucIs (String sonuc){
         String gelenDeger=sonuc;
         given()
+                .relaxedHTTPSValidation()
                 .when()
-                .get("http://test.kese.nl/api/user/bilgi?id=61fe0eaa26c152053806d935")
+                .get("https://kese.nl/api/user/bilgi?id=6203d3276939c771620a1db1")
                 .then()
                 .statusCode(200)
                 .log().all();
 
         Assert.assertEquals(gelenDeger,sonuc);
         System.out.println("gelenDeger: " + sonuc);
-    }
 
-}
+        }
+
+    }
 
 
 
