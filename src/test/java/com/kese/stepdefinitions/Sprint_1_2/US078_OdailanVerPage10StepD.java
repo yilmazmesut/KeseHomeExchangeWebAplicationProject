@@ -165,6 +165,7 @@ public class US078_OdailanVerPage10StepD {
 
     @Then("verify should not be able yo add {int} images")
     public void verifyShouldNotBeAbleYoAddImages(int numOfPicture) {
+
         verifyTheAddedImages(numOfPicture);
     }
 
