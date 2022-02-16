@@ -26,6 +26,7 @@ public class US091_HomeAdsApiStepD {
     private String secret_token = null;
     private String userId = null;
     private String homeId = null;
+    Homes hms=new Homes();
 
     @When("GET all of ads on {int}. page as JSON in {string} order")
     public void orderedAdsAsJSONInPage(int page, String orderType) {
@@ -122,7 +123,9 @@ public class US091_HomeAdsApiStepD {
         File photo3 = new File(System.getProperty("user.dir")+"/src/test/resources/pictures/4.jpg");
         File photo4 = new File(System.getProperty("user.dir")+"/src/test/resources/pictures/5.jpg");
         // Change user name and password
-        Map<String,Object> formParameters = Homes.dataMap();
+        Map<String,Object> formParameters = hms.dataMap();
+        //Muhsin bey homes daki metodu static olmaktan cikardim. nesne yaratmak gerekti.
+        // nesne yaratarak yeniden revize ettim . Bilal
         formParameters.replace("user", "{\"username\": \""+username+"\", \"id\" : \""+userId+"\"}");
         // Get home Id
         homeId = given().relaxedHTTPSValidation()

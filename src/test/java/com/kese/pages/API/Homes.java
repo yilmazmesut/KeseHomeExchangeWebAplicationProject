@@ -12,7 +12,7 @@ public class Homes {
 
 
 
-    public static Map<String,Object> dataMap(){
+    public Map<String,Object> dataMap(){
 
         Map<String, Object> datalar=new HashMap<String, Object>();
 
@@ -78,7 +78,7 @@ public class Homes {
         datalar.put("plantcare",true);
         datalar.put("carexchange", true);
         datalar.put("child", true);
-        datalar.put("home_description", "Bilalqa restAssured automotion KESE room");
+        datalar.put("home_description", "Bilalqa restAssured nevada home");
 
         return datalar; }
 }

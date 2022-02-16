@@ -1,10 +1,14 @@
 package com.kese.stepdefinitions.Sprint_3;
 
 import com.kese.pages.API.Homes;
+
+import com.kese.pages.API.Photos;
+import com.kese.utilities.ConfigurationReader;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import io.restassured.specification.MultiPartSpecification;
 import org.junit.Assert;
 
 import java.io.File;
@@ -15,14 +19,8 @@ public class US088_UserCreateNewHomeStepD {
 
     Response response = null;
 
-
-
-    File photo0 = new File(System.getProperty("user.dir")+"/src/test/resources/pictures/1.jpg");
-    File photo1 = new File(System.getProperty("user.dir")+"/src/test/resources/pictures/2.jpg");
-    File photo2 = new File(System.getProperty("user.dir")+"/src/test/resources/pictures/3.jpg");
-    File photo3 = new File(System.getProperty("user.dir")+"/src/test/resources/pictures/4.jpg");
-    File photo4 = new File(System.getProperty("user.dir")+"/src/test/resources/pictures/5.jpg");
-
+    Photos pht=new Photos();
+    Homes hms=new Homes();
 
 
     @Given("user connects to {string} and adds a new home adds")
@@ -30,23 +28,22 @@ public class US088_UserCreateNewHomeStepD {
 
         response = given()
 
+
+                .relaxedHTTPSValidation()
                 .queryParam("secret_token","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYxZmFmNGQ0NjYwNmNkMzg5MThhY2ViOSIsImVtYWlsIjoiY2VtYWxAZ21haWwuY29tIiwicm9sIjoia3VsbGFuaWNpIiwia3VsbGFuaWNpX2FkaSI6IkNlbWFsUUEiLCJkdXJ1bSI6MX0sImlhdCI6MTY0MzgzNjg5NiwiZXhwIjoxNjc1MzcyODk2fQ.cf9bcgMj9XcrbcrucSoX97on7cLs3gX9BKzHs78bPTY" )
 
-                .formParams(Homes.dataMap())
-                .contentType(ContentType.JSON)
-                //.body(hms)// bunu denedim ama olmadi galiba photo lardan dolayi
+                .formParams(hms.dataMap())
                 .contentType("multipart/form-data; charset=UTF-8")
 
 
-
-                .multiPart("photo0", photo0)
-                .multiPart("photo1", photo1)
-                .multiPart("photo2", photo2)
-                .multiPart("photo3", photo3)
-                .multiPart("photo4", photo4)
+                .multiPart("photo0", pht.PhotosMap().get("photo0"))
+                .multiPart("photo1", pht.PhotosMap().get("photo1"))
+                .multiPart("photo2", pht.PhotosMap().get("photo2"))
+                .multiPart("photo3", pht.PhotosMap().get("photo3"))
+                .multiPart("photo4", pht.PhotosMap().get("photo4"))
 
                 .when()
-                .post("http://test.kese.nl/api"+endPoint);
+                .post(ConfigurationReader.get("kese_URI") +endPoint);
 
 
 
