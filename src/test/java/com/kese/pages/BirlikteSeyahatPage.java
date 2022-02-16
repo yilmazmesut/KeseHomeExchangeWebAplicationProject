@@ -92,13 +92,17 @@ public class BirlikteSeyahatPage extends CommonPage{
     }
 
     public void setPage4AgeOptions(String age) {
-        String ageLocator = "//span[.='" + age + "']";
-        Driver.get().findElement(By.xpath(ageLocator)).click();
+        if(!age.isEmpty()) {
+            String ageLocator = "//span[.='" + age + "']";
+            Driver.get().findElement(By.xpath(ageLocator)).click();
+        }
     }
 
     public void setPage4GenderOption(String gender) {
-        String genderLocator = "//span[text()='" + gender + "']";
-        Driver.get().findElement(By.xpath(genderLocator)).click();
+        if(!gender.isEmpty()) {
+            String genderLocator = "//span[text()='" + gender + "']";
+            Driver.get().findElement(By.xpath(genderLocator)).click();
+        }
     }
 
     public void setPage5TripDates() {
