@@ -103,7 +103,13 @@
             <artifactId>javafaker</artifactId>
             <version>1.0.2</version>
         </dependency>
+
+
+
+
     </dependencies>
+
+
 
 
 <build>
@@ -144,8 +150,11 @@
             </includes>
         </configuration>
     </plugin>
+
+
+
     <plugin>
-        <groupId>net.masterthought</groupId>
+            <groupId>net.masterthought</groupId>
         <artifactId>maven-cucumber-reporting</artifactId>
         <version>5.3.0</version>
         <executions>
