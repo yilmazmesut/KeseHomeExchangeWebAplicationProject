@@ -1,5 +1,6 @@
 package com.kese.stepdefinitions.Sprint_1_2;
 
+import com.kese.pages.LoginPage;
 import com.kese.pages.MainPage;
 import com.kese.pages.SignedInHomePage;
 import com.kese.pages.US011LoginPage;
@@ -16,7 +17,9 @@ public class US026LogoutPageStepD {
 
         BrowserUtils.waitFor(1);
         new MainPage().girisYapButton.click();
-        new US011LoginPage().login(email, password);
+        LoginPage.enterUserName(email);
+        LoginPage.enterPassword(password);
+        LoginPage.clickSubmitbutton();
 
     }
 
