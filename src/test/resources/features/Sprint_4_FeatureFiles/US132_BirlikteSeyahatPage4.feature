@@ -1,4 +1,5 @@
 @US132
+# Nursel
 Feature: From 4. step to 5. Step Passing Feature in Birlikte Seyahat
 # Bir kullanıcı olarak "Birlikte Seyehat" ilan oluşturma sayfasında,
 # 4. stepten 5. stepe geçiş yapabilmeliyim.
