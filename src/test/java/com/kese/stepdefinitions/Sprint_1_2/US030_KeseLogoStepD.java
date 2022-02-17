@@ -21,7 +21,7 @@ public class US030_KeseLogoStepD {
 
     @Given("the user should be on the homepage")
     public void the_user_should_be_on_the_homepage() {
-        driver.get(ConfigurationReader.get("url"));
+        driver.get(ConfigurationReader.get("url_ui"));
         homePageTitle= Driver.get().getTitle();
     }
 
