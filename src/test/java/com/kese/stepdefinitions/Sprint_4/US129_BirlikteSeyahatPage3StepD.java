@@ -5,9 +5,11 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+import static org.junit.Assert.assertEquals;
+
 public class US129_BirlikteSeyahatPage3StepD {
 
-    BirlikteSeyahatPage Page3 = new BirlikteSeyahatPage();
+    BirlikteSeyahatPage page3 = new BirlikteSeyahatPage();
 
 
 
@@ -15,7 +17,9 @@ public class US129_BirlikteSeyahatPage3StepD {
 
     
     @Then("user verifty that there is a {string} Page Step Number visible on the Birlikte Seyahat three page")
-    public void userVeriftyThatThereIsAPageStepNumberVisibleOnTheBirlikteSeyahatTenPage(String arg0) {
+    public void userVeriftyThatThereIsAPageStepNumberVisibleOnTheBirlikteSeyahatTenPage(String expectedText) {
+        String actualPageNum =page3.page3title .getText();
+        assertEquals(expectedText,actualPageNum);
     }
 
     @Then("user verifty that there is a {string} Page  visible on the Birlikte Seyahat three page")
