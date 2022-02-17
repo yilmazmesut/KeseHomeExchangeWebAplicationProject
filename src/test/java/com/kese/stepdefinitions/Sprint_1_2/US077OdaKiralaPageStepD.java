@@ -1,5 +1,6 @@
 package com.kese.stepdefinitions.Sprint_1_2;
 
+
 import com.kese.pages.BedAndBreakfastPage;
 import com.kese.pages.EvDegisimiPage;
 import com.kese.pages.OdaKiralaPage;
@@ -11,12 +12,15 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+
 public class US077OdaKiralaPageStepD {
 
     EvDegisimiPage homePage = new EvDegisimiPage();
     OdaKiralaPage roomPage = new OdaKiralaPage();
 
+
     @Then("user verifies that the four image add buttons are visible as default on the new room_step ten page")
+
     public void userVerifiesThatTheFourPictureLoadingButtonsAreVisibleAsDefaultOnTheNewRoom_stepTenPage() {
 
         Assert.assertTrue(OdaKiralaPage.page10FirstResimEkleIsDisplayed());

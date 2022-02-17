@@ -72,9 +72,9 @@ public class MainPage extends CommonPage {
 
     @FindBy(xpath = "//span[@class='d-block text-gray-1 font-weight-normal text-left mb-0']")
     public WebElement gitmek;
-    @FindBy(linkText = "//i[@class='fas fa-home mr-1']")
+    @FindBy(xpath = "//a[@id='dropdownMenuButton']")
     public WebElement ilanVer;
-    @FindBy(xpath = "//a[@class='border d-flex align-items-center btn btn-white py-2  ']")
+    @FindBy(xpath = "//a[@id='dropdownMenuButton1']")
     public WebElement profilim;
 
 
@@ -85,7 +85,7 @@ public class MainPage extends CommonPage {
     public WebElement odaKiralaButton;
 
     @FindBy(xpath = "//span[text()='Oda değişimi yapmak istediğiniz yer']")
-    public WebElement odaDegisimiYapmakIstediğinizYer;
+    public WebElement odaDegisimiYapmakIstediginizYer;
 
     public void clickPopulerMenu (String menuTitle){
 
