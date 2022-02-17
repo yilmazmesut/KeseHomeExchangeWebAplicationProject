@@ -10,7 +10,8 @@ Feature: Creating new room
 
   Scenario: Negative testing without secret_token
     When user enters all requirement data without sending secret token
-    Then verify status code is 401
+    Then verify if status code is 401
+    And verify if the room is deleted from the database
 
 
 
