@@ -1,5 +1,7 @@
 package com.kese.stepdefinitions.Sprint_3;
 
+import com.kese.utilities.ConfigurationReader;
+import io.cucumber.java.Status;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.RestAssured;
@@ -16,20 +18,22 @@ import static io.restassured.RestAssured.given;
 
 public class US093_HomesApiPopulerIlanlarStepD {
 
-    String baseUrl= "http://test.kese.nl/api/";
+    String baseUrl= ConfigurationReader.get("kese_URI");
     RequestSpecification request = new RequestSpecBuilder()
             .setBaseUri(baseUrl)
             .build();
     Response response = null;
 
-    @When("user connects to {string} for home API")
-    public void user_connects_to_for_home_api(String endPoint) {
+    @When("user connects to {string} with GET for home API")
+    public void user_connects_to_with_GET_for_home_api(String endPoint) {
         response = given()
                 .spec(request)
                 .get(endPoint);
 
         Assert.assertEquals(response.getStatusCode(), 200);
     }
+
+
 
     @Then("system should display max {int} populer ev ilani for home API")
     public void system_should_display_max_populer_ev_ilani_for_home_api(int advNumber) {
