@@ -1,6 +1,7 @@
 package com.kese.stepdefinitions.Sprint_3;
 
 import com.kese.pages.API.Homes;
+import com.kese.utilities.TemporaryConfigUtils;
 import io.cucumber.java.en.*;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
@@ -16,16 +17,13 @@ import static io.restassured.RestAssured.given;
 
 public class US091_HomeAdsApiStepD {
 
-    private String username = "coder52";
+
     private String email = "coder52@nonmail.com";
     private String password = "1234";
     private String apiUrl = "https://test.kese.nl/api";
     private String address_list = "Lorton, Virginia, Amerika Birleşik Devletleri";
     private JsonPath jsonPath = null;
     private Response response=null;
-    private String secret_token = null;
-    private String userId = null;
-    private String homeId = null;
 
     @When("GET all of ads on {int}. page as JSON in {string} order")
     public void orderedAdsAsJSONInPage(int page, String orderType) {
@@ -94,8 +92,8 @@ public class US091_HomeAdsApiStepD {
         }
     }
 
-    @Given("GET secret_token and id for authorized user")
-    public void getSecret_tokenForAuthorizedUser() {
+    @Given("GET secret_token, id and user name for authorized user")
+    public void getTokenIdNameForAuthorizedUser() {
         Map<String, String> credentials = new HashMap<>();
         credentials.put("email", email);
         credentials.put("sifre", password);
@@ -110,8 +108,11 @@ public class US091_HomeAdsApiStepD {
 //                .log().body()
                 .statusCode(200)
                 .extract().jsonPath();
-        secret_token = jsonPath.getString("token");
-        userId = jsonPath.getString("_id");
+        TemporaryConfigUtils.deleteTemporaryFile();
+        TemporaryConfigUtils.writeDataToTemporaryFile("username", jsonPath.getString("kullanici_adi"));
+        TemporaryConfigUtils.writeDataToTemporaryFile("secret_token",jsonPath.getString("token"));
+        TemporaryConfigUtils.writeDataToTemporaryFile("userId", jsonPath.getString("_id"));
+
     }
 
     @Then("POST a new home advertisement and get id of it")
@@ -121,11 +122,14 @@ public class US091_HomeAdsApiStepD {
         File photo2 = new File(System.getProperty("user.dir")+"/src/test/resources/pictures/3.jpg");
         File photo3 = new File(System.getProperty("user.dir")+"/src/test/resources/pictures/4.jpg");
         File photo4 = new File(System.getProperty("user.dir")+"/src/test/resources/pictures/5.jpg");
+        String username = TemporaryConfigUtils.readDataFromTemporaryFile("username");
+        String secret_token = TemporaryConfigUtils.readDataFromTemporaryFile("secret_token");
+        String userId = TemporaryConfigUtils.readDataFromTemporaryFile("userId");
         // Change user name and password
         Map<String,Object> formParameters = Homes.dataMap();
         formParameters.replace("user", "{\"username\": \""+username+"\", \"id\" : \""+userId+"\"}");
         // Get home Id
-        homeId = given().relaxedHTTPSValidation()
+        String homeId = given().relaxedHTTPSValidation()
                 .queryParam("secret_token",secret_token )
                 .formParams(formParameters)
                 .contentType(ContentType.JSON)
@@ -144,18 +148,20 @@ public class US091_HomeAdsApiStepD {
                 .jsonPath()
                 .getString("_id")
                 ;
+        TemporaryConfigUtils.writeDataToTemporaryFile("homeId", homeId);
     }
 
     @And("DELETE the advertisement with users secret_token and id of home")
     public void deleteHomeAd() {
         response = given()
                 .relaxedHTTPSValidation()
-                .pathParam("id",homeId)
-                .queryParam("secret_token",secret_token)
+                .pathParam("id",TemporaryConfigUtils.readDataFromTemporaryFile("homeId"))
+                .queryParam("secret_token",TemporaryConfigUtils.readDataFromTemporaryFile("secret_token"))
                 .contentType("application/json; charset=UTF-8")
                 .when()
                 .delete(apiUrl+"/homes/{id}")
                 ;
+
     }
 
     @Then("user asserts that home has been by authorized user deleted")
@@ -167,7 +173,7 @@ public class US091_HomeAdsApiStepD {
     public void deleteTheAdvertisementWithUnauthorizedUser() {
         response = given()
                 .relaxedHTTPSValidation()
-                .pathParam("id",homeId)
+                .pathParam("id",TemporaryConfigUtils.readDataFromTemporaryFile("homeId"))
                 .contentType("application/json; charset=UTF-8")
                 .when()
                 .delete(apiUrl+"/homes/{id}")
