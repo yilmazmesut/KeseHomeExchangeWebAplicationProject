@@ -6,5 +6,7 @@ Feature: US096 Bir kullanıcı olarak "/api/rooms/{id}" sayfasına "delete" tipi
     Then verify status code is 202
 
   Scenario: The room removed from the system, should not be accessed again.
-    When user deletes rooms for rooms API
-    Then verify if room is deleted
+    Given user connects to "/rooms" for rooms API
+#    When user deletes rooms for rooms API
+    Then verify if the room is deleted
+    And verify if the value of deleted count is 1
