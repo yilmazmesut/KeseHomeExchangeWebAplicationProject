@@ -3,7 +3,7 @@ Feature: 3rd step should be able to select the starting seat information
 
   Background: Going to Page 3 on Birlikte Seyahat
     Given user in on login page
-    When user logs in with "nbc@gmail.com" and "jkl123"
+    When user logs in with "qwe@gmail.com" and "1234"
     And user clicks ilan ver menu on signed in home page
     * user clicks "Birlikte Seyehat" in ilan ver menu
     * user navigates to page 3 in Birlikte Seyahat
