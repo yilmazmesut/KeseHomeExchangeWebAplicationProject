@@ -1,6 +1,5 @@
 package com.kese.stepdefinitions.Sprint_1_2;
 
-
 import com.kese.pages.BedAndBreakfastPage;
 import com.kese.pages.EvDegisimiPage;
 import com.kese.pages.OdaKiralaPage;
@@ -12,15 +11,12 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-
 public class US077OdaKiralaPageStepD {
 
     EvDegisimiPage homePage = new EvDegisimiPage();
     OdaKiralaPage roomPage = new OdaKiralaPage();
 
-
     @Then("user verifies that the four image add buttons are visible as default on the new room_step ten page")
-
     public void userVerifiesThatTheFourPictureLoadingButtonsAreVisibleAsDefaultOnTheNewRoom_stepTenPage() {
 
         Assert.assertTrue(OdaKiralaPage.page10FirstResimEkleIsDisplayed());
@@ -42,27 +38,26 @@ public class US077OdaKiralaPageStepD {
         Assert.assertTrue(OdaKiralaPage.page10FourthResimEkleIsEnabled());
     }
 
-    @When("user uploads an image {string} {string}")
-    public void userUploadsAnImage(String locator, String imageName) {
-        OdaKiralaPage.uploadImage(By.id(locator), imageName);
+    @When("user clicks and adds the first image button")
+    public void userAddsTheFirstImage() {
+        WebElement choseFile = Driver.get().findElement(By.id("file-upload1"));
+
+        String projectPath = System.getProperty("user.dir");
+        //this method will find where your project is located in your computer.
+
+        //then we will add the relative file path which is after project location;
+        String filePath = "src/test/resources/pictures/Room 6.jfif";
+
+        //and finally we will concat those two and give as a absolute path to sendKeys method.
+        String fullPath = projectPath+"/"+filePath;
+        choseFile.sendKeys(fullPath);
+
+    }
+    @Then("user verifies that after adding the first image, the second Add image Button has become active and this should continue until the last picture on the new room_step ten page")
+    public void userVerifiesThatAfterAddingTheFirstImageTheSecondAddImageButtonShouldBecomeActiveAndThisShouldContinueUntilTheLastPictureOnTheNewRoom_stepTenPage() {
+
 
     }
 
-    @Then("user verifies that the second image button becomes active after adding an image")
-    public void userVerifiesThatTheSecondImageButtonBecomesActiveAfterAddingAnImage() {
-        Assert.assertFalse(OdaKiralaPage.page10SecondResimEkleIsEnabled());
 
-    }
-
-    @Then("user verifies that the third image button becomes active after adding an image")
-    public void userVerifiesThatTheThirdImageButtonBecomesActiveAfterAddingAnImage() {
-        Assert.assertFalse(OdaKiralaPage.page10ThirdResimEkleIsEnabled());
-
-    }
-
-    @Then("user verifies that the fourth image button becomes active after adding an image")
-    public void userVerifiesThatTheFourthImageButtonBecomesActiveAfterAddingAnImage() {
-        Assert.assertFalse(OdaKiralaPage.page10FourthResimEkleIsEnabled());
-
-    }
 }
