@@ -814,7 +814,63 @@ public class BedAndBreakfastPage extends CommonPage {
 
     }
 
+    // Page 3: by MSEN
+    @FindBy(xpath = "//div[@class='navbar-nav me-auto fs-3']")
+    public WebElement theNumberOfThePage3;
 
+    @FindBy(xpath = "//div/h2[contains(text(), 'Kullanım Alanı')]")
+    public WebElement page3KullanimAlani;
+
+    @FindBy(xpath = "//div/p[contains(text(), 'Odanızın kullanım alanını')]")
+    public WebElement page3KullanimAlaniAciklamasi;
+
+    @FindBy(xpath = "//input[@type = 'number']")
+    public WebElement page3KullanimAlani_Input;
+
+    @FindBy(xpath = "//p[contains(text(), 'Evinizin')]")
+    public WebElement page3MisafirOrtakKullanimAlaniBelirtinizText;
+
+    @FindBy(xpath = "//span[contains(text(), 'Yatak')]")
+    public WebElement page3YatakOdasi;
+
+    @FindBy(xpath = "//span[contains(text(), 'Banyo')]")
+    public WebElement page3Banyo;
+
+    @FindBy(xpath = "//span[contains(text(), 'Tuvalet')]")
+    public WebElement page3Tuvalet;
+
+    @FindBy(xpath = "//span[contains(text(), 'Oturma')]")
+    public WebElement page3OturmaOdasi;
+
+    @FindBy(xpath = "(//button[text() = '+'])[1]")
+    public List<WebElement> step3_incrementButton1;
+
+    @FindBy(xpath = "(//button[text() = '+'])[2]")
+    public List<WebElement> step3_incrementButton2;
+
+    @FindBy(xpath = "(//button[text() = '+'])[3]")
+    public List<WebElement> step3_incrementButton3;
+
+    @FindBy(xpath = "(//button[text() = '+'])[4]")
+    public List<WebElement> step3_incrementButton4;
+
+    @FindBy(xpath = "(//button[text() = '−'])[1]")
+    public List<WebElement> step3_decrementButton1;
+
+    @FindBy(xpath = "(//button[text() = '−'])[2]")
+    public List<WebElement> step3_decrementButton2;
+
+    @FindBy(xpath = "(//button[text() = '−'])[3]")
+    public List<WebElement> step3_decrementButton3;
+
+    @FindBy(xpath = "(//button[text() = '−'])[4]")
+    public List<WebElement> step3_decrementButton4;
+
+    @FindBy(xpath = "//button[contains(text(), 'İlerle')]")
+    public WebElement page3IlerleButton;
+
+    @FindBy(xpath = "//button[contains(text(), 'Geri')]")
+    public WebElement page3GeriButton;
 
 }
 
