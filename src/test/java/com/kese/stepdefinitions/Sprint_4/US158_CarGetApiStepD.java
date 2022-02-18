@@ -3,6 +3,7 @@ package com.kese.stepdefinitions.Sprint_4;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.builder.RequestSpecBuilder;
+import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.junit.Assert;
 
@@ -10,36 +11,41 @@ import static io.restassured.RestAssured.given;
 
 public class US158_CarGetApiStepD {
 
-
+    Response response=null;
     RequestSpecification request = new RequestSpecBuilder()
             .setRelaxedHTTPSValidation()
             .setBaseUri("https://kese.nl/api")
             .build();
 
-    @Given("user connect to {string} about")
+    @Given("user connects to {string} and adds")
     public void userConnectTo(String endPoint) {
 
         given()
                 .when()
                 .then()
-                .statusCode(202);;
+                .statusCode(202);
 
 
     }
 
-    @Then("user I should be able to see the information")
-    public void userIShouldBeAbleToSeeTheInformation(int statusCode) {
 
-        int gelencode=statusCode;
+
+    @Then("user I should be able to see the information {string}")
+    public void userIShouldBeAbleToSeeTheInformation(String sonuc) {
+        String gelenDeger=sonuc;
         given()
                 .relaxedHTTPSValidation()
                 .when()
-                .get("https://kese.nl/api/cars/6203d3276939c771620a1db1")
-                .then();
+                .get("https://kese.nl/car/620f563444c42508ff35fb4c")
+                .then()
+                .statusCode(200)
+                .log().all();
 
-        Assert.assertEquals(gelencode,statusCode);
-        System.out.println("gelenCode: "+ statusCode);
+        Assert.assertEquals(gelenDeger,sonuc);
+        System.out.println("gelenDeger: " + sonuc);
 
     }
-}
 
+
+
+}
