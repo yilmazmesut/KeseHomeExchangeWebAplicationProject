@@ -171,5 +171,167 @@ public class BirlikteSeyahatPage extends CommonPage{
         }
 
     }
+    /****************************************************************************************************************/
+    // Page1 by AdemClk:
+
+    @FindBy(xpath = "//*[@class='navbar-brand']")
+    public WebElement page1Kese;
+
+    @FindBy(xpath = "//*[@class='navbar-nav me-auto fs-3']")
+    public WebElement page1BirAlti;
+
+    @FindBy(xpath = "//*[text()='İlanlarım']")
+    public WebElement page1Ilanlarim;
+
+    @FindBy(xpath = "//*[text()='Araç Türü']")
+    public WebElement page1AracTuru;
+
+    @FindBy(xpath = "//*[text()='Birlikte seyahat etmek için kullancağınız / kullanmak istediğiniz aracın türünü belirtiniz.']")
+    public WebElement page1Bilgi;
+
+    @FindBy(xpath = "(//*[@class='pt-1 px-0' and text()='Taksi'])")
+    public WebElement page1Taksi;
+
+    @FindBy(xpath = "(//*[@class='pt-1 px-0' and text()='Kamyonet'])")
+    public WebElement page1Kamyonet;
+
+    @FindBy(xpath = "(//*[@class='pt-1 px-0' and text()='Minibüs'])")
+    public WebElement page1Minibus;
+
+    @FindBy(xpath = "(//*[@id='next' and text()='İlerle'])")
+    public WebElement page1IlerleButon;
+
+    /****************************************************************************************************************/
+    // Page1 by Berrin
+
+    @FindBy(xpath="//button[@style='cursor: not-allowed; opacity: 0.65;']")
+    public WebElement ilerleButonuSaydamlik;
+
+    @FindBy(xpath="//*[contains(text(),'*Lütfen araç tipini seçiniz.')]")
+    public WebElement LutfenAracTipiniGirinizYazisi;
+
+
+
+    /****************************************************************************************************************/
+    //Page3 by MehmetAslan and MehmetSen
+
+    @FindBy(xpath = "//div[@class='navbar-nav me-auto fs-3']")
+    public WebElement theNumberOfThePage3;
+
+    @FindBy(xpath = "//h2[normalize-space()='Araç/Seyehat Bilgileri']")
+    public WebElement page3AracInfo;
+
+    @FindBy(xpath = "//p[contains(text(),'Seyehattaki koltuk tecihinizi veya müsait olan kol')]")
+    public WebElement page3SeatInfo;
+
+    @FindBy(xpath = "//span[normalize-space()='Ön Koltuk']")
+    public WebElement page3OnKoltuk;
+
+    @FindBy(xpath = "//span[normalize-space()='Arka Koltuk']")
+    public WebElement page3ArkaKoltuk;
+
+    @FindBy(xpath = "//span[normalize-space()='Farketmez']")
+    public WebElement page3Farketmez;
+
+    @FindBy(xpath = "//p[contains(text(),'Aracınızla ilgili özellikleri, ayrıcalıkları , ava')]")
+    public WebElement page3AracQuality;
+
+
+
+    /****************************************************************************************************************/
+    //Page 4 Nuray
+
+    public boolean isDisplayedText(String text) {
+        String buttonLocatorText = "//*[contains(text(),'" + text + "')]";
+        WebElement textLocator = Driver.get().findElement(By.xpath(buttonLocatorText));
+        return textLocator.isDisplayed();
+
+    }
+    public void clickPage4AgeRange(int ageRange) {
+        String ageLocator = "(//div[@class='pt-1 d-flex flex-wrap'][1]//div[@class='pr-2 pb-2'])["+ageRange+"]";
+        BrowserUtils.waitFor(1);
+        Driver.get().findElement(By.xpath(ageLocator)).click();
+    }
+    public boolean isDisplayedPage4AgeRange(int ageRange) {
+        String ageLocator = "(//div[@class='pt-1 d-flex flex-wrap'][1]//div[@class='pr-2 pb-2'])["+ageRange+"]";
+        BrowserUtils.waitFor(1);
+        WebElement ageRangeLocator= Driver.get().findElement(By.xpath(ageLocator));
+        return ageRangeLocator.isDisplayed();
+    }
+
+    public boolean greenPage4AgeRangeDisplayed(int ageRange) {
+        String ageLocator = "(//span[@class='p-2 px-3 badge rounded-pill text-light bg-success'])["+ageRange+"]";
+        WebElement greenAgeRange= Driver.get().findElement(By.xpath(ageLocator));
+        return greenAgeRange.isDisplayed();
+    }
+
+    public void clickPage4Gender(int genderNum) {
+        String genderLocator = "(//div[@class='pt-1 d-flex flex-wrap'][2]//div[@class='pr-2 pb-2'])["+genderNum+"]";
+        Driver.get().findElement(By.xpath(genderLocator)).click();
+    }
+    public boolean enablePage4Gender(int genderNum) {
+        String genderLocator = "(//div[@class='pt-1 d-flex flex-wrap'][2]//div[@class='pr-2 pb-2'])["+genderNum+"]";
+        WebElement enableGender=Driver.get().findElement(By.xpath(genderLocator));
+        return enableGender.isEnabled();
+    }
+
+    @FindBy(xpath = "(//span[text()='Farketmez'])[1]")
+    public WebElement page4AgeFarketmez;
+
+    @FindBy(xpath = "(//span[text()='Farketmez'])[2]")
+    public WebElement page4GenderFarketmez;
+
+    @FindBy(xpath = "(//span[@class='p-2 px-3 badge rounded-pill text-light bg-success'])[1]")
+    public WebElement greenpage4GenderFarketmez;
+
+    @FindBy(xpath = "(//button[text()='+']")
+    public WebElement page4KisiSayisiIncrement;
+
+    @FindBy(xpath = "//span[text()='Kadin']")
+    public WebElement page4GenderKadin;
+
+    @FindBy(xpath = "//span[text()='Erkek']")
+    public WebElement page4GenderErkek;
+
+    @FindBy(xpath = "(//button[@type='button'])[2]")
+    public WebElement page4KisiSayisiDecrement;
+
+    @FindBy(xpath = "//span[@class='input-number-value']")
+    public WebElement page4KisiSayisiValue;
+
+    /****************************************************************************************************************/
+    //Page5 by Selen
+
+    @FindBy(xpath = "//button[@class='btn btn-danger rounded px-2 py-1 ']")
+    public WebElement page5TripCancelButton;
+
+
+    /*****************************************************************************************************************/
+    //Page6 by RejepA
+
+    @FindBy (xpath="//div/h2")
+    public WebElement Page6_Title;
+
+    @FindBy (xpath="//button[@class='border btn btn-white py-2']")
+    public WebElement Page6_ResimleriSecinButton;
+
+    @FindBy (xpath="//button[@class='border btn btn-white py-2 mt-2 mt-md-0']")
+    public WebElement Page6_TumResimleriKaldirButton;
+
+    @FindBy (xpath="//small[contains(text(), 'En az')]")
+    public WebElement Page6_EnAtlttakiYazi;
+
+    @FindBy (id = "file-upload1")
+    public WebElement Page6_FileUpload1;
+
+    @FindBy (id = "file-upload2")
+    public WebElement Page6_FileUpload2;
+
+    @FindBy (id = "file-upload3")
+    public WebElement Page6_FileUpload3;
+
+    @FindBy (id = "file-upload4")
+    public WebElement Page6_FileUpload4;
+
 
 }
