@@ -210,6 +210,24 @@ public class BirlikteSeyahatPage extends CommonPage{
     @FindBy(xpath="//*[contains(text(),'*Lütfen araç tipini seçiniz.')]")
     public WebElement LutfenAracTipiniGirinizYazisi;
 
+    /****************************************************************************************************************/
+    // Page2 by Bilal
+
+
+    @FindBy (xpath = "//h2[contains(text(),'Yolculuk Rotas')]")
+    public WebElement topText;
+
+    @FindBy (xpath = "//p[contains(text(),'Yapac')]")
+    public WebElement secondText;
+
+    @FindBy(id = "react-select-2-input")
+    public WebElement firstTextBox;
+
+    @FindBy(id = "react-select-3-input")
+    public WebElement secondTextBox;
+
+    @FindBy(id = "react-select-4-input")
+    public WebElement thirdTextBox;
 
 
     /****************************************************************************************************************/
