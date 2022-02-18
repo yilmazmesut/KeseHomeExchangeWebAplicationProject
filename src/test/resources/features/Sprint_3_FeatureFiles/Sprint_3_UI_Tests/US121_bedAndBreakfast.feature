@@ -16,9 +16,5 @@ Feature: US_121 Bir kullanıcı olarak "Bed & Breakfast" ilan oluşturma sayfas�
     Then user verifies that the four image add buttons are visible as default on the new room_step ten page
     Then user verifies that only the first image add buttons is clickable as default on the new room_step ten page
     Then user verifies that the rest of the image add buttons are disabled on the new room_step ten page
-    When user uploads an image "file-upload1" "Room 6.jfif"
-    Then user verifies that the second image button becomes active after adding an image
-    When user uploads an image "file-upload2" "Room 7.jfif"
-    Then user verifies that the third image button becomes active after adding an image
-    When user uploads an image "file-upload3" "Room 8.jfif"
-    Then user verifies that the fourth image button becomes active after adding an image
+    When user clicks and adds the first image button
+    Then user verifies that after adding the first image, the second Add image Button has become active and this should continue until the last picture on the new room_step ten page
