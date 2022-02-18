@@ -826,13 +826,11 @@ public class OdaKiralaPage extends CommonPage {
 
     }
 
-
     public static boolean page10enAzBesEnFazlaOnResimAciklamasi() {
         return BrowserUtils.isDisplayed(page10enAzBesEnFazlaOnResim);
     }
 
     public static boolean page10FirstResimEkleIsDisplayed() {
-
         return BrowserUtils.isDisplayed(page10FirstResimEkle);
     }
 
@@ -840,14 +838,11 @@ public class OdaKiralaPage extends CommonPage {
         return BrowserUtils.isDisplayed(page10SecondResimEkle);
     }
 
-
     //Enabled
-
     public static boolean page10FirstResimEkleIsEnabled() {
         return BrowserUtils.isDisabled(By.id("file-upload1"));
 
     }
-
 
     public static boolean page10SecondResimEkleIsEnabled() {
         return BrowserUtils.isDisabled(By.id("file-upload2"));
@@ -870,22 +865,6 @@ public class OdaKiralaPage extends CommonPage {
 
     public static boolean page10FourthResimEkleIsDisplayed() {
         return BrowserUtils.isDisplayed(page10FourthResimEkle);
-
-    }
-
-
-    public static void uploadImage(By locator, String imageName) {
-        WebElement choseFile = Driver.get().findElement(locator);
-
-        String projectPath = System.getProperty("user.dir");
-        //this method will find where your project is located in your computer.
-
-        //then we will add the relative file path which is after project location;
-        String filePath = "src/test/resources/pictures/" + imageName;
-
-        //and finally we will concat those two and give as a absolute path to sendKeys method.
-        String fullPath = projectPath + "/" + filePath;
-        choseFile.sendKeys(fullPath);
 
     }
 
