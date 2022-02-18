@@ -27,7 +27,6 @@ public class US157_User_Post_Car_CreateStepD {
                 .formParams(cars.dataCars())
                 .contentType("multipart/form-data; charset=UTF-8")
 
-
                 .multiPart("photo0", pht.carPhotosMap().get("photo0"))
                 .multiPart("photo1", pht.carPhotosMap().get("photo1"))
                 .multiPart("photo2", pht.carPhotosMap().get("photo2"))
