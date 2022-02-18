@@ -9,35 +9,6 @@ import org.junit.Assert;
 
 public class US003MainPageOdaKiralaStepdefs {
     MainPage mainPage = new MainPage();
-//    @When("the user clicks the {string} button")
-//    public void theUserClicksTheButton(String arg0) {
-//
-//    }
-//
-//    @Then("{string} is selected, the text {string} should be visible.")
-//    public void isSelectedTheTextShouldBeVisible(String arg0, String arg1) {
-//    }
-//
-//    @Then("user verifies the drop down menu is clickable, under the {string} text")
-//    public void userVerifiesTheSelectDropDownIsClickableUnderTheText(String arg0) {
-//    }
-//    @And("the user clicks the {string} button")
-//    public void theUserClicksTheButton(String arg0) {
-//        mainPage.odaKiralaButton.click();
-//    }
-//
-//    @When("{string} is selected, the text {string} should be visible.")
-//    public void isSelectedTheTextShouldBeVisible(String arg0, String arg1) {
-//        Assert.assertTrue(mainPage.EvDegisimiYapmakIstediğinizYer.isDisplayed());
-//    }
-//
-//    @Then("user validates the drop down menu is clickable, under the {string} text")
-//    public void userValidatesTheDropDownMenuIsClickableUnderTheText(String arg0) {
-//        Assert.assertTrue(mainPage.selectDropDown.isEnabled());
-//
-//    }
-
-
     @Given("the user clicks the Oda Kirala button")
     public void the_user_clicks_the_Oda_Kirala_button() {
         mainPage.odaKiralaButton.click();
@@ -47,7 +18,7 @@ public class US003MainPageOdaKiralaStepdefs {
 
     @When("Oda Kirala is selected, the text Oda değişimi yapmak istediğiniz yer should be visible.")
     public void oda_Kirala_is_selected_the_text_Oda_değişimi_yapmak_istediğiniz_yer_should_be_visible() {
-        Assert.assertTrue(mainPage.odaDegisimiYapmakIstediğinizYer.isDisplayed());
+        Assert.assertTrue(mainPage.odaDegisimiYapmakIstediginizYer.isDisplayed());
     }
 
 

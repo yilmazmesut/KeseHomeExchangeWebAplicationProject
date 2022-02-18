@@ -1,3 +1,4 @@
+@ui
 Feature: US_20 Bir kullanıcı olarak "/signup" sayfasına girdiğimde, yeni bir kullanıcıyı sadece benzersiz email ve kullanıcı adı ile oluşturabilmeliyim.
 
   Background: Successful connection to site and sign up
