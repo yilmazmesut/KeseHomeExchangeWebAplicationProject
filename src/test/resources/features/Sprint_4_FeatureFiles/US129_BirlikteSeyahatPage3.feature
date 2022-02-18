@@ -1,11 +1,12 @@
 Feature: 3rd step should be able to select the starting seat information
 
 
-  Background: Successful connection to site and coming to step 3 in "Kargo"
-    Given user is on login page "https://kese.nl/new_car"
-    When user signed in on sign in page
-      | qwe@gmail.com | 1234 |
-    And user navigates to page 3 in Birlikte Seyahat
+  Background: Going to Page 3 on Birlikte Seyahat
+    Given user in on login page
+    When user logs in with "qwe@gmail.com" and "1234"
+    And user clicks ilan ver menu on signed in home page
+    * user clicks "Birlikte Seyehat" in ilan ver menu
+    * user navigates to page 3 in Birlikte Seyahat
 
 
     Scenario:US129_TC_001 As a user, I should be able to select the 3rd step starting, seat information, and enter explanations about the trip.
