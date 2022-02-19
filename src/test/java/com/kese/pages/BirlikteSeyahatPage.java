@@ -352,4 +352,39 @@ public class BirlikteSeyahatPage extends CommonPage{
     public WebElement Page6_FileUpload4;
 
 
+    /*************************************************************************************************************/
+    //Page2 by MSEN
+
+    @FindBy(xpath = "//div[@class='navbar-nav me-auto fs-3']")
+    public WebElement page2theNumberOfThePage;
+
+    @FindBy(xpath = "//div/h2[contains(text(), 'Yolculuk Rotası')]")
+    public WebElement page2YolculukRotasi;
+
+    @FindBy(xpath = "//div/p[contains(text(), 'Yapacağınız/ Yapmak istediğiniz')]")
+    public WebElement page2YolculukRotasiAciklamasi;
+
+    @FindBy(xpath = "//h6[contains(text(), 'Başlangıç Noktası')]")
+    public WebElement page2BaslangicNoktasi;
+
+    @FindBy(xpath = "(//div[contains(text(), 'Select...')])[1]")
+    public WebElement page2BaslangicNoktasiBox1;
+
+    @FindBy(xpath = "//h6[contains(text(), 'Bitiş Noktası')]")
+    public WebElement page2BitisNoktasi;
+
+    @FindBy(xpath = "(//div[contains(text(), 'Select...')])[2]")
+    public WebElement page2BitisNoktasiSelectBox2;
+
+    @FindBy(xpath = "//h6[contains(text(), 'Geçiş Noktaları')]")
+    public WebElement page2GecisNoktalari;
+
+    @FindBy(xpath = "(//div[contains(text(), 'Select...')])[3]")
+    public WebElement page2GecisNoktalariSelectBox3;
+
+    @FindBy(xpath = "//button[contains(text(),'Geri')]")
+    public WebElement page2GeriButton;
+
+    @FindBy(xpath = "//button[contains(text(),'İlerle')]")
+    public WebElement page2ilerleButton;
 }
