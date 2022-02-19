@@ -1,5 +1,6 @@
 package com.kese.stepdefinitions.Sprint_4;
 
+import com.kese.stepdefinitions.Sprint_3.US082_CreateUserStepD;
 import com.kese.utilities.ConfigurationReader;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -22,7 +23,7 @@ import static io.restassured.RestAssured.given;
 public class US153_API_bedAndBreakfastStepD {
     Response response;
     RequestSpecification request = new RequestSpecBuilder()
-            .setBaseUri(ConfigurationReader.get("kese_URI"))
+            .setBaseUri(ConfigurationReader.get("url"))
             .build();
     String id = "";
     String token = "";
@@ -31,8 +32,8 @@ public class US153_API_bedAndBreakfastStepD {
 
     @Given("user logs in {string} with existing user info via post request")
     public void userLogsInWithExistingUserInfoViaPostRequest(String endpoint) {
-        String email = ConfigurationReader.get("test_user_email");
-        String sifre = ConfigurationReader.get("test_user_sifre");
+        String email = US082_CreateUserStepD.email;
+        String sifre = US082_CreateUserStepD.password;
         JSONObject requestParams = new JSONObject();
         requestParams.put("email", email);
         requestParams.put("sifre", sifre);
@@ -44,9 +45,7 @@ public class US153_API_bedAndBreakfastStepD {
 
         id = response.body().jsonPath().get("_id");
 
-
         token = response.body().jsonPath().get("token");
-
     }
 
     @Then("user verifies that status code is {int} for login.")
@@ -59,11 +58,9 @@ public class US153_API_bedAndBreakfastStepD {
     public void userCreatesAnAddOnBedAndBreakfastPage() {
         HashMap<String, Object> requestParams = new HashMap<>();
 
-
         JSONObject userMap = new JSONObject();
-        userMap.put("username", userName);
+        userMap.put("username", US082_CreateUserStepD.username);
         userMap.put("id", id);
-        System.out.println(userMap);
 
 
         ArrayList<String> address = new ArrayList();
@@ -74,12 +71,11 @@ public class US153_API_bedAndBreakfastStepD {
         JSONObject addressMap = new JSONObject();
         addressMap.put("label", "Rue de l'Arnon, Sainte-Croix, Suisse");
         addressMap.put("list", address);
-        addressMap.put("placeId", "Ei5SdWUgZGUgbCdBcm5vbiwgMTQ1MCBTYWludGUtQ3JvaXgsIFN3aXR6ZXJsYW5kIi4qLAoUChIJh62G63a4jUcR2t4HEFElbIoSFAoSCbc_icRkuI1HEeWIqvIIYsk6");
-        System.out.println(addressMap);
-        System.out.println(token);
+        addressMap.put("placeId", "mpoo654");
 
-        Date date = new Date();
-        Instant startDate = java.time.Clock.systemUTC().instant();
+
+//        Date date = new Date();
+//        Instant startDate = java.time.Clock.systemUTC().instant();
 
 
         ArrayList<JSONObject> available_datesList = new ArrayList();
@@ -100,10 +96,10 @@ public class US153_API_bedAndBreakfastStepD {
         requestParams.put("tip", 1);
         requestParams.put("cesit", 1);
         requestParams.put("kahvalti", true);
-        requestParams.put("kendineaitoda ", true);
-        requestParams.put("kisisayisi ", 2);
-        requestParams.put("cinsiyet ", 1);
-        requestParams.put("yasaralik  ", "3");
+        requestParams.put("kendineaitoda", true);
+        requestParams.put("kisisayisi", 2);
+        requestParams.put("cinsiyet", 1);
+        requestParams.put("yasaralik", "3");
         requestParams.put("otobus", "1");
         requestParams.put("tren", "1");
         requestParams.put("tramway", "1");
@@ -115,9 +111,9 @@ public class US153_API_bedAndBreakfastStepD {
         requestParams.put("teras", 1);
         requestParams.put("tv", 1);
         requestParams.put("wifi", 1);
-        requestParams.put("caymakinesi ", 1);
+        requestParams.put("caymakinesi", 1);
         requestParams.put("dryer", 1);
-        requestParams.put("minibuzdolabi ", 1);
+        requestParams.put("minibuzdolabi", 1);
         requestParams.put("microwave_oven", 1);
         requestParams.put("baby_gear", 1);
         requestParams.put("computer", 1);
@@ -131,7 +127,7 @@ public class US153_API_bedAndBreakfastStepD {
         requestParams.put("video_game_console", 1);
         requestParams.put("balcony", 1);
         requestParams.put("lift", 1);
-        requestParams.put("kahvemakinesi ", 1);
+        requestParams.put("kahvemakinesi", 1);
         requestParams.put("lunapark", 1);
         requestParams.put("plaj", 1);
         requestParams.put("bisiklet", 1);
@@ -154,8 +150,7 @@ public class US153_API_bedAndBreakfastStepD {
         requestParams.put("plantcare", true);
         requestParams.put("home_description", "3+1");
         requestParams.put("room_description", "double_bed with AC");
-        requestParams.put("breakfast_description ", "V0");
-
+        requestParams.put("breakfast_description", "V0");
 
         response = given().relaxedHTTPSValidation().contentType(ContentType.MULTIPART)
                 .spec(request.queryParam("secret_token", token))
@@ -166,13 +161,20 @@ public class US153_API_bedAndBreakfastStepD {
                 .multiPart("photo4", photo4)
                 .formParams(requestParams)
                 .post("/bedbreakfasts");
-        response.prettyPrint();
+
         Assert.assertEquals(response.statusCode(), 202);
     }
 
 
     @Then("user verifies that he can see the similar adds")
     public void userVerifiesThatHeCanSeeSimilarAdds() {
+        response = given().relaxedHTTPSValidation().contentType(ContentType.MULTIPART)
+                .spec(request).pathParam("bulundugu_sayfa", 1)
+                .queryParam("address_list ", "Frankfurt, Almanya")
+                .queryParam("order", "date")
+                .get("/bedbreakfasts/search/ilanlistesi/{bulundugu_sayfa}", 1);
+        response.prettyPrint();
+        Assert.assertEquals(200, response.statusCode());
 
     }
 

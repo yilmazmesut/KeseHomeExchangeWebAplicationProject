@@ -16,7 +16,7 @@ public class Users {
 
     public Response createNewUser(String email,String username, String password  ){
         RequestSpecification request = new RequestSpecBuilder()
-                .setBaseUri(ConfigurationReader.get("kese_URI"))
+                .setBaseUri(ConfigurationReader.get("url"))
                 .build();
         JSONObject requestParams = new JSONObject();
         requestParams.put("email",email).put("kullanici_adi",username).put("sifre",password);
