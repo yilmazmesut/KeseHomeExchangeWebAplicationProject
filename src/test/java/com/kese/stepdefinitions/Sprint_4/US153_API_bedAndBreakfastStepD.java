@@ -168,6 +168,13 @@ public class US153_API_bedAndBreakfastStepD {
 
     @Then("user verifies that he can see the similar adds")
     public void userVerifiesThatHeCanSeeSimilarAdds() {
+        response = given().relaxedHTTPSValidation().contentType(ContentType.MULTIPART)
+                .spec(request).pathParam("bulundugu_sayfa", 1)
+                .queryParam("address_list ", "Frankfurt, Almanya")
+                .queryParam("order", "date")
+                .get("/bedbreakfasts/search/ilanlistesi/{bulundugu_sayfa}", 1);
+        response.prettyPrint();
+        Assert.assertEquals(200, response.statusCode());
 
     }
 
