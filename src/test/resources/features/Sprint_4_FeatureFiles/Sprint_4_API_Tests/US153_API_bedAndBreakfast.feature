@@ -13,5 +13,6 @@ Feature: US_153_TC001-Bir kullanıcı olarak "/api/bedbreakfasts/{id}/benzerilan
     Then user verifies that status code is 200 for login.
     And user creates an add on bed and breakfast page
     Then user verifies that he can see the similar adds
+    Then user verifies that there are max 5 similar adds
 
 

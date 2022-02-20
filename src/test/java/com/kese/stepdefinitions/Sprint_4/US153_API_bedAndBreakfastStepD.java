@@ -14,9 +14,7 @@ import org.junit.Assert;
 
 import java.io.File;
 import java.time.Instant;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
+import java.util.*;
 
 import static io.restassured.RestAssured.given;
 
@@ -29,6 +27,7 @@ public class US153_API_bedAndBreakfastStepD {
     String token = "";
     String ilanID = "";
     String userName = ConfigurationReader.get("test_user_name");
+    List<Boolean> benzerIlanlar2;
 
     @Given("user logs in {string} with existing user info via post request")
     public void userLogsInWithExistingUserInfoViaPostRequest(String endpoint) {
@@ -161,6 +160,7 @@ public class US153_API_bedAndBreakfastStepD {
                 .multiPart("photo4", photo4)
                 .formParams(requestParams)
                 .post("/bedbreakfasts");
+        ilanID = response.jsonPath().get("_id");
 
         Assert.assertEquals(response.statusCode(), 202);
     }
@@ -168,15 +168,23 @@ public class US153_API_bedAndBreakfastStepD {
 
     @Then("user verifies that he can see the similar adds")
     public void userVerifiesThatHeCanSeeSimilarAdds() {
-        response = given().relaxedHTTPSValidation().contentType(ContentType.MULTIPART)
-                .spec(request).pathParam("bulundugu_sayfa", 1)
-                .queryParam("address_list ", "Frankfurt, Almanya")
-                .queryParam("order", "date")
-                .get("/bedbreakfasts/search/ilanlistesi/{bulundugu_sayfa}", 1);
-        response.prettyPrint();
+        response = given().relaxedHTTPSValidation().accept(ContentType.JSON)
+                .spec(request).queryParam("address_list", "Rue de l'Arnon, Sainte-Croix, Suisse")
+                .pathParam("id", ilanID)
+                .get("/bedbreakfasts/{id}/benzerilanlar");
+
         Assert.assertEquals(200, response.statusCode());
+
+        // List<Map<String, Object>> benzerIlanlar= response.as(List.class);
+        benzerIlanlar2 = response.jsonPath().getList("kahvalti");
+        //assertion using with lamda expression
+        benzerIlanlar2.forEach(l -> Assert.assertEquals(l, true));
 
     }
 
 
+    @Then("user verifies that there are max {int} similar adds")
+    public void userVerifiesThatThereAreMaxSimilarAdds(int addsMaxNumber) {
+        Assert.assertEquals(addsMaxNumber, benzerIlanlar2.size());
+    }
 }
