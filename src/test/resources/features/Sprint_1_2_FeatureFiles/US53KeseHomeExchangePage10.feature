@@ -1,3 +1,4 @@
+@ui
 Feature: US_53 Bir kullanıcı olarak "Ev Değişimi" ilan oluşturma sayfasında, 10. stepte en az 5 en fazla 10 tane resim ekleyebilmeliyim.
 
   Background: Successful connection to site and coming to step 10 in "Ev Değişimi"

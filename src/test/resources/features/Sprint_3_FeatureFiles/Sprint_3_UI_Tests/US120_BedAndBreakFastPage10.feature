@@ -8,7 +8,7 @@ Feature: US120-Bir kullanıcı olarak "Bed & Breakfast" ilan oluşturma sayfası
     And user navigates to page 10 in Bed & Breakfast
 
 
-  Scenario: US_051 TC_001 Buttons and the descriptions should be visible
+  Scenario: US_0120 TC_001 Buttons and the descriptions should be visible
     Then user verifty that there is a "10 / 10" Page Step Number visible on the bed and breakfast ten page
     Then user verifty that the title "Resim ve Fotograflar" should be visible on the bed and breakfast ten page
     Then user verifty that the description of Resim ve Fotograflar should be visible on the bed and breakfastp ten page
