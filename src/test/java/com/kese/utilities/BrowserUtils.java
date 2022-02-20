@@ -56,6 +56,22 @@ public class BrowserUtils {
 
     }
 
+    public static void waitAndClick (WebElement element){
+        Wait<WebDriver> wait = new FluentWait<>(Driver.get()).
+                withTimeout(Duration.ofSeconds(10)).
+                pollingEvery(Duration.ofSeconds(2)).
+                withMessage("My click method failed");
+        wait.until(ExpectedConditions.elementToBeClickable(element)).click();
+    }
+
+    public static void waitAndSendKeys (WebElement element, CharSequence...  text){
+        Wait<WebDriver> wait = new FluentWait<>(Driver.get()).
+                withTimeout(Duration.ofSeconds(10)).
+                pollingEvery(Duration.ofSeconds(2)).
+                withMessage("My click method failed");
+        wait.until(ExpectedConditions.elementToBeClickable(element)).sendKeys(text);
+    }
+
     public static void myClickMethod (By locator){
 
         WebElement element = Driver.get().findElement(locator);

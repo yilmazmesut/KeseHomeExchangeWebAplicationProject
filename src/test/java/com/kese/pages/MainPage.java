@@ -85,7 +85,7 @@ public class MainPage extends CommonPage {
     public WebElement odaKiralaButton;
 
     @FindBy(xpath = "//span[text()='Oda değişimi yapmak istediğiniz yer']")
-    public WebElement odaDegisimiYapmakIstediğinizYer;
+    public WebElement odaDegisimiYapmakIstediginizYer;
 
     public void clickPopulerMenu (String menuTitle){
 
@@ -123,6 +123,7 @@ public class MainPage extends CommonPage {
 
     @FindBy (xpath = "//a[contains(text(),' Kargo')]")
     public WebElement kargoOption; // Kargo option in "ilan Ver" menu
+
 }
 
 
