@@ -126,8 +126,8 @@ public class US091_HomeAdsApiStepD {
         String secret_token = TemporaryConfigUtils.readDataFromTemporaryFile("secret_token");
         String userId = TemporaryConfigUtils.readDataFromTemporaryFile("userId");
         // Change user name and password
-        Homes hms = new Homes();
-        Map<String,Object> formParameters = hms.dataMap();
+        Homes homes = new Homes();
+        Map<String,Object> formParameters = homes.dataMap();
         formParameters.replace("user", "{\"username\": \""+username+"\", \"id\" : \""+userId+"\"}");
         // Get home Id
         String homeId = given().relaxedHTTPSValidation()
