@@ -39,8 +39,4 @@ public class US026LogoutPageStepD {
 
     }
 
-    @Given("user in on login page")
-    public void userInOnLoginPage() {
-
-    }
 }
