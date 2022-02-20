@@ -9,15 +9,14 @@ Feature: Bir kullanıcı olarak "/api/homes/search/ilanlistesi/{bulundugu_sayfa}
     When GET all of ads on 1. page as JSON in "viewed" order
     And user asserts whether the advertisements are in "viewed" order
 
-
   Scenario: US091_TC003 The ad should be able to be deleted from the system by connecting in the Delete type.
-    Given GET secret_token and id for authorized user
+    Given GET secret_token, id and user name for authorized user
     Then POST a new home advertisement and get id of it
     And DELETE the advertisement with users secret_token and id of home
     Then user asserts that home has been by authorized user deleted
 
   Scenario: US091_TC004 Unauthorized users could not be able to delete the ad
-    Given GET secret_token and id for authorized user
+    Given GET secret_token, id and user name for authorized user
     Then POST a new home advertisement and get id of it
     And DELETE the advertisement with unauthorized user
     Then user asserts that home has been by unauthorized user not deleted
