@@ -271,6 +271,11 @@ public class BirlikteSeyahatPage extends CommonPage{
     @FindBy(xpath = "//p[contains(text(),'Aracınızla ilgili özellikleri, ayrıcalıkları , ava')]")
     public WebElement page3AracQuality;
 
+    @FindBy(xpath = "//textarea[@class='form-control']")
+    public WebElement page3textArea;
+
+    @FindBy(xpath = "//div/small[contains(text(), 'Lütfen zorunlu bilgileri giriniz.')]")
+    public WebElement page3ZorunluBilgilerWarning;
 
 
     /****************************************************************************************************************/
