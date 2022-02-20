@@ -1,15 +1,25 @@
 package com.kese.stepdefinitions.Sprint_4;
 
+import com.kese.pages.BirlikteSeyahatPage;
 import io.cucumber.java.en.Then;
+import org.junit.Assert;
 
 public class US130_BirlikteSeyahatPage3StepD {
+    BirlikteSeyahatPage page3 = new BirlikteSeyahatPage();
+
     @Then("user verifies that {string} button is visible")
-    public void userVerifiesThatButtonIsVisible(String arg0) {
+    public void userVerifiesThatButtonIsVisible(String ilerleButton) {
+        page3.ilerleButton.isDisplayed();
+
+        System.out.println(ilerleButton);
 
     }
 
     @Then("user verifies that the {string} button should be clickable by default, but should not move to the next step when clicked.")
     public void userVerifiesThatTheButtonShouldBeClickableByDefaultButShouldNotMoveToTheNextStepWhenClicked(String arg0) {
+        page3.ilerleButton.isEnabled();
+        page3.ilerleButton.click();
+        Assert.assertTrue(page3.ilerleButton.isEnabled());
 
     }
 
