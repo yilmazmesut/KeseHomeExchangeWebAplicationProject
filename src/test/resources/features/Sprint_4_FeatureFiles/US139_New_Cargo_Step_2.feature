@@ -10,3 +10,4 @@ Feature: US_139 Bir kullanıcı olarak "Kargo Gönder" ilan oluşturma sayfasın
   Scenario:
     Then user asserts "Kargo Güzergahı" is visible
     And user asserts "Taşıyacağınız veya göndermek istediğiniz kargonun güzergahını seçiniz. Başlangıç ve bitiş noktalarını belirtiniz. Ayrıca yolculuğunuz süresince uğrayacağınız geçiş noktalarını sırası ile belirtiniz." is visible
+    And user verifies the "starting point" information must be selectable.

@@ -38,6 +38,7 @@ public class US139_New_Cargo_StepD {
             BrowserUtils.waitAndSendKeys(page.step2_selectText2Input,"Köln, Almanya");
             BrowserUtils.waitFor(1);
             BrowserUtils.waitAndSendKeys(page.step2_selectText2Input, Keys.ENTER);
+            BrowserUtils.waitFor(1);
             BrowserUtils.waitAndClick(page.ilerleButton);
             if (sayfa == 3)
                 break;
@@ -51,12 +52,11 @@ public class US139_New_Cargo_StepD {
         }
     }
 
-    @And("user asserts that starting point options must be selectable")
-    public void userAssertsThatStartingPointOptionsMustBeSelectable() {
+    @And("user verifies the {string} information must be selectable.")
+    public void userVerifiesTheInformationMustBeSelectable(String arg0) {
         page.step2_selectText1.click();
         page.step2_selectText1Input.sendKeys("Frankfurt, Almanya");
         BrowserUtils.waitFor(1);
         page.step2_selectText1Input.sendKeys(Keys.ENTER);
-
     }
 }
