@@ -168,6 +168,7 @@ public class US153_API_bedAndBreakfastStepD {
 
     @Then("user verifies that he can see the similar adds")
     public void userVerifiesThatHeCanSeeSimilarAdds() {
+
         response = given().relaxedHTTPSValidation().accept(ContentType.JSON)
                 .spec(request).queryParam("address_list", "Rue de l'Arnon, Sainte-Croix, Suisse")
                 .pathParam("id", ilanID)
