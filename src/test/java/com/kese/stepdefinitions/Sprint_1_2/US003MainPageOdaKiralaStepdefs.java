@@ -18,7 +18,7 @@ public class US003MainPageOdaKiralaStepdefs {
 
     @When("Oda Kirala is selected, the text Oda değişimi yapmak istediğiniz yer should be visible.")
     public void oda_Kirala_is_selected_the_text_Oda_değişimi_yapmak_istediğiniz_yer_should_be_visible() {
-        Assert.assertTrue(mainPage.odaDegisimiYapmakIstediginizYer.isDisplayed());
+        Assert.assertTrue(mainPage.odaDegisimiYapmakIstediğinizYer.isDisplayed());
     }
 
 

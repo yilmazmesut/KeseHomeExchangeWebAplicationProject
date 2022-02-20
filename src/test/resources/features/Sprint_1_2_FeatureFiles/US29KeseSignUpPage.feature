@@ -1,3 +1,4 @@
+@ui
 Feature: US_29 Bir kullanıcı olarak "/signup" sayfasına girdiğimde, kullanım koşulları ve gizlilik politikası kabul edilebilir olmalıdır.
   @smoketest
   Scenario: US_29_TC_001 terms of use and privacy policy check box on signup page must be visible, enable, and not selected as default
