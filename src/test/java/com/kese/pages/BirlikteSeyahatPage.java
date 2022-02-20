@@ -223,11 +223,23 @@ public class BirlikteSeyahatPage extends CommonPage{
     @FindBy(id = "react-select-2-input")
     public WebElement firstTextBox;
 
+    @FindBy(css ="[id$='-option-0']")
+    public WebElement chooseOption;
+
+    @FindBy(xpath = "//div[contains(text(),'Ba')]")
+    public WebElement firstTextBoxValidation;
+
     @FindBy(id = "react-select-3-input")
     public WebElement secondTextBox;
 
+    @FindBy(xpath = "//div[contains(text(),'Biti')]")
+    public WebElement secondTextValidation;
+
     @FindBy(id = "react-select-4-input")
     public WebElement thirdTextBox;
+
+    @FindBy(xpath = "//p[contains(text(),'Noktalar')]")
+    public WebElement thirdTextBoxValidation;
 
 
     /****************************************************************************************************************/
