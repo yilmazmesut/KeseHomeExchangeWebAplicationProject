@@ -8,6 +8,9 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.FindBys;
+
+import java.util.List;
 
 public class BirlikteSeyahatPage extends CommonPage{
 
@@ -92,13 +95,17 @@ public class BirlikteSeyahatPage extends CommonPage{
     }
 
     public void setPage4AgeOptions(String age) {
-        String ageLocator = "//span[.='" + age + "']";
-        Driver.get().findElement(By.xpath(ageLocator)).click();
+        if(!age.isEmpty()) {
+            String ageLocator = "//span[.='" + age + "']";
+            Driver.get().findElement(By.xpath(ageLocator)).click();
+        }
     }
 
     public void setPage4GenderOption(String gender) {
-        String genderLocator = "//span[text()='" + gender + "']";
-        Driver.get().findElement(By.xpath(genderLocator)).click();
+        if(!gender.isEmpty()) {
+            String genderLocator = "//span[text()='" + gender + "']";
+            Driver.get().findElement(By.xpath(genderLocator)).click();
+        }
     }
 
     public void setPage5TripDates() {
@@ -239,8 +246,32 @@ public class BirlikteSeyahatPage extends CommonPage{
     @FindBy(id = "react-select-4-input")
     public WebElement thirdTextBox;
 
+    @FindBy(id = "react-select-5-input")
+    public WebElement fifthTextBox;
+
+    @FindBy(id = "react-select-6-input")
+    public WebElement sixthTextBox;
+
+    @FindBy(id = "react-select-7-input")
+    public WebElement seventhTextBox;
+
+
+
     @FindBy(xpath = "//p[contains(text(),'Noktalar')]")
     public WebElement thirdTextBoxValidation;
+
+
+    @FindBys( {
+            @FindBy(xpath = "//div[@class='col-11']")
+
+    } )
+    public List<WebElement> addPassListelements;
+
+
+    @FindBys({
+            @FindBy (xpath = "//button[@class='btn btn-danger rounded px-2 py-1 ']")
+    })
+    public List<WebElement> deleteElements;
 
 
     /****************************************************************************************************************/
@@ -267,6 +298,11 @@ public class BirlikteSeyahatPage extends CommonPage{
     @FindBy(xpath = "//p[contains(text(),'Aracınızla ilgili özellikleri, ayrıcalıkları , ava')]")
     public WebElement page3AracQuality;
 
+    @FindBy(xpath = "//textarea[@class='form-control']")
+    public WebElement page3textArea;
+
+    @FindBy(xpath = "//div/small[contains(text(), 'Lütfen zorunlu bilgileri giriniz.')]")
+    public WebElement page3ZorunluBilgilerWarning;
 
 
     /****************************************************************************************************************/
