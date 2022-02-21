@@ -1,76 +1,101 @@
 package com.kese.stepdefinitions.Sprint_4;
 
 import com.kese.pages.BedAndBreakfastPage;
+import com.kese.pages.BirlikteSeyahatPage;
+import com.kese.utilities.BrowserUtils;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
 public class US131_BirlikteSeyahatPage4StepD {
 
-    BedAndBreakfastPage page = new BedAndBreakfastPage();
+    BirlikteSeyahatPage bsPage = new BirlikteSeyahatPage();
 
 
-    @Then("{string} button should be displayed")
-    public void buttonShouldBeDisplayed(String arg0) {
-        Assert.assertTrue(page.ilerleButton.isDisplayed());
-    }
-
-
-    @Then("{string} button should not be clickable")
-    public void buttonShouldNotBeClickable(String arg0) {
-        Assert.assertFalse(page.ilerleButton.getAttribute("style").contains("cursor: pointer;"));
-
-    }
-
-    @When("click the {string} button")
-    public void clickTheButton(String arg0) {
-        page.ilerleButton.click();
-
-    }
-
-    @Then("{string} warning should be visible.")
-    public void warningShouldBeVisible(String expected) {
-        Assert.assertEquals(expected, page.page4Uyarı.getText());
-
-    }
-
-    @When("user clicks {string} age")
-    public void userClicksAge(String age) {
-        page.clickPage4Ageoptions(age);
-
-    }
-
-    @And("user clicks {string} gender")
-    public void userClicksGender(String gender) {
-        page.clickPage4Gender(gender);
+    @Given("{string} text is displayed")
+    public void textIsDisplayed(String text) {
+        Assert.assertTrue(bsPage.isDisplayedText(text));
 
 
     }
 
-    @And("user clicks + button")
-    public void userClicksButton() {
-        page.page4plusbutton.click();
+    @Given("Yaş Aralığı should be selectable up to {int}")
+    public void yaşAralığıShouldBeSelectableUpTo(int ageRange) {
+        if (ageRange < 8) {
+            for (int i = 1; i <= ageRange; i++) {
+                bsPage.clickPage4AgeRange(i);
+                BrowserUtils.waitFor(1);
+                Assert.assertTrue(bsPage.greenPage4AgeRangeDisplayed(i));
+            }
+        }
+    }
+
+    @When("Yaş Aralığı selected as {int} farketmez other choices can not be selected")
+    public void yaşAralığıSelectedAsFarketmezOtherChoicesCanNotBeSelected(int ageRange) {
+        if (ageRange == 8) {
+            bsPage.clickPage4AgeRange(ageRange);
+            for (int i = 2; i < ageRange; i++) {
+                Assert.assertTrue(bsPage.isDisplayedPage4AgeRange(i));
+            }
+        }
+    }
+
+    @Then("Verify selected only farketmez")
+    public void verifySelectedOnlyFarketmez() {
+        Assert.assertTrue(bsPage.greenpage4GenderFarketmez.isDisplayed());
+        for (int i = 1; i <= 8; i++) {
+            Assert.assertTrue(bsPage.isDisplayedPage4AgeRange(i));
+        }
+    }
+
+
+    @Given("user should be able to select from {int} to {int} number")
+    public void userShouldBeAbleToSelectFromToNumber(int min, int max) {
+        for (int i = min; i <= max; i++) {
+            bsPage.page4KisiSayisiIncrement.click();
+        }
+        Assert.assertEquals("15",bsPage.page4KisiSayisiValue.getText());
+    }
+
+
+    @Given("Cinsiyet should be selectable only {string} and {string}gender")
+    public void cinsiyetShouldBeSelectableOnlyAndGender(String cinsiyet, String num) {
+
+        bsPage.clickPage4Gender(cinsiyet, num);
+        Assert.assertTrue(bsPage.enablePage4Gender(cinsiyet, num));
 
 
     }
 
-    @Then("{string} button should be clickable")
-    public void buttonShouldBeClickable(String ilerle) {
-        Assert.assertTrue(page.ilerleButton.getAttribute("style").contains("cursor: pointer;"));
-        page.ilerleButton.click();
 
-    }
+    @Then("verify user select only one {string} choice")
+    public void verifyUserSelectOnlyOneAndChoice(String cinsiyet) {
+        switch (cinsiyet){
+        case "Kadin":
+                bsPage.clickPage4Gender("Kadin", "1");
+                System.out.println(bsPage.displayedGreenPage4Gender("Kadin", "1"));
+                System.out.println(bsPage.enablePage4Gender("Erkek", "1"));
+                Assert.assertTrue(bsPage.displayedGreenPage4Gender("Kadin", "1"));
+                Assert.assertTrue(bsPage.enablePage4Gender("Erkek", "1"));
+                Assert.assertTrue(bsPage.enablePage4Gender("Farketmez", "2"));
+                break;
+            case "Erkek":
+                bsPage.clickPage4Gender("Erkek", "1");
+                Assert.assertTrue(bsPage.displayedGreenPage4Gender("Erkek", "1"));
+                Assert.assertTrue(bsPage.enablePage4Gender("Kadin", "1"));
+                Assert.assertTrue(bsPage.enablePage4Gender("Farketmez", "2"));
+           break;
+            case "Farketmez":
+                bsPage.clickPage4Gender("Farketmez", "2");
+                Assert.assertTrue(bsPage.displayedGreenPage4Gender("Farketmez", "1"));
+                Assert.assertTrue(bsPage.enablePage4Gender("Kadin", "1"));
+                Assert.assertTrue(bsPage.enablePage4Gender("Erkek", "1"));
+                break;
+            }
+        }
+        }
 
-    @Then("Verify {string} page is displayed")
-    public void verifyPageIsDisplayed(String pagenumber) {
-        // Assert.assertTrue(pagenumber,page.page4to5thPageVerification.getText());
-        //page.page4to5thPageVerification.getText()
 
-        System.out.println(page.page4to5thPageVerification.getText());
 
-        Assert.assertEquals(pagenumber, page.page4to5thPageVerification.getText());
-        //  Assert.assertTrue(page.page4to5thPageVerification.getAttribute("text").contains("5"));
-
-    }
-    }

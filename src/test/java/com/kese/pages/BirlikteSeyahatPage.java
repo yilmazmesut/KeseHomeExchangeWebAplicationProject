@@ -9,6 +9,8 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
+
 public class BirlikteSeyahatPage extends CommonPage{
 
     //Common Locators
@@ -139,6 +141,7 @@ public class BirlikteSeyahatPage extends CommonPage{
             // 2. PAGE
             setPage2TripStartPoint("Litvanya");
             setPage2TripEndPoint("Amsterdam, Hollanda");
+            BrowserUtils.waitFor(2);
             ilerleButton.click();
             if (sayfa == 3)
                 break;
@@ -169,7 +172,79 @@ public class BirlikteSeyahatPage extends CommonPage{
                 break;
 
         }
+    }
+
+
+
+    //Page 4 Nuray
+
+        public boolean isDisplayedText(String text) {
+            String buttonLocatorText = "//*[contains(text(),'" + text + "')]";
+            WebElement textLocator = Driver.get().findElement(By.xpath(buttonLocatorText));
+            return textLocator.isDisplayed();
+
+        }
+        public void clickPage4AgeRange(int ageRange) {
+            String ageLocator = "(//div[@class='pt-1 d-flex flex-wrap'][1]//div[@class='pr-2 pb-2'])["+ageRange+"]";
+            BrowserUtils.waitFor(1);
+            Driver.get().findElement(By.xpath(ageLocator)).click();
+      }
+       public boolean isDisplayedPage4AgeRange(int ageRange) {
+        String ageLocator = "(//div[@class='pt-1 d-flex flex-wrap'][1]//div[@class='pr-2 pb-2'])["+ageRange+"]";
+        BrowserUtils.waitFor(1);
+        WebElement ageRangeLocator= Driver.get().findElement(By.xpath(ageLocator));
+        return ageRangeLocator.isDisplayed();
+      }
+
+        public boolean greenPage4AgeRangeDisplayed(int ageRange) {
+        String ageLocator = "(//span[@class='p-2 px-3 badge rounded-pill text-light bg-success'])["+ageRange+"]";
+            WebElement greenAgeRange= Driver.get().findElement(By.xpath(ageLocator));
+            return greenAgeRange.isDisplayed();
+      }
+
+        public void clickPage4Gender(String text,String num) {
+           String genderLocator = "(//span[text()='"+text+"'])["+num+"]";
+           Driver.get().findElement(By.xpath(genderLocator)).click();
+    }
+    public boolean enablePage4Gender(String text,String num) {
+        String genderLocator = "(//span[text()='"+text+"'])["+num+"]";
+        WebElement enableGender= Driver.get().findElement(By.xpath(genderLocator));
+        return enableGender.isEnabled();
+    }
+
+    public boolean displayedGreenPage4Gender(String text,String num) {
+        String genderLocator = "(//span[@class='p-2 px-3 badge rounded-pill text-light bg-success' and text()='"+text+"'])["+num+"]";
+        WebElement displayedGreeenGender=Driver.get().findElement(By.xpath(genderLocator));
+        return displayedGreeenGender.isDisplayed();
+    }
+
+
+
+    @FindBy(xpath = "(//span[text()='Farketmez'])[1]")
+    public WebElement page4AgeFarketmez;
+
+    @FindBy(xpath = "(//span[text()='Farketmez'])[2]")
+    public WebElement page4GenderFarketmez;
+
+    @FindBy(xpath = "(//span[@class='p-2 px-3 badge rounded-pill text-light bg-success'])[1]")
+    public WebElement greenpage4GenderFarketmez;
+
+    @FindBy(xpath = "//button[text()='+']")
+    public WebElement page4KisiSayisiIncrement;
+
+    @FindBy(xpath = "//span[text()='Kadin']")
+    public WebElement page4GenderKadin;
+
+    @FindBy(xpath = "//span[text()='Erkek']")
+    public WebElement page4GenderErkek;
+
+    @FindBy(xpath = "(//button[@type='button'])[2]")
+    public WebElement page4KisiSayisiDecrement;
+
+    @FindBy(xpath = "//span[@class='input-number-value']")
+    public WebElement page4KisiSayisiValue;
+
 
     }
 
-}
+

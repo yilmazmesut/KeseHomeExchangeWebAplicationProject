@@ -11,6 +11,7 @@ Feature: From 4. step to 5. Step Passing Feature in Birlikte Seyahat
     * user clicks "Birlikte Seyehat" in ilan ver menu
     * user navigates to page 4 in Birlikte Seyahat
 
+
   Scenario: Step 4 Ilerle Button Not Clickability By Default on Birlikte Seyahat
     Then ilerle button should be visible on bs page
     But ilerle button should not be clickable on bs page
