@@ -35,4 +35,24 @@ public class KargoPage extends CommonPage{
     @FindBy(xpath = "//small[@class='ps-2']")
     public WebElement missingInfoWarningText;
 
+//   msen
+    @FindBy(xpath = "//div[@class='navbar-nav me-auto fs-3']")
+    public WebElement page4NumberOfTheStep;
+
+    @FindBy(xpath = "//*[contains(text(),'Kargo Tarihi ve Zamanı')]")
+    public WebElement page4KargoTarihiVeZamani;
+
+    @FindBy(xpath = "//*[contains(text(),'Seyehat planınız ne zaman')]")
+    public WebElement page4SeyehatPlaniniAciklamasi;
+
+    @FindBy(xpath = "//*[contains(text(),'')]")
+    public WebElement page4TarihSec1;
+
+
+
+
+
+
+
+
 }

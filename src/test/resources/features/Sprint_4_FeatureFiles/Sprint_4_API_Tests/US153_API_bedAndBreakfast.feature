@@ -5,6 +5,8 @@
 # Benzer ilanlar gönderilen adres bilgisine sahip olmalıdır. (en az bir ortak adres)
 #"Gönderilecek datalar :  swagger dökümanınde belirtilmiştir"
 
+  # QA Engineer MSEN
+
 Feature: US_153_TC001-Bir kullanıcı olarak "/api/bedbreakfasts/{id}/benzerilanlar" sayfasına "get" tipinde id'sini gönderdiğim ilanın benzer ilanlarını görebilmeliyim.
 
   Scenario: US_153_TC001
