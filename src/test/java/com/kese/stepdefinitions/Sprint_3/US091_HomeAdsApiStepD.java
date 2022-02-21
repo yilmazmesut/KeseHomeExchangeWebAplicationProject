@@ -24,6 +24,7 @@ public class US091_HomeAdsApiStepD {
     private String address_list = "Lorton, Virginia, Amerika Birleşik Devletleri";
     private JsonPath jsonPath = null;
     private Response response=null;
+    Homes hms=new Homes();
 
     @When("GET all of ads on {int}. page as JSON in {string} order")
     public void orderedAdsAsJSONInPage(int page, String orderType) {

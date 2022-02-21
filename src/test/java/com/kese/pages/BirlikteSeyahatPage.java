@@ -8,6 +8,9 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.FindBys;
+
+import java.util.List;
 
 public class BirlikteSeyahatPage extends CommonPage{
 
@@ -238,8 +241,32 @@ public class BirlikteSeyahatPage extends CommonPage{
     @FindBy(id = "react-select-4-input")
     public WebElement thirdTextBox;
 
+    @FindBy(id = "react-select-5-input")
+    public WebElement fifthTextBox;
+
+    @FindBy(id = "react-select-6-input")
+    public WebElement sixthTextBox;
+
+    @FindBy(id = "react-select-7-input")
+    public WebElement seventhTextBox;
+
+
+
     @FindBy(xpath = "//p[contains(text(),'Noktalar')]")
     public WebElement thirdTextBoxValidation;
+
+
+    @FindBys( {
+            @FindBy(xpath = "//div[@class='col-11']")
+
+    } )
+    public List<WebElement> addPassListelements;
+
+
+    @FindBys({
+            @FindBy (xpath = "//button[@class='btn btn-danger rounded px-2 py-1 ']")
+    })
+    public List<WebElement> deleteElements;
 
 
     /****************************************************************************************************************/
