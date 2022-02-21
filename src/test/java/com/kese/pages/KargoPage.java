@@ -32,4 +32,7 @@ public class KargoPage extends CommonPage{
     @FindBy(id = "car")
     public WebElement step3_kargoBilgileriTextBox;
 
+    @FindBy(xpath = "//small[@class='ps-2']")
+    public WebElement missingInfoWarningText;
+
 }
