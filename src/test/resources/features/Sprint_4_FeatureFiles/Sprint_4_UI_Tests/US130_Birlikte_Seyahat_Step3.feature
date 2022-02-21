@@ -18,7 +18,7 @@ Feature: US_130 Bir kullanıcı olarak "Birlikte Seyehat" ilan oluşturma sayfas
 
   Scenario: US_130_TC001
     Then user verifies that "İlerle" button is visible
-    Then user verifies that the "ilerle" button should be clickable by default, but should not move to the next step when clicked.
-    Then user verifies that the opacity value of the "Next" button should be 0.65 by default
-    Then user verifies that If the seat information is not selected or the description information is not entered, if the Next button is clicked, "Please enter the required information." warning should be visible.
+    Then verifies that "İlerle" button shouldn't be clickable as a default
+    Then user verifies that the opacity value of ilerle button is 0.65
+    Then user verifies that when the seat information is not selected or the description information is not entered, and the Next button is clicked, "Please enter the required information." warning should be visible.
     Then user verifies that When the start point and end point are selected, the Next button should be clickable.
