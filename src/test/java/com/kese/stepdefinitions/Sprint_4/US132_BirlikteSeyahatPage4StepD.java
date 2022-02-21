@@ -1,6 +1,6 @@
 package com.kese.stepdefinitions.Sprint_4;
-
 import com.kese.pages.BirlikteSeyahatPage;
+import com.kese.utilities.BrowserUtils;
 import com.kese.utilities.ConfigurationReader;
 import com.kese.utilities.Driver;
 import io.cucumber.java.en.Given;
@@ -8,7 +8,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
-
+// Nursel
 public class US132_BirlikteSeyahatPage4StepD {
 
     BirlikteSeyahatPage bsPage = new BirlikteSeyahatPage();
@@ -29,7 +29,7 @@ public class US132_BirlikteSeyahatPage4StepD {
 
     }
 
-     @Then("ilerle button should be visible on bs page")
+    @Then("ilerle button should be visible on bs page")
     public void ilerle_button_should_be_visible_on_bs_page() {
         Assert.assertTrue(bsPage.ilerleButton.isDisplayed());
     }
@@ -58,6 +58,24 @@ public class US132_BirlikteSeyahatPage4StepD {
     public void warning_message_should_be_displayed_on_step_on_bs_page(String warningText, String stepNumber) {
         Assert.assertEquals(warningText, bsPage.missingInfoWarningText.getAttribute("innerText"));
         Assert.assertEquals(stepNumber, bsPage.theNumberOfPage.getAttribute("textContent"));
+    }
+
+    @When("user enters {string} {string} {string} on step four on bs page")
+    public void user_enters_on_step_four_on_bs_page(String age, String gender, String maxPerson) {
+
+        BrowserUtils.waitFor(1/2);
+        bsPage.setPage4AgeOptions(age);
+        bsPage.setPage4GenderOption(gender);
+        bsPage.setPage4MaxPerson(Integer.parseInt(maxPerson));
+
+    }
+
+    @Then("step number {string} should be displayed on bs page")
+    public void step_number_should_be_displayed_on_bs_page(String stepNumber) {
+
+        Assert.assertEquals(stepNumber, bsPage.theNumberOfPage.getText());
+        Assert.assertTrue(bsPage.theNumberOfPage.isDisplayed());
+
     }
 
 }
