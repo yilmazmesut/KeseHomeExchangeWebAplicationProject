@@ -25,3 +25,5 @@ Feature: As a user i should be able to see "Populer Ilanlar" part on the homepag
       | Ev Değişimi     | /home         |
       | Oda Kirala      | /room         |
       | Bed & Breakfast | /bedbreakfast |
+
+#    by nur
