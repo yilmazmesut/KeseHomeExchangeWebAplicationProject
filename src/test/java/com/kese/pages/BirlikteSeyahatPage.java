@@ -12,6 +12,8 @@ import org.openqa.selenium.support.FindBys;
 
 import java.util.List;
 
+import java.util.List;
+
 public class BirlikteSeyahatPage extends CommonPage{
 
     //Common Locators
@@ -177,8 +179,11 @@ public class BirlikteSeyahatPage extends CommonPage{
                 break;
 
         }
-
     }
+
+
+
+
     /****************************************************************************************************************/
     // Page1 by AdemClk:
 
@@ -332,15 +337,23 @@ public class BirlikteSeyahatPage extends CommonPage{
         return greenAgeRange.isDisplayed();
     }
 
-    public void clickPage4Gender(int genderNum) {
-        String genderLocator = "(//div[@class='pt-1 d-flex flex-wrap'][2]//div[@class='pr-2 pb-2'])["+genderNum+"]";
+    public void clickPage4Gender(String text,String num) {
+        String genderLocator = "(//span[text()='"+text+"'])["+num+"]";
         Driver.get().findElement(By.xpath(genderLocator)).click();
     }
-    public boolean enablePage4Gender(int genderNum) {
-        String genderLocator = "(//div[@class='pt-1 d-flex flex-wrap'][2]//div[@class='pr-2 pb-2'])["+genderNum+"]";
-        WebElement enableGender=Driver.get().findElement(By.xpath(genderLocator));
+    public boolean enablePage4Gender(String text,String num) {
+        String genderLocator = "(//span[text()='"+text+"'])["+num+"]";
+        WebElement enableGender= Driver.get().findElement(By.xpath(genderLocator));
         return enableGender.isEnabled();
     }
+
+    public boolean displayedGreenPage4Gender(String text,String num) {
+        String genderLocator = "(//span[@class='p-2 px-3 badge rounded-pill text-light bg-success' and text()='"+text+"'])["+num+"]";
+        WebElement displayedGreeenGender=Driver.get().findElement(By.xpath(genderLocator));
+        return displayedGreeenGender.isDisplayed();
+    }
+
+
 
     @FindBy(xpath = "(//span[text()='Farketmez'])[1]")
     public WebElement page4AgeFarketmez;
@@ -351,7 +364,7 @@ public class BirlikteSeyahatPage extends CommonPage{
     @FindBy(xpath = "(//span[@class='p-2 px-3 badge rounded-pill text-light bg-success'])[1]")
     public WebElement greenpage4GenderFarketmez;
 
-    @FindBy(xpath = "(//button[text()='+']")
+    @FindBy(xpath = "//button[text()='+']")
     public WebElement page4KisiSayisiIncrement;
 
     @FindBy(xpath = "//span[text()='Kadin']")
@@ -365,6 +378,8 @@ public class BirlikteSeyahatPage extends CommonPage{
 
     @FindBy(xpath = "//span[@class='input-number-value']")
     public WebElement page4KisiSayisiValue;
+
+
 
     /****************************************************************************************************************/
     //Page5 by Selen
@@ -431,9 +446,7 @@ public class BirlikteSeyahatPage extends CommonPage{
     @FindBy(xpath = "(//div[contains(text(), 'Select...')])[3]")
     public WebElement page2GecisNoktalariSelectBox3;
 
-    @FindBy(xpath = "//button[contains(text(),'Geri')]")
-    public WebElement page2GeriButton;
-
     @FindBy(xpath = "//button[contains(text(),'İlerle')]")
     public WebElement page2ilerleButton;
 }
+

@@ -1,10 +1,10 @@
-@smoketest
+@smoketest @ui
 Feature:US_010 User can acces to login page and inputs of the login should be available
 
 
 
   Background:
-    Given user is on login page "http://test.kese.nl/login"
+    Given user is on login page "https:kese.nl/login"
 
 
   Scenario Outline: TC_001_US_010 "Email" input must be active and available

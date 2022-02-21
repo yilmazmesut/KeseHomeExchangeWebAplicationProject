@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+
 import java.util.List;
 import java.util.Map;
 
@@ -429,8 +430,9 @@ public class BedAndBreakfastPage extends CommonPage {
     // Page 9 by Selen
 
 
-    @FindBy(xpath = "//input[@type='text']")
-    public WebElement page9InputCalenderBox;
+
+    @FindBy(xpath = "//input[@placeholder='Tarih seçmek için tıklayınız']")
+    public WebElement page9InputCalenderBox ;
 
     @FindBy(xpath = "//div[@class='react-datepicker__day-name' and text()='Su']")
     public WebElement page9CalendarPageSu;
@@ -444,6 +446,10 @@ public class BedAndBreakfastPage extends CommonPage {
 
     @FindBy(xpath = "//button[@class='btn btn-danger rounded px-2 py-1 ']")
     public WebElement page9CancelButton;
+
+    @FindBy(xpath = "//div[@class='react-datepicker__current-month']")
+    public WebElement page9currentMonthText ;
+
 
 
     /**
@@ -497,8 +503,13 @@ public class BedAndBreakfastPage extends CommonPage {
     @FindBy(xpath = "//button[contains(text(),'Resimleri Seçin')]")
     public WebElement page10ResimleriSecinButton;
 
-    @FindBy(xpath = "//div[@class='navbar-nav me-auto fs-3']")
+    @FindBy(xpath = "//div[@class='navbar-nav me-auto fs-3']")//div[@class='navbar-nav me-auto fs-3' and contains(text(),'2')]
     public WebElement page10StepTextBox;
+
+    public void pageRateText(int numberOfPage){
+        String pageRateLocator="//div[@class='navbar-nav me-auto fs-3' and contains(text(),'"+numberOfPage+"')]";
+        WebElement pageStepRateText=Driver.get().findElement(By.xpath(pageRateLocator));
+    }
 
     public void pictureLoaded(int pictureNum) {
         String pictureLoadedLocator = "(//div[@class = 'rounded '])[" + pictureNum + "]";
@@ -797,6 +808,9 @@ public class BedAndBreakfastPage extends CommonPage {
 
     @FindBy(xpath = "//p[@class='pt-3 false']")
     public WebElement page9SectiginizTarihler;
+
+    @FindBy (xpath = "//*[@tabindex=0]")
+    public WebElement page9todaysLocator;
 
 
     //US123

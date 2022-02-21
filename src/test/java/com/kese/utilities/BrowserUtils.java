@@ -1,5 +1,6 @@
 package com.kese.utilities;
 
+import io.cucumber.datatable.DataTable;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
@@ -7,6 +8,7 @@ import org.openqa.selenium.support.ui.*;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import static org.junit.Assert.*;
 
@@ -511,5 +513,13 @@ public class BrowserUtils {
         }
         return true;
     }
+
+    public static String getDataTableData(DataTable dataTable, String value) {
+        List<Map<String, String>> list = dataTable.asMaps(String.class, String.class);
+        String result = list.get(0).get(value);
+        return result;
+    }
+
+
 
 }
