@@ -2,6 +2,8 @@ package com.kese.stepdefinitions.Sprint_4;
 
 import com.google.gson.internal.bind.util.ISO8601Utils;
 import com.kese.pages.API.Breakfast;
+import com.kese.pages.API.Cars;
+import io.cucumber.java.bs.A;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import com.kese.utilities.ConfigurationReader;
@@ -15,16 +17,17 @@ import static io.restassured.RestAssured.given;
 public class US156_Admin_Patch_Aproval_StatusStepD {
 
     Response response = null;
+    Breakfast breakfast=new Breakfast("621246a844c42508ff407b04", 2);
     JsonPath jspath;
-    Breakfast breakfast=new Breakfast("620c98db44c42508ff30d35f", 2);
+
 
 
     @Given("user connects to {string} and change the exist ads status")
     public void user_connects_to_and_change_the_exist_ads_status(String endPoint) {
-        System.out.println(breakfast.patchMap());
+
         response = given().
                 relaxedHTTPSValidation().
-                queryParam("secret_token", breakfast.adminToken).
+                queryParam("secret_token", Breakfast.adminToken).
 
                 body(breakfast).
                 //formParams(breakfast.patchMap()).
@@ -40,6 +43,9 @@ public class US156_Admin_Patch_Aproval_StatusStepD {
         response.prettyPrint();
 
         Assert.assertEquals(statusCode, response.getStatusCode());
+        String modifiedValue = response.getBody().jsonPath().getString("nModified");
+        Assert.assertTrue(modifiedValue.contains("1"));
+        System.out.println("modified value: " + modifiedValue);
 
     }
 }

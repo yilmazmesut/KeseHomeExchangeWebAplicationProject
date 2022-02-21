@@ -31,10 +31,32 @@ public class BrowserUtils {
 
     }
 
+    public static boolean isDisplayed (WebElement element){
+
+        return waitUntilVisibilityOf(element).isDisplayed();
+
+    }
+
     public static boolean isDisabled (By locator){
 
         return Boolean.parseBoolean(Driver.get().findElement(locator).getAttribute("disabled"));
     }
+
+
+    public static void waitUntilVisibilityOfAllElements(List<WebElement> elementList){
+
+        Wait<WebDriver> wait = new FluentWait<WebDriver>(Driver.get()).
+                withTimeout(Duration.ofSeconds(4)).
+                pollingEvery(Duration.ofSeconds(2)).
+                withMessage("Element list not loaded");
+
+        wait.until(ExpectedConditions.visibilityOfAllElements(elementList));
+
+
+    }
+
+
+
 
     public static WebElement waitUntilVisibilityOf (By locator){
 
@@ -49,6 +71,18 @@ public class BrowserUtils {
 
     }
 
+    public static WebElement waitUntilVisibilityOf (WebElement element){
+
+
+
+        Wait<WebDriver> wait = new FluentWait<WebDriver>(Driver.get()).
+                withTimeout(Duration.ofSeconds(10)).
+                pollingEvery(Duration.ofSeconds(2)).
+                withMessage("My click method failed");
+
+        return wait.until(ExpectedConditions.visibilityOf(element));
+
+    }
 
     public static boolean isEnabled (By locator){
 
@@ -265,6 +299,8 @@ public class BrowserUtils {
 
         }
     }
+
+
 
     /**
      * Verifies whether the element matching the provided locator is NOT displayed on page

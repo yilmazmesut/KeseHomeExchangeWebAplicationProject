@@ -6,6 +6,8 @@ import java.util.Map;
 public class Cars {
 
 
+
+
     public Map<String,Object> dataCars() {
 
         Map<String, Object> datalarCars = new HashMap<String, Object>();
@@ -21,7 +23,7 @@ public class Cars {
         datalarCars.put("saat","14:30");
         datalarCars.put("koltuk",3);
         datalarCars.put("destination_list"," [ { \"label\": \"Utrecht, Hollanda\", \"list\": [ \"Utrecht\", \"Hollanda\" ], \"placeId\": \"ChIJNy3TOUNvxkcR6UqvGUz8yNY\", \"lat\": 52.09073739999999, \"lng\": 5.1214201 }, { \"label\": \"Arnhem, Hollanda\", \"list\": [ \"Arnhem\", \"Hollanda\" ], \"placeId\": \"ChIJcyKbzpG6x0cR18pz-eBaHBY\", \"lat\": 51.9851034, \"lng\": 5.898729599999999 } ]");
-        datalarCars.put("car_description","arac manyak guzel");
+        datalarCars.put("car_description","artis ne arar la bazarda");
 
     return datalarCars;
 
