@@ -9,7 +9,7 @@ public class Photos {
 
     public Map<String,File> PhotosMap() {
 
-        File photo0 = new File(System.getProperty("user.dir")+"/src/test/resources/pictures/1.jpg");
+        File photo0 = new File(System.getProperty("user.dir")+"/src/test/resources/pictures/carman.jpg");
         File photo1 = new File(System.getProperty("user.dir")+"/src/test/resources/pictures/2.jpg");
         File photo2 = new File(System.getProperty("user.dir")+"/src/test/resources/pictures/3.jpg");
         File photo3 = new File(System.getProperty("user.dir")+"/src/test/resources/pictures/4.jpg");

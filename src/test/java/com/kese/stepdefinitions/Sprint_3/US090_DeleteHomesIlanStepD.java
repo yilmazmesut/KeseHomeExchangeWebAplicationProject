@@ -21,7 +21,7 @@ public class US090_DeleteHomesIlanStepD {
 
     Response responseDelete;
     RequestSpecification request = new RequestSpecBuilder()
-            .setBaseUri(ConfigurationReader.get("kese_URI"))
+            .setBaseUri(ConfigurationReader.get("url"))
             .build();
     String id = "";
     String token = "";
@@ -151,6 +151,7 @@ public class US090_DeleteHomesIlanStepD {
         requestParams.put("plantcare", true);
         requestParams.put("home_description", "V0");
 
+        System.out.println(requestParams);
 
         responseDelete = given().relaxedHTTPSValidation().contentType(ContentType.MULTIPART)
                 .spec(request.queryParam("secret_token", token))

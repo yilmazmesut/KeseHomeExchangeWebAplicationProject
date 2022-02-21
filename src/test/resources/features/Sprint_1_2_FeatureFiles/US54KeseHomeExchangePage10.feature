@@ -1,3 +1,4 @@
+@ui
 Feature: US_054 Bir kullanıcı olarak "Ev Değişimi" ilan oluşturma sayfasında, 10. stepte tüm resimleri kaldır butonu yardımıyla, eklenen resimleri kaldırabilmeliyim.
 
   Background: Successful connection to site and coming to step 10 in "Ev Değişimi"

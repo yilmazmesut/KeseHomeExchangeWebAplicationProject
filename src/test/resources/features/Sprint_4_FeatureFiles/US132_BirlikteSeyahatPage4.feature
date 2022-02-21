@@ -12,9 +12,31 @@ Feature: From 4. step to 5. Step Passing Feature in Birlikte Seyahat
     * user navigates to page 4 in Birlikte Seyahat
 
 
-  Scenario: Step 4 Ilerle Button Not Clickability By Default on Birlikte Seyahat
+  @MH-311
+  Scenario Outline: Step 4 Missing Info <Yas> <Cinsiyet> <Max Kisi> Ilerle Button Not Clickability on Birlikte Seyahat Page
     Then ilerle button should be visible on bs page
     But ilerle button should not be clickable on bs page
     And ilerle button opacity should be 0.65 on bs page
+    When user enters "<Yas>" "<Cinsiyet>" "<Max Kisi>" on step four on bs page
+    Then ilerle button should not be clickable on bs page
     When user clicks to the ilerle button on bs page
     Then warning message "*Lütfen cinsiyet, yaş aralığı ve kişi sayısı seçiniz." should be displayed on step "4 / 6" on bs page
+
+    Examples:
+      | Yas   | Cinsiyet  | Max Kisi |
+      |       |           | 0        |
+      | 65+   | Kadin     | 0        |
+      |       | Farketmez | 2        |
+      | 10-15 |           | 3        |
+
+  @MH-312
+  Scenario Outline: Step 4 Complete Info <Yas> <Cinsiyet> <Max Kisi> Ilerle Button Not Clickability on Birlikte Seyahat Page
+    Then ilerle button should be visible on bs page
+    When user enters "<Yas>" "<Cinsiyet>" "<Max Kisi>" on step four on bs page
+    Then ilerle button should be clickable on bs page
+    When user clicks to the ilerle button on bs page
+    Then step number "5 / 6" should be displayed on bs page
+
+    Examples:
+      | Yas   | Cinsiyet  | Max Kisi |
+      | 16-20 | Kadin     | 4        |
