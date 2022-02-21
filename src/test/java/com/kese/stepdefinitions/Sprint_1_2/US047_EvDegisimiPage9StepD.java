@@ -47,9 +47,4 @@ public class US047_EvDegisimiPage9StepD {
         Assert.assertTrue(headerLocator.isDisplayed());
     }
 
-    @And("verify if the description {string} is visible in Home Exchange")
-    public void verifyIfTheDescriptionIsVisibleInHomeExchange(String arg0) {
-    }
-
-
 }
