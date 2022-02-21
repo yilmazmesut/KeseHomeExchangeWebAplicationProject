@@ -38,6 +38,24 @@ public class Users {
         return actualResponseSonuc;
     }
 
+    // Nursel
+    public Response postUserLogin(String email, String password){
 
+        RequestSpecification request = new RequestSpecBuilder()
+                .setBaseUri(ConfigurationReader.get("url"))
+                .build();
+
+        JSONObject requestParams = new JSONObject();
+        requestParams.put("email",email).put("sifre",password);
+
+        Response response = given()
+                            .relaxedHTTPSValidation()
+                            .contentType(ContentType.JSON)
+                            .spec(request)
+                            .body(requestParams.toString())
+                            .when()
+                            .post("/user/account/login");
+        return response;
+    }
 
 }
