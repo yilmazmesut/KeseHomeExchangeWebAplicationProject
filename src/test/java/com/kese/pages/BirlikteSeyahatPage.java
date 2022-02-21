@@ -139,6 +139,7 @@ public class BirlikteSeyahatPage extends CommonPage{
             // 2. PAGE
             setPage2TripStartPoint("Litvanya");
             setPage2TripEndPoint("Amsterdam, Hollanda");
+            BrowserUtils.waitFor(1);
             ilerleButton.click();
             if (sayfa == 3)
                 break;

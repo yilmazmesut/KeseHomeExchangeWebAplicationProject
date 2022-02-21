@@ -38,6 +38,7 @@ public class US139_New_Cargo_StepD {
             BrowserUtils.waitAndSendKeys(page.step2_selectText2Input,"Köln, Almanya");
             BrowserUtils.waitFor(1);
             BrowserUtils.waitAndSendKeys(page.step2_selectText2Input, Keys.ENTER);
+            BrowserUtils.waitFor(1);
             BrowserUtils.waitAndClick(page.ilerleButton);
             if (sayfa == 3)
                 break;
