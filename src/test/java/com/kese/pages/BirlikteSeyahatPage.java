@@ -436,4 +436,19 @@ public class BirlikteSeyahatPage extends CommonPage{
 
     @FindBy(xpath = "//button[contains(text(),'İlerle')]")
     public WebElement page2ilerleButton;
+
+
+    /****************************************************************************************************************/
+    //Page6 addition by nur
+    @FindBy (xpath = "//div[@class='rounded ']")
+    public List<WebElement> page6AddedPics;
+
+    @FindBy (xpath = "//button[.='Resimleri Kaydet']")
+    public WebElement page6ResimleriKaydetBtn;
+
+    @FindBy (xpath = "//button[.='Geri']")
+    public WebElement page6GeriBtn;
+
+    @FindBy (xpath = "//button[.='İlanı Yayınla']")
+    public WebElement page6IlaniYayinlaBtn;
 }
