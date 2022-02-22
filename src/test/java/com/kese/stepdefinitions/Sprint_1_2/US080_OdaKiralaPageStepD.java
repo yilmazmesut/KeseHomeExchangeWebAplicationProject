@@ -21,7 +21,7 @@ public class US080_OdaKiralaPageStepD {
     @Given("user clicks ilan ver menu on signed in home page")
     public void userClicksMenuOnSignedInHomePage() {
 
-        BrowserUtils.waitFor(1);
+        BrowserUtils.waitFor(1/2);
         signedInHomePage.ilanVerDropdownMenu.click();
 
     }
@@ -29,6 +29,7 @@ public class US080_OdaKiralaPageStepD {
     @When("user clicks {string} in ilan ver menu")
     public void userClicksInIlanVerMenu(String ilanVerItem) {
 
+        BrowserUtils.waitFor(1);
         signedInHomePage.clickItemIlanVerDropdownMenu(ilanVerItem);
     }
 
