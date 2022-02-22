@@ -313,6 +313,7 @@ public class US080_OdaKiralaPageStepD {
 
     }
 
+
     @Then("user clicks resimleri kaydet button on step ten on oda kirala page")
     public void user_clicks_resimleri_kaydet_button_on_step_ten_on_oda_kirala_page() {
 
