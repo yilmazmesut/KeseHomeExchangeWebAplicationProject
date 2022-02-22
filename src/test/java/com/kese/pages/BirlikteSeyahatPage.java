@@ -122,7 +122,7 @@ public class BirlikteSeyahatPage extends CommonPage{
         executor.executeScript("arguments[0].click();", page5TripNextMonthDay7Icon);
     }
 
-    private void setPage5TripHour() {
+    public void setPage5TripHour() {
         BrowserUtils.waitFor(1);
         page5TripHourMenu.click();
         BrowserUtils.waitFor(1);
@@ -141,6 +141,7 @@ public class BirlikteSeyahatPage extends CommonPage{
             // 1. PAGE
             BrowserUtils.waitFor(1);
             setPage1CarType("Taksi");
+            BrowserUtils.waitFor(1/2);
             ilerleButton.click();
             if (sayfa == 2)
                 break;
@@ -166,6 +167,7 @@ public class BirlikteSeyahatPage extends CommonPage{
             setPage4AgeOptions("Farketmez");
             setPage4GenderOption("Kadin");
             setPage4MaxPerson(3);
+            BrowserUtils.waitFor(1/2);
             ilerleButton.click();
             if (sayfa == 5)
                 break;

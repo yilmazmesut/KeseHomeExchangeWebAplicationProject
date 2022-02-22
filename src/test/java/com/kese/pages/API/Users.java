@@ -14,6 +14,7 @@ import static io.restassured.RestAssured.given;
 public class Users {
 
 
+
     public Response createNewUser(String email,String username, String password  ){
         RequestSpecification request = new RequestSpecBuilder()
                 .setBaseUri(ConfigurationReader.get("url"))
