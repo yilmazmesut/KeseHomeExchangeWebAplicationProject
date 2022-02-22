@@ -1,4 +1,5 @@
 package com.kese.stepdefinitions.Sprint_4;
+// QA Engineer msen
 
 import com.kese.pages.BirlikteSeyahatPage;
 import io.cucumber.java.en.Then;
@@ -38,11 +39,6 @@ public class US130_BirlikteSeyahatPage3StepD {
 
         page3.ilerleButton.click();
         Assert.assertTrue(warning, page3.page3ZorunluBilgilerWarning.isDisplayed());
-    }
-
-    @Then("user verifies that When the start point and end point are selected, the Next button should be clickable.")
-    public void userVerifiesThatWhenTheStartPointAndEndPointAreSelectedTheNextButtonShouldBeClickable() {
-
     }
 
 
