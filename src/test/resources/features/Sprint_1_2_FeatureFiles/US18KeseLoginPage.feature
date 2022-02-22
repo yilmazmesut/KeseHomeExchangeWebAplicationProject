@@ -9,8 +9,9 @@ Feature: Kese Login page feature
     Then user gets the url of the page
     And page url should be <expectedUrl>
     Examples:
-      | loginPageUrl                | userName          | password | expectedUrl            |
+      | loginPageUrl            | userName          | password | expectedUrl        |
       | "https://kese.nl/login" | "email@gmail.com" | "3344"   | "https://kese.nl/" |
+
   @smoketest
   Scenario Outline: Kese Website Login with valid username invalid password
     Given user is on login page <loginPageUrl>
@@ -19,8 +20,8 @@ Feature: Kese Login page feature
     And user clicks on Login button
     Then user should get the this message <expectederrorMessage>
     Examples:
-      | loginPageUrl                | userName          | invalidPassword | expectederrorMessage        |
-      | "https://kese.nl/" | "email@gmail.com" | "abcd"          | "Email ya da şifre hatalı." |
+      | loginPageUrl       | userName          | invalidPassword | expectederrorMessage        |
+      | "https://kese.nl/login" | "email@gmail.com" | "abcd"          | "Email ya da şifre hatalı." |
 
   @smoketest
   Scenario Outline: Kese Website Login with invalid username valid password
@@ -30,8 +31,9 @@ Feature: Kese Login page feature
     And user clicks on Login button
     Then user should get the this message <expectederrorMessage>
     Examples:
-      | loginPageUrl                | invalidUsername   | password | expectederrorMessage        |
-      | "https://kese.nl/" | "zmail@yahoo.com" | "3344"   | "Email ya da şifre hatalı." |
+      | loginPageUrl       | invalidUsername   | password | expectederrorMessage        |
+      | "https://kese.nl/login" | "zmail@yahoo.com" | "3344"   | "Email ya da şifre hatalı." |
+
   @smoketest
   Scenario Outline: Kese Website Login with invalid username invalid password
     Given user is on login page <loginPageUrl>
@@ -40,5 +42,5 @@ Feature: Kese Login page feature
     And user clicks on Login button
     Then user should get the this message <expectederrorMessage>
     Examples:
-      | loginPageUrl                | invalidUsername   | invalidPassword | expectederrorMessage        |
-      | "https://kese.nl/" | "xmail@gmail.com" | "ol56"          | "Email ya da şifre hatalı." |
+      | loginPageUrl       | invalidUsername   | invalidPassword | expectederrorMessage        |
+      | "https://kese.nl/login" | "xmail@gmail.com" | "ol56"          | "Email ya da şifre hatalı." |

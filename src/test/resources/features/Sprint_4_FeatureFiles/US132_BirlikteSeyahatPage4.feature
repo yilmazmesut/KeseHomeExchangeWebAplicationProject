@@ -11,6 +11,7 @@ Feature: From 4. step to 5. Step Passing Feature in Birlikte Seyahat
     * user clicks "Birlikte Seyehat" in ilan ver menu
     * user navigates to page 4 in Birlikte Seyahat
 
+
   @MH-311
   Scenario Outline: Step 4 Missing Info <Yas> <Cinsiyet> <Max Kisi> Ilerle Button Not Clickability on Birlikte Seyahat Page
     Then ilerle button should be visible on bs page

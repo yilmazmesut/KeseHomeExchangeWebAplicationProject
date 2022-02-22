@@ -28,3 +28,5 @@ Feature: As a user, I should be able to switch from step 6 to step 7 on the "Roo
     When user enters "N" explanation to the inputbox on the 6th roomExchange page
     And user clicks Ilerle button on the 6th roomExchange page
     Then verify user is on the "7 / 10" page
+
+#    by nur

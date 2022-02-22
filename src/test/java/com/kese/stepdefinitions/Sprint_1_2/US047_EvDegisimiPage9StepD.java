@@ -36,6 +36,7 @@ public class US047_EvDegisimiPage9StepD {
     @And("verify if the number of page {string} is visible")
     public void verifyIfTheNumberOfPageIsVisible(String numberOfPge) {
         String text = evDegisimiPage.theNumberOfPage.getText();
+        System.out.println(text);
         Assert.assertEquals(numberOfPge, text);
 //        Assert.assertTrue(evDegisimiPage.theNumberOfPage.isDisplayed());
     }
@@ -46,10 +47,5 @@ public class US047_EvDegisimiPage9StepD {
         WebElement headerLocator = Driver.get().findElement(By.xpath(headerLocatorText));
         Assert.assertTrue(headerLocator.isDisplayed());
     }
-
-    @And("verify if the description {string} is visible in Home Exchange")
-    public void verifyIfTheDescriptionIsVisibleInHomeExchange(String arg0) {
-    }
-
 
 }

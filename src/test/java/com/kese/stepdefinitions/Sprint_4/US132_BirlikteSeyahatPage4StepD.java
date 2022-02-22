@@ -31,6 +31,7 @@ public class US132_BirlikteSeyahatPage4StepD {
 
     @Then("ilerle button should be visible on bs page")
     public void ilerle_button_should_be_visible_on_bs_page() {
+
         Assert.assertTrue(bsPage.ilerleButton.isDisplayed());
     }
 

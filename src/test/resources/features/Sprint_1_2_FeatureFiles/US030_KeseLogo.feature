@@ -25,3 +25,5 @@ Feature: US30_TestExecution
 		      | CardTitle         |
 		      | Terborg, Hollanda |
 		      | London            |
+
+#		by nur
